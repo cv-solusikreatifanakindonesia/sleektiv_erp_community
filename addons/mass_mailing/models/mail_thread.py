@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import datetime
 
-from flectra import api, models, fields, tools
+from sleektiv import api, models, fields, tools
 
 BLACKLIST_MAX_BOUNCED_LIMIT = 5
 

@@ -1,4 +1,4 @@
-flectra.define('web_gantt.GanttView', function (require) {
+sleektiv.define('web_gantt.GanttView', function (require) {
 "use strict";
 
 

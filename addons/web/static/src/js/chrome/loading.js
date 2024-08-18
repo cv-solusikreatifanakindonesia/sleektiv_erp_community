@@ -1,4 +1,4 @@
-flectra.define('web.Loading', function (require) {
+sleektiv.define('web.Loading', function (require) {
 "use strict";
 
 /**

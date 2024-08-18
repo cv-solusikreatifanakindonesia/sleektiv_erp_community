@@ -1,8 +1,8 @@
-flectra.define('web.ReportService', function (require) {
+sleektiv.define('web.ReportService', function (require) {
 "use strict";
 
 /**
- * This file defines the service for the report generation in Flectra.
+ * This file defines the service for the report generation in Sleektiv.
  */
 
 var AbstractService = require('web.AbstractService');

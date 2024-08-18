@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, _
+from sleektiv import api, fields, models, _
 import base64
-from flectra.exceptions import UserError, ValidationError
+from sleektiv.exceptions import UserError, ValidationError
 import time
-from flectra.tools.misc import formatLang, format_date
+from sleektiv.tools.misc import formatLang, format_date
 
 
 

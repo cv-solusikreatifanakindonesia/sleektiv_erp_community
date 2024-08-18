@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from flectra import fields, SUPERUSER_ID
+from sleektiv import fields, SUPERUSER_ID
 
-from flectra.tests import common, new_test_user
-from flectra.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
+from sleektiv.tests import common, new_test_user
+from sleektiv.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
 
 
 class TestTimesheetHolidaysCreate(common.TransactionCase):

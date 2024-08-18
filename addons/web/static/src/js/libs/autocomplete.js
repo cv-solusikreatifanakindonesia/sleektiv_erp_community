@@ -1,4 +1,4 @@
-flectra.define('web.autocomplete.extensions', function () {
+sleektiv.define('web.autocomplete.extensions', function () {
 'use strict';
 
 /**

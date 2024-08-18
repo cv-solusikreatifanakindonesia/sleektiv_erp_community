@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from itertools import chain
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import UserError, ValidationError
-from flectra.tools.misc import formatLang, get_lang
+from sleektiv import api, fields, models, tools, _
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.tools.misc import formatLang, get_lang
 
 
 class Pricelist(models.Model):

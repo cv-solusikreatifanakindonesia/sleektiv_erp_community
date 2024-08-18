@@ -2,7 +2,7 @@
 # Copyright 2020 RGB Consulting
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from flectra import api, fields, models
+from sleektiv import api, fields, models
 
 
 class DmsAccessGroups(models.Model):

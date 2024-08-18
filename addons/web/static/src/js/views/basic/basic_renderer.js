@@ -1,4 +1,4 @@
-flectra.define('web.BasicRenderer', function (require) {
+sleektiv.define('web.BasicRenderer', function (require) {
 "use strict";
 
 /**
@@ -152,7 +152,7 @@ var BasicRenderer = AbstractRenderer.extend(WidgetAdapterMixin, {
      * @param {Object} state
      * @param {string} id
      * @param {string[]} fields
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      * @returns {Promise<AbstractField[]>} resolved with the list of widgets
      *                                      that have been reset
      */
@@ -913,11 +913,11 @@ var BasicRenderer = AbstractRenderer.extend(WidgetAdapterMixin, {
     /**
      * When someone presses the TAB/UP/DOWN/... key in a widget, it is nice to
      * be able to navigate in the view (default browser behaviors are disabled
-     * by Flectra).
+     * by Sleektiv).
      *
      * @abstract
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onNavigationMove: function (ev) {},
 });

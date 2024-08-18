@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, timedelta
 from hashlib import sha256
 from json import dumps
 
-from flectra import models, api, fields
-from flectra.fields import Datetime
-from flectra.tools.translate import _, _lt
-from flectra.exceptions import UserError
+from sleektiv import models, api, fields
+from sleektiv.fields import Datetime
+from sleektiv.tools.translate import _, _lt
+from sleektiv.exceptions import UserError
 
 
 class pos_config(models.Model):

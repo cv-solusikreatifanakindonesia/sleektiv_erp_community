@@ -1,4 +1,4 @@
-flectra.define('website_sale_comparison.comparison', function (require) {
+sleektiv.define('website_sale_comparison.comparison', function (require) {
 'use strict';
 
 var concurrency = require('web.concurrency');

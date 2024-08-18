@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 
 from unittest.mock import patch
 
-from flectra.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE_PLAINTEXT
-from flectra.addons.test_mail.models.test_mail_models import MailTestSimple
-from flectra.addons.test_mail.tests.common import TestMailCommon, TestRecipients
-from flectra.api import call_kw
-from flectra.exceptions import AccessError
-from flectra.tests import tagged
-from flectra.tools import mute_logger, formataddr
-from flectra.tests.common import users
+from sleektiv.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE_PLAINTEXT
+from sleektiv.addons.test_mail.models.test_mail_models import MailTestSimple
+from sleektiv.addons.test_mail.tests.common import TestMailCommon, TestRecipients
+from sleektiv.api import call_kw
+from sleektiv.exceptions import AccessError
+from sleektiv.tests import tagged
+from sleektiv.tools import mute_logger, formataddr
+from sleektiv.tests.common import users
 
 
 @tagged('mail_post')
@@ -37,7 +37,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         self.assertTrue(isinstance(messageId, int))
 
     @users('employee')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_notify_mail_add_signature(self):
         test_track = self.env['mail.test.track'].with_context(self._test_context).with_user(self.user_employee).create({
             'name': 'Test',
@@ -165,7 +165,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
                 self.assertFalse(partner_info['has_button_access'])
                 self.assertFalse(emp_info['has_button_access'])
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_post_needaction(self):
         (self.user_employee | self.user_admin).write({'notification_type': 'inbox'})
         with self.assertSinglePostNotifications([{'partner': self.partner_employee, 'type': 'inbox'}], {'content': 'Body'}):
@@ -204,7 +204,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
             self.test_record.message_post(
                 body='Test', message_type='comment', subtype_xmlid='mail.mt_comment')
 
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.tests')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail', 'sleektiv.tests')
     def test_post_notifications(self):
         _body, _subject = '<p>Test Body</p>', 'Test Subject'
 
@@ -238,7 +238,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         copy = msg.copy()
         self.assertFalse(copy.notified_partner_ids)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.tests')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail', 'sleektiv.tests')
     def test_post_notifications_email_field(self):
         """ Test various combinations of corner case / not standard filling of
         email fields: multi email, formatted emails, ... """
@@ -279,12 +279,12 @@ class TestMessagePost(TestMailCommon, TestRecipients):
                     email_to=expected_to,
                 )
 
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail', 'sleektiv.models.unlink')
     def test_post_notifications_emails_tweak(self):
         pass
         # we should check _notification_groups behavior, for emails and buttons
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_post_notifications_keep_emails(self):
         self.test_record.message_subscribe(partner_ids=[self.user_admin.partner_id.id])
 
@@ -298,7 +298,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         # notifications emails should not have been deleted: one for customers, one for user
         self.assertEqual(len(self.env['mail.mail'].sudo().search([('mail_message_id', '=', msg.id)])), 2)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_post_attachments(self):
         _attachments = [
             ('List1', b'My first attachment'),
@@ -340,7 +340,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         self.assertIn(('Attach1', b'migration test', 'application/octet-stream'),  self._mails[0]['attachments'])
         self.assertIn(('Attach2', b'migration test', 'application/octet-stream'), self._mails[0]['attachments'])
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_post_answer(self):
         with self.mock_mail_gateway():
             parent_msg = self.test_record.with_user(self.user_employee).message_post(
@@ -399,7 +399,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
             references='%s %s' % (parent_msg.message_id, new_msg.message_id),
         )
 
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.tests')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail', 'sleektiv.tests')
     def test_post_email_with_multiline_subject(self):
         _body, _body_alt, _subject = '<p>Test Body</p>', 'Test Body', '1st line\n2nd line'
         msg = self.test_record.with_user(self.user_employee).message_post(
@@ -409,7 +409,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         )
         self.assertEqual(msg.subject, '1st line 2nd line')
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_post_portal_ok(self):
         self.test_record.message_subscribe((self.partner_1 | self.user_employee.partner_id).ids)
 
@@ -429,7 +429,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
                 body='<p>Test</p>', subject='Subject',
                 message_type='comment', subtype_xmlid='mail.mt_comment')
 
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.addons.mail.models.mail_thread')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail', 'sleektiv.addons.mail.models.mail_thread')
     def test_post_internal(self):
         self.test_record.message_subscribe([self.user_admin.partner_id.id])
         msg = self.test_record.with_user(self.user_employee).message_post(
@@ -460,7 +460,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         self.assertEqual(new_note.email_from, formataddr((self.user_employee.name, self.user_employee.email)))
         self.assertEqual(new_note.notified_partner_ids, self.env['res.partner'])
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_post_notify(self):
         self.user_employee.write({'notification_type': 'inbox'})
 
@@ -494,7 +494,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         self.assertNotIn('/mail/view?model=', partner_mail, 'The email sent to admin should not contain an access link')
         # todo xdo add test message_notify on thread with followers and stuff
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_post_post_w_template(self):
         test_record = self.env['mail.test.simple'].with_context(self._test_context).create({'name': 'Test', 'email_from': 'ignasse@example.com'})
         self.user_employee.write({

@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchWidget', function (require) {
+sleektiv.define('lunch.LunchWidget', function (require) {
 "use strict";
 
 var core = require('web.core');

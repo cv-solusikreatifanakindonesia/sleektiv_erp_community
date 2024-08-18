@@ -1,4 +1,4 @@
-flectra.define('web.kanban_examples_registry', function (require) {
+sleektiv.define('web.kanban_examples_registry', function (require) {
 "use strict";
 
 /**

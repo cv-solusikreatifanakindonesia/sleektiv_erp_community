@@ -7,7 +7,7 @@ import time
 import werkzeug.urls
 
 
-class FlectraEdiProxyAuth(requests.auth.AuthBase):
+class SleektivEdiProxyAuth(requests.auth.AuthBase):
     """ For routes that needs to be authenticated and verified for access.
         Allows:
         1) to preserve the integrity of the message between the endpoints.
@@ -41,8 +41,8 @@ class FlectraEdiProxyAuth(requests.auth.AuthBase):
         h = hmac.new(base64.b64decode(self.refresh_token), message.encode(), digestmod=hashlib.sha256)
 
         request.headers.update({
-            'flectra-edi-client-id': self.id_client,
-            'flectra-edi-signature': h.hexdigest(),
-            'flectra-edi-timestamp': msg_timestamp,
+            'sleektiv-edi-client-id': self.id_client,
+            'sleektiv-edi-signature': h.hexdigest(),
+            'sleektiv-edi-timestamp': msg_timestamp,
         })
         return request

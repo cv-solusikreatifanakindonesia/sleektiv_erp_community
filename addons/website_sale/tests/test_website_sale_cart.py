@@ -1,9 +1,9 @@
 # coding: utf-8
 
-from flectra.addons.website_sale.controllers.main import WebsiteSale
-from flectra.addons.website.tools import MockRequest
-from flectra.exceptions import UserError
-from flectra.tests.common import SavepointCase, tagged
+from sleektiv.addons.website_sale.controllers.main import WebsiteSale
+from sleektiv.addons.website.tools import MockRequest
+from sleektiv.exceptions import UserError
+from sleektiv.tests.common import SavepointCase, tagged
 
 @tagged('post_install', '-at_install')
 class WebsiteSaleCart(SavepointCase):

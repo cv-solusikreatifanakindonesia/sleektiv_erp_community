@@ -1,4 +1,4 @@
-flectra.define('web.CalendarView', function (require) {
+sleektiv.define('web.CalendarView', function (require) {
 "use strict";
 
 var AbstractView = require('web.AbstractView');

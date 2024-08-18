@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <!-- Account Tax Templates (post-2024 rates change) -->
     <record model="account.tax.template" id="vat_sale_26">
         <field name="name">TVA due a 2.6% (TR)</field>
@@ -704,4 +704,4 @@
         <field name="active" eval="False"/>
         <field name="children_tax_ids" eval="[(6, 0, [ref('vat_purchase_81'), ref('vat_purchase_81_return')])]"/>
     </record>
-</flectra>
+</sleektiv>

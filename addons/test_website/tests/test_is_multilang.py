@@ -1,10 +1,10 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-import flectra.tests
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+import sleektiv.tests
 import lxml
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
-class TestIsMultiLang(flectra.tests.HttpCase):
+@sleektiv.tests.common.tagged('post_install', '-at_install')
+class TestIsMultiLang(sleektiv.tests.HttpCase):
 
     def test_01_is_multilang_url(self):
         website = self.env['website'].search([], limit=1)

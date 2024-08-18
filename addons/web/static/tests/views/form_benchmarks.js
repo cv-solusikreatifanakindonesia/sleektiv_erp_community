@@ -1,4 +1,4 @@
-flectra.define('web.form_benchmarks', function (require) {
+sleektiv.define('web.form_benchmarks', function (require) {
     "use strict";
 
     const FormView = require('web.FormView');

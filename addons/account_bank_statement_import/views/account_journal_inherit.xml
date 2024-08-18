@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <record id="journal_form_view_inherit" model="ir.ui.view">
         <field name="name">account.journal.form.inherit</field>
         <field name="model">account.journal</field>
@@ -11,4 +11,4 @@
             </xpath>
         </field>
     </record>
-</flectra> 
+</sleektiv> 

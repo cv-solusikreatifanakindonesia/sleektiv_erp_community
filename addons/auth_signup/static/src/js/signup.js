@@ -1,4 +1,4 @@
-flectra.define('auth_signup.signup', function (require) {
+sleektiv.define('auth_signup.signup', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

@@ -1,4 +1,4 @@
-flectra.define('website_slides.channel_tag.add', function (require) {
+sleektiv.define('website_slides.channel_tag.add', function (require) {
 'use strict';
 
 var core = require('web.core');

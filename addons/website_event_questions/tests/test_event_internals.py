@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from flectra.fields import Datetime as FieldsDatetime
-from flectra.tests.common import users
-from flectra.addons.website.tools import MockRequest
-from flectra.addons.website_event_questions.controllers.main import WebsiteEvent
-from flectra.addons.website_event_questions.tests.common import TestEventQuestionCommon
+from sleektiv.fields import Datetime as FieldsDatetime
+from sleektiv.tests.common import users
+from sleektiv.addons.website.tools import MockRequest
+from sleektiv.addons.website_event_questions.controllers.main import WebsiteEvent
+from sleektiv.addons.website_event_questions.tests.common import TestEventQuestionCommon
 
 
 class TestEventData(TestEventQuestionCommon):

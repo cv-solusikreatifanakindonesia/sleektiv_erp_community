@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.api import model
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.api import model
 from typing import Iterator, Mapping
 from collections import abc
-from flectra.tools import ReadonlyDict
-from flectra.addons.microsoft_calendar.utils.event_id_storage import combine_ids
+from sleektiv.tools import ReadonlyDict
+from sleektiv.addons.microsoft_calendar.utils.event_id_storage import combine_ids
 
 
 class MicrosoftEvent(abc.Set):
     """
     This helper class holds the values of a Microsoft event.
-    Inspired by Flectra recordset, one instance can be a single Microsoft event or a
+    Inspired by Sleektiv recordset, one instance can be a single Microsoft event or a
     (immutable) set of Microsoft events.
     All usual set operations are supported (union, intersection, etc).
 
@@ -69,31 +69,31 @@ class MicrosoftEvent(abc.Set):
         """
         return tuple(e.iCalUId for e in self)
 
-    def flectra_id(self, env):
-        return self._flectra_id
+    def sleektiv_id(self, env):
+        return self._sleektiv_id
 
-    def _meta_flectra_id(self, microsoft_guid):
-        """Returns the Flectra id stored in the Microsoft Event metadata.
+    def _meta_sleektiv_id(self, microsoft_guid):
+        """Returns the Sleektiv id stored in the Microsoft Event metadata.
         This id might not actually exists in the database.
         """
         return None
 
     @property
-    def flectra_ids(self):
+    def sleektiv_ids(self):
         """
-        Get the list of Flectra event ids already mapped with Outlook events (self)
+        Get the list of Sleektiv event ids already mapped with Outlook events (self)
         """
-        return tuple(e._flectra_id for e in self if e._flectra_id)
+        return tuple(e._sleektiv_id for e in self if e._sleektiv_id)
 
-    def _load_flectra_ids_from_db(self, env, force_model=None):
+    def _load_sleektiv_ids_from_db(self, env, force_model=None):
         """
-        Map Microsoft events to existing Flectra events:
+        Map Microsoft events to existing Sleektiv events:
         1) extract unmapped events only,
-        2) match Flectra events and Outlook events which have both a ICalUId set,
+        2) match Sleektiv events and Outlook events which have both a ICalUId set,
         3) match remaining events,
         Returns the list of mapped events
         """
-        mapped_events = [e.id for e in self if e._flectra_id]
+        mapped_events = [e.id for e in self if e._sleektiv_id]
 
         # avoid mapping events if they are already all mapped
         if len(self) == len(mapped_events):
@@ -102,36 +102,36 @@ class MicrosoftEvent(abc.Set):
         unmapped_events = self.filter(lambda e: e.id not in mapped_events)
 
         model_env = force_model if force_model is not None else self._get_model(env)
-        flectra_events = model_env.with_context(active_test=False).search([
+        sleektiv_events = model_env.with_context(active_test=False).search([
             '|',
             ('ms_universal_event_id', "in", unmapped_events.uids),
             ('ms_organizer_event_id', "in", unmapped_events.ids)
         ]).with_env(env)
 
-        # 1. try to match unmapped events with Flectra events using their iCalUId
+        # 1. try to match unmapped events with Sleektiv events using their iCalUId
         unmapped_events_with_uids = unmapped_events.filter(lambda e: e.iCalUId)
-        flectra_events_with_uids = flectra_events.filtered(lambda e: e.ms_universal_event_id)
-        mapping = {e.ms_universal_event_id: e.id for e in flectra_events_with_uids}
+        sleektiv_events_with_uids = sleektiv_events.filtered(lambda e: e.ms_universal_event_id)
+        mapping = {e.ms_universal_event_id: e.id for e in sleektiv_events_with_uids}
 
         for ms_event in unmapped_events_with_uids:
-            flectra_id = mapping.get(ms_event.iCalUId)
-            if flectra_id:
-                ms_event._events[ms_event.id]['_flectra_id'] = flectra_id
+            sleektiv_id = mapping.get(ms_event.iCalUId)
+            if sleektiv_id:
+                ms_event._events[ms_event.id]['_sleektiv_id'] = sleektiv_id
                 mapped_events.append(ms_event.id)
 
-        # 2. try to match unmapped events with Flectra events using their id
+        # 2. try to match unmapped events with Sleektiv events using their id
         unmapped_events = self.filter(lambda e: e.id not in mapped_events)
-        mapping = {e.ms_organizer_event_id: e for e in flectra_events}
+        mapping = {e.ms_organizer_event_id: e for e in sleektiv_events}
 
         for ms_event in unmapped_events:
-            flectra_event = mapping.get(ms_event.id)
-            if flectra_event:
-                ms_event._events[ms_event.id]['_flectra_id'] = flectra_event.id
+            sleektiv_event = mapping.get(ms_event.id)
+            if sleektiv_event:
+                ms_event._events[ms_event.id]['_sleektiv_id'] = sleektiv_event.id
                 mapped_events.append(ms_event.id)
 
-                # don't forget to also set the global event ID on the Flectra event to ease
+                # don't forget to also set the global event ID on the Sleektiv event to ease
                 # and improve reliability of future mappings
-                flectra_event.write({
+                sleektiv_event.write({
                     'microsoft_id': combine_ids(ms_event.id, ms_event.iCalUId),
                     'need_sync_m': False,
                 })
@@ -143,16 +143,16 @@ class MicrosoftEvent(abc.Set):
         Indicates who is the owner of an event (i.e the organizer of the event).
 
         There are several possible cases:
-        1) the current Flectra user is the organizer of the event according to Outlook event, so return his id.
-        2) the current Flectra user is NOT the organizer and:
-           2.1) we are able to find a Flectra user using the Outlook event organizer email address and we use his id,
-           2.2) we are NOT able to find a Flectra user matching the organizer email address and we return False, meaning
-                that no Flectra user will be able to modify this event. All modifications will be done from Outlook.
+        1) the current Sleektiv user is the organizer of the event according to Outlook event, so return his id.
+        2) the current Sleektiv user is NOT the organizer and:
+           2.1) we are able to find a Sleektiv user using the Outlook event organizer email address and we use his id,
+           2.2) we are NOT able to find a Sleektiv user matching the organizer email address and we return False, meaning
+                that no Sleektiv user will be able to modify this event. All modifications will be done from Outlook.
         """
         if self.isOrganizer:
             return env.user.id
         if self.organizer.get('emailAddress') and self.organizer.get('emailAddress').get('address'):
-            # Warning: In Microsoft: 1 email = 1 user; but in Flectra several users might have the same email
+            # Warning: In Microsoft: 1 email = 1 user; but in Sleektiv several users might have the same email
             user = env['res.users'].search([('email', '=', self.organizer.get('emailAddress').get('address'))], limit=1)
             return user.id if user else False
         return False
@@ -236,19 +236,19 @@ class MicrosoftEvent(abc.Set):
     def cancelled(self):
         return self.filter(lambda e: e.is_cancelled())
 
-    def match_with_flectra_events(self, env) -> 'MicrosoftEvent':
+    def match_with_sleektiv_events(self, env) -> 'MicrosoftEvent':
         """
-        Match Outlook events (self) with existing Flectra events, and return the list of matched events
+        Match Outlook events (self) with existing Sleektiv events, and return the list of matched events
         """
         # first, try to match recurrences
         # Note that when a recurrence is removed, there is no field in Outlook data to identify
         # the item as a recurrence, so select all deleted items by default.
         recurrence_candidates = self.filter(lambda x: x.is_recurrence() or x.is_removed())
-        mapped_recurrences = recurrence_candidates._load_flectra_ids_from_db(env, force_model=env["calendar.recurrence"])
+        mapped_recurrences = recurrence_candidates._load_sleektiv_ids_from_db(env, force_model=env["calendar.recurrence"])
 
         # then, try to match events
         events_candidates = (self - mapped_recurrences).filter(lambda x: not x.is_recurrence())
-        mapped_events = events_candidates._load_flectra_ids_from_db(env)
+        mapped_events = events_candidates._load_sleektiv_ids_from_db(env)
 
         return mapped_recurrences | mapped_events
 

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import api, models, fields, tools, _
-from flectra.tools import DEFAULT_SERVER_DATE_FORMAT, float_repr
-from flectra.tests.common import Form
-from flectra.exceptions import UserError
-from flectra.osv import expression
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv import api, models, fields, tools, _
+from sleektiv.tools import DEFAULT_SERVER_DATE_FORMAT, float_repr
+from sleektiv.tests.common import Form
+from sleektiv.exceptions import UserError
+from sleektiv.osv import expression
 
 from pathlib import PureWindowsPath
 

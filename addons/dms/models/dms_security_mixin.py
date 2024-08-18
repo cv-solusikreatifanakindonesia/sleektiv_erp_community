@@ -3,8 +3,8 @@
 
 from collections import defaultdict
 
-from flectra import SUPERUSER_ID, _, api, fields, models
-from flectra.exceptions import AccessError
+from sleektiv import SUPERUSER_ID, _, api, fields, models
+from sleektiv.exceptions import AccessError
 
 
 class DmsSecurityMixin(models.AbstractModel):

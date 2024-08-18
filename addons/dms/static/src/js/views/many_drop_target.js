@@ -4,7 +4,7 @@
  **********************************************************************************/
 
 /* global Uint8Array base64js*/
-flectra.define("dms.DragDrop", function(require) {
+sleektiv.define("dms.DragDrop", function(require) {
     "use strict";
 
     var DropTargetMixin = require("web_drop_target");

@@ -1,4 +1,4 @@
-flectra.define('pos_discount.models', function (require) {
+sleektiv.define('pos_discount.models', function (require) {
   "use strict";
 
   var models = require('point_of_sale.models');

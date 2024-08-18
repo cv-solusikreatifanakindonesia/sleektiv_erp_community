@@ -1,4 +1,4 @@
-# Part of flectra See LICENSE file for full copyright and licensing details.
+# Part of sleektiv See LICENSE file for full copyright and licensing details.
 
 from . import models
 from . import report

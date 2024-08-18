@@ -1,4 +1,4 @@
-flectra.define('lunch.lunchListTests', function (require) {
+sleektiv.define('lunch.lunchListTests', function (require) {
 "use strict";
 
 const LunchListView = require('lunch.LunchListView');

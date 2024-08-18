@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import fields, models, exceptions, _
+from sleektiv import fields, models, exceptions, _
 
 
 class Rating(models.Model):

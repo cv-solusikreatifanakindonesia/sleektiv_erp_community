@@ -1,4 +1,4 @@
-flectra.define('web.ErrorDialogRegistry', function (require) {
+sleektiv.define('web.ErrorDialogRegistry', function (require) {
 "use strict";
 
 var Registry = require('web.Registry');
@@ -6,7 +6,7 @@ var Registry = require('web.Registry');
 return new Registry();
 });
 
-flectra.define('web.CrashManager', function (require) {
+sleektiv.define('web.CrashManager', function (require) {
 "use strict";
 
 const AbstractService = require('web.AbstractService');
@@ -91,14 +91,14 @@ var CrashManager = AbstractService.extend({
         var self = this;
         active = true;
         this.isConnected = true;
-        this.flectraExceptionTitleMap = {
-            'flectra.addons.base.models.ir_mail_server.MailDeliveryException': _lt("MailDeliveryException"),
-            'flectra.exceptions.AccessDenied': _lt("Access Denied"),
-            'flectra.exceptions.AccessError': _lt("Access Error"),
-            'flectra.exceptions.MissingError': _lt("Missing Record"),
-            'flectra.exceptions.UserError': _lt("User Error"),
-            'flectra.exceptions.ValidationError': _lt("Validation Error"),
-            'flectra.exceptions.Warning': _lt("Warning"),
+        this.sleektivExceptionTitleMap = {
+            'sleektiv.addons.base.models.ir_mail_server.MailDeliveryException': _lt("MailDeliveryException"),
+            'sleektiv.exceptions.AccessDenied': _lt("Access Denied"),
+            'sleektiv.exceptions.AccessError': _lt("Access Error"),
+            'sleektiv.exceptions.MissingError': _lt("Missing Record"),
+            'sleektiv.exceptions.UserError': _lt("User Error"),
+            'sleektiv.exceptions.ValidationError': _lt("Validation Error"),
+            'sleektiv.exceptions.Warning': _lt("Warning"),
         };
 
         this.browserDetection = new BrowserDetection();
@@ -132,12 +132,12 @@ var CrashManager = AbstractService.extend({
                         config.device.isIOS
                         && message === "Script error."
                         && session.is_frontend
-                        && flectra.debug !== "assets"
+                        && sleektiv.debug !== "assets"
                     ) {
                         return;
                     }
                     self.show_error({
-                        type: _t("Flectra Client Error"),
+                        type: _t("Sleektiv Client Error"),
                         message: _t("Unknown CORS error"),
                         data: {debug: _t("An unknown CORS error occured. The error probably originates from a JavaScript file served from a different origin. (Opening your browser console might give you a hint on the error.)")},
                     });
@@ -149,7 +149,7 @@ var CrashManager = AbstractService.extend({
                 }
                 var traceback = error ? error.stack : '';
                 self.show_error({
-                    type: _t("Flectra Client Error"),
+                    type: _t("Sleektiv Client Error"),
                     message: message,
                     data: {debug: file + ':' + line + "\n" + _t('Traceback:') + "\n" + traceback},
                 });
@@ -172,7 +172,7 @@ var CrashManager = AbstractService.extend({
                     traceback = `${_t("Error:")} ${ev.reason.message}\n${ev.reason.stack}`;
                 }
                 self.show_error({
-                    type: _t("Flectra Client Error"),
+                    type: _t("Sleektiv Client Error"),
                     message: '',
                     data: {debug: _t('Traceback:') + "\n" + traceback},
                 });
@@ -231,12 +231,12 @@ var CrashManager = AbstractService.extend({
             return;
         }
 
-        // Flectra custom exception: UserError, AccessError, ...
-        if (_.has(this.flectraExceptionTitleMap, error.data.name)) {
+        // Sleektiv custom exception: UserError, AccessError, ...
+        if (_.has(this.sleektivExceptionTitleMap, error.data.name)) {
             error = _.extend({}, error, {
                 data: _.extend({}, error.data, {
                     message: error.data.arguments[0],
-                    title: this.flectraExceptionTitleMap[error.data.name],
+                    title: this.sleektivExceptionTitleMap[error.data.name],
                 }),
             });
             this.show_warning(error);
@@ -266,7 +266,7 @@ var CrashManager = AbstractService.extend({
         error.traceback = error.data.debug;
         var dialogClass = error.data.context && ErrorDialogRegistry.get(error.data.context.exception_class) || ErrorDialog;
         var dialog = new dialogClass(this, {
-            title: _.str.capitalize(error.type) || _t("Flectra Error"),
+            title: _.str.capitalize(error.type) || _t("Sleektiv Error"),
         }, error);
 
 
@@ -308,7 +308,7 @@ var CrashManager = AbstractService.extend({
     },
     show_message: function(exception) {
         return this.show_error({
-            type: _t("Flectra Client Error"),
+            type: _t("Sleektiv Client Error"),
             message: exception,
             data: {debug: ""}
         });
@@ -366,7 +366,7 @@ var RedirectWarningHandler = Widget.extend(ExceptionHandler, {
         var additional_context = _.extend({}, this.context, error.data.arguments[3]);
 
         new WarningDialog(this, {
-            title: _.str.capitalize(error.type) || _t("Flectra Warning"),
+            title: _.str.capitalize(error.type) || _t("Sleektiv Warning"),
             buttons: [
                 {text: error.data.arguments[2], classes : "btn-primary", click: function() {
                     self.do_action(
@@ -384,14 +384,14 @@ var RedirectWarningHandler = Widget.extend(ExceptionHandler, {
     }
 });
 
-core.crash_registry.add('flectra.exceptions.RedirectWarning', RedirectWarningHandler);
+core.crash_registry.add('sleektiv.exceptions.RedirectWarning', RedirectWarningHandler);
 
 function session_expired(cm) {
     return {
         display: function () {
             const notif = {
-                type: _t("Flectra Session Expired"),
-                message: _t("Your Flectra session expired. The current page is about to be refreshed."),
+                type: _t("Sleektiv Session Expired"),
+                message: _t("Your Sleektiv session expired. The current page is about to be refreshed."),
             };
             const options = {
                 buttons: [{
@@ -404,7 +404,7 @@ function session_expired(cm) {
         }
     };
 }
-core.crash_registry.add('flectra.http.SessionExpiredException', session_expired);
+core.crash_registry.add('sleektiv.http.SessionExpiredException', session_expired);
 core.crash_registry.add('werkzeug.exceptions.Forbidden', session_expired);
 
 core.crash_registry.add('504', function (cm) {

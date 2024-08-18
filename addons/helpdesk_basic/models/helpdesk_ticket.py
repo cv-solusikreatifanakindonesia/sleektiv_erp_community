@@ -1,7 +1,7 @@
-# Part of flectra. See LICENSE file for full copyright and licensing details.
+# Part of sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, _, tools
-from flectra.exceptions import AccessError
+from sleektiv import api, fields, models, _, tools
+from sleektiv.exceptions import AccessError
 from datetime import datetime
 import uuid
 

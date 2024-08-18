@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/chat_window_header/chat_window_header.js', function (require) {
+sleektiv.define('mail/static/src/components/chat_window_header/chat_window_header.js', function (require) {
 'use strict';
 
 const components = {

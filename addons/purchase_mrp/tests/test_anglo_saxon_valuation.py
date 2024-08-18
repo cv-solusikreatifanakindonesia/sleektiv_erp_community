@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.fields import Date
-from flectra.tests import Form, tagged
-from flectra.tests.common import SavepointCase
-from flectra.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
-from flectra.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
+from sleektiv.fields import Date
+from sleektiv.tests import Form, tagged
+from sleektiv.tests.common import SavepointCase
+from sleektiv.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
+from sleektiv.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
 
 
 @tagged('post_install', '-at_install')

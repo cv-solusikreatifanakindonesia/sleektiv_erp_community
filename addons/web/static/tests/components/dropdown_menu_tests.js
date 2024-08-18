@@ -1,4 +1,4 @@
-flectra.define('web.dropdown_menu_tests', function (require) {
+sleektiv.define('web.dropdown_menu_tests', function (require) {
     "use strict";
 
     const DropdownMenu = require('web.DropdownMenu');

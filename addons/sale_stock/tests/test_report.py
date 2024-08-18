@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import tagged, Form
-from flectra.addons.sale.tests.common import TestSaleCommon
+from sleektiv.tests import tagged, Form
+from sleektiv.addons.sale.tests.common import TestSaleCommon
 
-from flectra.tools import html2plaintext
+from sleektiv.tools import html2plaintext
 
 
 @tagged('post_install', '-at_install')

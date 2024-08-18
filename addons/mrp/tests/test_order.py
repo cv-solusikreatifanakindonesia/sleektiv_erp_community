@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import Form
+from sleektiv.tests import Form
 from datetime import datetime, timedelta
 from freezegun import freeze_time
 
-from flectra.fields import Datetime as Dt
-from flectra.exceptions import UserError
-from flectra.addons.mrp.tests.common import TestMrpCommon
+from sleektiv.fields import Datetime as Dt
+from sleektiv.exceptions import UserError
+from sleektiv.addons.mrp.tests.common import TestMrpCommon
 
 class TestMrpOrder(TestMrpCommon):
 

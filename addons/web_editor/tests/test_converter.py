@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import textwrap
 
 from lxml import etree, html
 from lxml.builder import E
 
-from flectra.tests import common
-from flectra.tests.common import BaseCase
-from flectra.addons.web_editor.models.ir_qweb import html_to_text
+from sleektiv.tests import common
+from sleektiv.tests.common import BaseCase
+from sleektiv.addons.web_editor.models.ir_qweb import html_to_text
 
 
 class TestHTMLToText(BaseCase):

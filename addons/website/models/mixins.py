@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 
 from werkzeug.urls import url_join
 
-from flectra import api, fields, models, _
-from flectra.addons.http_routing.models.ir_http import url_for
-from flectra.http import request
-from flectra.osv import expression
-from flectra.exceptions import AccessError
-from flectra.tools.json import scriptsafe as json_scriptsafe
+from sleektiv import api, fields, models, _
+from sleektiv.addons.http_routing.models.ir_http import url_for
+from sleektiv.http import request
+from sleektiv.osv import expression
+from sleektiv.exceptions import AccessError
+from sleektiv.tools.json import scriptsafe as json_scriptsafe
 
 logger = logging.getLogger(__name__)
 

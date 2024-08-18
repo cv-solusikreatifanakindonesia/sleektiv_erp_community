@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import _, http, fields
-from flectra.exceptions import AccessError
-from flectra.http import request
-from flectra.osv import expression
-from flectra.tools import float_round, float_repr
+from sleektiv import _, http, fields
+from sleektiv.exceptions import AccessError
+from sleektiv.http import request
+from sleektiv.osv import expression
+from sleektiv.tools import float_round, float_repr
 
 
 class LunchController(http.Controller):

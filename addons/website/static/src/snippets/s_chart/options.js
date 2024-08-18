@@ -1,4 +1,4 @@
-flectra.define('website.s_chart_options', function (require) {
+sleektiv.define('website.s_chart_options', function (require) {
 'use strict';
 
 var core = require('web.core');

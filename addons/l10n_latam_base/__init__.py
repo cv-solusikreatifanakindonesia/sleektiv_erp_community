@@ -1,6 +1,6 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 from . import models
-from flectra import api, SUPERUSER_ID
+from sleektiv import api, SUPERUSER_ID
 
 
 def _set_default_identification_type(cr, registry):

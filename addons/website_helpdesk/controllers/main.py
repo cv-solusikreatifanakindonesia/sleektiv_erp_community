@@ -1,14 +1,14 @@
-# Part of flectra See LICENSE file for full copyright and licensing details.
+# Part of sleektiv See LICENSE file for full copyright and licensing details.
 
 from collections import OrderedDict
-from flectra import http, _
-from flectra.http import request
-from flectra.addons.portal.controllers.portal import CustomerPortal
-from flectra.addons.portal.controllers.portal import get_records_pager
-from flectra.addons.portal.controllers.portal import pager as portal_pager
-from flectra.exceptions import AccessError, MissingError
+from sleektiv import http, _
+from sleektiv.http import request
+from sleektiv.addons.portal.controllers.portal import CustomerPortal
+from sleektiv.addons.portal.controllers.portal import get_records_pager
+from sleektiv.addons.portal.controllers.portal import pager as portal_pager
+from sleektiv.exceptions import AccessError, MissingError
 import copy
-from flectra.osv import expression
+from sleektiv.osv import expression
 
 class HelpdeskTicket(http.Controller):
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
@@ -8,14 +8,14 @@ import werkzeug
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
-from flectra import fields, http, SUPERUSER_ID, _
-from flectra.addons.base.models.ir_ui_view import keep_query
-from flectra.exceptions import UserError
-from flectra.http import request, content_disposition
-from flectra.osv import expression
-from flectra.tools import format_datetime, format_date, is_html_empty
+from sleektiv import fields, http, SUPERUSER_ID, _
+from sleektiv.addons.base.models.ir_ui_view import keep_query
+from sleektiv.exceptions import UserError
+from sleektiv.http import request, content_disposition
+from sleektiv.osv import expression
+from sleektiv.tools import format_datetime, format_date, is_html_empty
 
-from flectra.addons.web.controllers.main import Binary
+from sleektiv.addons.web.controllers.main import Binary
 
 _logger = logging.getLogger(__name__)
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.website_sale.controllers.main import WebsiteSale
-from flectra.tests import tagged, HttpCase
+from sleektiv.addons.website_sale.controllers.main import WebsiteSale
+from sleektiv.tests import tagged, HttpCase
 
 @tagged('post_install', '-at_install')
 class TestDelivery(HttpCase):

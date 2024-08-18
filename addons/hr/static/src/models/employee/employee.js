@@ -1,4 +1,4 @@
-flectra.define('hr/static/src/models/employee/employee.js', function (require) {
+sleektiv.define('hr/static/src/models/employee/employee.js', function (require) {
 'use strict';
 
 const { registerNewModel } = require('mail/static/src/model/model_core.js');

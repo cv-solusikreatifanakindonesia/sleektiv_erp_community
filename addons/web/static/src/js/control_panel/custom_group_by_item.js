@@ -1,4 +1,4 @@
-flectra.define('web.CustomGroupByItem', function (require) {
+sleektiv.define('web.CustomGroupByItem', function (require) {
     "use strict";
 
     const DropdownMenuItem = require('web.DropdownMenuItem');

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <!-- account.tax.template (pre-2023) -->
     <record id="tr_kdv_satis_sale_18" model="account.tax.template">
         <field name="sequence">11</field>
@@ -137,4 +137,4 @@
             }),
         ]"/>
     </record>
-</flectra>
+</sleektiv>

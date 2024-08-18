@@ -1,4 +1,4 @@
-flectra.define('stock.InventoryValidationView', function (require) {
+sleektiv.define('stock.InventoryValidationView', function (require) {
 "use strict";
 
 var InventoryValidationController = require('stock.InventoryValidationController');

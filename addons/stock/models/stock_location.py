@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import _, api, fields, models
-from flectra.exceptions import UserError
-from flectra.osv import expression
+from sleektiv import _, api, fields, models
+from sleektiv.exceptions import UserError
+from sleektiv.osv import expression
 
 
 class Location(models.Model):

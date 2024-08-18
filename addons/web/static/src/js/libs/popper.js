@@ -1,2 +1,2 @@
-/** @flectra-module **/
+/** @sleektiv-module **/
 Popper.Defaults.modifiers.preventOverflow.priority = ['right', 'left', 'bottom', 'top'];

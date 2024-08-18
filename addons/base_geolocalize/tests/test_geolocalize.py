@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.tests import TransactionCase
-from flectra.exceptions import UserError
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.tests import TransactionCase
+from sleektiv.exceptions import UserError
 
-import flectra.tests
+import sleektiv.tests
 
 
-@flectra.tests.tagged('external', '-standard')
+@sleektiv.tests.tagged('external', '-standard')
 class TestGeoLocalize(TransactionCase):
 
     def test_default_openstreetmap(self):

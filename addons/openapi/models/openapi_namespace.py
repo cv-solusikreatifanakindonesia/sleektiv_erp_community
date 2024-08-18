@@ -7,9 +7,9 @@ import collections
 import urllib.parse as urlparse
 import uuid
 
-from flectra import api, fields, models
+from sleektiv import api, fields, models
 
-from flectra.addons.base_api.lib import pinguin
+from sleektiv.addons.base_api.lib import pinguin
 
 
 class Namespace(models.Model):

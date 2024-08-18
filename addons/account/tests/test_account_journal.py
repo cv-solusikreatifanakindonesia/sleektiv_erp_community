@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-import flectra.tools
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.tests import tagged
-from flectra.exceptions import UserError, ValidationError
+import sleektiv.tools
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.tests import tagged
+from sleektiv.exceptions import UserError, ValidationError
 
 
 @tagged('post_install', '-at_install')
@@ -116,7 +116,7 @@ class TestAccountJournal(AccountTestInvoicingCommon):
         self.company_data['default_journal_misc'].account_control_ids = \
             self.company_data['default_account_revenue'] + self.company_data['default_account_expense']
 
-    @flectra.tools.mute_logger('flectra.addons.account.models.account_journal')
+    @sleektiv.tools.mute_logger('sleektiv.addons.account.models.account_journal')
     def test_account_journal_alias_name(self):
         journal = self.company_data['default_journal_misc']
         self.assertEqual(journal._get_alias_values(journal.type)['alias_name'], 'Miscellaneous Operations-company_1_data')

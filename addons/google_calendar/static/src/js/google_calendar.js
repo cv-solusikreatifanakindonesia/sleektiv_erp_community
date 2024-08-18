@@ -1,4 +1,4 @@
-flectra.define('google_calendar.CalendarView', function (require) {
+sleektiv.define('google_calendar.CalendarView', function (require) {
 "use strict";
 
 var core = require('web.core');
@@ -109,7 +109,7 @@ const GoogleCalendarController = CalendarController.include({
      * mean of a dialog.
      *
      * @private
-     * @returns {FlectraEvent} event
+     * @returns {SleektivEvent} event
      */
     _onGoogleSyncCalendar: function (event) {
         var self = this;

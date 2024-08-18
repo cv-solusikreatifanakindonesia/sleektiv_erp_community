@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import binascii
 
-from flectra import fields, http, SUPERUSER_ID, _
-from flectra.exceptions import AccessError, MissingError
-from flectra.http import request
-from flectra.addons.payment.controllers.portal import PaymentProcessing
-from flectra.addons.portal.controllers.mail import _message_post_helper
-from flectra.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager, get_records_pager
-from flectra.osv import expression
+from sleektiv import fields, http, SUPERUSER_ID, _
+from sleektiv.exceptions import AccessError, MissingError
+from sleektiv.http import request
+from sleektiv.addons.payment.controllers.portal import PaymentProcessing
+from sleektiv.addons.portal.controllers.mail import _message_post_helper
+from sleektiv.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager, get_records_pager
+from sleektiv.osv import expression
 
 
 class CustomerPortal(CustomerPortal):

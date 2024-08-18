@@ -1,11 +1,11 @@
 # -*- coding:utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models, fields, _
-from flectra.tests.common import Form
-from flectra.exceptions import UserError
-from flectra.addons.l10n_it_edi.tools.remove_signature import remove_signature
-from flectra.osv.expression import OR, AND
+from sleektiv import api, models, fields, _
+from sleektiv.tests.common import Form
+from sleektiv.exceptions import UserError
+from sleektiv.addons.l10n_it_edi.tools.remove_signature import remove_signature
+from sleektiv.osv.expression import OR, AND
 
 from lxml import etree
 from datetime import datetime
@@ -295,7 +295,7 @@ class AccountEdiFormat(models.Model):
         res = invoice.invoice_generate_xml()
         if invoice._is_commercial_partner_pa():
             invoice.message_post(
-                body=(_("Invoices for PA are not managed by Flectra, you can download the document and send it on your own."))
+                body=(_("Invoices for PA are not managed by Sleektiv, you can download the document and send it on your own."))
             )
         else:
             invoice.l10n_it_send_state = 'to_send'

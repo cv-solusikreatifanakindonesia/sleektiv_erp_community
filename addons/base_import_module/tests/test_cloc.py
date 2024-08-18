@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tools import cloc
-from flectra.addons.base.tests import test_cloc
+from sleektiv.tools import cloc
+from sleektiv.addons.base.tests import test_cloc
 
 class TestClocFields(test_cloc.TestClocCustomization):
 

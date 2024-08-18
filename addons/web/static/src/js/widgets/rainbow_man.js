@@ -1,4 +1,4 @@
-flectra.define('web.RainbowMan', function (require) {
+sleektiv.define('web.RainbowMan', function (require) {
 "use strict";
 
 /**

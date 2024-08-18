@@ -1,4 +1,4 @@
-flectra.define('website_sale.tour_shop_mail', function (require) {
+sleektiv.define('website_sale.tour_shop_mail', function (require) {
 'use strict';
 
 var rpc = require('web.rpc');

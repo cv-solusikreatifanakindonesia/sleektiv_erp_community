@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.tests import tagged
-from flectra.tests.common import Form, TransactionCase
-from flectra import fields, api, SUPERUSER_ID
-from flectra.exceptions import ValidationError
-from flectra.tools import mute_logger
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.tests import tagged
+from sleektiv.tests.common import Form, TransactionCase
+from sleektiv import fields, api, SUPERUSER_ID
+from sleektiv.exceptions import ValidationError
+from sleektiv.tools import mute_logger
 
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
@@ -141,7 +141,7 @@ class TestSequenceMixin(AccountTestInvoicingCommon):
         copy2.journal_id = new_journal
         self.assertEqual(copy2.name, 'MISC2/2016/01/0001')
         with Form(copy2) as move_form:  # It is editable in the form
-            with mute_logger('flectra.tests.common.onchange'):
+            with mute_logger('sleektiv.tests.common.onchange'):
                 move_form.name = 'MyMISC/2016/0001'
                 self.assertIn(
                     'The sequence will restart at 1 at the start of every year',
@@ -151,7 +151,7 @@ class TestSequenceMixin(AccountTestInvoicingCommon):
             self.assertEqual(move_form.name, '/')
             move_form.journal_id = new_journal
             self.assertEqual(move_form.name, 'MISC2/2016/01/0001')
-            with mute_logger('flectra.tests.common.onchange'):
+            with mute_logger('sleektiv.tests.common.onchange'):
                 move_form.name = 'MyMISC/2016/0001'
                 self.assertIn(
                     'The sequence will restart at 1 at the start of every year',
@@ -509,7 +509,7 @@ class TestSequenceMixinConcurrency(TransactionCase):
 
         # try to post in cr1, should fail because this transaction started before the post in cr2
         move = env1['account.move'].browse(self.data['move_ids'][2])
-        with self.assertRaises(psycopg2.OperationalError), mute_logger('flectra.sql_db'):
+        with self.assertRaises(psycopg2.OperationalError), mute_logger('sleektiv.sql_db'):
             move.action_post()
 
         # check the values

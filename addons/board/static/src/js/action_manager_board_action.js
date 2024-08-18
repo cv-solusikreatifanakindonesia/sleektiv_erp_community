@@ -1,4 +1,4 @@
-flectra.define('board.ActionManager', function (require) {
+sleektiv.define('board.ActionManager', function (require) {
 "use strict";
 
 /**

@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/thread_textual_typing_status/thread_textual_typing_status.js', function (require) {
+sleektiv.define('mail/static/src/components/thread_textual_typing_status/thread_textual_typing_status.js', function (require) {
 'use strict';
 
 const components = {

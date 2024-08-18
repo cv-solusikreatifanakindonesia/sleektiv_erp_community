@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-from flectra.exceptions import AccessError
-from flectra.tests.common import TransactionCase
-from flectra.addons.crm.tests.common import TestCrmCommon
-from flectra.addons.mail.tests.common import mail_new_test_user
+from sleektiv.exceptions import AccessError
+from sleektiv.tests.common import TransactionCase
+from sleektiv.addons.crm.tests.common import TestCrmCommon
+from sleektiv.addons.mail.tests.common import mail_new_test_user
 
 
 class TestPartnerAssign(TransactionCase):
@@ -33,7 +33,7 @@ class TestPartnerAssign(TransactionCase):
                 'Cannon Hill Park, B46 3AG Birmingham, United Kingdom': (52.45216, -1.898578),
             }.get(addr)
 
-        patcher = patch('flectra.addons.base_geolocalize.models.base_geocoder.GeoCoder.geo_find', wraps=geo_find)
+        patcher = patch('sleektiv.addons.base_geolocalize.models.base_geocoder.GeoCoder.geo_find', wraps=geo_find)
         patcher.start()
         self.addCleanup(patcher.stop)
 

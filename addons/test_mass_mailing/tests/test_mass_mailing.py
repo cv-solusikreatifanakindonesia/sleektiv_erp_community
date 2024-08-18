@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.test_mass_mailing.tests.common import TestMassMailCommon
-from flectra.tests import tagged
-from flectra.tests.common import users
-from flectra.tools import mute_logger
+from sleektiv.addons.test_mass_mailing.tests.common import TestMassMailCommon
+from sleektiv.tests import tagged
+from sleektiv.tests.common import users
+from sleektiv.tools import mute_logger
 
 
 @tagged('mass_mailing')
@@ -15,7 +15,7 @@ class TestMassMailing(TestMassMailCommon):
         super(TestMassMailing, cls).setUpClass()
 
     @users('user_marketing')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mailing_gateway_update(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_bl.ids)
         recipients = self._create_mailing_test_records(model='mailing.test.optout', count=5)
@@ -34,10 +34,10 @@ class TestMassMailing(TestMassMailCommon):
              for record in recipients],
             mailing, recipients,
             mail_links_info=[[
-                ('url0', 'https://www.flectra.tz/my/%s' % record.name, True, {}),
-                ('url1', 'https://www.flectra.be', True, {}),
+                ('url0', 'https://www.sleektiv.tz/my/%s' % record.name, True, {}),
+                ('url1', 'https://www.sleektiv.be', True, {}),
                 ('url2', 'https://www.flectrahq.com', True, {}),
-                ('url3', 'https://www.flectra.eu', True, {}),
+                ('url3', 'https://www.sleektiv.eu', True, {}),
                 ('url4', 'https://www.example.com/foo/bar?baz=qux', True, {'baz': 'qux'}),
                 ('url5', '%s/event/dummy-event-0' % mailing.get_base_url(), True, {}),
                 # view is not shortened and parsed at sending
@@ -51,7 +51,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertMailingStatistics(mailing, expected=5, delivered=5, sent=5)
 
         # simulate a click
-        self.gateway_mail_click(mailing, recipients[0], 'https://www.flectra.be')
+        self.gateway_mail_click(mailing, recipients[0], 'https://www.sleektiv.be')
         mailing.invalidate_cache()
         self.assertMailingStatistics(mailing, expected=5, delivered=5, sent=5, opened=1, clicked=1)
 
@@ -63,7 +63,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertEqual(recipients[1].message_bounce, 1)
 
     @users('user_marketing')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mailing_w_blacklist(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_bl.ids)
         recipients = self._create_mailing_test_records(count=5)
@@ -88,7 +88,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertEqual(mailing.ignored, 2)
 
     @users('user_marketing')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mailing_w_opt_out(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_bl.ids)
         recipients = self._create_mailing_test_records(model='mailing.test.optout', count=5)
@@ -117,7 +117,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertEqual(mailing.ignored, 3)
 
     @users('user_marketing')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mailing_mailing_list_optout(self):
         """ Test mailing list model specific optout behavior """
         mailing_contact_1 = self.env['mailing.contact'].create({'name': 'test 1A', 'email': 'test@test.example.com'})

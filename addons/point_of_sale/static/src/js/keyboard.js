@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.keyboard', function (require) {
+sleektiv.define('point_of_sale.keyboard', function (require) {
 "use strict";
 
 var Widget = require('web.Widget');

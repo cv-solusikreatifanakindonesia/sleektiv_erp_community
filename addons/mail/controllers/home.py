@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import ipaddress
 
-from flectra import _, SUPERUSER_ID
-from flectra.http import request
-from flectra.addons.web.controllers import main as web
+from sleektiv import _, SUPERUSER_ID
+from sleektiv.http import request
+from sleektiv.addons.web.controllers import main as web
 
 def _admin_password_warn(uid):
     """ Admin still has `admin` password, flash a message via chatter.

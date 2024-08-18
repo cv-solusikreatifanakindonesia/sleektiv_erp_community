@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from flectra import _, api, fields, models
+from sleektiv import _, api, fields, models
 
 import ast
-from flectra.osv import expression
+from sleektiv.osv import expression
 
 
 class CouponGenerate(models.TransientModel):

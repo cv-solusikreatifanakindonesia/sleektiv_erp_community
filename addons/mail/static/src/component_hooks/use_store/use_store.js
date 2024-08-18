@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/component_hooks/use_store/use_store.js', function (require) {
+sleektiv.define('mail/static/src/component_hooks/use_store/use_store.js', function (require) {
 'use strict';
 
 /**

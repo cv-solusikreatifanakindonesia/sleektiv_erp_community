@@ -1,5 +1,5 @@
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError
 
 
 class PosPaymentMethod(models.Model):

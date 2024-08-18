@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <data noupdate="1">
 
         <record id="base.partner_root" model="res.partner">
-            <field name="name">FlectraBot</field>
+            <field name="name">SleektivBot</field>
             <field name="email">flectrabot@example.com</field>
             <field name="image_1920" type="base64" file="mail/static/src/img/flectrabot.png"/>
         </record>
@@ -107,7 +107,7 @@
     <span t-if="not website_url" t-esc="company.name"/>
     </span>
     using
-    <a target="_blank" href="https://www.flectrahq.com?utm_source=db&amp;utm_medium=email" style="text-decoration:none; color: #009EFB;">Flectra</a>.
+    <a target="_blank" href="https://www.flectrahq.com?utm_source=db&amp;utm_medium=email" style="text-decoration:none; color: #009EFB;">Sleektiv</a>.
 </p>
 </div>
         </template>
@@ -162,7 +162,7 @@
     </tr>
     <tr>
         <td align="center" style="padding: 8px; font-size:11px;">
-            Powered by <a target="_blank" href="https://www.flectrahq.com?utm_source=db&amp;utm_medium=email">Flectra</a>.
+            Powered by <a target="_blank" href="https://www.flectrahq.com?utm_source=db&amp;utm_medium=email">Sleektiv</a>.
         </td>
     </tr>
 </tbody>
@@ -221,7 +221,7 @@
 </td></tr>
 <!-- POWERED BY -->
 <tr><td align="center" style="min-width: 590px;">
-        Powered by <a target="_blank" href="https://www.flectrahq.com?utm_source=db&amp;utm_medium=email" style="color: #009EFB;">Flectra</a>
+        Powered by <a target="_blank" href="https://www.flectrahq.com?utm_source=db&amp;utm_medium=email" style="color: #009EFB;">Sleektiv</a>
 </td></tr>
 </table>
         </template>
@@ -306,7 +306,7 @@
 </td></tr>
 <!-- POWERED BY -->
 <tr><td align="center" style="min-width: 590px; padding: 8px; font-size:11px;">
-    Powered by <a target="_blank" href="https://www.flectrahq.com?utm_source=db&amp;utm_medium=email" style="color: #009EFB;">Flectra</a>
+    Powered by <a target="_blank" href="https://www.flectrahq.com?utm_source=db&amp;utm_medium=email" style="color: #009EFB;">Sleektiv</a>
 </td></tr>
 </table>
         </template>
@@ -413,4 +413,4 @@
 </div>
         </template>
     </data>
-</flectra>
+</sleektiv>

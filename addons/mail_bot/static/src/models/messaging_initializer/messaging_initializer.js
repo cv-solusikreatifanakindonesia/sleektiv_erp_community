@@ -1,4 +1,4 @@
-flectra.define('mail_bot/static/src/models/messaging_initializer/messaging_initializer.js', function (require) {
+sleektiv.define('mail_bot/static/src/models/messaging_initializer/messaging_initializer.js', function (require) {
 'use strict';
 
 const { registerInstancePatchModel } = require('mail/static/src/model/model_core.js');
@@ -11,7 +11,7 @@ registerInstancePatchModel('mail.messaging_initializer', 'mail_bot/static/src/mo
     /**
      * @private
      */
-    async _initializeFlectraBot() {
+    async _initializeSleektivBot() {
         const data = await this.async(() => this.env.services.rpc({
             model: 'mail.channel',
             method: 'init_flectrabot',
@@ -29,7 +29,7 @@ registerInstancePatchModel('mail.messaging_initializer', 'mail_bot/static/src/mo
         await this.async(() => this._super());
 
         if ('flectrabot_initialized' in this.env.session && !this.env.session.flectrabot_initialized) {
-            this._initializeFlectraBot();
+            this._initializeSleektivBot();
         }
     },
 });

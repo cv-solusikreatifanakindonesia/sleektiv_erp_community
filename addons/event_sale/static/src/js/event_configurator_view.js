@@ -1,4 +1,4 @@
-flectra.define('event.EventConfiguratorFormView', function (require) {
+sleektiv.define('event.EventConfiguratorFormView', function (require) {
 "use strict";
 
 var EventConfiguratorFormController = require('event.EventConfiguratorFormController');

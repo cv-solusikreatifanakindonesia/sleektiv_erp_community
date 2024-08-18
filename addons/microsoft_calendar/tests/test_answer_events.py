@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from unittest.mock import patch, ANY
 
-from flectra.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
-from flectra.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from flectra.addons.microsoft_calendar.models.res_users import User
-from flectra.addons.microsoft_calendar.utils.event_id_storage import combine_ids
-from flectra.addons.microsoft_calendar.tests.common import TestCommon, mock_get_token, _modified_date_in_the_future, patch_api
+from sleektiv.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from sleektiv.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from sleektiv.addons.microsoft_calendar.models.res_users import User
+from sleektiv.addons.microsoft_calendar.utils.event_id_storage import combine_ids
+from sleektiv.addons.microsoft_calendar.tests.common import TestCommon, mock_get_token, _modified_date_in_the_future, patch_api
 
 
 @patch.object(User, '_get_microsoft_calendar_token', mock_get_token)
@@ -26,7 +26,7 @@ class TestAnswerEvents(TestCommon):
             )
 
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_attendee_accepts_event_from_flectra_calendar(self, mock_patch):
+    def test_attendee_accepts_event_from_sleektiv_calendar(self, mock_patch):
         attendee = self.env["calendar.attendee"].search([
             ('event_id', '=', self.simple_event.id),
             ('partner_id', '=', self.attendee_user.partner_id.id)
@@ -49,7 +49,7 @@ class TestAnswerEvents(TestCommon):
         )
 
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_attendee_declines_event_from_flectra_calendar(self, mock_patch):
+    def test_attendee_declines_event_from_sleektiv_calendar(self, mock_patch):
         attendee = self.env["calendar.attendee"].search([
             ('event_id', '=', self.simple_event.id),
             ('partner_id', '=', self.attendee_user.partner_id.id)
@@ -74,7 +74,7 @@ class TestAnswerEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_attendee_accepts_event_from_outlook_calendar(self, mock_get_events):
         """
-        In his Outlook calendar, the attendee accepts the event and sync with his flectra calendar.
+        In his Outlook calendar, the attendee accepts the event and sync with his sleektiv calendar.
         """
         mock_get_events.return_value = (
             MicrosoftEvent([dict(
@@ -98,7 +98,7 @@ class TestAnswerEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_attendee_accepts_event_from_outlook_calendar_synced_by_organizer(self, mock_get_events):
         """
-        In his Outlook calendar, the attendee accepts the event and the organizer syncs his flectra calendar.
+        In his Outlook calendar, the attendee accepts the event and the organizer syncs his sleektiv calendar.
         """
         mock_get_events.return_value = (
             MicrosoftEvent([dict(
@@ -126,7 +126,7 @@ class TestAnswerEvents(TestCommon):
 
         LIMITATION:
 
-        But, as there is no way to get the iCalUId to identify the corresponding Flectra event,
+        But, as there is no way to get the iCalUId to identify the corresponding Sleektiv event,
         there is no way to update the attendee status to "declined".
         """
 

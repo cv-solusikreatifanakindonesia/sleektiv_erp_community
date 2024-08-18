@@ -1,4 +1,4 @@
-flectra.define('website.s_countdown_options', function (require) {
+sleektiv.define('website.s_countdown_options', function (require) {
 'use strict';
 
 const core = require('web.core');

@@ -2,8 +2,8 @@
 
 import json
 
-from flectra import api, models, _
-from flectra.tools import float_round
+from sleektiv import api, models, _
+from sleektiv.tools import float_round
 
 class ReportBomStructure(models.AbstractModel):
     _name = 'report.mrp.report_bom_structure'

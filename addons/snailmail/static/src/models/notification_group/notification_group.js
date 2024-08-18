@@ -1,4 +1,4 @@
-flectra.define('snailmail/static/src/models/notification_group/notification_group.js', function (require) {
+sleektiv.define('snailmail/static/src/models/notification_group/notification_group.js', function (require) {
 'use strict';
 
 const {

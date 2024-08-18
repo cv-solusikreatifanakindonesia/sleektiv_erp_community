@@ -1,7 +1,7 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.addons.point_of_sale.controllers.main import PosController
-from flectra import http
-from flectra.http import request
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.addons.point_of_sale.controllers.main import PosController
+from sleektiv import http
+from sleektiv.http import request
 
 
 class PosCache(PosController):

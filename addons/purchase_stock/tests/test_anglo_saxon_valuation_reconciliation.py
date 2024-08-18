@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
-from flectra.tests.common import Form, tagged
-from flectra import fields
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from sleektiv.tests.common import Form, tagged
+from sleektiv import fields
 
 from freezegun import freeze_time
 

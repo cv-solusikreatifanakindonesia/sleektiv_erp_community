@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import _, api, fields, models
-from flectra.tools.float_utils import float_is_zero
-from flectra.osv.expression import AND
+from sleektiv import _, api, fields, models
+from sleektiv.tools.float_utils import float_is_zero
+from sleektiv.osv.expression import AND
 
 class StockWarehouseOrderpoint(models.Model):
     _inherit = 'stock.warehouse.orderpoint'

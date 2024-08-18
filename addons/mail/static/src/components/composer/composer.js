@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/composer/composer.js', function (require) {
+sleektiv.define('mail/static/src/components/composer/composer.js', function (require) {
 'use strict';
 
 const components = {

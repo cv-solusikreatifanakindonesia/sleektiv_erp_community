@@ -1,5 +1,5 @@
 import logging
-from flectra import models, fields, api, _
+from sleektiv import models, fields, api, _
 
 _logger = logging.getLogger(__name__)
 

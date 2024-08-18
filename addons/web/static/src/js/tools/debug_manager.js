@@ -1,4 +1,4 @@
-flectra.define('web.DebugManager', function (require) {
+sleektiv.define('web.DebugManager', function (require) {
 "use strict";
 
 var core = require('web.core');
@@ -20,7 +20,7 @@ var DebugManager = Widget.extend({
     init: function () {
         this._super.apply(this, arguments);
         this._events = null;
-        var debug = flectra.debug;
+        var debug = sleektiv.debug;
         this.debug_mode = debug;
         this.debug_mode_help = debug && debug !== '1' ? ' (' + debug + ')' : '';
     },

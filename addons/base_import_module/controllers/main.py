@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import functools
 
-from flectra import _
-from flectra.exceptions import AccessError
-from flectra.http import Controller, route, request, Response
+from sleektiv import _
+from sleektiv.exceptions import AccessError
+from sleektiv.http import Controller, route, request, Response
 
 def webservice(f):
     @functools.wraps(f)

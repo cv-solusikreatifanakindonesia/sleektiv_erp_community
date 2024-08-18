@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.tour.Chrome', function (require) {
+sleektiv.define('point_of_sale.tour.Chrome', function (require) {
     'use strict';
 
     const { ProductScreen } = require('point_of_sale.tour.ProductScreenTourMethods');

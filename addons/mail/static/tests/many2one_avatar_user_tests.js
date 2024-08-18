@@ -1,4 +1,4 @@
-flectra.define('mail.Many2OneAvatarUserTests', function (require) {
+sleektiv.define('mail.Many2OneAvatarUserTests', function (require) {
 "use strict";
 
 const { afterEach, beforeEach, start } = require('mail/static/src/utils/test_utils.js');

@@ -1,4 +1,4 @@
-flectra.define('options.s_google_map_options', function (require) {
+sleektiv.define('options.s_google_map_options', function (require) {
 'use strict';
 
 const {_t} = require('web.core');

@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchControllerCommon', function (require) {
+sleektiv.define('lunch.LunchControllerCommon', function (require) {
 "use strict";
 
 /**

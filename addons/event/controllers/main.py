@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.exceptions import NotFound
 
-from flectra.http import Controller, request, route, content_disposition
+from sleektiv.http import Controller, request, route, content_disposition
 
 
 class EventController(Controller):

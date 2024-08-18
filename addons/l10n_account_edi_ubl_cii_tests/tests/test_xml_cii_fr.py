@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra.addons.l10n_account_edi_ubl_cii_tests.tests.common import TestUBLCommon
-from flectra.tests import tagged
+from sleektiv.addons.l10n_account_edi_ubl_cii_tests.tests.common import TestUBLCommon
+from sleektiv.tests import tagged
 
 @tagged('post_install_l10n', 'post_install', '-at_install')
 class TestCIIFR(TestUBLCommon):
@@ -179,7 +179,7 @@ class TestCIIFR(TestUBLCommon):
                         <PaymentReference>___ignore___</PaymentReference>
                 </xpath>
             ''',
-            expected_file='from_flectra/facturx_out_invoice.xml',
+            expected_file='from_sleektiv/facturx_out_invoice.xml',
         )
         self.assertEqual(xml_filename, "factur-x.xml")
         self._assert_imported_invoice_from_etree(invoice, xml_etree, xml_filename)
@@ -224,7 +224,7 @@ class TestCIIFR(TestUBLCommon):
                         <IssuerAssignedID>___ignore___</IssuerAssignedID>
                 </xpath>
             ''',
-            expected_file='from_flectra/facturx_out_refund.xml'
+            expected_file='from_sleektiv/facturx_out_refund.xml'
         )
         self.assertEqual(xml_filename, "factur-x.xml")
         self._assert_imported_invoice_from_etree(refund, xml_etree, xml_filename)
@@ -277,7 +277,7 @@ class TestCIIFR(TestUBLCommon):
                         <IssuerAssignedID>___ignore___</IssuerAssignedID>
                 </xpath>
             ''',
-            expected_file='from_flectra/facturx_out_invoice_tax_incl.xml'
+            expected_file='from_sleektiv/facturx_out_invoice_tax_incl.xml'
         )
 
     def test_encoding_in_attachment_facturx(self):
@@ -299,7 +299,7 @@ class TestCIIFR(TestUBLCommon):
             ],
         )
         self.assertEqual(invoice.amount_total, 121)
-        self._assert_invoice_attachment(invoice, None, 'from_flectra/facturx_ecotaxes_case1.xml')
+        self._assert_invoice_attachment(invoice, None, 'from_sleektiv/facturx_ecotaxes_case1.xml')
 
     def test_export_with_fixed_taxes_case2(self):
         # CASE 2: Same but with several ecotaxes
@@ -317,7 +317,7 @@ class TestCIIFR(TestUBLCommon):
             ],
         )
         self.assertEqual(invoice.amount_total, 121)
-        self._assert_invoice_attachment(invoice, None, 'from_flectra/facturx_ecotaxes_case2.xml')
+        self._assert_invoice_attachment(invoice, None, 'from_sleektiv/facturx_ecotaxes_case2.xml')
 
     def test_export_with_fixed_taxes_case3(self):
         # CASE 3: same as Case 1 but taxes are Price Included
@@ -339,7 +339,7 @@ class TestCIIFR(TestUBLCommon):
             ],
         )
         self.assertEqual(invoice.amount_total, 121)
-        self._assert_invoice_attachment(invoice, None, 'from_flectra/facturx_ecotaxes_case3.xml')
+        self._assert_invoice_attachment(invoice, None, 'from_sleektiv/facturx_ecotaxes_case3.xml')
 
     ####################################################
     # Test import
@@ -383,7 +383,7 @@ class TestCIIFR(TestUBLCommon):
         })
         self.update_invoice_from_file(
             module_name='l10n_account_edi_ubl_cii_tests',
-            subfolder='tests/test_files/from_flectra',
+            subfolder='tests/test_files/from_sleektiv',
             filename='facturx_test_import_partner.xml',
             invoice=invoice)
 
@@ -409,7 +409,7 @@ class TestCIIFR(TestUBLCommon):
         Total: 574.004
         """
         self._assert_imported_invoice_from_file(
-            subfolder='tests/test_files/from_flectra',
+            subfolder='tests/test_files/from_sleektiv',
             filename='facturx_out_invoice_tax_incl.xml',
             amount_total=574.004,
             amount_tax=27.334,
@@ -447,7 +447,7 @@ class TestCIIFR(TestUBLCommon):
         See the tests above to create these xml attachments ('test_export_with_fixed_taxes_case_[X]').
         NB: use move_type = 'out_invoice' s.t. we can retrieve the taxes used to create the invoices.
         """
-        subfolder = "tests/test_files/from_flectra"
+        subfolder = "tests/test_files/from_sleektiv"
         self._assert_imported_invoice_from_file(
             subfolder=subfolder, filename='facturx_ecotaxes_case1.xml', amount_total=121, amount_tax=22,
             list_line_subtotals=[99], currency_id=self.currency_data['currency'].id, list_line_price_unit=[99],

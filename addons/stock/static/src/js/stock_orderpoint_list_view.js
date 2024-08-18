@@ -1,4 +1,4 @@
-flectra.define('stock.StockOrderpointListView', function (require) {
+sleektiv.define('stock.StockOrderpointListView', function (require) {
 "use strict";
 
 var ListView = require('web.ListView');

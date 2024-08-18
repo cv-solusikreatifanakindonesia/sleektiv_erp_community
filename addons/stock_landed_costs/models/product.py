@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import fields, models
-from flectra.addons.stock_landed_costs.models.stock_landed_cost import SPLIT_METHOD
-from flectra.exceptions import UserError
-from flectra import _
+from sleektiv import fields, models
+from sleektiv.addons.stock_landed_costs.models.stock_landed_cost import SPLIT_METHOD
+from sleektiv.exceptions import UserError
+from sleektiv import _
 
 
 class ProductTemplate(models.Model):

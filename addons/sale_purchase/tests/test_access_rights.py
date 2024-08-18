@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.exceptions import AccessError
-from flectra.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
-from flectra.tests import tagged
+from sleektiv.exceptions import AccessError
+from sleektiv.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
+from sleektiv.tests import tagged
 
 
 @tagged('-at_install', 'post_install')

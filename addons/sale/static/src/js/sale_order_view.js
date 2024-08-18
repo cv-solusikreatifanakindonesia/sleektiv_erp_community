@@ -1,4 +1,4 @@
-flectra.define('sale.SaleOrderView', function (require) {
+sleektiv.define('sale.SaleOrderView', function (require) {
     "use strict";
 
     const FormController = require('web.FormController');

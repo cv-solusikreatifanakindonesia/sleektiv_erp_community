@@ -1,9 +1,9 @@
 
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.account_edi_extended.tests.common import AccountEdiExtendedTestCommon, _mocked_post, _mocked_post_two_steps, _generate_mocked_needs_web_services, _mocked_cancel_failed, _generate_mocked_support_batching
-from flectra.tests import tagged
+from sleektiv.addons.account_edi_extended.tests.common import AccountEdiExtendedTestCommon, _mocked_post, _mocked_post_two_steps, _generate_mocked_needs_web_services, _mocked_cancel_failed, _generate_mocked_support_batching
+from sleektiv.tests import tagged
 
 
 @tagged('post_install', '-at_install')

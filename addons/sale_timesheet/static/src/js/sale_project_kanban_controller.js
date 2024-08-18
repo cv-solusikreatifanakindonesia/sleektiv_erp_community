@@ -1,4 +1,4 @@
-flectra.define('sale_timesheet.sale_project_kanban_controller', function (require) {
+sleektiv.define('sale_timesheet.sale_project_kanban_controller', function (require) {
 "use strict";
 
 var core = require('web.core');

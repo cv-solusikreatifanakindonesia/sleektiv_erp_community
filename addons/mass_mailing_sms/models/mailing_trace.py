@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import random
 import string
 
-from flectra import api, fields, models
-from flectra.osv import expression
+from sleektiv import api, fields, models
+from sleektiv.osv import expression
 
 
 class MailingTrace(models.Model):

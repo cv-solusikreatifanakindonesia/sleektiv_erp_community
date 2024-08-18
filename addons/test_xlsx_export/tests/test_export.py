@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 from datetime import date
 from unittest.mock import patch
 
-from flectra import http
-from flectra.tests import common, tagged
-from flectra.tools.misc import get_lang
-from flectra.addons.web.controllers.main import ExportXlsxWriter
-from flectra.addons.mail.tests.common import mail_new_test_user
+from sleektiv import http
+from sleektiv.tests import common, tagged
+from sleektiv.tools.misc import get_lang
+from sleektiv.addons.web.controllers.main import ExportXlsxWriter
+from sleektiv.addons.mail.tests.common import mail_new_test_user
 
 
 class XlsxCreatorCase(common.HttpCase):
@@ -409,6 +409,6 @@ class TestComputedBinaryExport(XlsxCreatorCase):
         export = self.export(values, fields=['binary_field'], params={'groupby': ['create_uid']})
         self.assertExportEqual(export, [
             ['Binary Field'],
-            ['FlectraBot (1)'],
+            ['SleektivBot (1)'],
             ["['computed value']"],
         ])

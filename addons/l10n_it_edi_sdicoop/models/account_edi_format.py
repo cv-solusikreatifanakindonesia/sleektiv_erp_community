@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, _, _lt
-from flectra.exceptions import UserError
-from flectra.addons.account_edi_proxy_client.models.account_edi_proxy_user import AccountEdiProxyError
+from sleektiv import models, _, _lt
+from sleektiv.exceptions import UserError
+from sleektiv.addons.account_edi_proxy_client.models.account_edi_proxy_user import AccountEdiProxyError
 
 from lxml import etree
 import base64
@@ -154,7 +154,7 @@ class AccountEdiFormat(models.Model):
 
             if invoice._is_commercial_partner_pa():
                 invoice.message_post(
-                    body=(_("Invoices for PA are not managed by Flectra, you can download the document and send it on your own."))
+                    body=(_("Invoices for PA are not managed by Sleektiv, you can download the document and send it on your own."))
                 )
                 to_return[invoice] = {'attachment': attachment, 'success': True}
             else:
@@ -245,7 +245,7 @@ class AccountEdiFormat(models.Model):
                         ' and request that they provide a solution.'
                         ' During the following 10 days, the Exchange System will try to forward the'
                         ' FatturaPA file to the Public Administration in question again.'
-                        ' Should this also fail, the System will notify Flectra of the failed delivery,'
+                        ' Should this also fail, the System will notify Sleektiv of the failed delivery,'
                         ' and you will be required to send the invoice to the Administration'
                         ' through another channel, outside of the Exchange System.')}
                 else:

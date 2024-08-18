@@ -1,4 +1,4 @@
-flectra.define('web.PieChart', function (require) {
+sleektiv.define('web.PieChart', function (require) {
 "use strict";
 
 /**

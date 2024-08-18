@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, fields, models, tools
+from sleektiv import api, fields, models, tools
 
 
 class MaintenanceEquipment(models.Model):

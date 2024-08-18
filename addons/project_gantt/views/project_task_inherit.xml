@@ -1,4 +1,4 @@
-<flectra>
+<sleektiv>
 
     <record id="project_task_view_gantt_inherit" model="ir.ui.view">
         <field name="name">project.task.form.view</field>
@@ -63,4 +63,4 @@
     </record>
 
 
-</flectra> 
+</sleektiv> 

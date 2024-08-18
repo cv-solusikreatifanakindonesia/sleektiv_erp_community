@@ -5,7 +5,7 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
   -->
-<flectra noupdate="1">
+<sleektiv noupdate="1">
     <record id="category_01_demo" model="dms.category">
         <field name="name">Internal</field>
     </record>
@@ -28,4 +28,4 @@
         <field name="name">News</field>
         <field name="parent_id" ref="dms.category_05_demo" />
     </record>
-</flectra>
+</sleektiv>

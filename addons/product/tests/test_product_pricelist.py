@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 import time
 
-from flectra.tests.common import TransactionCase
-from flectra.tools import float_compare, test_reports
+from sleektiv.tests.common import TransactionCase
+from sleektiv.tools import float_compare, test_reports
 
 
 class TestProductPricelist(TransactionCase):

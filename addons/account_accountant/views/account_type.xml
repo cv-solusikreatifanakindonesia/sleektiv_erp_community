@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<flectra>
+<sleektiv>
 
     <menuitem id="account_type_menu"
               action="account.action_account_type_form"
@@ -7,4 +7,4 @@
               parent="account.account_account_menu"
     />
 
-</flectra>
+</sleektiv>

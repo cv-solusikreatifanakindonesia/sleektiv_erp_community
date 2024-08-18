@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, fields, models
-from flectra.addons.bus.models.bus_presence import AWAY_TIMER
-from flectra.addons.bus.models.bus_presence import DISCONNECTION_TIMER
+from sleektiv import api, fields, models
+from sleektiv.addons.bus.models.bus_presence import AWAY_TIMER
+from sleektiv.addons.bus.models.bus_presence import DISCONNECTION_TIMER
 
 
 class ResUsers(models.Model):

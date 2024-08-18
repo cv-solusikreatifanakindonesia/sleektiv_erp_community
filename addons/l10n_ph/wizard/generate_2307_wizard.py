@@ -1,12 +1,12 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 import io
 import re
 import xlwt
 
-from flectra import fields, models
-from flectra.tools.misc import format_date
+from sleektiv import fields, models
+from sleektiv.tools.misc import format_date
 
 
 COLUMN_HEADER_MAP = {

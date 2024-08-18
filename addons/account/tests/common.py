@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import fields
-from flectra.tests.common import SavepointCase, HttpSavepointCase, tagged, Form
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv import fields
+from sleektiv.tests.common import SavepointCase, HttpSavepointCase, tagged, Form
 
 import time
 import base64

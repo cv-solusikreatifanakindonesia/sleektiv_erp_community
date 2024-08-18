@@ -1,4 +1,4 @@
-<flectra>
+<sleektiv>
     <record model="ir.ui.view" id="view_totp_list">
         <field name="name">users list: add totp status</field>
         <field name="model">res.users</field>
@@ -163,4 +163,4 @@
             </button>
         </field>
     </record>
-</flectra>
+</sleektiv>

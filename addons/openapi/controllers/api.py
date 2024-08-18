@@ -5,14 +5,14 @@
 # pylint: disable=redefined-builtin
 import logging
 
-from flectra import http
+from sleektiv import http
 
 from . import pinguin
 
 _logger = logging.getLogger(__name__)
 
 #################################################################
-# Flectra REST API                                                 #
+# Sleektiv REST API                                                 #
 #  Version 1                                                    #
 # --------------------------------------------------------------#
 # The current api version is considered stable, although        #

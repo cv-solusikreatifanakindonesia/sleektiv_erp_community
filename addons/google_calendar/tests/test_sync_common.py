@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from unittest.mock import MagicMock, patch
 
-from flectra.tests.common import SavepointCase
-from flectra.addons.google_calendar.utils.google_calendar import GoogleCalendarService
-from flectra.addons.google_account.models.google_service import GoogleService
-from flectra.addons.google_calendar.models.res_users import User
-from flectra.addons.google_calendar.models.google_sync import GoogleSync
-from flectra.addons.google_account.models.google_service import TIMEOUT
+from sleektiv.tests.common import SavepointCase
+from sleektiv.addons.google_calendar.utils.google_calendar import GoogleCalendarService
+from sleektiv.addons.google_account.models.google_service import GoogleService
+from sleektiv.addons.google_calendar.models.res_users import User
+from sleektiv.addons.google_calendar.models.google_sync import GoogleSync
+from sleektiv.addons.google_account.models.google_service import TIMEOUT
 
 
 def patch_api(func):

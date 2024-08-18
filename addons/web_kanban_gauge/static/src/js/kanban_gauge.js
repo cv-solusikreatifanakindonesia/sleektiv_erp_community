@@ -1,4 +1,4 @@
-flectra.define('web_kanban_gauge.widget', function (require) {
+sleektiv.define('web_kanban_gauge.widget', function (require) {
 "use strict";
 
 var AbstractField = require('web.AbstractField');

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import logging
 import werkzeug
 
-from flectra import http, tools, _
-from flectra.addons.auth_signup.models.res_users import SignupError
-from flectra.addons.web.controllers.main import ensure_db, Home, SIGN_UP_REQUEST_PARAMS
-from flectra.addons.base_setup.controllers.main import BaseSetup
-from flectra.exceptions import UserError
-from flectra.http import request
+from sleektiv import http, tools, _
+from sleektiv.addons.auth_signup.models.res_users import SignupError
+from sleektiv.addons.web.controllers.main import ensure_db, Home, SIGN_UP_REQUEST_PARAMS
+from sleektiv.addons.base_setup.controllers.main import BaseSetup
+from sleektiv.exceptions import UserError
+from sleektiv.http import request
 
 _logger = logging.getLogger(__name__)
 

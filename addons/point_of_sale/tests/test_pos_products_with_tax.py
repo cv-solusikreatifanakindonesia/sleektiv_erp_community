@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import tools
+from sleektiv import tools
 
-import flectra
-from flectra.addons.point_of_sale.tests.common import TestPoSCommon
-from flectra.tests.common import Form
+import sleektiv
+from sleektiv.addons.point_of_sale.tests.common import TestPoSCommon
+from sleektiv.tests.common import Form
 
 
-@flectra.tests.tagged('post_install', '-at_install')
+@sleektiv.tests.tagged('post_install', '-at_install')
 class TestPoSProductsWithTax(TestPoSCommon):
     """ Test normal configuration PoS selling products with tax
     """

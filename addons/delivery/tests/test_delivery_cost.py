@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra.tests import common, Form
-from flectra.tools import float_compare
+from sleektiv.tests import common, Form
+from sleektiv.tools import float_compare
 
 
 @common.tagged('post_install', '-at_install')

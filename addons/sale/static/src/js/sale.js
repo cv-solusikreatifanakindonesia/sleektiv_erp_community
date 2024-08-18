@@ -1,4 +1,4 @@
-flectra.define('sale.sales_team_dashboard', function (require) {
+sleektiv.define('sale.sales_team_dashboard', function (require) {
 "use strict";
 
 var core = require('web.core');

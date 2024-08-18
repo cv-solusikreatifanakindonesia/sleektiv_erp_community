@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
-from flectra.tools import float_compare, float_is_zero, OrderedSet
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError
+from sleektiv.tools import float_compare, float_is_zero, OrderedSet
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -507,7 +507,7 @@ class StockMove(models.Model):
                 self.with_company(company_from)._create_account_move_line(acc_valuation, acc_dest, journal_id, qty, description, svl_id, cost)
 
         if self.company_id.anglo_saxon_accounting:
-            # Creates an account entry from stock_input to stock_output on a dropship move. https://github.com/flectra/flectra/issues/12687
+            # Creates an account entry from stock_input to stock_output on a dropship move. https://github.com/sleektiv/sleektiv/issues/12687
             if self._is_dropshipped():
                 if cost > 0:
                     self.with_company(self.company_id)._create_account_move_line(acc_src, acc_valuation, journal_id, qty, description, svl_id, cost)

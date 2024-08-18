@@ -1,7 +1,7 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import fields
-from flectra.tests.common import Form
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv import fields
+from sleektiv.tests.common import Form
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
 import random
 import logging
 import time
@@ -248,7 +248,7 @@ class TestAr(AccountTestInvoicingCommon):
         })
         cls.product_iva_exento = cls.env['product.product'].create({
             # demo product_product_exento
-            'name': 'Book: Development in Flectra (VAT Exempt)',
+            'name': 'Book: Development in Sleektiv (VAT Exempt)',
             'uom_id': uom_unit.id,
             'uom_po_id': uom_unit.id,
             "list_price": 80.0,

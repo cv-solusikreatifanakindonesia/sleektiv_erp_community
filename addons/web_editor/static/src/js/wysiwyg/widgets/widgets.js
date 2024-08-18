@@ -1,4 +1,4 @@
-flectra.define('wysiwyg.widgets', function (require) {
+sleektiv.define('wysiwyg.widgets', function (require) {
 'use strict';
 
 var Dialog = require('wysiwyg.widgets.Dialog');

@@ -5,12 +5,12 @@ import logging
 import pytz
 from unittest.mock import patch, ANY
 
-from flectra.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
-from flectra.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from flectra.addons.microsoft_calendar.models.res_users import User
-from flectra.addons.microsoft_calendar.utils.event_id_storage import combine_ids
-from flectra.addons.microsoft_calendar.tests.common import TestCommon, mock_get_token, _modified_date_in_the_future, patch_api
-from flectra.exceptions import UserError
+from sleektiv.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from sleektiv.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from sleektiv.addons.microsoft_calendar.models.res_users import User
+from sleektiv.addons.microsoft_calendar.utils.event_id_storage import combine_ids
+from sleektiv.addons.microsoft_calendar.tests.common import TestCommon, mock_get_token, _modified_date_in_the_future, patch_api
+from sleektiv.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -23,15 +23,15 @@ class TestUpdateEvents(TestCommon):
         self.create_events_for_tests()
 
     # -------------------------------------------------------------------------------
-    # Update from Flectra to Outlook
+    # Update from Sleektiv to Outlook
     # -------------------------------------------------------------------------------
 
     # ------ Simple event ------
 
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_simple_event_from_flectra(self, mock_patch):
+    def test_update_simple_event_from_sleektiv(self, mock_patch):
         """
-        Update an Flectra event with Outlook sync enabled
+        Update an Sleektiv event with Outlook sync enabled
         """
 
         # arrange
@@ -53,9 +53,9 @@ class TestUpdateEvents(TestCommon):
         self.assertEqual(self.simple_event.name, "my new simple event")
 
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_simple_event_from_flectra_attendee_calendar(self, mock_patch):
+    def test_update_simple_event_from_sleektiv_attendee_calendar(self, mock_patch):
         """
-        Update an Flectra event from the attendee calendar.
+        Update an Sleektiv event from the attendee calendar.
         """
 
         # arrange
@@ -79,9 +79,9 @@ class TestUpdateEvents(TestCommon):
     # ------ One event in a recurrence ------
 
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_name_of_one_event_of_recurrence_from_flectra(self, mock_patch):
+    def test_update_name_of_one_event_of_recurrence_from_sleektiv(self, mock_patch):
         """
-        Update one Flectra event name from a recurrence from the organizer calendar.
+        Update one Sleektiv event name from a recurrence from the organizer calendar.
         """
 
         # arrange
@@ -112,9 +112,9 @@ class TestUpdateEvents(TestCommon):
                 self.assertNotEqual(self.recurrent_events[i].name, new_name)
 
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_start_of_one_event_of_recurrence_from_flectra(self, mock_patch):
+    def test_update_start_of_one_event_of_recurrence_from_sleektiv(self, mock_patch):
         """
-        Update one Flectra event start date from a recurrence from the organizer calendar.
+        Update one Sleektiv event start date from a recurrence from the organizer calendar.
         """
 
         # arrange
@@ -158,9 +158,9 @@ class TestUpdateEvents(TestCommon):
                 self.assertEqual(self.recurrent_events[i].follow_recurrence, True)
 
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_start_of_one_event_of_recurrence_from_flectra_with_overlap(self, mock_patch):
+    def test_update_start_of_one_event_of_recurrence_from_sleektiv_with_overlap(self, mock_patch):
         """
-        Update one Flectra event start date from a recurrence from the organizer calendar, in order to
+        Update one Sleektiv event start date from a recurrence from the organizer calendar, in order to
         overlap another existing event.
         """
         # arrange
@@ -180,9 +180,9 @@ class TestUpdateEvents(TestCommon):
         mock_patch.assert_not_called()
 
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_name_of_one_event_of_recurrence_from_flectra_attendee_calendar(self, mock_patch):
+    def test_update_name_of_one_event_of_recurrence_from_sleektiv_attendee_calendar(self, mock_patch):
         """
-        Update one Flectra event name from a recurrence from the atendee calendar.
+        Update one Sleektiv event name from a recurrence from the atendee calendar.
         """
 
         # arrange
@@ -213,11 +213,11 @@ class TestUpdateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'delete')
     @patch.object(MicrosoftCalendarService, 'insert')
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_name_of_one_and_future_events_of_recurrence_from_flectra(
+    def test_update_name_of_one_and_future_events_of_recurrence_from_sleektiv(
         self, mock_patch, mock_insert, mock_delete
     ):
         """
-        Update a Flectra event name and future events from a recurrence from the organizer calendar.
+        Update a Sleektiv event name and future events from a recurrence from the organizer calendar.
         """
 
         # arrange
@@ -252,11 +252,11 @@ class TestUpdateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'delete')
     @patch.object(MicrosoftCalendarService, 'insert')
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_start_of_one_and_future_events_of_recurrence_from_flectra(
+    def test_update_start_of_one_and_future_events_of_recurrence_from_sleektiv(
         self, mock_patch, mock_insert, mock_delete
     ):
         """
-        Update a Flectra event start date and future events from a recurrence from the organizer calendar.
+        Update a Sleektiv event start date and future events from a recurrence from the organizer calendar.
         """
 
         # When a time-related field is changed, the event does not follow the recurrence scheme anymore.
@@ -328,11 +328,11 @@ class TestUpdateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'delete')
     @patch.object(MicrosoftCalendarService, 'insert')
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_start_of_one_and_future_events_of_recurrence_from_flectra_with_overlap(
+    def test_update_start_of_one_and_future_events_of_recurrence_from_sleektiv_with_overlap(
         self, mock_patch, mock_insert, mock_delete
     ):
         """
-        Update a Flectra event start date and future events from a recurrence from the organizer calendar,
+        Update a Sleektiv event start date and future events from a recurrence from the organizer calendar,
         overlapping an existing event.
         """
 
@@ -400,11 +400,11 @@ class TestUpdateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'delete')
     @patch.object(MicrosoftCalendarService, 'insert')
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_one_and_future_events_of_recurrence_from_flectra_attendee_calendar(
+    def test_update_one_and_future_events_of_recurrence_from_sleektiv_attendee_calendar(
         self, mock_patch, mock_insert, mock_delete
     ):
         """
-        Update a Flectra event name and future events from a recurrence from the attendee calendar.
+        Update a Sleektiv event name and future events from a recurrence from the attendee calendar.
         """
 
         # arrange
@@ -469,7 +469,7 @@ class TestUpdateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'delete')
     @patch.object(MicrosoftCalendarService, 'insert')
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_name_of_all_events_of_recurrence_from_flectra(
+    def test_update_name_of_all_events_of_recurrence_from_sleektiv(
         self, mock_patch, mock_insert, mock_delete
     ):
         """
@@ -503,7 +503,7 @@ class TestUpdateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'delete')
     @patch.object(MicrosoftCalendarService, 'insert')
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_start_of_all_events_of_recurrence_from_flectra(
+    def test_update_start_of_all_events_of_recurrence_from_sleektiv(
         self, mock_patch, mock_insert, mock_delete
     ):
         """
@@ -525,7 +525,7 @@ class TestUpdateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'delete')
     @patch.object(MicrosoftCalendarService, 'insert')
     @patch.object(MicrosoftCalendarService, 'patch')
-    def test_update_all_events_of_recurrence_from_flectra_attendee_calendar(
+    def test_update_all_events_of_recurrence_from_sleektiv_attendee_calendar(
         self, mock_patch, mock_insert, mock_delete
     ):
         """
@@ -545,7 +545,7 @@ class TestUpdateEvents(TestCommon):
             self.recurrent_events.invalidate_cache()
 
     # -------------------------------------------------------------------------------
-    # Update from Outlook to Flectra
+    # Update from Outlook to Sleektiv
     # -------------------------------------------------------------------------------
 
     @patch.object(MicrosoftCalendarService, 'get_events')
@@ -822,7 +822,7 @@ class TestUpdateEvents(TestCommon):
         self.assertEqual(new_recurrences.ms_universal_event_id, "REC456_new")
 
         for i, e in enumerate(sorted(new_events, key=lambda e: e.id)):
-            self.assert_flectra_event(e, {
+            self.assert_sleektiv_event(e, {
                 "start": new_rec_first_event_start_date + timedelta(days=i * self.recurrent_event_interval),
                 "stop": new_rec_first_event_end_date + timedelta(days=i * self.recurrent_event_interval),
                 "microsoft_id": combine_ids(f'REC123_new_{i+1}', f'REC456_new_{i+1}'),
@@ -941,7 +941,7 @@ class TestUpdateEvents(TestCommon):
         self.assertEqual(new_recurrences.ms_universal_event_id, "REC456_new")
 
         for i, e in enumerate(sorted(new_events, key=lambda e: e.id)):
-            self.assert_flectra_event(e, {
+            self.assert_sleektiv_event(e, {
                 "start": new_rec_first_event_start_date + timedelta(days=i * self.recurrent_event_interval),
                 "stop": new_rec_first_event_end_date + timedelta(days=i * self.recurrent_event_interval),
                 "microsoft_id": combine_ids(f'REC123_new_{i+1}', f'REC456_new_{i+1}'),

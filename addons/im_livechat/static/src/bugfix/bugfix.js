@@ -1,10 +1,10 @@
 /**
  * This file allows introducing new JS modules without contaminating other files.
  * This is useful when bug fixing requires adding such JS modules in stable
- * versions of Flectra. Any module that is defined in this file should be isolated
+ * versions of Sleektiv. Any module that is defined in this file should be isolated
  * in its own file in master.
  */
-flectra.define('im_livechat/static/src/bugfix/bugfix.js', function (require) {
+sleektiv.define('im_livechat/static/src/bugfix/bugfix.js', function (require) {
 'use strict';
 
 const {
@@ -34,7 +34,7 @@ registerInstancePatchModel('mail.chat_window', 'im_livechat/static/src/models/ch
 });
 
 
-flectra.define('im_livechat/static/src/models/message/message.js', function (require) {
+sleektiv.define('im_livechat/static/src/models/message/message.js', function (require) {
 'use strict';
 
 const {
@@ -65,7 +65,7 @@ registerClassPatchModel('mail.message', 'im_livechat/static/src/models/message/m
 
 });
 
-flectra.define('im_livechat/static/src/models/composer/composer.js', function (require) {
+sleektiv.define('im_livechat/static/src/models/composer/composer.js', function (require) {
 'use strict';
 
 const { registerInstancePatchModel } = require('mail/static/src/model/model_core.js');

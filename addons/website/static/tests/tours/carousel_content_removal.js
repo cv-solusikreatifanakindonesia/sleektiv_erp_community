@@ -1,4 +1,4 @@
-flectra.define('website.tour.carousel_content_removal', function (require) {
+sleektiv.define('website.tour.carousel_content_removal', function (require) {
 'use strict';
 
 const tour = require('web_tour.tour');

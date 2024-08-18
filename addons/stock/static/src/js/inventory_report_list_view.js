@@ -1,4 +1,4 @@
-flectra.define('stock.InventoryReportListView', function (require) {
+sleektiv.define('stock.InventoryReportListView', function (require) {
 "use strict";
 
 var ListView = require('web.ListView');

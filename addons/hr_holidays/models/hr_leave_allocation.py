@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 # Copyright (c) 2005-2006 Axelor SARL. (http://www.axelor.com)
 
@@ -8,12 +8,12 @@ import logging
 from datetime import datetime, time
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, fields, models
-from flectra.addons.resource.models.resource import HOURS_PER_DAY
-from flectra.exceptions import AccessError, UserError, ValidationError
-from flectra.tools.translate import _
-from flectra.tools.float_utils import float_round
-from flectra.osv import expression
+from sleektiv import api, fields, models
+from sleektiv.addons.resource.models.resource import HOURS_PER_DAY
+from sleektiv.exceptions import AccessError, UserError, ValidationError
+from sleektiv.tools.translate import _
+from sleektiv.tools.float_utils import float_round
+from sleektiv.osv import expression
 
 _logger = logging.getLogger(__name__)
 

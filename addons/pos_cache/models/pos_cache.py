@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import base64
 import json
 from ast import literal_eval
 
-from flectra import models, fields, api
-from flectra.tools import date_utils
+from sleektiv import models, fields, api
+from sleektiv.tools import date_utils
 
 
 class pos_cache(models.Model):

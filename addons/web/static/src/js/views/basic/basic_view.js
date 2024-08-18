@@ -1,4 +1,4 @@
-flectra.define('web.BasicView', function (require) {
+sleektiv.define('web.BasicView', function (require) {
 "use strict";
 
 /**

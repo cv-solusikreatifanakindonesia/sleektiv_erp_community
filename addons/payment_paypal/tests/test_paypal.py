@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from flectra import fields
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.addons.payment.tests.common import PaymentAcquirerCommon
-from flectra.addons.payment_paypal.controllers.main import PaypalController
+from sleektiv import fields
+from sleektiv.addons.payment.models.payment_acquirer import ValidationError
+from sleektiv.addons.payment.tests.common import PaymentAcquirerCommon
+from sleektiv.addons.payment_paypal.controllers.main import PaypalController
 from werkzeug import urls
 
-from flectra.tools import mute_logger
-from flectra.tests import tagged
+from sleektiv.tools import mute_logger
+from sleektiv.tests import tagged
 
 from lxml import objectify
 
@@ -63,7 +63,7 @@ class PaypalForm(PaypalCommon):
             'first_name': 'Norbert',
             'last_name': 'Buyer',
             'amount': '0.01',
-            'bn': 'FlectraInc_SP',
+            'bn': 'SleektivInc_SP',
             'currency_code': 'EUR',
             'address1': 'Huge Street 2/543',
             'city': 'Sin City',
@@ -123,7 +123,7 @@ class PaypalForm(PaypalCommon):
                 self.assertEqual(form_input.get('value'), '1.57', 'paypal: wrong computed fees')
         self.assertTrue(handling_found, 'paypal: fees_active did not add handling input in rendered form')
 
-    @mute_logger('flectra.addons.payment_paypal.models.payment', 'ValidationError')
+    @mute_logger('sleektiv.addons.payment_paypal.models.payment', 'ValidationError')
     def test_20_paypal_form_management(self):
         # be sure not to do stupid things
         self.assertEqual(self.paypal.state, 'test', 'test without test environment')

@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/utils/utils.js', function (require) {
+sleektiv.define('mail/static/src/utils/utils.js', function (require) {
 'use strict';
 
 const { delay } = require('web.concurrency');

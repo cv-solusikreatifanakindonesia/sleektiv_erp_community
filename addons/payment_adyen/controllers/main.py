@@ -5,8 +5,8 @@ import logging
 import pprint
 import werkzeug
 
-from flectra import http
-from flectra.http import request
+from sleektiv import http
+from sleektiv.http import request
 
 _logger = logging.getLogger(__name__)
 

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.fields import Datetime, Date
-from flectra.addons.hr_contract.tests.common import TestContractCommon
+from sleektiv.fields import Datetime, Date
+from sleektiv.addons.hr_contract.tests.common import TestContractCommon
 
 
 class TestContractCalendars(TestContractCommon):

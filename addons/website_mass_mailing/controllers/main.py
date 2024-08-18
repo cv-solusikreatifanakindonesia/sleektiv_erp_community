@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import _
-from flectra.http import route, request
-from flectra.osv import expression
-from flectra.addons.mass_mailing.controllers.main import MassMailController
+from sleektiv import _
+from sleektiv.http import route, request
+from sleektiv.osv import expression
+from sleektiv.addons.mass_mailing.controllers.main import MassMailController
 
 
 class MassMailController(MassMailController):

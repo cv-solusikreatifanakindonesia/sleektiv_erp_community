@@ -1,4 +1,4 @@
-flectra.define('web.framework', function (require) {
+sleektiv.define('web.framework', function (require) {
 "use strict";
 
 var core = require('web.core');
@@ -103,7 +103,7 @@ function unblockUI() {
  */
 function redirect (url, wait) {
     // Dont display a dialog if some xmlhttprequest are in progress
-    // we don't disable the crash manager on mobile phones, because when going back to flectra,
+    // we don't disable the crash manager on mobile phones, because when going back to sleektiv,
     // the page is not reloaded, and the crashManager stays disabled.
     if (!config.device.isIOS && !config.device.isAndroid) {
         disableCrashManager();

@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 from collections import OrderedDict
 from datetime import datetime
 
-from flectra import http
-from flectra.exceptions import AccessError, MissingError
-from flectra.http import request, Response
-from flectra.tools import image_process
-from flectra.tools.translate import _
-from flectra.addons.portal.controllers.portal import pager as portal_pager, CustomerPortal
-from flectra.addons.web.controllers.main import Binary
+from sleektiv import http
+from sleektiv.exceptions import AccessError, MissingError
+from sleektiv.http import request, Response
+from sleektiv.tools import image_process
+from sleektiv.tools.translate import _
+from sleektiv.addons.portal.controllers.portal import pager as portal_pager, CustomerPortal
+from sleektiv.addons.web.controllers.main import Binary
 
 
 class CustomerPortal(CustomerPortal):

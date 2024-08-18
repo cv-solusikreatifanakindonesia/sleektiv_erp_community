@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
-from flectra import _, api, exceptions, fields, models, modules
-from flectra.addons.base.models.res_users import is_selection_groups
+from sleektiv import _, api, exceptions, fields, models, modules
+from sleektiv.addons.base.models.res_users import is_selection_groups
 
 
 class Users(models.Model):
@@ -22,11 +22,11 @@ class Users(models.Model):
 
     notification_type = fields.Selection([
         ('email', 'Handle by Emails'),
-        ('inbox', 'Handle in Flectra')],
+        ('inbox', 'Handle in Sleektiv')],
         'Notification', required=True, default='email',
         help="Policy on how to handle Chatter notifications:\n"
              "- Handle by Emails: notifications are sent to your email address\n"
-             "- Handle in Flectra: notifications appear in your Flectra Inbox")
+             "- Handle in Sleektiv: notifications appear in your Sleektiv Inbox")
     # channel-specific: moderation
     is_moderator = fields.Boolean(string='Is moderator', compute='_compute_is_moderator')
     moderation_counter = fields.Integer(string='Moderation count', compute='_compute_moderation_counter')

@@ -1,14 +1,14 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 
 from dateutil.relativedelta import relativedelta
 
-from flectra import tests
-from flectra.addons.base.tests.common import HttpCaseWithUserPortal
-from flectra.addons.gamification.tests.common import HttpCaseGamification
-from flectra.fields import Datetime
-from flectra.modules.module import get_module_resource
+from sleektiv import tests
+from sleektiv.addons.base.tests.common import HttpCaseWithUserPortal
+from sleektiv.addons.gamification.tests.common import HttpCaseGamification
+from sleektiv.fields import Datetime
+from sleektiv.modules.module import get_module_resource
 
 
 class TestUICommon(HttpCaseGamification, HttpCaseWithUserPortal):
@@ -109,8 +109,8 @@ class TestUi(TestUICommon):
 
         self.browser_js(
             '/slides',
-            'flectra.__DEBUG__.services["web_tour.tour"].run("course_member")',
-            'flectra.__DEBUG__.services["web_tour.tour"].tours.course_member.ready',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].run("course_member")',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].tours.course_member.ready',
             login=user_demo.login)
 
     def test_course_member_elearning_officer(self):
@@ -122,8 +122,8 @@ class TestUi(TestUICommon):
 
         self.browser_js(
             '/slides',
-            'flectra.__DEBUG__.services["web_tour.tour"].run("course_member")',
-            'flectra.__DEBUG__.services["web_tour.tour"].tours.course_member.ready',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].run("course_member")',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].tours.course_member.ready',
             login=user_demo.login)
 
     def test_course_member_portal(self):
@@ -132,8 +132,8 @@ class TestUi(TestUICommon):
 
         self.browser_js(
             '/slides',
-            'flectra.__DEBUG__.services["web_tour.tour"].run("course_member")',
-            'flectra.__DEBUG__.services["web_tour.tour"].tours.course_member.ready',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].run("course_member")',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].tours.course_member.ready',
             login=user_portal.login)
 
     def test_full_screen_edition_website_publisher(self):
@@ -146,8 +146,8 @@ class TestUi(TestUICommon):
 
         self.browser_js(
             '/slides',
-            'flectra.__DEBUG__.services["web_tour.tour"].run("full_screen_web_editor")',
-            'flectra.__DEBUG__.services["web_tour.tour"].tours.full_screen_web_editor.ready',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].run("full_screen_web_editor")',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].tours.full_screen_web_editor.ready',
             login=user_demo.login)
 
     def test_course_reviews_elearning_officer(self):
@@ -164,8 +164,8 @@ class TestUi(TestUICommon):
 
         self.browser_js(
             '/slides',
-            'flectra.__DEBUG__.services["web_tour.tour"].run("course_reviews")',
-            'flectra.__DEBUG__.services["web_tour.tour"].tours.course_reviews.ready',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].run("course_reviews")',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].tours.course_reviews.ready',
             login=user_demo.login)
 
 
@@ -183,8 +183,8 @@ class TestUiYoutube(HttpCaseGamification):
 
         self.browser_js(
             '/slides',
-            'flectra.__DEBUG__.services["web_tour.tour"].run("course_member_youtube")',
-            'flectra.__DEBUG__.services["web_tour.tour"].tours.course_member_youtube.ready',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].run("course_member_youtube")',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].tours.course_member_youtube.ready',
             login=user_demo.login)
 
     def test_course_publisher_elearning_manager(self):
@@ -196,6 +196,6 @@ class TestUiYoutube(HttpCaseGamification):
 
         self.browser_js(
             '/slides',
-            'flectra.__DEBUG__.services["web_tour.tour"].run("course_publisher")',
-            'flectra.__DEBUG__.services["web_tour.tour"].tours.course_publisher.ready',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].run("course_publisher")',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].tours.course_publisher.ready',
             login=user_demo.login)

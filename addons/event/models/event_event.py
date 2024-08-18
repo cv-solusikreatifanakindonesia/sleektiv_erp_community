@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 import pytz
 
-from flectra import _, api, fields, models
-from flectra.addons.base.models.res_partner import _tz_get
-from flectra.tools import format_datetime
-from flectra.exceptions import ValidationError
-from flectra.tools.translate import html_translate
+from sleektiv import _, api, fields, models
+from sleektiv.addons.base.models.res_partner import _tz_get
+from sleektiv.tools import format_datetime
+from sleektiv.exceptions import ValidationError
+from sleektiv.tools.translate import html_translate
 
 _logger = logging.getLogger(__name__)
 

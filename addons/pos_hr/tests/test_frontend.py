@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import tools
-from flectra.api import Environment
-from flectra.tools import DEFAULT_SERVER_DATE_FORMAT
+from sleektiv import tools
+from sleektiv.api import Environment
+from sleektiv.tools import DEFAULT_SERVER_DATE_FORMAT
 from datetime import date, timedelta
 
-from flectra.tests import Form, tagged, new_test_user
-from flectra.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from sleektiv.tests import Form, tagged, new_test_user
+from sleektiv.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
 
 class TestPosHrHttpCommon(TestPointOfSaleHttpCommon):

@@ -1,4 +1,4 @@
-flectra.define('website.translateMenu', function (require) {
+sleektiv.define('website.translateMenu', function (require) {
 'use strict';
 
 var utils = require('web.utils');

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.website_slides.tests import common
+from sleektiv.addons.website_slides.tests import common
 
 
 class TestAttendee(common.SlidesCase):

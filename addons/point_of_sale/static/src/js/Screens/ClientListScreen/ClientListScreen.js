@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.ClientListScreen', function(require) {
+sleektiv.define('point_of_sale.ClientListScreen', function(require) {
     'use strict';
 
     const { debounce } = owl.utils;

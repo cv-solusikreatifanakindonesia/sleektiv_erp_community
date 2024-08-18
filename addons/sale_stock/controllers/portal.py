@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import exceptions, SUPERUSER_ID
-from flectra.addons.sale.controllers.portal import CustomerPortal
-from flectra.http import request, route
-from flectra.tools import consteq
+from sleektiv import exceptions, SUPERUSER_ID
+from sleektiv.addons.sale.controllers.portal import CustomerPortal
+from sleektiv.http import request, route
+from sleektiv.tools import consteq
 
 
 class SaleStockPortal(CustomerPortal):

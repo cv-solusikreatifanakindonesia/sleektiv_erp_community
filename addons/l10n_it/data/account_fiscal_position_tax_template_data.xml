@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <!-- account.fiscal.position.tax.template -->
     <record id="afpttn_it_intra_1" model="account.fiscal.position.tax.template">
         <field name="position_id" ref="intra"/>
@@ -78,4 +78,4 @@
         <field name="tax_src_id"  ref="00as"/>
         <field name="tax_dest_id" ref="00rcs"/>
     </record>
-</flectra>
+</sleektiv>

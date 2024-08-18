@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.TipScreen', function (require) {
+sleektiv.define('pos_restaurant.TipScreen', function (require) {
     'use strict';
 
     const Registries = require('point_of_sale.Registries');

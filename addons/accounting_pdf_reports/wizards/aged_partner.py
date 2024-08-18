@@ -2,8 +2,8 @@
 
 import time
 from dateutil.relativedelta import relativedelta
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError
 
 
 class AccountAgedTrialBalance(models.TransientModel):

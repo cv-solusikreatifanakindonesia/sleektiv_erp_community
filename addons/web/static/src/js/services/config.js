@@ -1,4 +1,4 @@
-flectra.define('web.config', function (require) {
+sleektiv.define('web.config', function (require) {
 "use strict";
 
 const Bus = require('web.Bus');
@@ -85,9 +85,9 @@ var config = {
      */
     isDebug: function (debugMode) {
         if (debugMode) {
-            return flectra.debug && flectra.debug.indexOf(debugMode) !== -1;
+            return sleektiv.debug && sleektiv.debug.indexOf(debugMode) !== -1;
         }
-        return flectra.debug;
+        return sleektiv.debug;
     },
 };
 

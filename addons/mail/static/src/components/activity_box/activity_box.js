@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/activity_box/activity_box.js', function (require) {
+sleektiv.define('mail/static/src/components/activity_box/activity_box.js', function (require) {
 'use strict';
 
 const components = {

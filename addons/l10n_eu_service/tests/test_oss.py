@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flectra.addons.l10n_eu_service.models.eu_tag_map import EU_TAG_MAP
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.tests import tagged
+from sleektiv.addons.l10n_eu_service.models.eu_tag_map import EU_TAG_MAP
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.tests import tagged
 
 
 class OssTemplateTestCase(AccountTestInvoicingCommon):

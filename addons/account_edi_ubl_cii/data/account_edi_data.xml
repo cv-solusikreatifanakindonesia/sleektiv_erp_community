@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <data>
         <record id="ubl_bis3" model="account.edi.format">
             <field name="name">Peppol BIS Billing 3.0</field>
@@ -11,4 +11,4 @@
             <field name="code">ubl_de</field>
         </record>
     </data>
-</flectra>
+</sleektiv>

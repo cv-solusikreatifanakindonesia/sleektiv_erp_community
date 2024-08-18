@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from collections import defaultdict
 
-from flectra.exceptions import AccessError
-from flectra import api, fields, models, _
-from flectra import SUPERUSER_ID
-from flectra.exceptions import UserError, ValidationError
-from flectra.http import request
-from flectra.addons.account.models.account_tax import TYPE_TAX_USE
-from flectra.tools import html_escape
+from sleektiv.exceptions import AccessError
+from sleektiv import api, fields, models, _
+from sleektiv import SUPERUSER_ID
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.http import request
+from sleektiv.addons.account.models.account_tax import TYPE_TAX_USE
+from sleektiv.tools import html_escape
 
 
 import logging

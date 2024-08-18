@@ -1,4 +1,4 @@
-flectra.define('account.ReconciliationClientAction', function (require) {
+sleektiv.define('account.ReconciliationClientAction', function (require) {
 "use strict";
 
 var AbstractAction = require('web.AbstractAction');
@@ -318,7 +318,7 @@ var StatementAction = AbstractAction.extend({
      * 'inactive' mode
      *
      * @private
-     * @param {FlectraEvent} event
+     * @param {SleektivEvent} event
      */
     _onAction: function (event) {
         var self = this;
@@ -345,7 +345,7 @@ var StatementAction = AbstractAction.extend({
 
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSearch: function (ev) {
         var self = this;
@@ -372,7 +372,7 @@ var StatementAction = AbstractAction.extend({
      * call 'closeStatement' model method
      *
      * @private
-     * @param {FlectraEvent} event
+     * @param {SleektivEvent} event
      */
     _onCloseStatement: function (event) {
         var self = this;
@@ -391,7 +391,7 @@ var StatementAction = AbstractAction.extend({
     /**
      * Load more statement and render them
      *
-     * @param {FlectraEvent} event
+     * @param {SleektivEvent} event
      */
     _onLoadMore: function (event) {
         return this._loadMore(this.model.defaultDisplayQty);
@@ -402,7 +402,7 @@ var StatementAction = AbstractAction.extend({
      * values and notifications then open the first available line
      *
      * @private
-     * @param {FlectraEvent} event
+     * @param {SleektivEvent} event
      */
     _onValidate: function (event) {
         var self = this;
@@ -464,7 +464,7 @@ var ManualAction = StatementAction.extend({
      * first available line
      *
      * @private
-     * @param {FlectraEvent} event
+     * @param {SleektivEvent} event
      */
     _onValidate: function (event) {
         var self = this;

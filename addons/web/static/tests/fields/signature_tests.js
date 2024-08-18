@@ -1,4 +1,4 @@
-flectra.define('web.signature_field_tests', function (require) {
+sleektiv.define('web.signature_field_tests', function (require) {
 "use strict";
 
 var ajax = require('web.ajax');

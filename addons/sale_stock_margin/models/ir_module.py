@@ -1,5 +1,5 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import api, models
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv import api, models
 
 
 class IrModule(models.Model):

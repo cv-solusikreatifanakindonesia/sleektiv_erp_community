@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-import flectra
-from flectra.tests import HttpCase
-from flectra import http
-from flectra.exceptions import AccessError
+import sleektiv
+from sleektiv.tests import HttpCase
+from sleektiv import http
+from sleektiv.exceptions import AccessError
 
 class TestAuthSignupFlow(HttpCase):
 
@@ -44,7 +44,7 @@ class TestAuthSignupFlow(HttpCase):
         }
 
         # Override unlink to not delete the email if the send works.
-        with patch.object(flectra.addons.mail.models.mail_mail.MailMail, 'unlink', lambda self: None):
+        with patch.object(sleektiv.addons.mail.models.mail_mail.MailMail, 'unlink', lambda self: None):
             # Call the controller
             url_free_signup = self._get_free_signup_url()
             self.url_open(url_free_signup, data=payload)

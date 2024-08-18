@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.tests import common, new_test_user
-from flectra import fields
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.tests import common, new_test_user
+from sleektiv import fields
 
 
 class TestFleet(common.SavepointCase):

@@ -1,4 +1,4 @@
-flectra.define('sale_product_configurator.ProductConfiguratorFormRenderer', function (require) {
+sleektiv.define('sale_product_configurator.ProductConfiguratorFormRenderer', function (require) {
 "use strict";
 
 var FormRenderer = require('web.FormRenderer');

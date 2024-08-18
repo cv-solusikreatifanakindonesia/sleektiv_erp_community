@@ -1,4 +1,4 @@
-flectra.define('website_slides.tour.slide.course.reviews', function (require) {
+sleektiv.define('website_slides.tour.slide.course.reviews', function (require) {
 'use strict';
 
 const tour = require('web_tour.tour');

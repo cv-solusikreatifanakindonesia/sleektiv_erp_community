@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.addons.account_check_printing.models.account_payment import INV_LINES_PER_STUB
-from flectra.tests import tagged
-from flectra.tools.misc import NON_BREAKING_SPACE
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.addons.account_check_printing.models.account_payment import INV_LINES_PER_STUB
+from sleektiv.tests import tagged
+from sleektiv.tools.misc import NON_BREAKING_SPACE
 
 import math
 

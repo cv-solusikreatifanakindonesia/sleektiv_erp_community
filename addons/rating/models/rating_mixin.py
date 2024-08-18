@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
 
-from flectra import api, fields, models, tools
-from flectra.addons.rating.models.rating import RATING_LIMIT_SATISFIED, RATING_LIMIT_OK, RATING_LIMIT_MIN
-from flectra.osv import expression
+from sleektiv import api, fields, models, tools
+from sleektiv.addons.rating.models.rating import RATING_LIMIT_SATISFIED, RATING_LIMIT_OK, RATING_LIMIT_MIN
+from sleektiv.osv import expression
 
 
 class RatingParentMixin(models.AbstractModel):

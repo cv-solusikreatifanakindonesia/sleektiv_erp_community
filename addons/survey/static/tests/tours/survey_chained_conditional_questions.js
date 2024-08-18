@@ -1,4 +1,4 @@
-flectra.define('survey.tour_test_survey_chained_conditional_questions', function (require) {
+sleektiv.define('survey.tour_test_survey_chained_conditional_questions', function (require) {
 'use strict';
 
 const tour = require('web_tour.tour');

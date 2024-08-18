@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.phone_validation.tools import phone_validation
-from flectra.addons.mass_mailing_sms.tests.common import MassSMSCommon
-from flectra.addons.test_mail.tests.common import TestRecipients
-from flectra.addons.test_mass_mailing.tests.common import TestMassMailCommon
+from sleektiv.addons.phone_validation.tools import phone_validation
+from sleektiv.addons.mass_mailing_sms.tests.common import MassSMSCommon
+from sleektiv.addons.test_mail.tests.common import TestRecipients
+from sleektiv.addons.test_mass_mailing.tests.common import TestMassMailCommon
 
 
 class TestMailFullCommon(TestMassMailCommon, MassSMSCommon):

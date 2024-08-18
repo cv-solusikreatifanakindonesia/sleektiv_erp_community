@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 import os
 from collections import OrderedDict
 
-from flectra import api, fields, models
-from flectra.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
-from flectra.exceptions import MissingError
-from flectra.http import request
+from sleektiv import api, fields, models
+from sleektiv.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+from sleektiv.exceptions import MissingError
+from sleektiv.http import request
 
 _logger = logging.getLogger(__name__)
 

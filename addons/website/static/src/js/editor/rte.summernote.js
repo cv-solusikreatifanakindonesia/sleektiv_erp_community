@@ -1,4 +1,4 @@
-flectra.define('website.rte.summernote', function (require) {
+sleektiv.define('website.rte.summernote', function (require) {
 'use strict';
 
 var core = require('web.core');

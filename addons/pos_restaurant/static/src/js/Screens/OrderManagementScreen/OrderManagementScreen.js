@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.OrderManagementScreen', function (require) {
+sleektiv.define('pos_restaurant.OrderManagementScreen', function (require) {
     'use strict';
 
     const OrderManagementScreen = require('point_of_sale.OrderManagementScreen');

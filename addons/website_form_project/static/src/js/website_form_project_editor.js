@@ -1,4 +1,4 @@
-flectra.define('website_form_project.form', function (require) {
+sleektiv.define('website_form_project.form', function (require) {
 'use strict';
 
 var core = require('web.core');

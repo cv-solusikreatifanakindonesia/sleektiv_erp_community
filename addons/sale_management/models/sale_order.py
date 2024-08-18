@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from flectra import api, fields, models, _, SUPERUSER_ID
-from flectra.exceptions import UserError, ValidationError
+from sleektiv import api, fields, models, _, SUPERUSER_ID
+from sleektiv.exceptions import UserError, ValidationError
 
 
 class SaleOrder(models.Model):

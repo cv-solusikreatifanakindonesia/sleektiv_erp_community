@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
 
     <!-- The taxes are sorted in the file: Type of tax > Scope of tax > Tax Due
 
@@ -3008,4 +3008,4 @@
         ]"/>
     </record>
 
-</flectra>
+</sleektiv>

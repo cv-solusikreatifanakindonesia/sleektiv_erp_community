@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/chatter_topbar/chatter_topbar.js', function (require) {
+sleektiv.define('mail/static/src/components/chatter_topbar/chatter_topbar.js', function (require) {
 'use strict';
 
 const components = {

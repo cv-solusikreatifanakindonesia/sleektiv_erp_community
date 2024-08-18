@@ -1,4 +1,4 @@
-from flectra import api, fields, models, _
+from sleektiv import api, fields, models, _
 
 
 class ResConfigSettings(models.TransientModel):

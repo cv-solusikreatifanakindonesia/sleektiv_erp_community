@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 
-from flectra import fields
-from flectra.tests.common import SavepointCase, new_test_user
-from flectra.addons.mail.tests.common import MailCase
+from sleektiv import fields
+from sleektiv.tests.common import SavepointCase, new_test_user
+from sleektiv.addons.mail.tests.common import MailCase
 
 
 class TestEventNotifications(SavepointCase, MailCase):

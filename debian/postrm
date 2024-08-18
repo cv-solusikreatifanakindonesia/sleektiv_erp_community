@@ -2,9 +2,9 @@
 
 set -e
 
-FLECTRA_LIB_DIR=/var/lib/flectra
-FLECTRA_USER="flectra"
-FLECTRA_GROUP="flectra"
+FLECTRA_LIB_DIR=/var/lib/sleektiv
+FLECTRA_USER="sleektiv"
+FLECTRA_GROUP="sleektiv"
 
 case "${1}" in
     remove)

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.mail.tests.common import MailCommon
-from flectra.tests.common import Form, users
-from flectra.tests import tagged
+from sleektiv.addons.mail.tests.common import MailCommon
+from sleektiv.tests.common import Form, users
+from sleektiv.tests import tagged
 
 
 @tagged('res_partner')

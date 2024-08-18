@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime, timedelta
 
-from flectra.tests.common import Form, SavepointCase
+from sleektiv.tests.common import Form, SavepointCase
 
 
 class TestReportsCommon(SavepointCase):

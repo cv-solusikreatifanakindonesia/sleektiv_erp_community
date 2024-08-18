@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 import pytz
 
-from flectra import http
-from flectra.addons.http_routing.models.ir_http import url_for
-from flectra.http import request
-from flectra.modules.module import get_module_resource
-from flectra.tools import ustr
-from flectra.tools.translate import _
+from sleektiv import http
+from sleektiv.addons.http_routing.models.ir_http import url_for
+from sleektiv.http import request
+from sleektiv.modules.module import get_module_resource
+from sleektiv.tools import ustr
+from sleektiv.tools.translate import _
 
 
 class TrackManifest(http.Controller):

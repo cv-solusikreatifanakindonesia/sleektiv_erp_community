@@ -1,4 +1,4 @@
-flectra.define('hr_timesheet.timesheet_uom', function (require) {
+sleektiv.define('hr_timesheet.timesheet_uom', function (require) {
 'use strict';
 
 const basicFields = require('web.basic_fields');

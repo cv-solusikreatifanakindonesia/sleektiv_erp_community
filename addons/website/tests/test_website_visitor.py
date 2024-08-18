@@ -1,14 +1,14 @@
 # coding: utf-8
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from contextlib import contextmanager
 from datetime import datetime, timedelta
 from unittest.mock import patch
 
-from flectra.addons.base.tests.common import HttpCaseWithUserDemo
-from flectra.addons.website.tools import MockRequest
-from flectra.addons.website.models.website_visitor import WebsiteVisitor
-from flectra.tests import common, tagged
+from sleektiv.addons.base.tests.common import HttpCaseWithUserDemo
+from sleektiv.addons.website.tools import MockRequest
+from sleektiv.addons.website.models.website_visitor import WebsiteVisitor
+from sleektiv.tests import common, tagged
 
 
 class MockVisitor(common.BaseCase):

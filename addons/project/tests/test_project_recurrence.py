@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 
-from flectra.tests.common import SavepointCase, Form
-from flectra.exceptions import ValidationError
-from flectra import fields
+from sleektiv.tests.common import SavepointCase, Form
+from sleektiv.exceptions import ValidationError
+from sleektiv import fields
 
 from datetime import date, datetime
 from dateutil.rrule import MO, TU, WE, TH, FR, SA, SU

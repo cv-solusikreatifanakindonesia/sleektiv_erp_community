@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.tests import HttpCase, tagged, new_test_user
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.tests import HttpCase, tagged, new_test_user
 
 @tagged('post_install', '-at_install')
 class TestControllersRoute(HttpCase):

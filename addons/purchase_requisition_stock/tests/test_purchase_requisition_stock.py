@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import fields
+from sleektiv import fields
 from datetime import datetime
-from flectra.tools import DEFAULT_SERVER_DATETIME_FORMAT
-from flectra.addons.purchase_requisition.tests.common import TestPurchaseRequisitionCommon
+from sleektiv.tools import DEFAULT_SERVER_DATETIME_FORMAT
+from sleektiv.addons.purchase_requisition.tests.common import TestPurchaseRequisitionCommon
 
 
 class TestPurchaseRequisitionStock(TestPurchaseRequisitionCommon):

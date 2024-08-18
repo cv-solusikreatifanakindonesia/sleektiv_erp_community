@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 from werkzeug.exceptions import Forbidden, NotFound
 from werkzeug.utils import redirect
 
-from flectra import exceptions, http
-from flectra.http import request
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.addons.website_event.controllers.community import EventCommunityController
-from flectra.osv import expression
+from sleektiv import exceptions, http
+from sleektiv.http import request
+from sleektiv.addons.http_routing.models.ir_http import slug
+from sleektiv.addons.website_event.controllers.community import EventCommunityController
+from sleektiv.osv import expression
 
 _logger = logging.getLogger(__name__)
 

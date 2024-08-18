@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import tools
-from flectra.api import Environment
-from flectra.tools import DEFAULT_SERVER_DATE_FORMAT
+from sleektiv import tools
+from sleektiv.api import Environment
+from sleektiv.tools import DEFAULT_SERVER_DATE_FORMAT
 from datetime import date, timedelta
 
-import flectra.tests
+import sleektiv.tests
 
 
-class TestPointOfSaleHttpCommon(flectra.tests.HttpCase):
+class TestPointOfSaleHttpCommon(sleektiv.tests.HttpCase):
 
     def setUp(self):
         super().setUp()
@@ -470,7 +470,7 @@ class TestPointOfSaleHttpCommon(flectra.tests.HttpCase):
         env['ir.property']._set_default("property_product_pricelist", "res.partner", public_pricelist, main_company)
 
 
-@flectra.tests.tagged('post_install', '-at_install')
+@sleektiv.tests.tagged('post_install', '-at_install')
 class TestUi(TestPointOfSaleHttpCommon):
     def test_01_pos_basic_order(self):
 

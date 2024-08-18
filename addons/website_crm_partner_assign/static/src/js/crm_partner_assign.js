@@ -1,4 +1,4 @@
-flectra.define('crm.partner_assign', function (require) {
+sleektiv.define('crm.partner_assign', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

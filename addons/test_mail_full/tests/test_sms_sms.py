@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 
 from unittest.mock import patch
 from unittest.mock import DEFAULT
 
-from flectra import exceptions
-from flectra.addons.sms.models.sms_sms import SmsSms as SmsSms
-from flectra.addons.test_mail_full.tests.common import TestMailFullCommon
-from flectra.tests import common
+from sleektiv import exceptions
+from sleektiv.addons.sms.models.sms_sms import SmsSms as SmsSms
+from sleektiv.addons.test_mail_full.tests.common import TestMailFullCommon
+from sleektiv.tests import common
 
 
 class LinkTrackerMock(common.BaseCase):
@@ -22,7 +22,7 @@ class LinkTrackerMock(common.BaseCase):
 
         self.env['ir.config_parameter'].sudo().set_param('web.base.url', 'https://test.flectrahq.com')
 
-        link_tracker_title_patch = patch('flectra.addons.link_tracker.models.link_tracker.LinkTracker._get_title_from_url', wraps=_get_title_from_url)
+        link_tracker_title_patch = patch('sleektiv.addons.link_tracker.models.link_tracker.LinkTracker._get_title_from_url', wraps=_get_title_from_url)
         link_tracker_title_patch.start()
         self.addCleanup(link_tracker_title_patch.stop)
 

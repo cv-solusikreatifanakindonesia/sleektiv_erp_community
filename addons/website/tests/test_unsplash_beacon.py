@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-import flectra.tests
+import sleektiv.tests
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
-class TestUnsplashBeacon(flectra.tests.HttpCase):
+@sleektiv.tests.common.tagged('post_install', '-at_install')
+class TestUnsplashBeacon(sleektiv.tests.HttpCase):
 
     def test_01_beacon(self):
         self.env['ir.config_parameter'].sudo().set_param('unsplash.app_id', '123456')

@@ -1,4 +1,4 @@
-flectra.define('sale_product_matrix.product_configurator', function (require) {
+sleektiv.define('sale_product_matrix.product_configurator', function (require) {
 var ProductConfiguratorWidget = require('sale_product_configurator.product_configurator');
 
 /**

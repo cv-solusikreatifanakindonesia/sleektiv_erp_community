@@ -1,4 +1,4 @@
-flectra.define('root.widget', function (require) {
+sleektiv.define('root.widget', function (require) {
 'use strict';
 
 const AbstractService = require('web.AbstractService');

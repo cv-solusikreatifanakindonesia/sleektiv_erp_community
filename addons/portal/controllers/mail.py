@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 from werkzeug import urls
 from werkzeug.exceptions import NotFound, Forbidden
 
-from flectra import http, _
-from flectra.http import request
-from flectra.osv import expression
-from flectra.tools import consteq, plaintext2html
-from flectra.addons.mail.controllers.main import MailController
-from flectra.addons.portal.controllers.portal import CustomerPortal
-from flectra.exceptions import AccessError, MissingError, UserError
+from sleektiv import http, _
+from sleektiv.http import request
+from sleektiv.osv import expression
+from sleektiv.tools import consteq, plaintext2html
+from sleektiv.addons.mail.controllers.main import MailController
+from sleektiv.addons.portal.controllers.portal import CustomerPortal
+from sleektiv.exceptions import AccessError, MissingError, UserError
 
 
 def _check_special_access(res_model, res_id, token='', _hash='', pid=False):

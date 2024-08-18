@@ -1,6 +1,6 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, SUPERUSER_ID
+from sleektiv import api, SUPERUSER_ID
 
 from . import models
 from . import controllers

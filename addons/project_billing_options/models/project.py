@@ -1,8 +1,8 @@
 # coding: utf-8
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import models, fields, api, _
-from flectra.osv import expression
-from flectra.addons.web.controllers.main import clean_action
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv import models, fields, api, _
+from sleektiv.osv import expression
+from sleektiv.addons.web.controllers.main import clean_action
 import json
 
 

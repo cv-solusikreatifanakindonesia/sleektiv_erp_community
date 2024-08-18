@@ -1,4 +1,4 @@
-flectra.define('web.name_and_signature', function (require) {
+sleektiv.define('web.name_and_signature', function (require) {
 'use strict';
 
 var core = require('web.core');

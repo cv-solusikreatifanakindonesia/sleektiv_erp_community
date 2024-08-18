@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.http_routing.models.ir_http import url_lang
-from flectra.addons.website.tools import MockRequest
-from flectra.tests import HttpCase, tagged
+from sleektiv.addons.http_routing.models.ir_http import url_lang
+from sleektiv.addons.website.tools import MockRequest
+from sleektiv.tests import HttpCase, tagged
 
 
 @tagged('-at_install', 'post_install')

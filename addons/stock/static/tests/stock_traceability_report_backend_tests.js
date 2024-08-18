@@ -1,4 +1,4 @@
-flectra.define('stock.stock_traceability_report_backend_tests', function (require) {
+sleektiv.define('stock.stock_traceability_report_backend_tests', function (require) {
     "use strict";
 
     const ControlPanel = require('web.ControlPanel');

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 
 from psycopg2 import Error, OperationalError
 
-from flectra import _, api, fields, models
-from flectra.exceptions import RedirectWarning, UserError, ValidationError
-from flectra.osv import expression
-from flectra.tools.float_utils import float_compare, float_is_zero, float_round
+from sleektiv import _, api, fields, models
+from sleektiv.exceptions import RedirectWarning, UserError, ValidationError
+from sleektiv.osv import expression
+from sleektiv.tools.float_utils import float_compare, float_is_zero, float_round
 
 _logger = logging.getLogger(__name__)
 

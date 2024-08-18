@@ -1,4 +1,4 @@
-flectra.define("website.tour.homepage", function (require) {
+sleektiv.define("website.tour.homepage", function (require) {
 "use strict";
 
 const wTourUtils = require("website.tour_utils");

@@ -1,4 +1,4 @@
-flectra.define("web.patchMixin_tests", function (require) {
+sleektiv.define("web.patchMixin_tests", function (require) {
 "use strict";
 
 const patchMixin = require('web.patchMixin');

@@ -1,4 +1,4 @@
-flectra.define('survey.form', function (require) {
+sleektiv.define('survey.form', function (require) {
 'use strict';
 
 var field_utils = require('web.field_utils');

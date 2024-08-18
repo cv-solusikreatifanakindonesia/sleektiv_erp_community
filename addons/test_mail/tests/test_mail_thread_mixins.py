@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import exceptions, tools
-from flectra.addons.test_mail.tests.common import TestMailCommon, TestRecipients
-from flectra.tests.common import tagged
-from flectra.tools import mute_logger
+from sleektiv import exceptions, tools
+from sleektiv.addons.test_mail.tests.common import TestMailCommon, TestRecipients
+from sleektiv.tests.common import tagged
+from sleektiv.tools import mute_logger
 
 
 @tagged('mail_thread', 'mail_blacklist')
 class TestMailThread(TestMailCommon, TestRecipients):
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_blacklist_mixin_email_normalized(self):
         """ Test email_normalized and is_blacklisted fields behavior, notably
         when dealing with encapsulated email fields and multi-email input. """

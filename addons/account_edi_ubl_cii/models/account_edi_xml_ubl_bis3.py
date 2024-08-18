@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra import models, _
-from flectra.addons.account_edi_ubl_cii.models.account_edi_common import COUNTRY_EAS
+from sleektiv import models, _
+from sleektiv.addons.account_edi_ubl_cii.models.account_edi_common import COUNTRY_EAS
 
 from stdnum.no import mva
 

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, fields, models
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.tools.translate import html_translate
+from sleektiv import api, fields, models
+from sleektiv.addons.http_routing.models.ir_http import slug
+from sleektiv.tools.translate import html_translate
 
 
 class WebsiteResPartner(models.Model):

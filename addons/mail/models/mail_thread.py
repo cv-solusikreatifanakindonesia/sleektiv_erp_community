@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import ast
 import base64
@@ -24,12 +24,12 @@ from lxml import etree
 from werkzeug import urls
 from xmlrpc import client as xmlrpclib
 
-from flectra import _, api, exceptions, fields, models, tools, registry, SUPERUSER_ID
-from flectra.exceptions import MissingError
-from flectra.osv import expression
+from sleektiv import _, api, exceptions, fields, models, tools, registry, SUPERUSER_ID
+from sleektiv.exceptions import MissingError
+from sleektiv.osv import expression
 
-from flectra.tools import ustr
-from flectra.tools.misc import clean_context, split_every
+from sleektiv.tools import ustr
+from sleektiv.tools.misc import clean_context, split_every
 
 _logger = logging.getLogger(__name__)
 
@@ -44,7 +44,7 @@ class MailThread(models.AbstractModel):
         communication history. ``mail.thread`` also manages followers of
         inheriting classes. All features and expected behavior are managed
         by mail.thread. Widgets has been designed for the 7.0 and following
-        versions of Flectra.
+        versions of Sleektiv.
 
         Inheriting classes are not required to implement any method, as the
         default implementation will work for any model. However it is common
@@ -1972,7 +1972,7 @@ class MailThread(models.AbstractModel):
         handle ir ui views. """
         values = kwargs.pop('values', None) or dict()
         try:
-            from flectra.addons.http_routing.models.ir_http import slug
+            from sleektiv.addons.http_routing.models.ir_http import slug
             values['slug'] = slug
         except ImportError:
             values['slug'] = lambda self: self.id
@@ -2283,7 +2283,7 @@ class MailThread(models.AbstractModel):
         mail_subject = ' '.join((mail_subject or '').splitlines())
         # compute references: set references to the parent and add current message just to
         # have a fallback in case replies mess with Messsage-Id in the In-Reply-To (e.g. amazon
-        # SES SMTP may replace Message-Id and In-Reply-To refers an internal ID not stored in Flectra)
+        # SES SMTP may replace Message-Id and In-Reply-To refers an internal ID not stored in Sleektiv)
         message_sudo = message.sudo()
         if message_sudo.parent_id:
             references = f'{message_sudo.parent_id.message_id} {message_sudo.message_id}'

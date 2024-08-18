@@ -1,4 +1,4 @@
-flectra.define('web_tour.TourStepUtils', function (require) {
+sleektiv.define('web_tour.TourStepUtils', function (require) {
 'use strict';
 
 const core = require('web.core');

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.exceptions import UserError
-from flectra.tests.common import TransactionCase, tagged
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.exceptions import UserError
+from sleektiv.tests.common import TransactionCase, tagged
 
 
 @tagged('post_install_l10n', 'post_install', '-at_install')

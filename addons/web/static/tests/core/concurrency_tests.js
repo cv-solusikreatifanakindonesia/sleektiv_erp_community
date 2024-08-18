@@ -1,4 +1,4 @@
-flectra.define('web.concurrency_tests', function (require) {
+sleektiv.define('web.concurrency_tests', function (require) {
 "use strict";
 
 var concurrency = require('web.concurrency');

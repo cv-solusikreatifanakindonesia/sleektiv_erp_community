@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 
@@ -7,9 +7,9 @@ from babel.dates import format_date
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
-from flectra.release import version
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError
+from sleektiv.release import version
 
 
 class CrmTeam(models.Model):

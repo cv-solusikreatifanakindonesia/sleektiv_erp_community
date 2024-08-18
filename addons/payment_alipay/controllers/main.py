@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 import pprint
 import requests
 import werkzeug
 
-from flectra import http
-from flectra.http import request
+from sleektiv import http
+from sleektiv.http import request
 
 _logger = logging.getLogger(__name__)
 
@@ -53,11 +53,11 @@ class AlipayController(http.Controller):
     def alipay_return(self, **post):
         """ Alipay return
 
-        The route is flagged with `save_session=False` to prevent Flectra from assigning a new session
+        The route is flagged with `save_session=False` to prevent Sleektiv from assigning a new session
         to the user if they are redirected to this route with a POST request. Indeed, as the session
         cookie is created without a `SameSite` attribute, some browsers that don't implement the
         recommended default `SameSite=Lax` behavior will not include the cookie in the redirection
-        request from the payment provider to Flectra. As the redirection to the '/payment/status' page
+        request from the payment provider to Sleektiv. As the redirection to the '/payment/status' page
         will satisfy any specification of the `SameSite` attribute, the session of the user will be
         retrieved and with it the transaction which will be immediately post-processed.
         """

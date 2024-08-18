@@ -1,6 +1,6 @@
-# Part of flectra See LICENSE file for full copyright and licensing details.
+# Part of sleektiv See LICENSE file for full copyright and licensing details.
 
-from flectra import models
+from sleektiv import models
 
 
 class HelpdeskTicket(models.Model):

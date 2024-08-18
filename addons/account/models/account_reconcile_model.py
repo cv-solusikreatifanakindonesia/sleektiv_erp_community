@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, fields, models, _
-from flectra.tools import float_compare, float_is_zero
-from flectra.osv.expression import get_unaccent_wrapper
-from flectra.exceptions import UserError, ValidationError
+from sleektiv import api, fields, models, _
+from sleektiv.tools import float_compare, float_is_zero
+from sleektiv.osv.expression import get_unaccent_wrapper
+from sleektiv.exceptions import UserError, ValidationError
 import re
 from math import copysign
 import itertools

@@ -1,4 +1,4 @@
-flectra.define('website.customizeMenu', function (require) {
+sleektiv.define('website.customizeMenu', function (require) {
 'use strict';
 
 var core = require('web.core');

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, models, fields, tools, _
-from flectra.tools import DEFAULT_SERVER_DATE_FORMAT, float_repr, str2bool
-from flectra.tests.common import Form
-from flectra.exceptions import RedirectWarning, UserError
+from sleektiv import api, models, fields, tools, _
+from sleektiv.tools import DEFAULT_SERVER_DATE_FORMAT, float_repr, str2bool
+from sleektiv.tests.common import Form
+from sleektiv.exceptions import RedirectWarning, UserError
 
 from datetime import datetime
 from lxml import etree
@@ -58,7 +58,7 @@ class AccountEdiFormat(models.Model):
         if not edi_document.attachment_id:
             return
 
-        pdf_writer.embed_flectra_attachment(edi_document.attachment_id, subtype='text/xml')
+        pdf_writer.embed_sleektiv_attachment(edi_document.attachment_id, subtype='text/xml')
         if not pdf_writer.is_pdfa and str2bool(self.env['ir.config_parameter'].sudo().get_param('edi.use_pdfa', 'False')):
             try:
                 pdf_writer.convert_to_pdfa()
@@ -273,7 +273,7 @@ class AccountEdiFormat(models.Model):
             elements = tree.xpath('//ram:InvoiceCurrencyCode', namespaces=tree.nsmap)
             if elements:
                 currency_str = elements[0].text
-            # Fallback for old invoices from flectra where the InvoiceCurrencyCode was not present
+            # Fallback for old invoices from sleektiv where the InvoiceCurrencyCode was not present
             else:
                 elements = tree.xpath('//ram:TaxTotalAmount', namespaces=tree.nsmap)
                 if elements:

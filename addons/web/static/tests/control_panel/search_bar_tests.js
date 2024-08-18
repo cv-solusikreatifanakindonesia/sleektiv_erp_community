@@ -1,4 +1,4 @@
-flectra.define('web.search_bar_tests', function (require) {
+sleektiv.define('web.search_bar_tests', function (require) {
     "use strict";
 
     const { Model } = require('web/static/src/js/model.js');

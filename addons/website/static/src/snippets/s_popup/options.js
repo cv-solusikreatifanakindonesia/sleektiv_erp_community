@@ -1,4 +1,4 @@
-flectra.define('website.s_popup_options', function (require) {
+sleektiv.define('website.s_popup_options', function (require) {
 'use strict';
 
 const options = require('web_editor.snippets.options');

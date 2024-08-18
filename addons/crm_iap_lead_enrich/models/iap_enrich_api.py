@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, api
-from flectra.addons.iap.tools import iap_tools
+from sleektiv import models, api
+from sleektiv.addons.iap.tools import iap_tools
 
 
 class IapEnrichAPI(models.AbstractModel):

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 import io
@@ -7,11 +7,11 @@ import os
 import mimetypes
 from werkzeug.utils import redirect
 
-from flectra import http
-from flectra.exceptions import AccessError
-from flectra.http import request
-from flectra.addons.sale.controllers.portal import CustomerPortal
-from flectra.addons.website_sale.controllers.main import WebsiteSale
+from sleektiv import http
+from sleektiv.exceptions import AccessError
+from sleektiv.http import request
+from sleektiv.addons.sale.controllers.portal import CustomerPortal
+from sleektiv.addons.website_sale.controllers.main import WebsiteSale
 
 
 class WebsiteSaleDigitalConfirmation(WebsiteSale):

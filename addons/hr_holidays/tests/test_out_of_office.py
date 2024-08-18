@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from flectra.addons.base.tests.common import TransactionCaseWithUserDemo
-from flectra.tests.common import tagged, users, warmup
-from flectra.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from sleektiv.addons.base.tests.common import TransactionCaseWithUserDemo
+from sleektiv.tests.common import tagged, users, warmup
+from sleektiv.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 @tagged('out_of_office')

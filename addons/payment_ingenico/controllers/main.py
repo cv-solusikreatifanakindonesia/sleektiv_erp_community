@@ -4,10 +4,10 @@ import pprint
 import werkzeug
 from werkzeug.urls import url_unquote_plus
 
-from flectra import http
-from flectra.http import request
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.addons.payment.controllers.portal import PaymentProcessing
+from sleektiv import http
+from sleektiv.http import request
+from sleektiv.addons.payment.models.payment_acquirer import ValidationError
+from sleektiv.addons.payment.controllers.portal import PaymentProcessing
 
 _logger = logging.getLogger(__name__)
 

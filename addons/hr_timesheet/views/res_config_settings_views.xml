@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<sleektiv>
     <menuitem id="hr_timesheet_menu_configuration" name="Configuration" parent="timesheet_menu_root"
         groups="group_timesheet_manager" sequence="100"/>
 
@@ -120,4 +120,4 @@
 
     <menuitem id="hr_timesheet_config_settings_menu_action" name="Settings" parent="hr_timesheet_menu_configuration"
         action="hr_timesheet_config_settings_action" sequence="0" groups="base.group_system"/>
-</flectra>
+</sleektiv>

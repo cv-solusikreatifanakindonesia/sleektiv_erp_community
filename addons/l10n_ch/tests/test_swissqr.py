@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import time
 
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.tests import tagged
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.tests import tagged
 
 CH_IBAN = 'CH15 3881 5158 3845 3843 7'
 QR_IBAN = 'CH21 3080 8001 2345 6782 7'
@@ -160,7 +160,7 @@ class TestSwissQR(AccountTestInvoicingCommon):
 
     def test_swissQR_missing_bank(self):
         # Let us test the generation of a SwissQR for an invoice, first by showing an
-        # QR is included in the invoice is only generated when Flectra has all the data it needs.
+        # QR is included in the invoice is only generated when Sleektiv has all the data it needs.
         self.invoice1.action_post()
         self.swissqr_not_generated(self.invoice1)
 

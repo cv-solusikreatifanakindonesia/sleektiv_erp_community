@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.WrappedProductNameLines', function(require) {
+sleektiv.define('point_of_sale.WrappedProductNameLines', function(require) {
     'use strict';
 
     const PosComponent = require('point_of_sale.PosComponent');

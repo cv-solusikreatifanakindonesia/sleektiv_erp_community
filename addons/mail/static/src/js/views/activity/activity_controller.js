@@ -1,4 +1,4 @@
-flectra.define('mail.ActivityController', function (require) {
+sleektiv.define('mail.ActivityController', function (require) {
 "use strict";
 
 require('mail.Activity');
@@ -73,7 +73,7 @@ var ActivityController = BasicController.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onEmptyCell: function (ev) {
         var state = this.model.get(this.handle);

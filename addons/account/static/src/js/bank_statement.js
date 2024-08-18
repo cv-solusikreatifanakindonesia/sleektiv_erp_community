@@ -1,4 +1,4 @@
-flectra.define('account.bank_statement', function(require) {
+sleektiv.define('account.bank_statement', function(require) {
     "use strict";
 
     var KanbanController = require("web.KanbanController");

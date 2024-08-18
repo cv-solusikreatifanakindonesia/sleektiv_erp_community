@@ -1,4 +1,4 @@
-flectra.define('website.s_image_gallery', function (require) {
+sleektiv.define('website.s_image_gallery', function (require) {
 'use strict';
 
 var core = require('web.core');

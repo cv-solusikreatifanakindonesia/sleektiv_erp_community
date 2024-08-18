@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/model/model_field.js', function (require) {
+sleektiv.define('mail/static/src/model/model_field.js', function (require) {
 'use strict';
 
 const { clear, FieldCommand } = require('mail/static/src/model/model_field_command.js');

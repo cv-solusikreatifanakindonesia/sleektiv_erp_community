@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from lxml import etree
 
-from flectra import models
-from flectra.tools.misc import hmac
+from sleektiv import models
+from sleektiv.tools.misc import hmac
 
 
 class View(models.Model):

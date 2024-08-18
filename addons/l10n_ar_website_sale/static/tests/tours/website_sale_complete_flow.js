@@ -1,4 +1,4 @@
-flectra.define('l10n_ar_website_sale.website_sale_tour', function (require) {
+sleektiv.define('l10n_ar_website_sale.website_sale_tour', function (require) {
 "use strict";
 
     let tour = require('web_tour.tour');

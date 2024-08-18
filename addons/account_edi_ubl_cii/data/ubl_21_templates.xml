@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
 
     <template id="ubl_21_InvoiceLineType" inherit_id="account_edi_ubl_cii.ubl_20_InvoiceLineType" primary="True">
         <xpath expr="//*[local-name()='Item']" position="before">
@@ -61,4 +61,4 @@
         </xpath>
     </template>
 
-</flectra>
+</sleektiv>

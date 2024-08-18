@@ -1,4 +1,4 @@
-flectra.define('website.ripple_effect', function (require) {
+sleektiv.define('website.ripple_effect', function (require) {
 'use strict';
 
 const publicWidget = require('web.public.widget');

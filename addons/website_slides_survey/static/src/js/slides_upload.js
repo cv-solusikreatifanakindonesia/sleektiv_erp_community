@@ -1,4 +1,4 @@
-flectra.define('website_slides_survey.upload_modal', function (require) {
+sleektiv.define('website_slides_survey.upload_modal', function (require) {
 "use strict";
 
 var core = require('web.core');

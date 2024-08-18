@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import tagged
-from flectra.tests.common import HttpCase, TransactionCase
-from flectra.addons.base.tests.common import HttpCaseWithUserPortal
+from sleektiv.tests import tagged
+from sleektiv.tests.common import HttpCase, TransactionCase
+from sleektiv.addons.base.tests.common import HttpCaseWithUserPortal
 
 @tagged('post_install', '-at_install')
 class TestWebsiteSaleCartRecovery(HttpCaseWithUserPortal):

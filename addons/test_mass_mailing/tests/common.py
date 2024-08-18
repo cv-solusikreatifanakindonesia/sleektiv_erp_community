@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.mass_mailing.tests.common import MassMailCommon
-from flectra.addons.test_mail.tests.common import TestMailCommon
+from sleektiv.addons.mass_mailing.tests.common import MassMailCommon
+from sleektiv.addons.test_mail.tests.common import TestMailCommon
 
 
 class TestMassMailCommon(MassMailCommon, TestMailCommon):
@@ -26,9 +26,9 @@ class TestMassMailCommon(MassMailCommon, TestMailCommon):
             'preview': 'Hi ${object.name} :)',
             'body_html': """<div><p>Hello ${object.name}</p>,
 % set url = "www.flectrahq.com"
-% set httpurl = "https://www.flectra.eu"
-<span>Website0: <a id="url0" href="https://www.flectra.tz/my/${object.name}">https://www.flectra.tz/my/${object.name}</a></span>
-<span>Website1: <a id="url1" href="https://www.flectra.be">https://www.flectra.be</a></span>
+% set httpurl = "https://www.sleektiv.eu"
+<span>Website0: <a id="url0" href="https://www.sleektiv.tz/my/${object.name}">https://www.sleektiv.tz/my/${object.name}</a></span>
+<span>Website1: <a id="url1" href="https://www.sleektiv.be">https://www.sleektiv.be</a></span>
 <span>Website2: <a id="url2" href="https://${url}">https://${url}</a></span>
 <span>Website3: <a id="url3" href="${httpurl}">${httpurl}</a></span>
 <span>External1: <a id="url4" href="https://www.example.com/foo/bar?baz=qux">Youpie</a></span>

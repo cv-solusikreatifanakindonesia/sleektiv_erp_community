@@ -1,4 +1,4 @@
-flectra.define('website_sale_delivery.checkout', function (require) {
+sleektiv.define('website_sale_delivery.checkout', function (require) {
 'use strict';
 
 var core = require('web.core');

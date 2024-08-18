@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 from unittest.mock import patch
 
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.addons.test_mail.tests.common import TestMailCommon
-from flectra.addons.test_mail.models.test_mail_models import MailTestSimple
-from flectra.exceptions import AccessError
-from flectra.tools import mute_logger, formataddr
-from flectra.tests import tagged, users
+from sleektiv.addons.mail.tests.common import mail_new_test_user
+from sleektiv.addons.test_mail.tests.common import TestMailCommon
+from sleektiv.addons.test_mail.models.test_mail_models import MailTestSimple
+from sleektiv.exceptions import AccessError
+from sleektiv.tools import mute_logger, formataddr
+from sleektiv.tests import tagged, users
 
 
 @tagged('mail_message')
@@ -27,7 +27,7 @@ class TestMessageValues(TestMailCommon):
         })
         cls.Message = cls.env['mail.message'].with_user(cls.user_employee)
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_mail_message_format(self):
         record1 = self.env['mail.test.simple'].create({'name': 'Test1'})
         message = self.env['mail.message'].create([{
@@ -41,7 +41,7 @@ class TestMessageValues(TestMailCommon):
         res = message.message_format()
         self.assertEqual(res[0].get('record_name'), 'Test2')
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_mail_message_format_access(self):
         """
         User that doesn't have access to a record should still be able to fetch
@@ -72,7 +72,7 @@ class TestMessageValues(TestMailCommon):
             '<img src="/web/image/{attachment.id}?access_token={attachment.access_token}" alt="image0" width="2"></p>'.format(attachment=msg.attachment_ids[0])
         )
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     @users('employee')
     def test_mail_message_values_fromto_long_name(self):
         """ Long headers may break in python if above 78 chars as folding is not
@@ -132,7 +132,7 @@ class TestMessageValues(TestMailCommon):
         self.assertEqual(msg.reply_to, f"{sanitized_alias_name}@{self.alias_domain}",
                          'Reply-To: even a long email is ok as only formataddr is problematic')
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_mail_message_values_fromto_no_document_values(self):
         msg = self.Message.create({
             'reply_to': 'test.reply@example.com',
@@ -142,7 +142,7 @@ class TestMessageValues(TestMailCommon):
         self.assertEqual(msg.reply_to, 'test.reply@example.com')
         self.assertEqual(msg.email_from, 'test.from@example.com')
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_mail_message_values_fromto_no_document(self):
         msg = self.Message.create({})
         self.assertIn('-private', msg.message_id.split('@')[0], 'mail_message: message_id for a void message should be a "private" one')
@@ -168,7 +168,7 @@ class TestMessageValues(TestMailCommon):
         self.assertEqual(msg.reply_to, formataddr((self.user_employee.name, self.user_employee.email)))
         self.assertEqual(msg.email_from, formataddr((self.user_employee.name, self.user_employee.email)))
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_mail_message_values_fromto_document_alias(self):
         msg = self.Message.create({
             'model': 'mail.test.container',
@@ -205,7 +205,7 @@ class TestMessageValues(TestMailCommon):
         self.assertEqual(msg.reply_to, formataddr((reply_to_name, reply_to_email)))
         self.assertEqual(msg.email_from, formataddr((self.user_employee.name, self.user_employee.email)))
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_mail_message_values_fromto_document_no_alias(self):
         test_record = self.env['mail.test.simple'].create({'name': 'Test', 'email_from': 'ignasse@example.com'})
 
@@ -219,7 +219,7 @@ class TestMessageValues(TestMailCommon):
         self.assertEqual(msg.reply_to, formataddr((reply_to_name, reply_to_email)))
         self.assertEqual(msg.email_from, formataddr((self.user_employee.name, self.user_employee.email)))
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_mail_message_values_fromto_document_manual_alias(self):
         test_record = self.env['mail.test.simple'].create({'name': 'Test', 'email_from': 'ignasse@example.com'})
         alias = self.env['mail.alias'].create({
@@ -283,7 +283,7 @@ class TestMessageAccess(TestMailCommon):
             'res_id': cls.group_private.id,
         })
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mail_message_access_search(self):
         # Data: various author_ids, partner_ids, documents
         msg1 = self.env['mail.message'].create({
@@ -340,12 +340,12 @@ class TestMessageAccess(TestMailCommon):
     # READ
     # --------------------------------------------------
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('sleektiv.addons.base.models.ir_model', 'sleektiv.models')
     def test_mail_message_access_read_crash(self):
         with self.assertRaises(AccessError):
             self.message.with_user(self.user_employee).read()
 
-    @mute_logger('flectra.models')
+    @mute_logger('sleektiv.models')
     def test_mail_message_access_read_crash_portal(self):
         with self.assertRaises(AccessError):
             self.message.with_user(self.user_portal).read(['body', 'message_type', 'subtype_id'])
@@ -386,7 +386,7 @@ class TestMessageAccess(TestMailCommon):
     # CREATE
     # --------------------------------------------------
 
-    @mute_logger('flectra.addons.base.models.ir_model')
+    @mute_logger('sleektiv.addons.base.models.ir_model')
     def test_mail_message_access_create_crash_public(self):
         # Do: Bert creates a message on Pigs -> ko, no creation rights
         with self.assertRaises(AccessError):
@@ -396,13 +396,13 @@ class TestMessageAccess(TestMailCommon):
         with self.assertRaises(AccessError):
             self.env['mail.message'].with_user(self.user_public).create({'model': 'mail.channel', 'res_id': self.group_public.id, 'body': 'Test'})
 
-    @mute_logger('flectra.models')
+    @mute_logger('sleektiv.models')
     def test_mail_message_access_create_crash(self):
         # Do: Bert create a private message -> ko, no creation rights
         with self.assertRaises(AccessError):
             self.env['mail.message'].with_user(self.user_employee).create({'model': 'mail.channel', 'res_id': self.group_private.id, 'body': 'Test'})
 
-    @mute_logger('flectra.models')
+    @mute_logger('sleektiv.models')
     def test_mail_message_access_create_doc(self):
         Message = self.env['mail.message'].with_user(self.user_employee)
         # Do: Raoul creates a message on Jobs -> ok, write access to the related document
@@ -425,7 +425,7 @@ class TestMessageAccess(TestMailCommon):
         is not accessible by current user. """
         test_record = self.env['mail.test.simple'].with_context(self._test_context).create({'name': 'Test', 'email_from': 'ignasse@example.com'})
         partner_1 = self.env['res.partner'].create({
-            'name': 'Jitendra Prajapati (jpr-flectra)',
+            'name': 'Jitendra Prajapati (jpr-sleektiv)',
             'email': 'jpr@flectrahq.com',
         })
         test_record.message_subscribe((partner_1 | self.user_admin.partner_id).ids)
@@ -572,7 +572,7 @@ class TestMessageModeration(TestMailCommon):
         cls.msg_c1_admin2 = cls._add_messages(cls.channel_1, 'Body12', author=cls.partner_admin, moderation_status='pending_moderation')
         cls.msg_c1_portal = cls._add_messages(cls.channel_1, 'Body21', author=cls.partner_portal, moderation_status='pending_moderation')
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_moderate_accept(self):
         self._reset_bus()
         self.assertFalse(self.msg_c1_admin1.channel_ids | self.msg_c1_admin2.channel_ids | self.msg_c1_portal.channel_ids)
@@ -583,7 +583,7 @@ class TestMessageModeration(TestMailCommon):
         self.assertEqual(self.msg_c1_admin2.moderation_status, 'pending_moderation')
         self.assertBusNotifications([(self.cr.dbname, 'mail.channel', self.channel_1.id)])
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_moderate_allow(self):
         self._reset_bus()
 
@@ -596,7 +596,7 @@ class TestMessageModeration(TestMailCommon):
             (self.cr.dbname, 'mail.channel', self.channel_1.id),
             (self.cr.dbname, 'mail.channel', self.channel_1.id)])
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_moderate_reject(self):
         with self.mock_mail_gateway():
             (self.msg_c1_admin1 | self.msg_c1_portal).with_user(self.user_employee)._moderate_send_reject_email('Title', 'Message to author')
@@ -614,7 +614,7 @@ class TestMessageModeration(TestMailCommon):
             set(['<div>Message to author</div>\n%s\n' % self.msg_c1_admin1.body, '<div>Message to author</div>\n%s\n' % self.msg_c1_portal.body])
         )  # TDE note: \n are added by append content to html, because why not
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_moderate_discard(self):
         self._reset_bus()
         id1, id2, id3 = self.msg_c1_admin1.id, self.msg_c1_admin2.id, self.msg_c1_portal.id  # save ids because unlink will discard them
@@ -629,7 +629,7 @@ class TestMessageModeration(TestMailCommon):
              {'type': 'deletion', 'message_ids': [id3]}]  # author of 1 message
         )
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_notify_moderators(self):
         # create pending messages in another channel to have two notification to push
         channel_2 = self.env['mail.channel'].create({

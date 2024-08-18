@@ -1,4 +1,4 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 # Endpoints of the API.
 # See https://docs.adyen.com/api-explorer/#/CheckoutService/v68/overview for Checkout API

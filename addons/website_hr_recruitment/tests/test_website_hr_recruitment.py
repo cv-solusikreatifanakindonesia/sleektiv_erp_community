@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.api import Environment
-import flectra.tests
+from sleektiv.api import Environment
+import sleektiv.tests
 
-@flectra.tests.tagged('post_install', '-at_install')
-class TestWebsiteHrRecruitmentForm(flectra.tests.HttpCase):
+@sleektiv.tests.tagged('post_install', '-at_install')
+class TestWebsiteHrRecruitmentForm(sleektiv.tests.HttpCase):
     def test_tour(self):
         job_guru = self.env['hr.job'].create({
             'name': 'Guru',

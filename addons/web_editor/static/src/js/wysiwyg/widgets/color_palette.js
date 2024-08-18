@@ -1,4 +1,4 @@
-flectra.define('web_editor.ColorPalette', function (require) {
+sleektiv.define('web_editor.ColorPalette', function (require) {
 'use strict';
 
 const ajax = require('web.ajax');

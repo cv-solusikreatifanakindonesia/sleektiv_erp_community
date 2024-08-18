@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<flectra>
+<sleektiv>
     <!-- VAT Registered -->
     <record id="l10n_ph_fiscal_position_tax_sale_vat_registered_vat_exempt" model="account.fiscal.position.tax.template">
         <field name="tax_src_id" ref="l10n_ph_tax_sale_vat_exempt" />
@@ -21,4 +21,4 @@
         <field name="tax_dest_id" ref="l10n_ph_tax_purchase_vat_exempt" />
         <field name="position_id" ref="l10n_ph_fiscal_position_vat_exempt" />
     </record>
-</flectra>
+</sleektiv>

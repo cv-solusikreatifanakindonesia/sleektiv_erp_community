@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Assets Management',
@@ -12,8 +12,8 @@
     'category': 'Accounting',
     'sequence': 10,
     'license': 'LGPL-3',
-    'company': 'FlectraHQ',
-    'maintainer': 'FlectraHQ',
+    'company': 'SleektivHQ',
+    'maintainer': 'SleektivHQ',
     'website': 'https://www.flectrahq.com',
     'images': ['static/description/assets.gif'],
     'data': [

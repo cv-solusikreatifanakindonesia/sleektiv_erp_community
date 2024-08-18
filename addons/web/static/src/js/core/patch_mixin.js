@@ -1,4 +1,4 @@
-flectra.define("web.patchMixin", function () {
+sleektiv.define("web.patchMixin", function () {
     "use strict";
 
     /**

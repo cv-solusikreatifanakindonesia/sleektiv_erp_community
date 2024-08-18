@@ -1,4 +1,4 @@
-flectra.define('survey.fields_form', function (require) {
+sleektiv.define('survey.fields_form', function (require) {
 "use strict";
 
 var FieldRegistry = require('web.field_registry');

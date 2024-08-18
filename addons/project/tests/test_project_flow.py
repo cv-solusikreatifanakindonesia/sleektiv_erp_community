@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 
 from .test_project_base import TestProjectCommon
-from flectra.tools import mute_logger
-from flectra.modules.module import get_resource_path
+from sleektiv.tools import mute_logger
+from sleektiv.modules.module import get_resource_path
 
 
 EMAIL_TPL = """Return-Path: <whatever-2a840@postmaster.twitter.com>
@@ -41,7 +41,7 @@ class TestProjectFlow(TestProjectCommon):
         dogs = pigs.copy()
         self.assertEqual(len(dogs.tasks), 2, 'project: duplicating a project must duplicate its tasks')
 
-    @mute_logger('flectra.addons.mail.mail_thread')
+    @mute_logger('sleektiv.addons.mail.mail_thread')
     def test_task_process_without_stage(self):
         # Do: incoming mail from an unknown partner on an alias creates a new task 'Frogs'
         task = self.format_and_process(
@@ -68,7 +68,7 @@ class TestProjectFlow(TestProjectCommon):
         self.assertEqual(task.project_id.id, self.project_pigs.id, 'project_task: incorrect project')
         self.assertEqual(task.stage_id.sequence, False, "project_task: shouldn't have a stage, i.e. sequence=False")
 
-    @mute_logger('flectra.addons.mail.mail_thread')
+    @mute_logger('sleektiv.addons.mail.mail_thread')
     def test_task_process_with_stages(self):
         # Do: incoming mail from an unknown partner on an alias creates a new task 'Cats'
         task = self.format_and_process(
@@ -95,7 +95,7 @@ class TestProjectFlow(TestProjectCommon):
         self.assertEqual(task.project_id.id, self.project_goats.id, 'project_task: incorrect project')
         self.assertEqual(task.stage_id.sequence, 1, "project_task: should have a stage with sequence=1")
 
-    @mute_logger('flectra.addons.mail.mail_thread')
+    @mute_logger('sleektiv.addons.mail.mail_thread')
     def test_portal_visibility(self):
         # change portal visibility to the project and add Portal user as invited
         self.project_goats.write({

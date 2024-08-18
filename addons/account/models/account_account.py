@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from flectra import api, fields, models, _, tools
-from flectra.osv import expression
-from flectra.exceptions import UserError, ValidationError
+from sleektiv import api, fields, models, _, tools
+from sleektiv.osv import expression
+from sleektiv.exceptions import UserError, ValidationError
 
 
 class AccountAccountType(models.Model):

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, fields, models, _
-from flectra.addons.base.models.decimal_precision import DecimalPrecision
-from flectra.exceptions import RedirectWarning, UserError, ValidationError, AccessError
-from flectra.tools import float_compare, date_utils, email_split, email_re, float_is_zero
-from flectra.tools.misc import formatLang, format_date, get_lang
-from flectra.osv import expression
+from sleektiv import api, fields, models, _
+from sleektiv.addons.base.models.decimal_precision import DecimalPrecision
+from sleektiv.exceptions import RedirectWarning, UserError, ValidationError, AccessError
+from sleektiv.tools import float_compare, date_utils, email_split, email_re, float_is_zero
+from sleektiv.tools.misc import formatLang, format_date, get_lang
+from sleektiv.osv import expression
 
 from datetime import date, timedelta
 from collections import defaultdict
@@ -2329,16 +2329,16 @@ class AccountMove(models.Model):
         reference = 'RF{} {}'.format(check_digits, " ".join(["".join(x) for x in zip_longest(*[iter(partner_ref_nr)]*4, fillvalue="")]))
         return reference
 
-    def _get_invoice_reference_flectra_invoice(self):
-        """ This computes the reference based on the Flectra format.
+    def _get_invoice_reference_sleektiv_invoice(self):
+        """ This computes the reference based on the Sleektiv format.
             We simply return the number of the invoice, defined on the journal
             sequence.
         """
         self.ensure_one()
         return self.name
 
-    def _get_invoice_reference_flectra_partner(self):
-        """ This computes the reference based on the Flectra format.
+    def _get_invoice_reference_sleektiv_partner(self):
+        """ This computes the reference based on the Sleektiv format.
             The data used is the reference set on the partner or its database
             id otherwise. For instance if the reference of the customer is
             'dumb customer 97', the reference will be 'CUST/dumb customer 97'.
@@ -3207,7 +3207,7 @@ class AccountMove(models.Model):
             if application == 'Discount':
                 return 100
             return original_precision_get(self, application)
-        with patch('flectra.addons.base.models.decimal_precision.DecimalPrecision.precision_get', new=precision_get):
+        with patch('sleektiv.addons.base.models.decimal_precision.DecimalPrecision.precision_get', new=precision_get):
             yield
 
     def _message_post_after_hook(self, new_message, message_values):

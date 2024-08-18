@@ -1,4 +1,4 @@
-flectra.define('account.ShowResequenceRenderer', function (require) {
+sleektiv.define('account.ShowResequenceRenderer', function (require) {
 "use strict";
 
 const { Component } = owl;

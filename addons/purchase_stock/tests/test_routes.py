@@ -1,4 +1,4 @@
-from flectra.tests.common import TransactionCase, Form
+from sleektiv.tests.common import TransactionCase, Form
 
 
 class TestRoutes(TransactionCase):

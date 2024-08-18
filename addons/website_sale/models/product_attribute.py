@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import OrderedDict
 
-from flectra import models
+from sleektiv import models
 
 
 class ProductTemplateAttributeLine(models.Model):

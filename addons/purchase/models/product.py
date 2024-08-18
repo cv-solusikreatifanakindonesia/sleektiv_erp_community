@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, _
-from flectra.addons.base.models.res_partner import WARNING_MESSAGE, WARNING_HELP
-from flectra.tools.float_utils import float_round
+from sleektiv import api, fields, models, _
+from sleektiv.addons.base.models.res_partner import WARNING_MESSAGE, WARNING_HELP
+from sleektiv.tools.float_utils import float_round
 from dateutil.relativedelta import relativedelta
 
 

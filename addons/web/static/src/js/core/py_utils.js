@@ -1,4 +1,4 @@
-flectra.define('web.py_utils', function (require) {
+sleektiv.define('web.py_utils', function (require) {
 "use strict";
 
 var core = require('web.core');

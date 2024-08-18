@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 MAIL_TEMPLATE = """Return-Path: <whatever-2a840@postmaster.twitter.com>
 To: {to}
@@ -664,7 +664,7 @@ Résultat de recherche d'images pour "dessin la princesse au petit pois"
 --
 Soup
 
-FlectraHQ, Inc., Odoo S.A.
+SleektivHQ, Inc., Odoo S.A.
 Chaussée de Namur, 40
 B-1367 Grand Rosière
 Web: http://www.flectrahq.com
@@ -687,7 +687,7 @@ src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjCNAadd3NDM8g9w0P_-g
     <pre class="moz-signature" cols="72">--
 Soup
 
-FlectraHQ, Inc., Odoo S.A.
+SleektivHQ, Inc., Odoo S.A.
 Chaussée de Namur, 40
 B-1367 Grand Rosière
 Web: <a class="moz-txt-link-freetext" href="http://www.flectrahq.com">http://www.flectrahq.com</a> </pre>
@@ -708,7 +708,7 @@ From: {email_from}
 To: {to}
 Message-Id: <20191224103207.415713014C@example.com>
 Return-Path: <MAILER-DAEMON>
-Delivered-To: flectra+82240-account.invoice-19177@mycompany.example.com
+Delivered-To: sleektiv+82240-account.invoice-19177@mycompany.example.com
 Received: by example.com (Postfix) id 415713014C; Tue, 24 Dec
  2019 11:32:07 +0100 (CET)
 Auto-Submitted: auto-replied
@@ -752,7 +752,7 @@ From: "Test" <noreply+srglvrz-gmail.com@mycompany.example.com>
 Reply-To: "MY COMPANY" <info@mycompany.example.com>
 To: "Test" <test@anothercompany.example.com>
 Date: Tue, 24 Dec 2019 10:32:05 -0000
-X-Flectra-Objects: account.invoice-19177
+X-Sleektiv-Objects: account.invoice-19177
 
 --16063919151.b32bE0eD.7--"""
 
@@ -1073,7 +1073,7 @@ From: Mitchell Admin <admin@yourcompany.example.com>
 Reply-To: YourCompany Research & Development <aaa+catchall@test.ironsky>
 To: Raoul <{email_from}>
 Date: Mon, 15 Apr 2019 13:40:24 -0000
-X-Flectra-Objects: project.project-3, ,project.task-32
+X-Sleektiv-Objects: project.project-3, ,project.task-32
 X-Spam-Status: No, score=-2.0 required=5.0 tests=ALL_TRUSTED,BAYES_00,
     DKIM_ADSP_NXDOMAIN,HEADER_FROM_DIFFERENT_DOMAINS,HTML_MESSAGE
     shortcircuit=no autolearn=no autolearn_force=no version=3.4.2
@@ -1173,7 +1173,7 @@ Received: from eupp00.flectrahq.com (00.72.79.34.bc.googleusercontent.com [34.=
         by mailserver.flectrahq.com (Postfix) with ESMTPS id DFFDC17AA03;
         Tue, 10 Jan 2023 11:22:57 +0100 (CET)
 DKIM-Signature: v=3D1; a=3Drsa-sha256; c=3Dsimple/simple; d=3Dxxx.be;
-        s=3Dflectra; t=3D1673346178;
+        s=3Dsleektiv; t=3D1673346178;
         bh=3DYPJOqkUi8B28X1MrRUsgmsL8KRz/ZIkpbYyc6wNITXA=3D;
         h=3Dreferences:Subject:From:Reply-To:To:Date:From;
         b=3DCMqh7mUvpgUw+JpCeGluv1+MZ3y6EsXd0acmsfzpYBjcoy1InvD6FLT1/lQCcgetf
@@ -1190,7 +1190,7 @@ Reply-To: "SO/11" <catchall@xxx.flectrahq.com=
 >
 To: "rdesfrdgtfdrfesd@outlook.com" <rdesfrdgtfdrfesd@outlook.com>
 Date: Tue, 29 Feb 2023 06:09:06 -0000
-X-Flectra-Objects: sale.order-11
+X-Sleektiv-Objects: sale.order-11
 MIME-Version: 1.0
 Content-Type: multipart/mixed; boundary=3D"=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
 =3D=3D=3D=3D=3D5706316606908750110=3D=3D"

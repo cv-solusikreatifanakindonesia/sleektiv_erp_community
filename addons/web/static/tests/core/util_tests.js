@@ -1,4 +1,4 @@
-flectra.define('web.util_tests', function (require) {
+sleektiv.define('web.util_tests', function (require) {
 "use strict";
 
 var utils = require('web.utils');

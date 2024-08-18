@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.exceptions import UserError
-from flectra.tests.common import users
-from flectra.addons.website.tools import MockRequest
-from flectra.addons.website_blog.tests.common import TestWebsiteBlogCommon
-from flectra.addons.portal.controllers.mail import PortalChatter
+from sleektiv.exceptions import UserError
+from sleektiv.tests.common import users
+from sleektiv.addons.website.tools import MockRequest
+from sleektiv.addons.website_blog.tests.common import TestWebsiteBlogCommon
+from sleektiv.addons.portal.controllers.mail import PortalChatter
 
 
 class TestWebsiteBlogFlow(TestWebsiteBlogCommon):

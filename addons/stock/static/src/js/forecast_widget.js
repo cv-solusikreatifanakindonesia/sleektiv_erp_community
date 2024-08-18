@@ -1,4 +1,4 @@
-flectra.define('stock.forecast_widget', function (require) {
+sleektiv.define('stock.forecast_widget', function (require) {
 'use strict';
 
 const AbstractField = require('web.AbstractField');

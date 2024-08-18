@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.account_edi.tests.common import AccountEdiTestCommon
+from sleektiv.addons.account_edi.tests.common import AccountEdiTestCommon
 from unittest.mock import patch
-from flectra.tests import tagged
+from sleektiv.tests import tagged
 
 
 @tagged('post_install', '-at_install')
@@ -24,7 +24,7 @@ class TestAccountEdi(AccountEdiTestCommon):
         to_process = edi_docs._prepare_jobs()
         self.assertEqual(len(to_process), 2)
 
-        with patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._support_batching', return_value=True):
+        with patch('sleektiv.addons.account_edi.models.account_edi_format.AccountEdiFormat._support_batching', return_value=True):
             to_process = edi_docs._prepare_jobs()
             self.assertEqual(len(to_process), 1)
 
@@ -36,13 +36,13 @@ class TestAccountEdi(AccountEdiTestCommon):
         edi_docs |= self.create_edi_document(other_edi, 'to_send')
         edi_docs |= self.create_edi_document(other_edi, 'to_send')
 
-        with patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._support_batching', return_value=True):
+        with patch('sleektiv.addons.account_edi.models.account_edi_format.AccountEdiFormat._support_batching', return_value=True):
             to_process = edi_docs._prepare_jobs()
             self.assertEqual(len(to_process), 2)
 
-    @patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._post_invoice_edi')
+    @patch('sleektiv.addons.account_edi.models.account_edi_format.AccountEdiFormat._post_invoice_edi')
     def test_error(self, patched):
-        with patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._needs_web_services',
+        with patch('sleektiv.addons.account_edi.models.account_edi_format.AccountEdiFormat._needs_web_services',
                    new=lambda edi_format: True):
             edi_docs = self.create_edi_document(self.edi_format, 'to_send')
             edi_docs.error = 'Test Error'

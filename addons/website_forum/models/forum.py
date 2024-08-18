@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 import math
@@ -7,11 +7,11 @@ import re
 
 from datetime import datetime
 
-from flectra import api, fields, models, tools, SUPERUSER_ID, _
-from flectra.exceptions import UserError, ValidationError, AccessError
-from flectra.tools import misc, sql
-from flectra.tools.translate import html_translate
-from flectra.addons.http_routing.models.ir_http import slug
+from sleektiv import api, fields, models, tools, SUPERUSER_ID, _
+from sleektiv.exceptions import UserError, ValidationError, AccessError
+from sleektiv.tools import misc, sql
+from sleektiv.tools.translate import html_translate
+from sleektiv.addons.http_routing.models.ir_http import slug
 
 _logger = logging.getLogger(__name__)
 

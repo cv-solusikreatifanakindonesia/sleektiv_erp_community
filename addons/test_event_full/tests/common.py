@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta, time
 
-from flectra.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
-from flectra.addons.event_crm.tests.common import TestEventCrmCommon
-from flectra.addons.sales_team.tests.common import TestSalesCommon
-from flectra.addons.website.tests.test_website_visitor import MockVisitor
-from flectra.addons.website_event.tests.common import EventDtPatcher
+from sleektiv.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from sleektiv.addons.event_crm.tests.common import TestEventCrmCommon
+from sleektiv.addons.sales_team.tests.common import TestSalesCommon
+from sleektiv.addons.website.tests.test_website_visitor import MockVisitor
+from sleektiv.addons.website_event.tests.common import EventDtPatcher
 
 
 class TestEventFullCommon(TestEventCrmCommon, TestSalesCommon, EventDtPatcher, MockVisitor):

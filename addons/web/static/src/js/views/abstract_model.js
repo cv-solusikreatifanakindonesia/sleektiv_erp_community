@@ -1,4 +1,4 @@
-flectra.define('web.AbstractModel', function (require) {
+sleektiv.define('web.AbstractModel', function (require) {
 "use strict";
 
 /**

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from unittest import skip
 
-from flectra.addons.crm.tests.common import TestCrmCommon
-from flectra.tests import tagged, users
-from flectra.tools import mute_logger
+from sleektiv.addons.crm.tests.common import TestCrmCommon
+from sleektiv.tests import tagged, users
+from sleektiv.tools import mute_logger
 
 
 @tagged('mail_thread', 'mail_gateway')
@@ -86,7 +86,7 @@ class NewLeadNotification(TestCrmCommon):
         lead_user = lead.with_user(self.user_sales_manager)
         self.assertTrue(lead_user.message_needaction)
 
-    @mute_logger('flectra.addons.mail.models.mail_thread')
+    @mute_logger('sleektiv.addons.mail.models.mail_thread')
     def test_new_lead_from_email_multicompany(self):
         company0 = self.env.company
         company1 = self.env['res.company'].create({'name': 'new_company'})

@@ -1,4 +1,4 @@
-flectra.define('web.pivot_tests', function (require) {
+sleektiv.define('web.pivot_tests', function (require) {
 "use strict";
 
 var core = require('web.core');

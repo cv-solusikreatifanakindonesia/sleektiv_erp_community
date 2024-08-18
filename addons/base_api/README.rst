@@ -26,7 +26,7 @@ Maintainers
     
         To get a guaranteed support
         you are kindly requested to purchase the module
-        at `flectra apps store <https://store.flectrahq.com/apps/modules/13.0/base_api/>`__.
+        at `sleektiv apps store <https://store.flectrahq.com/apps/modules/13.0/base_api/>`__.
         
         Thank you for understanding!
         
@@ -48,4 +48,4 @@ Notifications on updates: `via Atom
 `by Email
 <https://blogtrottr.com/?subscribe=https://github.com/it-projects-llc/sync-addons/commits/13.0/base_api.atom>`__
 
-Tested on Flectra 13.0 eed3171f2f057223c3fbedd95ce6bcde2124f46c
+Tested on Sleektiv 13.0 eed3171f2f057223c3fbedd95ce6bcde2124f46c

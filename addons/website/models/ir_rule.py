@@ -1,6 +1,6 @@
 # coding: utf-8
-from flectra import api, models
-from flectra.addons.website.models import ir_http
+from sleektiv import api, models
+from sleektiv.addons.website.models import ir_http
 
 
 class IrRule(models.Model):

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, timedelta
 
-from flectra.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
-from flectra.addons.sale.tests.common import TestSaleCommon
-from flectra.exceptions import UserError
-from flectra.tests import Form, tagged
-from flectra.tests.common import SavepointCase
+from sleektiv.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from sleektiv.addons.sale.tests.common import TestSaleCommon
+from sleektiv.exceptions import UserError
+from sleektiv.tests import Form, tagged
+from sleektiv.tests.common import SavepointCase
 
 
 @tagged('post_install', '-at_install')

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 
-from flectra import fields
-from flectra.tests.common import tagged, HttpCase
+from sleektiv import fields
+from sleektiv.tests.common import tagged, HttpCase
 
 
 @tagged('post_install', '-at_install')

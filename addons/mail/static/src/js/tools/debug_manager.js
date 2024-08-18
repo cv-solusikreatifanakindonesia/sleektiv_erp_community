@@ -1,4 +1,4 @@
-flectra.define('mail.DebugManager.Backend', function (require) {
+sleektiv.define('mail.DebugManager.Backend', function (require) {
 "use strict";
 
 var core = require('web.core');

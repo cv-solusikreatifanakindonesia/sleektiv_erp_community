@@ -1,4 +1,4 @@
-flectra.define('stock.reports.setup.tour', function (require) {
+sleektiv.define('stock.reports.setup.tour', function (require) {
     "use strict";
 
     const tour = require('web_tour.tour');

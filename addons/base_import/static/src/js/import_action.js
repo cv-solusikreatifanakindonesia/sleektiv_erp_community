@@ -1,4 +1,4 @@
-flectra.define('base_import.import', function (require) {
+sleektiv.define('base_import.import', function (require) {
 "use strict";
 
 var AbstractAction = require('web.AbstractAction');

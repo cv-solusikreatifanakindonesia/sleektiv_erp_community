@@ -1,6 +1,6 @@
-# Part of flectra See LICENSE file for full copyright and licensing details.
+# Part of sleektiv See LICENSE file for full copyright and licensing details.
 
-from flectra.tests.common import TransactionCase
+from sleektiv.tests.common import TransactionCase
 
 
 class TestHelpdeskForum(TransactionCase):

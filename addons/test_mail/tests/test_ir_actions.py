@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.base.tests.test_ir_actions import TestServerActionsBase
-from flectra.addons.test_mail.tests.common import TestMailCommon
+from sleektiv.addons.base.tests.test_ir_actions import TestServerActionsBase
+from sleektiv.addons.test_mail.tests.common import TestMailCommon
 
 
 class TestServerActionsEmail(TestMailCommon, TestServerActionsBase):

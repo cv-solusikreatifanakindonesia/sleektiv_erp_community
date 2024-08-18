@@ -1,4 +1,4 @@
-flectra.define('om_account_bank_statement_import.import', function (require) {
+sleektiv.define('om_account_bank_statement_import.import', function (require) {
 "use strict";
 
 var core = require('web.core');

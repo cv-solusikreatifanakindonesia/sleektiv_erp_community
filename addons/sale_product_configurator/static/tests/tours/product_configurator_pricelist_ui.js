@@ -1,4 +1,4 @@
-flectra.define('sale.product_configurator_pricelist_tour', function (require) {
+sleektiv.define('sale.product_configurator_pricelist_tour', function (require) {
 "use strict";
 
 var tour = require('web_tour.tour');

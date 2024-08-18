@@ -1,4 +1,4 @@
-flectra.define('mail.many2manytags', function (require) {
+sleektiv.define('mail.many2manytags', function (require) {
 "use strict";
 
 var BasicModel = require('web.BasicModel');

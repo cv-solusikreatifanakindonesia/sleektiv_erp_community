@@ -1,4 +1,4 @@
-flectra.define('base_import.ImportMenu', function (require) {
+sleektiv.define('base_import.ImportMenu', function (require) {
     "use strict";
 
     const DropdownMenuItem = require('web.DropdownMenuItem');

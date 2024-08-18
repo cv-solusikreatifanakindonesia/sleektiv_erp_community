@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.addons.base.tests.common import SavepointCase
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.addons.base.tests.common import SavepointCase
 
 
 class TestSaleCommonBase(SavepointCase):

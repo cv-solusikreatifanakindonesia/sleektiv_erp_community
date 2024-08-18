@@ -3,10 +3,10 @@ import json
 import logging
 import werkzeug.utils
 
-from flectra import http
-from flectra.http import request
-from flectra.osv.expression import AND
-from flectra.tools import convert
+from sleektiv import http
+from sleektiv.http import request
+from sleektiv.osv.expression import AND
+from sleektiv.tools import convert
 
 _logger = logging.getLogger(__name__)
 

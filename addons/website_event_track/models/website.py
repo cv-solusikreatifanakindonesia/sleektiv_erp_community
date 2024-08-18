@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 
 from PIL import Image
 
-from flectra import api, fields, models
-from flectra.exceptions import ValidationError
-from flectra.tools import ImageProcess
-from flectra.tools.translate import _
+from sleektiv import api, fields, models
+from sleektiv.exceptions import ValidationError
+from sleektiv.tools import ImageProcess
+from sleektiv.tools.translate import _
 
 
 class Website(models.Model):

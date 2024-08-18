@@ -1,4 +1,4 @@
-flectra.define('sale.SalePortalSidebar', function (require) {
+sleektiv.define('sale.SalePortalSidebar', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

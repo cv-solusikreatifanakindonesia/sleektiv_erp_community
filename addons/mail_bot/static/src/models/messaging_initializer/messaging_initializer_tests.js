@@ -1,4 +1,4 @@
-flectra.define('mail_bot/static/src/models/messaging_initializer/messaging_initializer_tests.js', function (require) {
+sleektiv.define('mail_bot/static/src/models/messaging_initializer/messaging_initializer_tests.js', function (require) {
 "use strict";
 
 const { afterEach, beforeEach, start } = require('mail/static/src/utils/test_utils.js');
@@ -24,9 +24,9 @@ QUnit.module('messaging_initializer_tests.js', {
 });
 
 
-QUnit.test('FlectraBot initialized at init', async function (assert) {
+QUnit.test('SleektivBot initialized at init', async function (assert) {
     // TODO this test should be completed in combination with
-    // implementing _mockMailChannelInitFlectraBot task-2300480
+    // implementing _mockMailChannelInitSleektivBot task-2300480
     assert.expect(2);
 
     await this.start({
@@ -45,7 +45,7 @@ QUnit.test('FlectraBot initialized at init', async function (assert) {
 
     assert.verifySteps(
         ['init_flectrabot'],
-        "should have initialized FlectraBot at init"
+        "should have initialized SleektivBot at init"
     );
 });
 

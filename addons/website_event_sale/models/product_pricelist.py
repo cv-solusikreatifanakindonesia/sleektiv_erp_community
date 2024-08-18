@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import _, api, models
+from sleektiv import _, api, models
 
 class PricelistItem(models.Model):
     _inherit = "product.pricelist.item"

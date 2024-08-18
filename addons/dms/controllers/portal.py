@@ -2,13 +2,13 @@
 import base64
 import logging
 
-from flectra import _, http
-from flectra.exceptions import AccessError, MissingError
-from flectra.http import request
-from flectra.osv.expression import OR
+from sleektiv import _, http
+from sleektiv.exceptions import AccessError, MissingError
+from sleektiv.http import request
+from sleektiv.osv.expression import OR
 
-from flectra.addons.portal.controllers.portal import CustomerPortal
-from flectra.addons.web.controllers.main import content_disposition, ensure_db
+from sleektiv.addons.portal.controllers.portal import CustomerPortal
+from sleektiv.addons.web.controllers.main import content_disposition, ensure_db
 
 _logger = logging.getLogger(__name__)
 

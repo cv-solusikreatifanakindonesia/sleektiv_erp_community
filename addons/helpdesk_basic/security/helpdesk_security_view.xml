@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<flectra>
+<sleektiv>
 
     <record id="module_helpdesk_category" model="ir.module.category">
         <field name="name">Helpdesk</field>
@@ -67,4 +67,4 @@
         <field name="groups" eval="[(4, ref('helpdesk_group_manager'))]"/>
     </record>
 
-</flectra>
+</sleektiv>

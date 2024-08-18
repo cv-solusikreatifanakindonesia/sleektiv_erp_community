@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <!-- Project form inherited -->
     <record id="view_project_form_inherited" model="ir.ui.view">
         <field name="name">Project inherited form</field>
@@ -152,4 +152,4 @@
             </field>
         </field>
     </record>
-</flectra>
+</sleektiv>

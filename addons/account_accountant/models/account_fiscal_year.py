@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra.exceptions import ValidationError
-from flectra import api, fields, models, _
+from sleektiv.exceptions import ValidationError
+from sleektiv import api, fields, models, _
 
 
 class AccountFiscalYear(models.Model):

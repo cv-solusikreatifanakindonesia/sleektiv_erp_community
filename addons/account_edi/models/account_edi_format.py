@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, fields, api
-from flectra.tools.pdf import FlectraPdfFileReader, FlectraPdfFileWriter
-from flectra.osv import expression
-from flectra.tools import html_escape
-from flectra.exceptions import RedirectWarning
+from sleektiv import models, fields, api
+from sleektiv.tools.pdf import SleektivPdfFileReader, SleektivPdfFileWriter
+from sleektiv.osv import expression
+from sleektiv.tools import html_escape
+from sleektiv.exceptions import RedirectWarning
 from PyPDF2.utils import PdfReadError
 
 from lxml import etree
@@ -258,7 +258,7 @@ class AccountEdiFormat(models.Model):
         """ Create a new invoice with the data inside a pdf.
 
         :param filename: The name of the pdf.
-        :param reader:   The FlectraPdfFileReader of the pdf to import.
+        :param reader:   The SleektivPdfFileReader of the pdf to import.
         :returns:        The created invoice.
         """
         # TO OVERRIDE
@@ -270,7 +270,7 @@ class AccountEdiFormat(models.Model):
         """ Update an existing invoice with the data inside the pdf.
 
         :param filename: The name of the pdf.
-        :param reader:   The FlectraPdfFileReader of the pdf to import.
+        :param reader:   The SleektivPdfFileReader of the pdf to import.
         :param invoice:  The invoice to update.
         :returns:        The updated invoice.
         """
@@ -312,7 +312,7 @@ class AccountEdiFormat(models.Model):
         # TO OVERRIDE
         self.ensure_one()
         if self._is_embedding_to_invoice_pdf_needed() and edi_document.attachment_id:
-            pdf_writer.embed_flectra_attachment(edi_document.attachment_id)
+            pdf_writer.embed_sleektiv_attachment(edi_document.attachment_id)
 
     ####################################################
     # Export Internal methods (not meant to be overridden)
@@ -329,8 +329,8 @@ class AccountEdiFormat(models.Model):
         # Add the attachments to the pdf file
         if to_embed:
             reader_buffer = io.BytesIO(pdf_content)
-            reader = FlectraPdfFileReader(reader_buffer, strict=False)
-            writer = FlectraPdfFileWriter()
+            reader = SleektivPdfFileReader(reader_buffer, strict=False)
+            writer = SleektivPdfFileWriter()
             writer.cloneReaderDocumentRoot(reader)
             for edi_document in to_embed:
                 edi_document.edi_format_id._prepare_invoice_report(writer, edi_document)
@@ -386,7 +386,7 @@ class AccountEdiFormat(models.Model):
         to_process = []
         try:
             buffer = io.BytesIO(content)
-            pdf_reader = FlectraPdfFileReader(buffer, strict=False)
+            pdf_reader = SleektivPdfFileReader(buffer, strict=False)
         except Exception as e:
             # Malformed pdf
             _logger.exception("Error when reading the pdf: %s" % e)

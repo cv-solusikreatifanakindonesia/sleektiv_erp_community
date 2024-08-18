@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from threading import Thread, Event
 
-from flectra.addons.hw_drivers.main import drivers, iot_devices
-from flectra.tools.lru import LRU
+from sleektiv.addons.hw_drivers.main import drivers, iot_devices
+from sleektiv.tools.lru import LRU
 
 
 class DriverMetaClass(type):

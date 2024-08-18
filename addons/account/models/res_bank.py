@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import base64
 
-from flectra import api, models, fields, _
-from flectra.exceptions import UserError
-from flectra.tools.image import image_data_uri
+from sleektiv import api, models, fields, _
+from sleektiv.exceptions import UserError
+from sleektiv.tools.image import image_data_uri
 
 import werkzeug
 import werkzeug.exceptions

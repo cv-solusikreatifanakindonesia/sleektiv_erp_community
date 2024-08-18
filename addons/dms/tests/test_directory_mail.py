@@ -5,7 +5,7 @@
 import logging
 import os
 
-from flectra.tools import mute_logger
+from sleektiv.tools import mute_logger
 
 from .test_directory import DirectoryTestCase
 
@@ -20,7 +20,7 @@ class DirectoryActionTestCase(DirectoryTestCase):
         self.params.set_param("mail.catchall.domain", "mydomain.com")
         self._setup_test_data()
 
-    @mute_logger("flectra.addons.mail.mail_thread")
+    @mute_logger("sleektiv.addons.mail.mail_thread")
     def test_mail_alias_files(self):
         self.create_directory(storage=self.new_storage).write(
             {"alias_process": "files", "alias_name": "directory+test"}
@@ -30,7 +30,7 @@ class DirectoryActionTestCase(DirectoryTestCase):
         with open(os.path.join(_path, "tests", "data", "mail02.eml"), "r") as file:
             self.env["mail.thread"].message_process(None, file.read())
 
-    @mute_logger("flectra.addons.mail.mail_thread")
+    @mute_logger("sleektiv.addons.mail.mail_thread")
     def test_mail_alias_directory(self):
         self.create_directory(storage=self.new_storage).write(
             {"alias_process": "directory", "alias_name": "directory+test"}

@@ -1,7 +1,7 @@
-Flectra Supply Chain
+Sleektiv Supply Chain
 -----------------
 
-Automate requisition-to-pay, control invoicing with the Flectra
+Automate requisition-to-pay, control invoicing with the Sleektiv
 <a href="https://www.flectrahq.com/page/purchase">Open Source Supply Chain</a>.
 
 Automate procurement propositions, launch request for quotations, track
@@ -39,7 +39,7 @@ Standard Price, Average Price, FIFO
 
 Use the costing method that reflects your business: standard price, average
 price, fifo or lifo. Get your accounting entries and the right inventory
-valuation in real-time; Flectra manages everything for you, transparently.
+valuation in real-time; Sleektiv manages everything for you, transparently.
 
 Import Vendor Pricelists
 --------------------------

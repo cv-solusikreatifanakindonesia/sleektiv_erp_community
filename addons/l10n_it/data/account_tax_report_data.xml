@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
 
     <record id="tax_report_vat" model="account.tax.report">
         <field name="name">VAT Report</field>
@@ -345,4 +345,4 @@
         <field name="parent_id" ref="tax_report_line_reverse_charge_iva"/>
         <field name="report_id" ref="tax_report_vat"/>
     </record>
-</flectra>
+</sleektiv>

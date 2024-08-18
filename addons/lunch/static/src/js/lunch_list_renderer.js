@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchListRenderer', function (require) {
+sleektiv.define('lunch.LunchListRenderer', function (require) {
 "use strict";
 
 /**

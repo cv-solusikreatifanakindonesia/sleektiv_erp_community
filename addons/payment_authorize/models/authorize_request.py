@@ -5,10 +5,10 @@ import requests
 
 from uuid import uuid4
 
-from flectra import _
-from flectra.exceptions import UserError
+from sleektiv import _
+from sleektiv.exceptions import UserError
 
-from flectra.addons.payment.models.payment_acquirer import _partner_split_name
+from sleektiv.addons.payment.models.payment_acquirer import _partner_split_name
 
 _logger = logging.getLogger(__name__)
 
@@ -59,7 +59,7 @@ class AuthorizeAPI():
         """Create a payment and customer profile in the Authorize.net backend.
 
         Creates a customer profile for the partner/credit card combination and links
-        a corresponding payment profile to it. Note that a single partner in the Flectra
+        a corresponding payment profile to it. Note that a single partner in the Sleektiv
         database can have multiple customer profiles in Authorize.net (i.e. a customer
         profile is created for every res.partner/payment.token couple).
 
@@ -122,7 +122,7 @@ class AuthorizeAPI():
         """Create an Auth.net payment/customer profile from an existing transaction.
 
         Creates a customer profile for the partner/credit card combination and links
-        a corresponding payment profile to it. Note that a single partner in the Flectra
+        a corresponding payment profile to it. Note that a single partner in the Sleektiv
         database can have multiple customer profiles in Authorize.net (i.e. a customer
         profile is created for every res.partner/payment.token couple).
 

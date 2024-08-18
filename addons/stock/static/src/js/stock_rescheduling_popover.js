@@ -1,4 +1,4 @@
-flectra.define('stock.PopoverStockPicking', function (require) {
+sleektiv.define('stock.PopoverStockPicking', function (require) {
 "use strict";
 
 var core = require('web.core');

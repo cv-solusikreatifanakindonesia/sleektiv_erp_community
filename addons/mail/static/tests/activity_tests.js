@@ -1,4 +1,4 @@
-flectra.define('mail.activity_view_tests', function (require) {
+sleektiv.define('mail.activity_view_tests', function (require) {
 'use strict';
 
 var ActivityView = require('mail.ActivityView');

@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/widgets/discuss_invite_partner_dialog/discuss_invite_partner_dialog.js', function (require) {
+sleektiv.define('mail/static/src/widgets/discuss_invite_partner_dialog/discuss_invite_partner_dialog.js', function (require) {
 'use strict';
 
 const core = require('web.core');

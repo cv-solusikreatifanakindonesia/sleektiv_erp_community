@@ -2,7 +2,7 @@
 import requests
 import logging
 
-from flectra.tools import html2plaintext
+from sleektiv.tools import html2plaintext
 
 _logger = logging.getLogger(__name__)
 

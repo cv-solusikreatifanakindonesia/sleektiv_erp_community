@@ -1,4 +1,4 @@
-flectra.define('mail.MockServer', function (require) {
+sleektiv.define('mail.MockServer', function (require) {
 "use strict";
 
 const { nextAnimationFrame } = require('mail/static/src/utils/test_utils.js');
@@ -211,7 +211,7 @@ MockServer.include({
         }
         if (args.model === 'mail.message' && args.method === 'message_fetch') {
             // TODO FIXME delay RPC until next potential render as a workaround
-            // to issue https://github.com/flectra/owl/pull/724
+            // to issue https://github.com/sleektiv/owl/pull/724
             await nextAnimationFrame();
             const domain = args.args[0] || args.kwargs.domain;
             const limit = args.args[1] || args.kwargs.limit;

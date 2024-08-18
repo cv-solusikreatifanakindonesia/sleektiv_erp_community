@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/models/thread/thread.js', function (require) {
+sleektiv.define('mail/static/src/models/thread/thread.js', function (require) {
 'use strict';
 
 const { registerNewModel } = require('mail/static/src/model/model_core.js');

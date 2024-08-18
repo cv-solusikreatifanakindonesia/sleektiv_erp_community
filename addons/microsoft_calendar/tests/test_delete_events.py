@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from unittest.mock import patch, ANY, call
 
-from flectra.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
-from flectra.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from flectra.addons.microsoft_calendar.models.res_users import User
-from flectra.addons.microsoft_calendar.tests.common import (
+from sleektiv.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from sleektiv.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from sleektiv.addons.microsoft_calendar.models.res_users import User
+from sleektiv.addons.microsoft_calendar.tests.common import (
     TestCommon,
     mock_get_token,
     _modified_date_in_the_future,
@@ -20,7 +20,7 @@ class TestDeleteEvents(TestCommon):
         self.create_events_for_tests()
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_delete_simple_event_from_flectra_organizer_calendar(self, mock_delete):
+    def test_delete_simple_event_from_sleektiv_organizer_calendar(self, mock_delete):
         event_id = self.simple_event.ms_organizer_event_id
 
         self.simple_event.with_user(self.organizer_user).unlink()
@@ -35,7 +35,7 @@ class TestDeleteEvents(TestCommon):
         )
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_delete_simple_event_from_flectra_attendee_calendar(self, mock_delete):
+    def test_delete_simple_event_from_sleektiv_attendee_calendar(self, mock_delete):
         event_id = self.simple_event.ms_organizer_event_id
 
         self.simple_event.with_user(self.attendee_user).unlink()
@@ -50,7 +50,7 @@ class TestDeleteEvents(TestCommon):
         )
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_archive_simple_event_from_flectra_organizer_calendar(self, mock_delete):
+    def test_archive_simple_event_from_sleektiv_organizer_calendar(self, mock_delete):
         event_id = self.simple_event.ms_organizer_event_id
 
         self.simple_event.with_user(self.organizer_user).write({'active': False})
@@ -66,7 +66,7 @@ class TestDeleteEvents(TestCommon):
         )
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_archive_simple_event_from_flectra_attendee_calendar(self, mock_delete):
+    def test_archive_simple_event_from_sleektiv_attendee_calendar(self, mock_delete):
         event_id = self.simple_event.ms_organizer_event_id
 
         self.simple_event.with_user(self.attendee_user).write({'active': False})
@@ -117,21 +117,21 @@ class TestDeleteEvents(TestCommon):
 
     def test_delete_simple_event_from_outlook_attendee_calendar(self):
         """
-        If an attendee deletes an event from its Outlook calendar, during the sync, Flectra will be notified that
+        If an attendee deletes an event from its Outlook calendar, during the sync, Sleektiv will be notified that
         this event has been deleted BUT only with the attendees's calendar event id and not with the global one
-        (called iCalUId). That means, it's not possible to match this deleted event with an Flectra event.
+        (called iCalUId). That means, it's not possible to match this deleted event with an Sleektiv event.
 
         LIMITATION:
 
         Unfortunately, there is no magic solution:
-            1) keep the list of calendar events ids linked to a unique iCalUId but all Flectra users may not have synced
-            their Flectra calendar, leading to missing ids in the list => bad solution.
+            1) keep the list of calendar events ids linked to a unique iCalUId but all Sleektiv users may not have synced
+            their Sleektiv calendar, leading to missing ids in the list => bad solution.
             2) call the microsoft API to get the iCalUId matching the received event id => as the event has already
             been deleted, this call may return an error.
         """
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_delete_one_event_from_recurrence_from_flectra_calendar(self, mock_delete):
+    def test_delete_one_event_from_recurrence_from_sleektiv_calendar(self, mock_delete):
 
         # arrange
         idx = 2
@@ -151,7 +151,7 @@ class TestDeleteEvents(TestCommon):
         )
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_delete_first_event_from_recurrence_from_flectra_calendar(self, mock_delete):
+    def test_delete_first_event_from_recurrence_from_sleektiv_calendar(self, mock_delete):
 
         # arrange
         idx = 0

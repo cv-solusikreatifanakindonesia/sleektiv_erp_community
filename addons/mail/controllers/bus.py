@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import SUPERUSER_ID, tools
-from flectra.http import request, route
-from flectra.addons.bus.controllers.main import BusController
+from sleektiv import SUPERUSER_ID, tools
+from sleektiv.http import request, route
+from sleektiv.addons.bus.controllers.main import BusController
 
 
 class MailChatController(BusController):

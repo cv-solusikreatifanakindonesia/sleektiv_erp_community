@@ -1,4 +1,4 @@
-flectra.define('website_sale_comparison.tour_comparison', function (require) {
+sleektiv.define('website_sale_comparison.tour_comparison', function (require) {
     'use strict';
 
     var tour = require('web_tour.tour');

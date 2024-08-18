@@ -2,7 +2,7 @@
 # Copyright 2019 Anvar Kildebekov <https://it-projects.info/team/fedoranvar>
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from flectra import api, models
+from sleektiv import api, models
 
 from ..lib import pinguin
 

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime as dt
 from datetime import timedelta as td
 from freezegun import freeze_time
 
-from flectra import SUPERUSER_ID
-from flectra.tests import Form
-from flectra.tests.common import SavepointCase
-from flectra.exceptions import UserError
+from sleektiv import SUPERUSER_ID
+from sleektiv.tests import Form
+from sleektiv.tests.common import SavepointCase
+from sleektiv.exceptions import UserError
 
 
 @freeze_time("2021-01-14 09:12:15")

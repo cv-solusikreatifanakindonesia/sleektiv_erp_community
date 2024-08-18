@@ -1,4 +1,4 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 {
     "name": "Philippines - Accounting",
@@ -7,7 +7,7 @@
     """,
     "category": "Accounting/Localizations/Account Charts",
     "version": "1.0",
-    "author": "Flectra PS",
+    "author": "Sleektiv PS",
     "website": "https://www.flectrahq.com",
     "depends": [
         "account",

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<flectra noupdate="1">
+<sleektiv noupdate="1">
     <record id="recurring_document_partner0" model="recurring.document">
         <field eval="1" name="active"/>
         <field name="model" ref="account.model_account_move"/>
@@ -19,4 +19,4 @@
         <field name="date_init" eval="datetime.now()"/>
         <field name="doc_source" ref='l10n_generic_coa.demo_invoice_1'/>
     </record>
-</flectra>
+</sleektiv>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <data>
         <record id="ofx_partner_bank_1" model="res.partner.bank">
             <field name="acc_number">BE68539007547034</field>
@@ -25,4 +25,4 @@
             <field name="bank_id" ref="base.res_bank_1"/>
         </record>
     </data>
-</flectra>
+</sleektiv>

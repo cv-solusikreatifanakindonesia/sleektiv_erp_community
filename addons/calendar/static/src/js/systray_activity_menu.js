@@ -1,4 +1,4 @@
-flectra.define('calendar.systray.ActivityMenu', function (require) {
+sleektiv.define('calendar.systray.ActivityMenu', function (require) {
 "use strict";
 
 var ActivityMenu = require('mail.systray.ActivityMenu');

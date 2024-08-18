@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flectra import models, fields, api, _
-from flectra.tools import float_round
-from flectra.exceptions import ValidationError
+from sleektiv import models, fields, api, _
+from sleektiv.tools import float_round
+from sleektiv.exceptions import ValidationError
 
 
 class AccountCashRounding(models.Model):

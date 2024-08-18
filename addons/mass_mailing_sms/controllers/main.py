@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 
-from flectra import http, _
-from flectra.addons.phone_validation.tools import phone_validation
-from flectra.http import request
+from sleektiv import http, _
+from sleektiv.addons.phone_validation.tools import phone_validation
+from sleektiv.http import request
 
 
 class MailingSMSController(http.Controller):

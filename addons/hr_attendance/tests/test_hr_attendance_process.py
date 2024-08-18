@@ -4,9 +4,9 @@ import pytz
 from datetime import datetime
 from unittest.mock import patch
 
-from flectra import fields
-from flectra.tests import new_test_user
-from flectra.tests.common import TransactionCase
+from sleektiv import fields
+from sleektiv.tests import new_test_user
+from sleektiv.tests.common import TransactionCase
 
 
 class TestHrAttendance(TransactionCase):

@@ -1,4 +1,4 @@
-flectra.define('website_mail.follow', function (require) {
+sleektiv.define('website_mail.follow', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

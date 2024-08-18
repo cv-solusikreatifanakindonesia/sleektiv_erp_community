@@ -4,8 +4,8 @@
 
 import logging
 
-from flectra import _, api, fields, models
-from flectra.exceptions import ValidationError
+from sleektiv import _, api, fields, models
+from sleektiv.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
 

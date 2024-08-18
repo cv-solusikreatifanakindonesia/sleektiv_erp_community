@@ -1,4 +1,4 @@
-flectra.define('test_event_full.tour.register', function (require) {
+sleektiv.define('test_event_full.tour.register', function (require) {
 "use strict";
 
 var tour = require('web_tour.tour');

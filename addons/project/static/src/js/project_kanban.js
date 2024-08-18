@@ -1,4 +1,4 @@
-flectra.define('project.project_kanban', function (require) {
+sleektiv.define('project.project_kanban', function (require) {
 'use strict';
 
 var KanbanController = require('web.KanbanController');

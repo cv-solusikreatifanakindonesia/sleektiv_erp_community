@@ -1,4 +1,4 @@
-flectra.define('purchase.dashboard', function (require) {
+sleektiv.define('purchase.dashboard', function (require) {
 "use strict";
 
 /**
@@ -130,7 +130,7 @@ var PurchaseListDashboardController = ListController.extend({
 
     /**
      * @private
-     * @param {FlectraEvent} e
+     * @param {SleektivEvent} e
      */
     _onDashboardOpenAction: function (e) {
         return this.do_action(e.data.action_name,
@@ -246,7 +246,7 @@ var PurchaseKanbanDashboardController = KanbanController.extend({
 
     /**
      * @private
-     * @param {FlectraEvent} e
+     * @param {SleektivEvent} e
      */
     _onDashboardOpenAction: function (e) {
         return this.do_action(e.data.action_name,

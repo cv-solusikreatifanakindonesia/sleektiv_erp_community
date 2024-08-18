@@ -1,4 +1,4 @@
-flectra.define('web.ListController', function (require) {
+sleektiv.define('web.ListController', function (require) {
 "use strict";
 
 /**
@@ -723,7 +723,7 @@ var ListController = BasicController.extend({
      * reached. Go back to the first row in that case.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onActivateNextWidget: function (ev) {
         ev.stopPropagation();
@@ -733,7 +733,7 @@ var ListController = BasicController.extend({
      * Add a record to the list
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      * @param {string} [ev.data.groupId=this.handle] the id of a dataPoint of
      *   type list to which the record must be added (default: main list)
      */
@@ -750,7 +750,7 @@ var ListController = BasicController.extend({
      * Handles a click on a button by performing its action.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onButtonClicked: function (ev) {
         ev.stopPropagation();
@@ -818,7 +818,7 @@ var ListController = BasicController.extend({
             // If the user starts clicking (mousedown) on the button and stops clicking
             // (mouseup) outside of the button, we want to trigger the original onFieldChanged
             // Event that was prevented in the meantime.
-            if (ev.target !== mouseupEvent.target && preventedEvent.constructor.name === 'FlectraEvent') {
+            if (ev.target !== mouseupEvent.target && preventedEvent.constructor.name === 'SleektivEvent') {
                 self._onFieldChanged(preventedEvent);
             }
         }, { capture: true, once: true });
@@ -826,7 +826,7 @@ var ListController = BasicController.extend({
     /**
      * Called when the user asks to edit a row -> Updates the controller buttons
      *
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onEditLine: function (ev) {
         var self = this;
@@ -864,7 +864,7 @@ var ListController = BasicController.extend({
      * Opens the related form view.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onEditGroupClicked: function (ev) {
         ev.stopPropagation();
@@ -950,7 +950,7 @@ var ListController = BasicController.extend({
      * Called when the renderer displays an editable row and the user tries to
      * leave it -> Saves the record associated to that line.
      *
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSaveLine: function (ev) {
         this.saveRecord(ev.data.recordID)
@@ -971,7 +971,7 @@ var ListController = BasicController.extend({
      * left), we need to display (or hide) the 'sidebar'.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSelectionChanged: function (ev) {
         this.selectedRecords = ev.data.selection;
@@ -987,7 +987,7 @@ var ListController = BasicController.extend({
      *
      * @private
      * @override
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSetDirty: function (ev) {
         var recordId = ev.data.dataPointID;
@@ -1010,7 +1010,7 @@ var ListController = BasicController.extend({
      * rerender the view.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onToggleColumnOrder: function (ev) {
         ev.stopPropagation();
@@ -1029,7 +1029,7 @@ var ListController = BasicController.extend({
      * renderer.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onToggleGroup: function (ev) {
         ev.stopPropagation();

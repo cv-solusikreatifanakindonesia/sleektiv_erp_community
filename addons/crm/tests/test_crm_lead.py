@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from freezegun import freeze_time
 
-from flectra.addons.crm.models.crm_lead import PARTNER_FIELDS_TO_SYNC, PARTNER_ADDRESS_FIELDS_TO_SYNC
-from flectra.addons.crm.tests.common import TestCrmCommon, INCOMING_EMAIL
-from flectra.addons.phone_validation.tools.phone_validation import phone_format
-from flectra.exceptions import UserError
-from flectra.tests.common import Form, users
-from flectra.tools import mute_logger
+from sleektiv.addons.crm.models.crm_lead import PARTNER_FIELDS_TO_SYNC, PARTNER_ADDRESS_FIELDS_TO_SYNC
+from sleektiv.addons.crm.tests.common import TestCrmCommon, INCOMING_EMAIL
+from sleektiv.addons.phone_validation.tools.phone_validation import phone_format
+from sleektiv.exceptions import UserError
+from sleektiv.tests.common import Form, users
+from sleektiv.tools import mute_logger
 
 
 class TestCRMLead(TestCrmCommon):
@@ -506,7 +506,7 @@ class TestCRMLead(TestCrmCommon):
         # self.assertFalse(new_team.alias_id.alias_name)
         # self.assertFalse(new_team.alias_name)
 
-    @mute_logger('flectra.addons.mail.models.mail_thread')
+    @mute_logger('sleektiv.addons.mail.models.mail_thread')
     def test_mailgateway(self):
         new_lead = self.format_and_process(
             INCOMING_EMAIL,

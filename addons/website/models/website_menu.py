@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import werkzeug.exceptions
 import werkzeug.urls
 
-from flectra import api, fields, models
-from flectra.http import request
-from flectra.tools.translate import html_translate
+from sleektiv import api, fields, models
+from sleektiv.http import request
+from sleektiv.tools.translate import html_translate
 
 
 class Menu(models.Model):

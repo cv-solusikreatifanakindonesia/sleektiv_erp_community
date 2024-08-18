@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 #
 # Please note that these reports are not multi-currency !!!
@@ -7,9 +7,9 @@
 
 import re
 
-from flectra import api, fields, models, tools
-from flectra.exceptions import UserError
-from flectra.osv.expression import AND, expression
+from sleektiv import api, fields, models, tools
+from sleektiv.exceptions import UserError
+from sleektiv.osv.expression import AND, expression
 
 
 class PurchaseReport(models.Model):

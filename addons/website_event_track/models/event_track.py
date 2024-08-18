@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 from pytz import utc
 from random import randint
 
-from flectra import api, fields, models, tools
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.osv import expression
-from flectra.tools.mail import is_html_empty
-from flectra.tools.translate import _, html_translate
+from sleektiv import api, fields, models, tools
+from sleektiv.addons.http_routing.models.ir_http import slug
+from sleektiv.osv import expression
+from sleektiv.tools.mail import is_html_empty
+from sleektiv.tools.translate import _, html_translate
 
 
 class Track(models.Model):

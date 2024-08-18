@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra import _, api, models
-from flectra.exceptions import ValidationError
+from sleektiv import _, api, models
+from sleektiv.exceptions import ValidationError
 
 
 class View(models.Model):

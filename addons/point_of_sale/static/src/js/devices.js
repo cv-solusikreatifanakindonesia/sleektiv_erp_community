@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.devices', function (require) {
+sleektiv.define('point_of_sale.devices', function (require) {
 "use strict";
 
 var core = require('web.core');

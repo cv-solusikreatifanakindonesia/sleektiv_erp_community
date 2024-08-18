@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.phone_validation.tools import phone_validation
-from flectra.exceptions import UserError
-from flectra.tests import tagged
-from flectra.tests.common import BaseCase
+from sleektiv.addons.phone_validation.tools import phone_validation
+from sleektiv.exceptions import UserError
+from sleektiv.tests import tagged
+from sleektiv.tests.common import BaseCase
 
 
 @tagged('phone_validation')

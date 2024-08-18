@@ -1,22 +1,22 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import json
 import logging
 from datetime import datetime
 from werkzeug.exceptions import Forbidden, NotFound
 
-from flectra import fields, http, SUPERUSER_ID, tools, _
-from flectra.http import request
-from flectra.addons.base.models.ir_qweb_fields import nl2br
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.addons.payment.controllers.portal import PaymentProcessing
-from flectra.addons.website.controllers.main import QueryURL
-from flectra.addons.website.models.ir_http import sitemap_qs2dom
-from flectra.exceptions import ValidationError
-from flectra.addons.portal.controllers.portal import _build_url_w_params
-from flectra.addons.website.controllers.main import Website
-from flectra.addons.website_form.controllers.main import WebsiteForm
-from flectra.osv import expression
+from sleektiv import fields, http, SUPERUSER_ID, tools, _
+from sleektiv.http import request
+from sleektiv.addons.base.models.ir_qweb_fields import nl2br
+from sleektiv.addons.http_routing.models.ir_http import slug
+from sleektiv.addons.payment.controllers.portal import PaymentProcessing
+from sleektiv.addons.website.controllers.main import QueryURL
+from sleektiv.addons.website.models.ir_http import sitemap_qs2dom
+from sleektiv.exceptions import ValidationError
+from sleektiv.addons.portal.controllers.portal import _build_url_w_params
+from sleektiv.addons.website.controllers.main import Website
+from sleektiv.addons.website_form.controllers.main import WebsiteForm
+from sleektiv.osv import expression
 _logger = logging.getLogger(__name__)
 
 

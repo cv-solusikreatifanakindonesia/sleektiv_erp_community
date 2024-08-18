@@ -1,4 +1,4 @@
-flectra.define('l10n_sa_pos.pos', function (require) {
+sleektiv.define('l10n_sa_pos.pos', function (require) {
 "use strict";
 
 const { Gui } = require('point_of_sale.Gui');

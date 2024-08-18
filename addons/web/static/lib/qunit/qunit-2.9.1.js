@@ -1247,7 +1247,7 @@
 
   var LISTENERS = Object.create(null);
   var SUPPORTED_EVENTS = ["runStart", "suiteStart", "testStart", "assertion", "testEnd", "suiteEnd", "runEnd"];
-  SUPPORTED_EVENTS.push("FlectraBeforeTestHook", "FlectraAfterTestHook"); // Flectra customization
+  SUPPORTED_EVENTS.push("SleektivBeforeTestHook", "SleektivAfterTestHook"); // Sleektiv customization
 
   /**
    * Emits an event with the specified data to all currently registered listeners.
@@ -3003,7 +3003,7 @@
 
   			_this.started = now();
 			emit("testStart", _this.testReport.start(true));
-			emit("FlectraBeforeTestHook"); // Flectra customization
+			emit("SleektivBeforeTestHook"); // Sleektiv customization
   			return runLoggingCallbacks("testStart", {
   				name: _this.testName,
   				module: module.name,
@@ -3143,7 +3143,7 @@
   			this.pushFailure("Expected at least one assertion, but none were run - call " + "expect(0) to accept zero assertions.", this.stack);
   		}
 
-        emit("FlectraAfterTestHook", this); // Flectra customization
+        emit("SleektivAfterTestHook", this); // Sleektiv customization
 
   		var i,
   		    module = this.module,

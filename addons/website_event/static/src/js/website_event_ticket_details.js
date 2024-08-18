@@ -1,4 +1,4 @@
-flectra.define('website_event.ticket_details', function (require) {
+sleektiv.define('website_event.ticket_details', function (require) {
     var publicWidget = require('web.public.widget');
 
     publicWidget.registry.ticketDetailsWidget = publicWidget.Widget.extend({

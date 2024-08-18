@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import http, _
-from flectra.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
-from flectra.exceptions import AccessError, MissingError
+from sleektiv import http, _
+from sleektiv.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from sleektiv.exceptions import AccessError, MissingError
 from collections import OrderedDict
-from flectra.http import request
+from sleektiv.http import request
 
 
 class PortalAccount(CustomerPortal):

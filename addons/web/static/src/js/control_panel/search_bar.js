@@ -1,4 +1,4 @@
-flectra.define('web.SearchBar', function (require) {
+sleektiv.define('web.SearchBar', function (require) {
     "use strict";
 
     const Domain = require('web.Domain');

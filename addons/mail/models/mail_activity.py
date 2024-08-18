@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from datetime import date, datetime
@@ -7,11 +7,11 @@ from dateutil.relativedelta import relativedelta
 import logging
 import pytz
 
-from flectra import api, exceptions, fields, models, _
-from flectra.osv import expression
+from sleektiv import api, exceptions, fields, models, _
+from sleektiv.osv import expression
 
-from flectra.tools.misc import clean_context
-from flectra.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+from sleektiv.tools.misc import clean_context
+from sleektiv.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
 
 _logger = logging.getLogger(__name__)
 

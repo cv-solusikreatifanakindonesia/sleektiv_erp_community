@@ -1,4 +1,4 @@
-<flectra>
+<sleektiv>
     <data noupdate="1">
         <record id="demo_invoicable_factor1" model="hr_timesheet_invoice.factor">
             <field name="name">100% Invoiceable</field>
@@ -22,4 +22,4 @@
         </record>
 
     </data>
-</flectra>
+</sleektiv>

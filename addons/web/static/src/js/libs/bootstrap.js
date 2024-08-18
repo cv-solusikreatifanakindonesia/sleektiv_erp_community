@@ -1,4 +1,4 @@
-flectra.define('web.bootstrap.extensions', function () {
+sleektiv.define('web.bootstrap.extensions', function () {
 'use strict';
 
 /**

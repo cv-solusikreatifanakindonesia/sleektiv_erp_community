@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.PosContext', function (require) {
+sleektiv.define('point_of_sale.PosContext', function (require) {
     'use strict';
 
     const { Context } = owl;

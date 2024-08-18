@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import json
@@ -8,9 +8,9 @@ import werkzeug
 from dateutil.relativedelta import relativedelta
 from werkzeug.exceptions import NotFound
 
-from flectra import fields, http
-from flectra.http import request
-from flectra.tools import is_html_empty
+from sleektiv import fields, http
+from sleektiv.http import request
+from sleektiv.tools import is_html_empty
 
 
 class UserInputSession(http.Controller):

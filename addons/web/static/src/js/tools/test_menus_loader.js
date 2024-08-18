@@ -1,4 +1,4 @@
-flectra.define('web.clickEverywhere', function (require) {
+sleektiv.define('web.clickEverywhere', function (require) {
     "use strict";
     var ajax = require('web.ajax');
     function startClickEverywhere(xmlId, appsMenusOnly) {

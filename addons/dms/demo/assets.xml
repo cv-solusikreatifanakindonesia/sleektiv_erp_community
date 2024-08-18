@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- License AGPL-3.0 (http://www.gnu.org/licenses/agpl.html). -->
-<flectra>
+<sleektiv>
     <template id="dms_frontend_demo" inherit_id="web.assets_frontend">
         <xpath expr="//script[last()]" position="after">
             <script
@@ -9,4 +9,4 @@
             />
         </xpath>
     </template>
-</flectra>
+</sleektiv>

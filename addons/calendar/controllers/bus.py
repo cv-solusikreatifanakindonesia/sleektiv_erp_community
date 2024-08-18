@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*
 
-from flectra.addons.bus.controllers.main import BusController
-from flectra.http import request
+from sleektiv.addons.bus.controllers.main import BusController
+from sleektiv.http import request
 
 
 class CalendarBusController(BusController):

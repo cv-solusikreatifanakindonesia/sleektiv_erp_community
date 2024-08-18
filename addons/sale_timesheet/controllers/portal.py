@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import http, _
-from flectra.http import request
-from flectra.osv import expression
+from sleektiv import http, _
+from sleektiv.http import request
+from sleektiv.osv import expression
 
-from flectra.addons.account.controllers import portal
-from flectra.addons.hr_timesheet.controllers.portal import TimesheetCustomerPortal
+from sleektiv.addons.account.controllers import portal
+from sleektiv.addons.hr_timesheet.controllers.portal import TimesheetCustomerPortal
 
 
 class PortalAccount(portal.PortalAccount):

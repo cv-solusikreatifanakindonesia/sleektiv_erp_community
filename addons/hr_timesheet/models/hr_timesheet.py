@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from lxml import etree
 import re
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError, AccessError
-from flectra.osv import expression
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError, AccessError
+from sleektiv.osv import expression
 
 class AccountAnalyticLine(models.Model):
     _inherit = 'account.analytic.line'

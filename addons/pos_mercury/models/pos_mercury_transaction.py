@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, timedelta
 
@@ -7,10 +7,10 @@ import requests
 
 from html import unescape
 
-from flectra import models, api, service
-from flectra.tools.translate import _
-from flectra.exceptions import UserError
-from flectra.tools import DEFAULT_SERVER_DATETIME_FORMAT, misc
+from sleektiv import models, api, service
+from sleektiv.tools.translate import _
+from sleektiv.exceptions import UserError
+from sleektiv.tools import DEFAULT_SERVER_DATETIME_FORMAT, misc
 
 
 class MercuryTransaction(models.Model):
@@ -44,7 +44,7 @@ class MercuryTransaction(models.Model):
         data['operator_id'] = pos_session.user_id.login
         data['merchant_id'] = pos_mercury_config.sudo().merchant_id
         data['merchant_pwd'] = pos_mercury_config.sudo().merchant_pwd
-        data['memo'] = "Flectra " + service.common.exp_version()['server_version']
+        data['memo'] = "Sleektiv " + service.common.exp_version()['server_version']
 
     def _do_request(self, template, data):
         xml_transaction = self.env.ref(template)._render(data).decode()

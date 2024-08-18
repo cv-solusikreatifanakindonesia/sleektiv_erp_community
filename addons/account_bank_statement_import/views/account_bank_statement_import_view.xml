@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
 
     <record id="om_account_bank_statement_import_view" model="ir.ui.view">
         <field name="name">Upload Bank Statements</field>
@@ -55,4 +55,4 @@
         </field>
     </record>
 
-</flectra>
+</sleektiv>

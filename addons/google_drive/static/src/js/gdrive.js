@@ -1,4 +1,4 @@
-flectra.define('google_drive.ActionMenus', function (require) {
+sleektiv.define('google_drive.ActionMenus', function (require) {
     "use strict";
 
     const ActionMenus = require('web.ActionMenus');

@@ -1,4 +1,4 @@
-flectra.define('google_calendar.GoogleCalendarPopover', function(require) {
+sleektiv.define('google_calendar.GoogleCalendarPopover', function(require) {
     "use strict";
 
     const CalendarPopover = require('web.CalendarPopover');

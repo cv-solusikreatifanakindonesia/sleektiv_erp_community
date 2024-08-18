@@ -1,16 +1,16 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 import io
 
-from flectra.addons.website_sale.tests.common import TestWebsiteSaleCommon
+from sleektiv.addons.website_sale.tests.common import TestWebsiteSaleCommon
 from PIL import Image
 
-import flectra.tests
+import sleektiv.tests
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteSaleImage(flectra.tests.HttpCase, TestWebsiteSaleCommon):
+@sleektiv.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteSaleImage(sleektiv.tests.HttpCase, TestWebsiteSaleCommon):
 
     # registry_test_mode = False  # uncomment to save the product to test in browser
 

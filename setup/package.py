@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import argparse
 import logging
@@ -23,7 +23,7 @@ from glob import glob
 
 ROOTDIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 TSTAMP = time.strftime("%Y%m%d", time.gmtime())
-exec(open(os.path.join(ROOTDIR, 'flectra', 'release.py'), 'rb').read())
+exec(open(os.path.join(ROOTDIR, 'sleektiv', 'release.py'), 'rb').read())
 VERSION = version.split('-')[0].replace('saas~', '')
 GPGPASSPHRASE = os.getenv('GPGPASSPHRASE')
 GPGID = os.getenv('GPGID')
@@ -31,12 +31,12 @@ DOCKERVERSION = VERSION.replace('+', '')
 INSTALL_TIMEOUT = 600
 
 DOCKERUSER = """
-RUN mkdir /var/lib/flectra && \
-    groupadd -g %(group_id)s flectra && \
-    useradd -u %(user_id)s -g flectra flectra -d /var/lib/flectra && \
+RUN mkdir /var/lib/sleektiv && \
+    groupadd -g %(group_id)s sleektiv && \
+    useradd -u %(user_id)s -g sleektiv sleektiv -d /var/lib/sleektiv && \
     mkdir /data && \
-    chown flectra:flectra /var/lib/flectra /data
-USER flectra
+    chown sleektiv:sleektiv /var/lib/sleektiv /data
+USER sleektiv
 """ % {'group_id': os.getgid(), 'user_id': os.getuid()}
 
 
@@ -102,7 +102,7 @@ def publish(args, pub_type, extensions):
 
     published = []
     for extension in extensions:
-        release = glob("%s/flectra_*.%s" % (args.build_dir, extension))
+        release = glob("%s/sleektiv_*.%s" % (args.build_dir, extension))
         if release:
             published.append(_publish(release[0]))
     return published
@@ -161,13 +161,13 @@ def _prepare_build_dir(args, win32=False, move_addons=True):
     if win32 is False:
         cmd += ['--exclude', 'setup/win32']
 
-    run_cmd(cmd + ['%s/' % args.flectra_dir, args.build_dir])
+    run_cmd(cmd + ['%s/' % args.sleektiv_dir, args.build_dir])
     if not move_addons:
         return
     for addon_path in glob(os.path.join(args.build_dir, 'addons/*')):
         if args.blacklist is None or os.path.basename(addon_path) not in args.blacklist:
             try:
-                shutil.move(addon_path, os.path.join(args.build_dir, 'flectra/addons'))
+                shutil.move(addon_path, os.path.join(args.build_dir, 'sleektiv/addons'))
             except shutil.Error as e:
                 logging.warning("Warning '%s' while moving addon '%s", e, addon_path)
                 if addon_path.startswith(args.build_dir) and os.path.isdir(addon_path):
@@ -188,7 +188,7 @@ class Docker():
         :param args: argparse parsed arguments
         """
         self.args = args
-        self.tag = 'flectra-%s-%s-nightly-tests' % (DOCKERVERSION, self.arch)
+        self.tag = 'sleektiv-%s-%s-nightly-tests' % (DOCKERVERSION, self.arch)
         self.container_name = None
         self.exposed_port = None
         dockerfiles = {
@@ -212,7 +212,7 @@ class Docker():
         run_cmd(["docker", "build", "--rm=True", "-t", self.tag, "."], chdir=docker_dir, timeout=1200).check_returncode()
         shutil.rmtree(docker_dir)
 
-    def run(self, cmd, build_dir, container_name, user='flectra', exposed_port=None, detach=False, timeout=None):
+    def run(self, cmd, build_dir, container_name, user='sleektiv', exposed_port=None, detach=False, timeout=None):
         self.container_name = container_name
         docker_cmd = [
             "docker",
@@ -246,12 +246,12 @@ class Docker():
     def stop(self):
         run_cmd(["docker", "stop", self.container_name]).check_returncode()
 
-    def test_flectra(self):
+    def test_sleektiv(self):
         logging.info('Starting to test Flectra install test')
         start_time = time.time()
         while self.is_running() and (time.time() - start_time) < INSTALL_TIMEOUT:
             time.sleep(5)
-            if os.path.exists(os.path.join(args.build_dir, 'flectra.pid')):
+            if os.path.exists(os.path.join(args.build_dir, 'sleektiv.pid')):
                 try:
                     _rpc_count_modules(port=self.exposed_port)
                 finally:
@@ -278,9 +278,9 @@ class DockerTgz(Docker):
 
     def build(self):
         logging.info('Start building python tgz package')
-        self.run('python3 setup.py sdist --quiet --formats=gztar,zip', self.args.build_dir, 'flectra-src-build-%s' % TSTAMP)
-        os.rename(glob('%s/dist/flectra-*.tar.gz' % self.args.build_dir)[0], '%s/flectra_%s.%s.tar.gz' % (self.args.build_dir, VERSION, TSTAMP))
-        os.rename(glob('%s/dist/flectra-*.zip' % self.args.build_dir)[0], '%s/flectra_%s.%s.zip' % (self.args.build_dir, VERSION, TSTAMP))
+        self.run('python3 setup.py sdist --quiet --formats=gztar,zip', self.args.build_dir, 'sleektiv-src-build-%s' % TSTAMP)
+        os.rename(glob('%s/dist/sleektiv-*.tar.gz' % self.args.build_dir)[0], '%s/sleektiv_%s.%s.tar.gz' % (self.args.build_dir, VERSION, TSTAMP))
+        os.rename(glob('%s/dist/sleektiv-*.zip' % self.args.build_dir)[0], '%s/sleektiv_%s.%s.zip' % (self.args.build_dir, VERSION, TSTAMP))
         logging.info('Finished building python tgz package')
 
     def start_test(self):
@@ -289,14 +289,14 @@ class DockerTgz(Docker):
         logging.info('Start testing python tgz package')
         cmds = [
             'service postgresql start',
-            'pip3 install /data/src/flectra_%s.%s.tar.gz' % (VERSION, TSTAMP),
-            'su postgres -s /bin/bash -c "createuser -s flectra"',
+            'pip3 install /data/src/sleektiv_%s.%s.tar.gz' % (VERSION, TSTAMP),
+            'su postgres -s /bin/bash -c "createuser -s sleektiv"',
             'su postgres -s /bin/bash -c "createdb mycompany"',
-            'su flectra -s /bin/bash -c "flectra -d mycompany -i base --stop-after-init"',
-            'su flectra -s /bin/bash -c "flectra -d mycompany --pidfile=/data/src/flectra.pid"',
+            'su sleektiv -s /bin/bash -c "sleektiv -d mycompany -i base --stop-after-init"',
+            'su sleektiv -s /bin/bash -c "sleektiv -d mycompany --pidfile=/data/src/sleektiv.pid"',
         ]
-        self.run(' && '.join(cmds), self.args.build_dir, 'flectra-src-test-%s' % TSTAMP, user='root', detach=True, exposed_port=7073, timeout=300)
-        self.test_flectra()
+        self.run(' && '.join(cmds), self.args.build_dir, 'sleektiv-src-test-%s' % TSTAMP, user='root', detach=True, exposed_port=7073, timeout=300)
+        self.test_sleektiv()
         logging.info('Finished testing tgz package')
 
 
@@ -308,11 +308,11 @@ class DockerDeb(Docker):
     def build(self):
         logging.info('Start building debian package')
         # Append timestamp to version for the .dsc to refer the right .tar.gz
-        cmds = ["sed -i '1s/^.*$/flectra (%s.%s) stable; urgency=low/' debian/changelog" % (VERSION, TSTAMP)]
+        cmds = ["sed -i '1s/^.*$/sleektiv (%s.%s) stable; urgency=low/' debian/changelog" % (VERSION, TSTAMP)]
         cmds.append('dpkg-buildpackage -rfakeroot -uc -us -tc')
         # As the packages are built in the parent of the buildir, we move them back to build_dir
-        cmds.append('mv ../flectra_* ./')
-        self.run(' && '.join(cmds), self.args.build_dir, 'flectra-deb-build-%s' % TSTAMP)
+        cmds.append('mv ../sleektiv_* ./')
+        self.run(' && '.join(cmds), self.args.build_dir, 'sleektiv-deb-build-%s' % TSTAMP)
         logging.info('Finished building debian package')
 
     def start_test(self):
@@ -323,12 +323,12 @@ class DockerDeb(Docker):
             'service postgresql start',
             'su postgres -s /bin/bash -c "createdb mycompany"',
             '/usr/bin/apt-get update -y',
-            '/usr/bin/dpkg -i /data/src/flectra_%s.%s_all.deb ; /usr/bin/apt-get install -f -y' % (VERSION, TSTAMP),
-            'su flectra -s /bin/bash -c "flectra -d mycompany -i base --stop-after-init"',
-            'su flectra -s /bin/bash -c "flectra -d mycompany --pidfile=/data/src/flectra.pid"',
+            '/usr/bin/dpkg -i /data/src/sleektiv_%s.%s_all.deb ; /usr/bin/apt-get install -f -y' % (VERSION, TSTAMP),
+            'su sleektiv -s /bin/bash -c "sleektiv -d mycompany -i base --stop-after-init"',
+            'su sleektiv -s /bin/bash -c "sleektiv -d mycompany --pidfile=/data/src/sleektiv.pid"',
         ]
-        self.run(' && '.join(cmds), self.args.build_dir, 'flectra-deb-test-%s' % TSTAMP, user='root', detach=True, exposed_port=7073, timeout=300)
-        self.test_flectra()
+        self.run(' && '.join(cmds), self.args.build_dir, 'sleektiv-deb-test-%s' % TSTAMP, user='root', detach=True, exposed_port=7073, timeout=300)
+        self.test_sleektiv()
         logging.info('Finished testing debian package')
 
 
@@ -339,8 +339,8 @@ class DockerRpm(Docker):
 
     def build(self):
         logging.info('Start building fedora rpm package')
-        self.run('python3 setup.py --quiet bdist_rpm', self.args.build_dir, 'flectra-rpm-build-%s' % TSTAMP)
-        os.rename(glob('%s/dist/flectra-*.noarch.rpm' % self.args.build_dir)[0], '%s/flectra_%s.%s.rpm' % (self.args.build_dir, VERSION, TSTAMP))
+        self.run('python3 setup.py --quiet bdist_rpm', self.args.build_dir, 'sleektiv-rpm-build-%s' % TSTAMP)
+        os.rename(glob('%s/dist/sleektiv-*.noarch.rpm' % self.args.build_dir)[0], '%s/sleektiv_%s.%s.rpm' % (self.args.build_dir, VERSION, TSTAMP))
         logging.info('Finished building fedora rpm package')
 
     def start_test(self):
@@ -351,12 +351,12 @@ class DockerRpm(Docker):
             'su postgres -c "/usr/bin/pg_ctl -D /var/lib/postgres/data start"',
             'sleep 5',
             'su postgres -c "createdb mycompany"',
-            'dnf install -d 0 -e 0 /data/src/flectra_%s.%s.rpm -y' % (VERSION, TSTAMP),
-            'su flectra -s /bin/bash -c "flectra -c /etc/flectra/flectra.conf -d mycompany -i base --stop-after-init"',
-            'su flectra -s /bin/bash -c "flectra -c /etc/flectra/flectra.conf -d mycompany --pidfile=/data/src/flectra.pid"',
+            'dnf install -d 0 -e 0 /data/src/sleektiv_%s.%s.rpm -y' % (VERSION, TSTAMP),
+            'su sleektiv -s /bin/bash -c "sleektiv -c /etc/sleektiv/sleektiv.conf -d mycompany -i base --stop-after-init"',
+            'su sleektiv -s /bin/bash -c "sleektiv -c /etc/sleektiv/sleektiv.conf -d mycompany --pidfile=/data/src/sleektiv.pid"',
         ]
-        self.run(' && '.join(cmds), args.build_dir, 'flectra-rpm-test-%s' % TSTAMP, user='root', detach=True, exposed_port=7073, timeout=300)
-        self.test_flectra()
+        self.run(' && '.join(cmds), args.build_dir, 'sleektiv-rpm-test-%s' % TSTAMP, user='root', detach=True, exposed_port=7073, timeout=300)
+        self.test_sleektiv()
         logging.info('Finished testing rpm package')
 
     def gen_rpm_repo(self, args, rpm_filepath):
@@ -369,7 +369,7 @@ class DockerRpm(Docker):
         shutil.copy(rpm_filepath, temp_path)
 
         logging.info('Start creating rpm repo')
-        self.run('createrepo /data/src/', temp_path, 'flectra-rpm-createrepo-%s' % TSTAMP)
+        self.run('createrepo /data/src/', temp_path, 'sleektiv-rpm-createrepo-%s' % TSTAMP)
         shutil.copytree(os.path.join(temp_path, "repodata"), os.path.join(args.pub, 'rpm', 'repodata'))
 
         # Remove temp directory
@@ -457,7 +457,7 @@ class KVMWinBuildExe(KVM):
         with open(os.path.join(self.args.build_dir, 'setup/win32/Makefile.servicename'), 'w') as f:
             f.write("SERVICENAME=%s\n" % nt_service_name)
 
-        remote_build_dir = '/cygdrive/c/flectrabuild/server/'
+        remote_build_dir = '/cygdrive/c/sleektivbuild/server/'
 
         self.ssh("mkdir -p build")
         logging.info("Syncing Flectra files to virtual machine...")
@@ -470,15 +470,15 @@ class KVMWinBuildExe(KVM):
 class KVMWinTestExe(KVM):
     def run(self):
         logging.info('Start testing Windows package')
-        setup_path = glob("%s/flectra_setup_*.exe" % self.args.build_dir)[0]
+        setup_path = glob("%s/sleektiv_setup_*.exe" % self.args.build_dir)[0]
         setupfile = setup_path.split('/')[-1]
-        setupversion = setupfile.split('flectra_setup_')[1].split('.exe')[0]
+        setupversion = setupfile.split('sleektiv_setup_')[1].split('.exe')[0]
 
         self.rsync(['%s' % setup_path, '%s@127.0.0.1:' % self.login])
         self.ssh("TEMP=/tmp ./%s /S" % setupfile)
         self.ssh('PGPASSWORD=openpgpwd /cygdrive/c/"Program Files"/"Flectra %s"/PostgreSQL/bin/createdb.exe -e -U openpg mycompany' % setupversion)
         self.ssh('netsh advfirewall set publicprofile state off')
-        self.ssh('/cygdrive/c/"Program Files"/"Flectra {sv}"/python/python.exe \'c:\\Program Files\\Flectra {sv}\\server\\flectra-bin\' -d mycompany -i base --stop-after-init'.format(sv=setupversion))
+        self.ssh('/cygdrive/c/"Program Files"/"Flectra {sv}"/python/python.exe \'c:\\Program Files\\Flectra {sv}\\server\\sleektiv-bin\' -d mycompany -i base --stop-after-init'.format(sv=setupversion))
         _rpc_count_modules(port=17073)
         logging.info('Finished testing Windows package')
 
@@ -505,8 +505,8 @@ def parse_args():
     ap.add_argument("--build-win", action="store_true")
 
     # Windows VM
-    ap.add_argument("--vm-winxp-image", default='/home/flectra/vm/win1036/win10_winpy36.qcow2', help="%(default)s")
-    ap.add_argument("--vm-winxp-ssh-key", default='/home/flectra/vm/win1036/id_rsa', help="%(default)s")
+    ap.add_argument("--vm-winxp-image", default='/home/sleektiv/vm/win1036/win10_winpy36.qcow2', help="%(default)s")
+    ap.add_argument("--vm-winxp-ssh-key", default='/home/sleektiv/vm/win1036/id_rsa', help="%(default)s")
     ap.add_argument("--vm-winxp-login", default='Naresh', help="Windows login %(default)s")
     ap.add_argument("--vm-winxp-python-version", default='3.7.7', help="Windows Python version installed in the VM (default: %(default)s)")
 
@@ -517,7 +517,7 @@ def parse_args():
 
     parsed_args = ap.parse_args()
     logging.basicConfig(format='%(asctime)s %(levelname)s: %(message)s', datefmt='%Y-%m-%d %I:%M:%S', level=log_levels[parsed_args.logging])
-    parsed_args.flectra_dir = ROOTDIR
+    parsed_args.sleektiv_dir = ROOTDIR
     return parsed_args
 
 

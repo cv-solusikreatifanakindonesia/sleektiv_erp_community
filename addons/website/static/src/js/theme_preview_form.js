@@ -1,4 +1,4 @@
-flectra.define('website.theme_preview_form', function (require) {
+sleektiv.define('website.theme_preview_form', function (require) {
 "use strict";
 
 var FormController = require('web.FormController');

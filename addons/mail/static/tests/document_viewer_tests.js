@@ -1,4 +1,4 @@
-flectra.define('mail.document_viewer_tests', function (require) {
+sleektiv.define('mail.document_viewer_tests', function (require) {
 "use strict";
 
 var DocumentViewer = require('mail.DocumentViewer');

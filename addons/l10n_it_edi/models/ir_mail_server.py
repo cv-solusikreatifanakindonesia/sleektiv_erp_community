@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import zipfile
 import io
@@ -14,9 +14,9 @@ from lxml import etree
 from datetime import datetime
 from xmlrpc import client as xmlrpclib
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import ValidationError, UserError
-from flectra.addons.l10n_it_edi.tools.remove_signature import remove_signature
+from sleektiv import api, fields, models, tools, _
+from sleektiv.exceptions import ValidationError, UserError
+from sleektiv.addons.l10n_it_edi.tools.remove_signature import remove_signature
 
 
 _logger = logging.getLogger(__name__)
@@ -358,7 +358,7 @@ class FetchmailServer(models.Model):
             # This is the file sent by the ES to the addressee together with the invoice file,
             # containing the main reference data of the file useful for processing, including
             # the IdentificativoSDI.
-            # Useless for Flectra
+            # Useless for Sleektiv
 
         elif receipt_type == 'DT':
             # Deadline passed notice

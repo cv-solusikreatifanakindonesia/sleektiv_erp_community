@@ -1,4 +1,4 @@
-flectra.define('web.class_tests', function (require) {
+sleektiv.define('web.class_tests', function (require) {
 "use strict";
 
 var Class = require('web.Class');

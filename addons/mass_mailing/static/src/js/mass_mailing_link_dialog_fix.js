@@ -1,5 +1,5 @@
 
-flectra.define('mass_mailing.fix.LinkDialog', function (require) {
+sleektiv.define('mass_mailing.fix.LinkDialog', function (require) {
 'use strict';
 
 const LinkDialog = require('wysiwyg.widgets.LinkDialog');

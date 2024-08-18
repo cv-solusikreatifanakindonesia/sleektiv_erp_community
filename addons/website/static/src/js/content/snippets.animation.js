@@ -1,4 +1,4 @@
-flectra.define('website.content.snippets.animation', function (require) {
+sleektiv.define('website.content.snippets.animation', function (require) {
 'use strict';
 
 /**
@@ -669,13 +669,13 @@ registry.mediaVideo = publicWidget.Widget.extend(MobileYoutubeAutoplayMixin, {
      */
     start: function () {
         // TODO: this code should be refactored to make more sense and be better
-        // integrated with Flectra (this refactoring should be done in master).
+        // integrated with Sleektiv (this refactoring should be done in master).
 
         const proms = [this._super.apply(this, arguments)];
         let iframeEl = this.$target[0].querySelector(':scope > iframe');
 
         // The following code is only there to ensure compatibility with
-        // videos added before bug fixes or new Flectra versions where the
+        // videos added before bug fixes or new Sleektiv versions where the
         // <iframe/> element is properly saved.
         if (!iframeEl) {
             iframeEl = this._generateIframe();
@@ -1327,7 +1327,7 @@ registry.ImagesLazyLoading = publicWidget.Widget.extend({
  * Note: a gap also appears between some shapes without zoom. This is likely
  * due to error in the shapes themselves. Many things were done to try and fix
  * this, but the remaining errors will likely be fixed with a review of the
- * shapes in future Flectra versions.
+ * shapes in future Sleektiv versions.
  *
  * /!\
  * If a better solution for stable comes up, this widget behavior may be

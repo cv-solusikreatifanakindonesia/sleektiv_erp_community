@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <template id="_assets_primary_variables" inherit_id="website._assets_primary_variables">
         <xpath expr="//link[last()]" position="after">
             <link rel="stylesheet" type="text/scss" href="/website_sale/static/src/scss/primary_variables.scss"/>
@@ -695,14 +695,14 @@
 
     <template inherit_id='website_sale.product' id="product_picture_magnify" customize_show="True" name="Image Zoom">
         <xpath expr='//div[hasclass("js_sale")]' position='attributes'>
-            <attribute name="class" separator=" " add="ecom-zoomable zoomflectra-next" />
+            <attribute name="class" separator=" " add="ecom-zoomable zoomsleektiv-next" />
         </xpath>
     </template>
 
     <template inherit_id='website_sale.product' id="product_picture_magnify_auto" active="False" customize_show="True" name="Automatic Image Zoom">
         <xpath expr='//div[hasclass("js_sale")]' position='attributes'>
             <attribute name="data-ecom-zoom-auto">1</attribute>
-            <attribute name="class" separator=" " add="ecom-zoomable zoomflectra-next" />
+            <attribute name="class" separator=" " add="ecom-zoomable zoomsleektiv-next" />
 
         </xpath>
     </template>
@@ -1947,4 +1947,4 @@
         </xpath>
     </template>
 
-</flectra>
+</sleektiv>

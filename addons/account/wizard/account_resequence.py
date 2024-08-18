@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
-from flectra.tools.date_utils import get_month, get_fiscal_year
-from flectra.tools.misc import format_date
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError
+from sleektiv.tools.date_utils import get_month, get_fiscal_year
+from sleektiv.tools.misc import format_date
 
 import re
 from collections import defaultdict

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import os
 
-from flectra.tools import config, test_reports
-from flectra.addons.hr_payroll.tests.common import TestPayslipBase
+from sleektiv.tools import config, test_reports
+from sleektiv.addons.hr_payroll.tests.common import TestPayslipBase
 
 
 class TestPayslipFlow(TestPayslipBase):

@@ -5,11 +5,11 @@ from lxml import etree
 import base64
 import json
 
-from flectra import _, _lt, api, fields, models
-from flectra.osv.expression import AND, TRUE_DOMAIN, normalize_domain
-from flectra.tools import date_utils, lazy
-from flectra.tools.misc import get_lang
-from flectra.exceptions import UserError
+from sleektiv import _, _lt, api, fields, models
+from sleektiv.osv.expression import AND, TRUE_DOMAIN, normalize_domain
+from sleektiv.tools import date_utils, lazy
+from sleektiv.tools.misc import get_lang
+from sleektiv.exceptions import UserError
 from collections import defaultdict
 
 SEARCH_PANEL_ERROR_MESSAGE = _lt("Too many items to display.")

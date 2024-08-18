@@ -1,4 +1,4 @@
-from flectra import api,models
+from sleektiv import api,models
 
 class PurchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import datetime
 
-from flectra.addons.gamification.tests.common import TransactionCaseGamification
-from flectra.exceptions import UserError
-from flectra.tools import mute_logger
+from sleektiv.addons.gamification.tests.common import TransactionCaseGamification
+from sleektiv.exceptions import UserError
+from sleektiv.tools import mute_logger
 
 
 class TestGamificationCommon(TransactionCaseGamification):
@@ -61,7 +61,7 @@ class test_challenge(TestGamificationCommon):
         badge_ids = self.env['gamification.badge.user'].search([('badge_id', '=', badge_id), ('user_id', '=', demo.id)])
         self.assertEqual(len(badge_ids), 1, "Demo user has not received the badge")
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_20_update_all_goals_filter(self):
         # Enroll two internal and two portal users in the challenge
         (

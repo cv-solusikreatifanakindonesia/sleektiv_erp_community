@@ -1,4 +1,4 @@
-flectra.define('web.ListModel', function (require) {
+sleektiv.define('web.ListModel', function (require) {
     "use strict";
 
     var BasicModel = require('web.BasicModel');

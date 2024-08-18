@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import json
 
-from flectra import http
-from flectra.addons.website_form.controllers.main import WebsiteForm
-from flectra.http import request
+from sleektiv import http
+from sleektiv.addons.website_form.controllers.main import WebsiteForm
+from sleektiv.http import request
 
 
 class ContactController(WebsiteForm):

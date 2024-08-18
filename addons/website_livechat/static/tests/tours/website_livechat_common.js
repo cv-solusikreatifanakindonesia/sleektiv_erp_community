@@ -1,4 +1,4 @@
-flectra.define('website_livechat.tour_common', function(require) {
+sleektiv.define('website_livechat.tour_common', function(require) {
 'use strict';
 
 var session = require('web.session');

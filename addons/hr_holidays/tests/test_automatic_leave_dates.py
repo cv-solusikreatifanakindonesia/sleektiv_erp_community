@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from datetime import date, datetime
 
-from flectra.tests.common import Form
+from sleektiv.tests.common import Form
 
-from flectra.addons.hr_holidays.tests.common import TestHrHolidaysCommon
-from flectra.exceptions import ValidationError
+from sleektiv.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from sleektiv.exceptions import ValidationError
 
 
 class TestAutomaticLeaveDates(TestHrHolidaysCommon):

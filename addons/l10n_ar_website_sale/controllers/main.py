@@ -1,7 +1,7 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import _
-from flectra.addons.website_sale.controllers.main import WebsiteSale
-from flectra.http import request, route
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv import _
+from sleektiv.addons.website_sale.controllers.main import WebsiteSale
+from sleektiv.http import request, route
 
 
 class L10nARWebsiteSale(WebsiteSale):

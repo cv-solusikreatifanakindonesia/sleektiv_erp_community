@@ -1,4 +1,4 @@
-flectra.define('web.Notification', function (require) {
+sleektiv.define('web.Notification', function (require) {
 'use strict';
 
 var Widget = require('web.Widget');

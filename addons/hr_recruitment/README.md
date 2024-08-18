@@ -1,7 +1,7 @@
 Manage Recruitment and Job applications
 ---------------------------------------
 
-Publish, promote and organize your job offers with the Flectra
+Publish, promote and organize your job offers with the Sleektiv
 <a href="https://www.flectrahq.com/page/recruitment">Open Source Recruitment Application</a>.
 
 Organize your job board, promote your job announces and keep track of

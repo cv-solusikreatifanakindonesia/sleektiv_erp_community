@@ -1,10 +1,10 @@
 # coding: utf-8
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from uuid import uuid4
 
-from flectra import api, exceptions, fields, models, _
+from sleektiv import api, exceptions, fields, models, _
 
 
 class PaymentAcquirerTest(models.Model):

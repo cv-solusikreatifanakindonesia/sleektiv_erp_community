@@ -1,9 +1,9 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 # -*- coding: utf-8 -*-
 
-from flectra.tests import tagged
-from flectra.tests.common import TransactionCase
-from flectra import tools
+from sleektiv.tests import tagged
+from sleektiv.tests.common import TransactionCase
+from sleektiv import tools
 from io import BytesIO
 from PIL import Image
 import base64

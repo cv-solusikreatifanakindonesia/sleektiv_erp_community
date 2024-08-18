@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import models
+from sleektiv import models
 
-from flectra.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
-from flectra.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from sleektiv.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
+from sleektiv.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
 
 
 class Attendee(models.Model):
@@ -13,7 +13,7 @@ class Attendee(models.Model):
 
     def _send_mail_to_attendees(self, template_xmlid, force_send=False, ignore_recurrence=False):
         """ Override the super method
-        If not synced with Microsoft Outlook, let Flectra in charge of sending emails
+        If not synced with Microsoft Outlook, let Sleektiv in charge of sending emails
         Otherwise, Microsoft Outlook will send them
         """
         with microsoft_calendar_token(self.env.user.sudo()) as token:

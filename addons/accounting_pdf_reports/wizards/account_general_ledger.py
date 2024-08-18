@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra import fields, models, _
-from flectra.exceptions import UserError
+from sleektiv import fields, models, _
+from sleektiv.exceptions import UserError
 
 
 class AccountReportGeneralLedger(models.TransientModel):

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.exceptions import RedirectWarning, UserError, ValidationError
-from flectra.tests.common import SavepointCase
+from sleektiv.exceptions import RedirectWarning, UserError, ValidationError
+from sleektiv.tests.common import SavepointCase
 
 
 class TestRobustness(SavepointCase):

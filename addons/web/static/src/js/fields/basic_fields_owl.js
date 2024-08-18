@@ -1,4 +1,4 @@
-flectra.define('web.basic_fields_owl', function (require) {
+sleektiv.define('web.basic_fields_owl', function (require) {
     "use strict";
 
     const AbstractField = require('web.AbstractFieldOwl');

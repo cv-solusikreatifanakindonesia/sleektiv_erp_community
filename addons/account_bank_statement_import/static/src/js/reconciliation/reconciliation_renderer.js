@@ -1,4 +1,4 @@
-flectra.define('account.ReconciliationRenderer', function (require) {
+sleektiv.define('account.ReconciliationRenderer', function (require) {
 "use strict";
 
 var Widget = require('web.Widget');
@@ -688,7 +688,7 @@ var LineRenderer = Widget.extend(FieldManagerMixin, {
     },
     /**
      * @private
-     * @param {FlectraEvent} event
+     * @param {SleektivEvent} event
      */
     _onFieldChanged: function (event) {
         event.stopPropagation();

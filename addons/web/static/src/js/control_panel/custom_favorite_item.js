@@ -1,4 +1,4 @@
-flectra.define('web.CustomFavoriteItem', function (require) {
+sleektiv.define('web.CustomFavoriteItem', function (require) {
     "use strict";
 
     const DropdownMenuItem = require('web.DropdownMenuItem');

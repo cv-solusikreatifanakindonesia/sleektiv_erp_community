@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, _
-from flectra.tools import html2plaintext, html_escape
+from sleektiv import models, _
+from sleektiv.tools import html2plaintext, html_escape
 
 
 class MailChannel(models.Model):

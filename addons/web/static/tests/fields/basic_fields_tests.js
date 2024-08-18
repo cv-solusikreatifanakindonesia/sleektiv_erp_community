@@ -1,4 +1,4 @@
-flectra.define('web.basic_fields_tests', function (require) {
+sleektiv.define('web.basic_fields_tests', function (require) {
 "use strict";
 
 var ajax = require('web.ajax');

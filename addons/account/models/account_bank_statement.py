@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, fields, models, _
-from flectra.osv import expression
-from flectra.tools import float_is_zero
-from flectra.tools import float_compare, float_round, float_repr
-from flectra.tools.misc import formatLang, format_date
-from flectra.exceptions import UserError, ValidationError
+from sleektiv import api, fields, models, _
+from sleektiv.osv import expression
+from sleektiv.tools import float_is_zero
+from sleektiv.tools import float_compare, float_round, float_repr
+from sleektiv.tools.misc import formatLang, format_date
+from sleektiv.exceptions import UserError, ValidationError
 
 import time
 import math
@@ -301,11 +301,11 @@ class AccountBankStatement(models.Model):
             st_line.currency_id = self.journal_id.currency_id or self.company_id.currency_id
 
     def _check_balance_end_real_same_as_computed(self):
-        """ Check the balance_end_real (encoded manually by the user) is equals to the balance_end (computed by flectra). """
+        """ Check the balance_end_real (encoded manually by the user) is equals to the balance_end (computed by sleektiv). """
         return self._check_cash_balance_end_real_same_as_computed() and self._check_bank_balance_end_real_same_as_computed()
 
     def _check_cash_balance_end_real_same_as_computed(self):
-        """ Check the balance_end_real (encoded manually by the user) is equals to the balance_end (computed by flectra).
+        """ Check the balance_end_real (encoded manually by the user) is equals to the balance_end (computed by sleektiv).
             For a cash statement, if there is a difference, the different is set automatically to a profit/loss account.
         """
         for statement in self.filtered(lambda stmt: stmt.journal_type == 'cash'):
@@ -343,7 +343,7 @@ class AccountBankStatement(models.Model):
         return True
 
     def _check_bank_balance_end_real_same_as_computed(self):
-        """ Check the balance_end_real (encoded manually by the user) is equals to the balance_end (computed by flectra). """
+        """ Check the balance_end_real (encoded manually by the user) is equals to the balance_end (computed by sleektiv). """
         for statement in self.filtered(lambda stmt: stmt.journal_type == 'bank'):
             if not statement.currency_id.is_zero(statement.difference):
                 balance_end_real = formatLang(self.env, statement.balance_end_real, currency_obj=statement.currency_id)

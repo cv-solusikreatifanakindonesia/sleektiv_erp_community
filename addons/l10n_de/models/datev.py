@@ -1,4 +1,4 @@
-from flectra import fields, models
+from sleektiv import fields, models
 
 class AccountTaxTemplate(models.Model):
     _inherit = 'account.tax.template'

@@ -1,4 +1,4 @@
-flectra.define('report', function (require) {
+sleektiv.define('report', function (require) {
 'use strict';
 
 require('web.dom_ready');

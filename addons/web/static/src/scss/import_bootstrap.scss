@@ -39,7 +39,7 @@
 // Instead, here, in the very specific case we have a transparent table bg and
 // table color equal to the body color, we temporarily unset the table color
 // variable for the duration of the bootstrap table rules.
-// Note: we cannot create a rule in an "Flectra file" to fix this as unsetting the
+// Note: we cannot create a rule in an "Sleektiv file" to fix this as unsetting the
 // color for the `.table` rule would also unset the case of a `.table.bg-XXX`
 // where we still want `.bg-XXX` to force the color.
 $-tmp: $table-color;

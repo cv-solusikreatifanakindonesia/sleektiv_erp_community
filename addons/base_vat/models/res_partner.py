@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import string
@@ -9,9 +9,9 @@ from stdnum.eu.vat import check_vies
 from stdnum.exceptions import InvalidComponent
 import logging
 
-from flectra import api, models, tools, _
-from flectra.tools.misc import ustr
-from flectra.exceptions import ValidationError
+from sleektiv import api, models, tools, _
+from sleektiv.tools.misc import ustr
+from sleektiv.exceptions import ValidationError
 
 
 _logger = logging.getLogger(__name__)

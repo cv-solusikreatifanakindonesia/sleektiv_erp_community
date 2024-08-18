@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from flectra.addons.sale_coupon.tests.common import TestSaleCouponCommon
-from flectra.exceptions import UserError
-from flectra.fields import Date
+from sleektiv.addons.sale_coupon.tests.common import TestSaleCouponCommon
+from sleektiv.exceptions import UserError
+from sleektiv.fields import Date
 
 class TestProgramRules(TestSaleCouponCommon):
     # Test all the validity rules to allow a customer to have a reward.

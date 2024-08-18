@@ -1,4 +1,4 @@
-flectra.define('pos_mercury.ProductScreen', function (require) {
+sleektiv.define('pos_mercury.ProductScreen', function (require) {
     'use strict';
 
     const ProductScreen = require('point_of_sale.ProductScreen');

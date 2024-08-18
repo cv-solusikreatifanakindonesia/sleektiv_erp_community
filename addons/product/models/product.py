@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 import re
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import UserError, ValidationError
-from flectra.osv import expression
+from sleektiv import api, fields, models, tools, _
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.osv import expression
 
 
-from flectra.tools import float_compare
+from sleektiv.tools import float_compare
 
 _logger = logging.getLogger(__name__)
 
@@ -401,7 +401,7 @@ class ProductProduct(models.Model):
             self = to_unlink
 
         try:
-            with self.env.cr.savepoint(), tools.mute_logger('flectra.sql_db'):
+            with self.env.cr.savepoint(), tools.mute_logger('sleektiv.sql_db'):
                 self.unlink()
         except Exception:
             # We catch all kind of exceptions to be sure that the operation
@@ -424,7 +424,7 @@ class ProductProduct(models.Model):
         For convenience the template is copied instead and its first variant is
         returned.
         """
-        # copy variant is disabled in https://github.com/flectra/flectra/pull/38303
+        # copy variant is disabled in https://github.com/sleektiv/sleektiv/pull/38303
         # this returns the first possible combination of variant to make it
         # works for now, need to be fixed to return product_variant_id if it's
         # possible in the future

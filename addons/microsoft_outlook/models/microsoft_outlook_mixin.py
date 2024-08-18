@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
@@ -8,9 +8,9 @@ import requests
 
 from werkzeug.urls import url_encode, url_join
 
-from flectra import _, api, fields, models
-from flectra.exceptions import AccessError, UserError
-from flectra.tools.misc import hmac
+from sleektiv import _, api, fields, models
+from sleektiv.exceptions import AccessError, UserError
+from sleektiv.tools.misc import hmac
 
 _logger = logging.getLogger(__name__)
 

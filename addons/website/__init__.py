@@ -1,12 +1,12 @@
 # -*- encoding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from . import controllers
 from . import models
 from . import wizard
 
-import flectra
-from flectra import api, SUPERUSER_ID
+import sleektiv
+from sleektiv import api, SUPERUSER_ID
 from functools import partial
 
 
@@ -21,7 +21,7 @@ def uninstall_hook(cr, registry):
 
     # Properly unlink website_id from ir.model.fields
     def rem_website_id_null(dbname):
-        db_registry = flectra.modules.registry.Registry.new(dbname)
+        db_registry = sleektiv.modules.registry.Registry.new(dbname)
         with api.Environment.manage(), db_registry.cursor() as cr:
             env = api.Environment(cr, SUPERUSER_ID, {})
             env['ir.model.fields'].search([

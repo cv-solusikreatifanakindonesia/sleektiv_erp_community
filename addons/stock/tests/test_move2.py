@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from flectra.addons.stock.tests.common import TestStockCommon
-from flectra.exceptions import UserError
+from sleektiv.addons.stock.tests.common import TestStockCommon
+from sleektiv.exceptions import UserError
 
-from flectra.tests import Form
-from flectra.tools import float_is_zero, float_compare
+from sleektiv.tests import Form
+from sleektiv.tools import float_is_zero, float_compare
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta

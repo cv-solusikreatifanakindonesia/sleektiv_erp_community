@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import logging
 import random
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, models, fields, _
-from flectra.http import request
-from flectra.osv import expression
-from flectra.exceptions import UserError, ValidationError
+from sleektiv import api, models, fields, _
+from sleektiv.http import request
+from sleektiv.osv import expression
+from sleektiv.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
 

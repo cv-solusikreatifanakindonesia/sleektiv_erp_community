@@ -1,4 +1,4 @@
-flectra.define('web.AttachDocument', function (require) {
+sleektiv.define('web.AttachDocument', function (require) {
 "use static";
 
 var core = require('web.core');

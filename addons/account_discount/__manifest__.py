@@ -7,8 +7,8 @@
     'description': """
         Use Document Discounts on Invoices
     """,
-    'author': "Jamotion GmbH, Flectra HQ",
-    'website': "https://flectra-hq.com",
+    'author': "Jamotion GmbH, Sleektiv HQ",
+    'website': "https://sleektiv-hq.com",
     'category': 'Accounting',
     'version': '0.1',
     'depends': [

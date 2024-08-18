@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models, fields
-from flectra.http import request
-from flectra.addons.http_routing.models.ir_http import url_for
+from sleektiv import api, models, fields
+from sleektiv.http import request
+from sleektiv.addons.http_routing.models.ir_http import url_for
 
 
 class View(models.Model):

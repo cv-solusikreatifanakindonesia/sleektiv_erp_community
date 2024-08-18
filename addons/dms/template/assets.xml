@@ -6,7 +6,7 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
   -->
-<flectra>
+<sleektiv>
     <template id="assets_backend" name="dms_assets" inherit_id="web.assets_backend">
         <xpath expr="//link[last()]" position="after">
             <link rel="stylesheet" href="/dms/static/src/scss/variables.scss" />
@@ -43,4 +43,4 @@
             />
         </xpath>
     </template>
-</flectra>
+</sleektiv>

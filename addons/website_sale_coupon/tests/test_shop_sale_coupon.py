@@ -1,9 +1,9 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
 
-from flectra import fields
-from flectra.tests import HttpCase, tagged, TransactionCase
-from flectra.addons.sale.tests.test_sale_product_attribute_value_config import TestSaleProductAttributeValueCommon
+from sleektiv import fields
+from sleektiv.tests import HttpCase, tagged, TransactionCase
+from sleektiv.addons.sale.tests.test_sale_product_attribute_value_config import TestSaleProductAttributeValueCommon
 
 
 @tagged('post_install', '-at_install')

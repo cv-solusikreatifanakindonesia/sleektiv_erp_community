@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
-from flectra import fields, models
-from flectra.tools import float_is_zero, float_compare
-from flectra.tools.misc import formatLang
+from sleektiv import fields, models
+from sleektiv.tools import float_is_zero, float_compare
+from sleektiv.tools.misc import formatLang
 
 
 class AccountMove(models.Model):

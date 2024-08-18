@@ -1,4 +1,4 @@
-flectra.define('web.list_benchmarks', function (require) {
+sleektiv.define('web.list_benchmarks', function (require) {
     "use strict";
 
     const ListView = require('web.ListView');

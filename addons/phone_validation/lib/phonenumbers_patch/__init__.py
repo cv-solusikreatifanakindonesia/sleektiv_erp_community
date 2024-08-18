@@ -15,7 +15,7 @@
 
 # https://github.com/google/libphonenumber
 
-from flectra.tools.parse_version import parse_version
+from sleektiv.tools.parse_version import parse_version
 
 try:
     import phonenumbers

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from flectra import fields
-from flectra.tests import tagged
-from flectra.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
+from sleektiv import fields
+from sleektiv.tests import tagged
+from sleektiv.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
 
 
 @tagged('post_install', '-at_install')

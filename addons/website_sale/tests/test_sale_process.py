@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-import flectra.tests
+import sleektiv.tests
 
-from flectra import api
-from flectra.addons.base.tests.common import HttpCaseWithUserDemo, TransactionCaseWithUserDemo, HttpCaseWithUserPortal
-from flectra.addons.website_sale.controllers.main import WebsiteSale
-from flectra.addons.website_sale.tests.common import TestWebsiteSaleCommon
-from flectra.addons.website.tools import MockRequest
+from sleektiv import api
+from sleektiv.addons.base.tests.common import HttpCaseWithUserDemo, TransactionCaseWithUserDemo, HttpCaseWithUserPortal
+from sleektiv.addons.website_sale.controllers.main import WebsiteSale
+from sleektiv.addons.website_sale.tests.common import TestWebsiteSaleCommon
+from sleektiv.addons.website.tools import MockRequest
 
 
-@flectra.tests.tagged('post_install', '-at_install')
+@sleektiv.tests.tagged('post_install', '-at_install')
 class TestUi(HttpCaseWithUserDemo, TestWebsiteSaleCommon):
 
     def setUp(self):
@@ -102,7 +102,7 @@ class TestUi(HttpCaseWithUserDemo, TestWebsiteSaleCommon):
         self.start_tour("/", 'website_sale_tour')
 
 
-@flectra.tests.tagged('post_install', '-at_install')
+@sleektiv.tests.tagged('post_install', '-at_install')
 class TestWebsiteSaleCheckoutAddress(TransactionCaseWithUserDemo, HttpCaseWithUserPortal):
     ''' The goal of this method class is to test the address management on
         the checkout (new/edit billing/shipping, company_id, website_id..).

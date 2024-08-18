@@ -1,4 +1,4 @@
-flectra.define('web_gantt.GanttRenderer', function (require) {
+sleektiv.define('web_gantt.GanttRenderer', function (require) {
 "use strict";
 
 var AbstractRenderer = require('web.AbstractRenderer');

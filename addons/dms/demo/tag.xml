@@ -5,7 +5,7 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
   -->
-<flectra noupdate="1">
+<sleektiv noupdate="1">
     <record id="tag_01_demo" model="dms.tag">
         <field name="name">Customer</field>
         <field name="color">1</field>
@@ -61,4 +61,4 @@
         <field name="color">11</field>
         <field name="category_id" ref="category_01_demo" />
     </record>
-</flectra>
+</sleektiv>

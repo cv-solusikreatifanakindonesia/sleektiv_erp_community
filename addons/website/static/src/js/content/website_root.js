@@ -1,4 +1,4 @@
-flectra.define('website.root', function (require) {
+sleektiv.define('website.root', function (require) {
 'use strict';
 
 const ajax = require('web.ajax');
@@ -7,7 +7,7 @@ var Dialog = require('web.Dialog');
 const KeyboardNavigationMixin = require('web.KeyboardNavigationMixin');
 const session = require('web.session');
 var publicRootData = require('web.public.root');
-require("web.zoomflectra");
+require("web.zoomsleektiv");
 
 var websiteRootRegistry = publicRootData.publicRootRegistry;
 
@@ -69,7 +69,7 @@ var WebsiteRoot = publicRootData.PublicRoot.extend(KeyboardNavigationMixin, {
         }
 
         // Enable magnify on zommable img
-        this.$('.zoomable img[data-zoom]').zoomFlectra();
+        this.$('.zoomable img[data-zoom]').zoomSleektiv();
 
         return this._super.apply(this, arguments);
     },
@@ -146,7 +146,7 @@ var WebsiteRoot = publicRootData.PublicRoot.extend(KeyboardNavigationMixin, {
             this._gmapAPILoading = new Promise(async resolve => {
                 const key = await this._getGMapAPIKey(refetch);
 
-                window.flectra_gmap_api_post_load = (async function flectra_gmap_api_post_load() {
+                window.sleektiv_gmap_api_post_load = (async function sleektiv_gmap_api_post_load() {
                     await this._startWidgets(undefined, {editableMode: editableMode});
                     resolve(key);
                 }).bind(this);
@@ -171,7 +171,7 @@ var WebsiteRoot = publicRootData.PublicRoot.extend(KeyboardNavigationMixin, {
                     this._gmapAPILoading = false;
                     return;
                 }
-                await ajax.loadJS(`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&callback=flectra_gmap_api_post_load&key=${encodeURIComponent(key)}`);
+                await ajax.loadJS(`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&callback=sleektiv_gmap_api_post_load&key=${encodeURIComponent(key)}`);
             });
         }
         return this._gmapAPILoading;
@@ -241,7 +241,7 @@ var WebsiteRoot = publicRootData.PublicRoot.extend(KeyboardNavigationMixin, {
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     async _onGMapAPIRequest(ev) {
         ev.stopPropagation();
@@ -250,7 +250,7 @@ var WebsiteRoot = publicRootData.PublicRoot.extend(KeyboardNavigationMixin, {
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     async _onGMapAPIKeyRequest(ev) {
         ev.stopPropagation();
@@ -262,7 +262,7 @@ var WebsiteRoot = publicRootData.PublicRoot.extend(KeyboardNavigationMixin, {
      * Checks information about the page SEO object.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSeoObjectRequest: function (ev) {
         var res = this._unslugHtmlDataObject('seo-object');

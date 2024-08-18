@@ -1,4 +1,4 @@
-flectra.define("crm.crm_form", function (require) {
+sleektiv.define("crm.crm_form", function (require) {
     "use strict";
 
     /**
@@ -68,7 +68,7 @@ flectra.define("crm.crm_form", function (require) {
          *
          * @param {string} dataPointID
          * @param {Object} changes
-         * @param {FlectraEvent} event
+         * @param {SleektivEvent} event
          * @override
          * @private
          */

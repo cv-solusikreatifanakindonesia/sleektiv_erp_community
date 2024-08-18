@@ -1,4 +1,4 @@
-flectra.define('web.LocalStorageService', function (require) {
+sleektiv.define('web.LocalStorageService', function (require) {
 'use strict';
 
 /**

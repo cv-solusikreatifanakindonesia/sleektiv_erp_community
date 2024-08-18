@@ -357,7 +357,7 @@ define([
         var eventName = keyMap[keyString];
 
         // FLECTRA: (start_modification
-        // flectra change: add visible event to overwrite the browser comportment
+        // sleektiv change: add visible event to overwrite the browser comportment
         var keycode = event.keyCode;
         if (!eventName &&
             !event.ctrlKey && !event.metaKey && ( // special code/command

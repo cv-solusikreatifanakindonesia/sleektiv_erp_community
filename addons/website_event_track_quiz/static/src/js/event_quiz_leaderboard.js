@@ -1,4 +1,4 @@
-flectra.define('website_event_track_quiz.event_leaderboard', function (require) {
+sleektiv.define('website_event_track_quiz.event_leaderboard', function (require) {
 
 'use strict';
 

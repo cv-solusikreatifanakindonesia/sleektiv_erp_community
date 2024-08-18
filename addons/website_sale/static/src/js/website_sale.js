@@ -1,4 +1,4 @@
-flectra.define('website_sale.cart', function (require) {
+sleektiv.define('website_sale.cart', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');
@@ -105,7 +105,7 @@ publicWidget.registry.websiteSaleCartLink = publicWidget.Widget.extend({
 });
 });
 
-flectra.define('website_sale.website_sale_category', function (require) {
+sleektiv.define('website_sale.website_sale_category', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');
@@ -143,7 +143,7 @@ publicWidget.registry.websiteSaleCategory = publicWidget.Widget.extend({
 });
 });
 
-flectra.define('website_sale.website_sale', function (require) {
+sleektiv.define('website_sale.website_sale', function (require) {
 'use strict';
 
 var core = require('web.core');
@@ -152,7 +152,7 @@ var publicWidget = require('web.public.widget');
 var VariantMixin = require('sale.VariantMixin');
 var wSaleUtils = require('website_sale.utils');
 const wUtils = require('website.utils');
-require("web.zoomflectra");
+require("web.zoomsleektiv");
 
 
 publicWidget.registry.WebsiteSale = publicWidget.Widget.extend(VariantMixin, {
@@ -411,7 +411,7 @@ publicWidget.registry.WebsiteSale = publicWidget.Widget.extend(VariantMixin, {
             _.each($('.ecom-zoomable img[data-zoom]'), function (el) {
                 onImageLoaded(el, function () {
                     var $img = $(el);
-                    $img.zoomFlectra({event: autoZoom ? 'mouseenter' : 'click', attach: attach});
+                    $img.zoomSleektiv({event: autoZoom ? 'mouseenter' : 'click', attach: attach});
                     $img.attr('data-zoom', 1);
                 });
             });

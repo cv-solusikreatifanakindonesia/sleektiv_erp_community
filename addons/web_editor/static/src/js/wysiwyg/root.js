@@ -1,4 +1,4 @@
-flectra.define('web_editor.wysiwyg.root', function (require) {
+sleektiv.define('web_editor.wysiwyg.root', function (require) {
 'use strict';
 
 var Widget = require('web.Widget');
@@ -35,7 +35,7 @@ var WysiwygRoot = Widget.extend({
             // JS module was requiring a delayed module, using it here right
             // away would lead to a crash.
             if (!assetsLoaded) {
-                var Wysiwyg = flectra.__DEBUG__.services['web_editor.wysiwyg'];
+                var Wysiwyg = sleektiv.__DEBUG__.services['web_editor.wysiwyg'];
                 _.each(['getRange', 'setRange', 'setRangeFromNode'], function (methodName) {
                     WysiwygRoot[methodName] = Wysiwyg[methodName].bind(Wysiwyg);
                 });
@@ -60,7 +60,7 @@ var WysiwygRoot = Widget.extend({
     },
 
     _getWysiwygContructor: function () {
-        return flectra.__DEBUG__.services['web_editor.wysiwyg'];
+        return sleektiv.__DEBUG__.services['web_editor.wysiwyg'];
     }
 });
 
@@ -68,7 +68,7 @@ return WysiwygRoot;
 
 });
 
-flectra.define('web_editor.wysiwyg.default_options', function (require) {
+sleektiv.define('web_editor.wysiwyg.default_options', function (require) {
 'use strict';
 
 /**
@@ -91,7 +91,7 @@ return {
 });
 
 // TODO should be moved in a dedicated file in newer versions
-flectra.define('web_editor.browser_extensions', function (require) {
+sleektiv.define('web_editor.browser_extensions', function (require) {
 'use strict';
 
 // Redefine the getRangeAt function in order to avoid an error appearing

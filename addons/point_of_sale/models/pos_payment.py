@@ -1,6 +1,6 @@
-from flectra import api, fields, models, _
-from flectra.tools import formatLang
-from flectra.exceptions import ValidationError
+from sleektiv import api, fields, models, _
+from sleektiv.tools import formatLang
+from sleektiv.exceptions import ValidationError
 
 
 class PosPayment(models.Model):

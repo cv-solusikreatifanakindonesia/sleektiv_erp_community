@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import base64
 import random
 import re
 
-from flectra import api, fields, models, modules, _
+from sleektiv import api, fields, models, modules, _
 
 
 class ImLivechatChannel(models.Model):
     """ Livechat Channel
         Define a communication channel, which can be accessed with 'script_external' (script tag to put on
-        external website), 'script_internal' (code to be integrated with flectra website) or via 'web_page' link.
+        external website), 'script_internal' (code to be integrated with sleektiv website) or via 'web_page' link.
         It provides rating tools, and access rules for anonymous people.
     """
 

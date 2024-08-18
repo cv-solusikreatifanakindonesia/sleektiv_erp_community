@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.tests.common import TransactionCase, users, warmup
-from flectra.tests import tagged
-from flectra.tools import mute_logger
+from sleektiv.addons.mail.tests.common import mail_new_test_user
+from sleektiv.tests.common import TransactionCase, users, warmup
+from sleektiv.tests import tagged
+from sleektiv.tools import mute_logger
 
 
 @tagged('mail_performance', 'post_install', '-at_install')
@@ -50,7 +50,7 @@ class TestMassMailPerformance(TestMassMailPerformanceBase):
 
     @users('__system__', 'marketing')
     @warmup
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.models.unlink', 'flectra.tests')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail', 'sleektiv.models.unlink', 'sleektiv.tests')
     def test_send_mailing(self):
         mailing = self.env['mailing.mailing'].create({
             'name': 'Test',
@@ -90,7 +90,7 @@ class TestMassMailBlPerformance(TestMassMailPerformanceBase):
 
     @users('__system__', 'marketing')
     @warmup
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.models.unlink', 'flectra.tests')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail', 'sleektiv.models.unlink', 'sleektiv.tests')
     def test_send_mailing_w_bl(self):
         mailing = self.env['mailing.mailing'].create({
             'name': 'Test',

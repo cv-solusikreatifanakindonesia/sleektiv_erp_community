@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.test_event_full.tests.common import TestEventFullCommon
-from flectra.tests import users
+from sleektiv.addons.test_event_full.tests.common import TestEventFullCommon
+from sleektiv.tests import users
 
 
 class TestEventCrm(TestEventFullCommon):

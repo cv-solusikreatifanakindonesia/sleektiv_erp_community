@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/messaging_menu/messaging_menu_tests.js', function (require) {
+sleektiv.define('mail/static/src/components/messaging_menu/messaging_menu_tests.js', function (require) {
 'use strict';
 
 const {
@@ -892,7 +892,7 @@ QUnit.test('<br/> tags in message body preview are transformed in spaces', async
     );
 });
 
-QUnit.test('rendering with FlectraBot has a request (default)', async function (assert) {
+QUnit.test('rendering with SleektivBot has a request (default)', async function (assert) {
     assert.expect(4);
 
     await this.start({
@@ -907,7 +907,7 @@ QUnit.test('rendering with FlectraBot has a request (default)', async function (
 
     assert.ok(
         document.querySelector('.o_MessagingMenu_counter'),
-        "should display a notification counter next to the messaging menu for FlectraBot request"
+        "should display a notification counter next to the messaging menu for SleektivBot request"
     );
     assert.strictEqual(
         document.querySelector('.o_MessagingMenu_counter').textContent,
@@ -925,12 +925,12 @@ QUnit.test('rendering with FlectraBot has a request (default)', async function (
     );
     assert.strictEqual(
         document.querySelector('.o_NotificationRequest_name').textContent.trim(),
-        'FlectraBot has a request',
-        "notification should display that FlectraBot has a request"
+        'SleektivBot has a request',
+        "notification should display that SleektivBot has a request"
     );
 });
 
-QUnit.test('rendering without FlectraBot has a request (denied)', async function (assert) {
+QUnit.test('rendering without SleektivBot has a request (denied)', async function (assert) {
     assert.expect(2);
 
     await this.start({
@@ -959,7 +959,7 @@ QUnit.test('rendering without FlectraBot has a request (denied)', async function
     );
 });
 
-QUnit.test('rendering without FlectraBot has a request (accepted)', async function (assert) {
+QUnit.test('rendering without SleektivBot has a request (accepted)', async function (assert) {
     assert.expect(2);
 
     await this.start({

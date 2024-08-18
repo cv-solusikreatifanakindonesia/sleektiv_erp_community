@@ -1,4 +1,4 @@
-flectra.define('hr/static/src/models/messaging/messaging.js', function (require) {
+sleektiv.define('hr/static/src/models/messaging/messaging.js', function (require) {
 'use strict';
 
 const {

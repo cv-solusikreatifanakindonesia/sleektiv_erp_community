@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/follower_subtype_list/follower_subtype_list.js', function (require) {
+sleektiv.define('mail/static/src/components/follower_subtype_list/follower_subtype_list.js', function (require) {
 'use strict';
 
 const components = {

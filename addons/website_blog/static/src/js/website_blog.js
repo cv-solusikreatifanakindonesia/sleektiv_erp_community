@@ -1,4 +1,4 @@
-flectra.define('website_blog.website_blog', function (require) {
+sleektiv.define('website_blog.website_blog', function (require) {
 'use strict';
 var core = require('web.core');
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.l10n_account_edi_ubl_cii_tests.tests.common import TestUBLCommon
-from flectra.tests import tagged
+from sleektiv.addons.l10n_account_edi_ubl_cii_tests.tests.common import TestUBLCommon
+from sleektiv.tests import tagged
 import base64
 
 @tagged('post_install_l10n', 'post_install', '-at_install')
@@ -160,7 +160,7 @@ class TestUBLBE(TestUBLCommon):
                     <PaymentID>___ignore___</PaymentID>
                 </xpath>
             ''',
-            expected_file='from_flectra/bis3_out_invoice.xml',
+            expected_file='from_sleektiv/bis3_out_invoice.xml',
         )
         self.assertEqual(xml_filename[-12:], "ubl_bis3.xml")  # ensure we test the right format !
         self._assert_imported_invoice_from_etree(invoice, xml_etree, xml_filename)
@@ -214,7 +214,7 @@ class TestUBLBE(TestUBLCommon):
                     <ID>___ignore___</ID>
                 </xpath>
             ''',
-            expected_file='from_flectra/bis3_out_refund.xml',
+            expected_file='from_sleektiv/bis3_out_refund.xml',
         )
         self.assertEqual(xml_filename[-12:], "ubl_bis3.xml")
         self._assert_imported_invoice_from_etree(refund, xml_etree, xml_filename)
@@ -254,7 +254,7 @@ class TestUBLBE(TestUBLCommon):
                     <ID>___ignore___</ID>
                 </xpath>
             ''',
-            expected_file='from_flectra/bis3_out_invoice_public_admin.xml',
+            expected_file='from_sleektiv/bis3_out_invoice_public_admin.xml',
         )
 
     def test_rounding_price_unit(self):
@@ -283,7 +283,7 @@ class TestUBLBE(TestUBLCommon):
                 }
             ],
         )
-        self._assert_invoice_attachment(invoice, None, 'from_flectra/bis3_out_invoice_rounding.xml')
+        self._assert_invoice_attachment(invoice, None, 'from_sleektiv/bis3_out_invoice_rounding.xml')
 
     def test_export_with_fixed_taxes_case1(self):
         # CASE 1: simple invoice with a recupel tax
@@ -301,7 +301,7 @@ class TestUBLBE(TestUBLCommon):
             ],
         )
         self.assertEqual(invoice.amount_total, 121)
-        self._assert_invoice_attachment(invoice, None, 'from_flectra/bis3_ecotaxes_case1.xml')
+        self._assert_invoice_attachment(invoice, None, 'from_sleektiv/bis3_ecotaxes_case1.xml')
 
     def test_export_with_fixed_taxes_case2(self):
         # CASE 2: Same but with several ecotaxes
@@ -319,7 +319,7 @@ class TestUBLBE(TestUBLCommon):
             ],
         )
         self.assertEqual(invoice.amount_total, 121)
-        self._assert_invoice_attachment(invoice, None, 'from_flectra/bis3_ecotaxes_case2.xml')
+        self._assert_invoice_attachment(invoice, None, 'from_sleektiv/bis3_ecotaxes_case2.xml')
 
     def test_export_with_fixed_taxes_case3(self):
         # CASE 3: same as Case 1 but taxes are Price Included
@@ -341,7 +341,7 @@ class TestUBLBE(TestUBLCommon):
             ],
         )
         self.assertEqual(invoice.amount_total, 121)
-        self._assert_invoice_attachment(invoice, None, 'from_flectra/bis3_ecotaxes_case3.xml')
+        self._assert_invoice_attachment(invoice, None, 'from_sleektiv/bis3_ecotaxes_case3.xml')
 
     def test_export_tax_exempt(self):
         invoice = self._generate_move(
@@ -356,7 +356,7 @@ class TestUBLBE(TestUBLCommon):
                 },
             ],
         )
-        self._assert_invoice_attachment(invoice, None, 'from_flectra/bis3_out_invoice_tax_exempt.xml')
+        self._assert_invoice_attachment(invoice, None, 'from_sleektiv/bis3_out_invoice_tax_exempt.xml')
 
     ####################################################
     # Test import
@@ -400,7 +400,7 @@ class TestUBLBE(TestUBLCommon):
         })
         self.update_invoice_from_file(
             module_name='l10n_account_edi_ubl_cii_tests',
-            subfolder='tests/test_files/from_flectra',
+            subfolder='tests/test_files/from_sleektiv',
             filename='ubl_test_import_partner.xml',
             invoice=invoice)
 
@@ -438,7 +438,7 @@ class TestUBLBE(TestUBLCommon):
 
     def test_import_invoice_xml(self):
         kwargs = {
-            'subfolder': 'tests/test_files/from_flectra',
+            'subfolder': 'tests/test_files/from_sleektiv',
             'amount_total': 3164.22,
             'amount_tax': 482.22,
             'list_line_subtotals': [1782, 1000, -100],
@@ -475,7 +475,7 @@ class TestUBLBE(TestUBLCommon):
         invoice = self.env['account.move'].create({'move_type': 'out_invoice'})
         self.update_invoice_from_file(
             'l10n_account_edi_ubl_cii_tests',
-            'tests/test_files/from_flectra',
+            'tests/test_files/from_sleektiv',
             'bis3_out_refund.xml',
             invoice,
         )
@@ -486,7 +486,7 @@ class TestUBLBE(TestUBLCommon):
         See the tests above to create these xml attachments ('test_export_with_fixed_taxes_case_[X]').
         NB: use move_type = 'out_invoice' s.t. we can retrieve the taxes used to create the invoices.
         """
-        subfolder = "tests/test_files/from_flectra"
+        subfolder = "tests/test_files/from_sleektiv"
         # The tax 21% from l10n_be is retrieved since it's a duplicate of self.tax_21
         tax_21 = self.env.ref(f'l10n_be.{self.env.company.id}_attn_VAT-OUT-21-L')
         self._assert_imported_invoice_from_file(

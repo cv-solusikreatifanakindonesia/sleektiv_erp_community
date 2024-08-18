@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 """ Implementation of "INVENTORY VALUATION TESTS (With valuation layers)" spreadsheet. """
 
-from flectra.tests import Form, tagged
-from flectra.addons.stock_landed_costs.tests.common import TestStockLandedCostsCommon
+from sleektiv.tests import Form, tagged
+from sleektiv.addons.stock_landed_costs.tests.common import TestStockLandedCostsCommon
 
 
 class TestStockValuationLCCommon(TestStockLandedCostsCommon):

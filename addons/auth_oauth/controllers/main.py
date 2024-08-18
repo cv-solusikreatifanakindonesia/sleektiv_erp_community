@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import base64
 import functools
 import json
@@ -10,14 +10,14 @@ import werkzeug.urls
 import werkzeug.utils
 from werkzeug.exceptions import BadRequest
 
-from flectra import api, http, SUPERUSER_ID, _
-from flectra.exceptions import AccessDenied
-from flectra.http import request
-from flectra import registry as registry_get
-from flectra.tools.misc import clean_context
+from sleektiv import api, http, SUPERUSER_ID, _
+from sleektiv.exceptions import AccessDenied
+from sleektiv.http import request
+from sleektiv import registry as registry_get
+from sleektiv.tools.misc import clean_context
 
-from flectra.addons.auth_signup.controllers.main import AuthSignupHome as Home
-from flectra.addons.web.controllers.main import db_monodb, ensure_db, set_cookie_and_redirect, login_and_redirect
+from sleektiv.addons.auth_signup.controllers.main import AuthSignupHome as Home
+from sleektiv.addons.web.controllers.main import db_monodb, ensure_db, set_cookie_and_redirect, login_and_redirect
 
 
 _logger = logging.getLogger(__name__)
@@ -169,7 +169,7 @@ class OAuthController(http.Controller):
 
     @http.route('/auth_oauth/oea', type='http', auth='none')
     def oea(self, **kw):
-        """login user via Flectra Account provider"""
+        """login user via Sleektiv Account provider"""
         dbname = kw.pop('db', None)
         if not dbname:
             dbname = db_monodb()

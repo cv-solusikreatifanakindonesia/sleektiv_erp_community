@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-import flectra
+import sleektiv
 
-from flectra.addons.point_of_sale.tests.common import TestPoSCommon
+from sleektiv.addons.point_of_sale.tests.common import TestPoSCommon
 
 
-@flectra.tests.tagged('post_install', '-at_install')
+@sleektiv.tests.tagged('post_install', '-at_install')
 class TestPoSSaleReport(TestPoSCommon):
 
     def setUp(self):

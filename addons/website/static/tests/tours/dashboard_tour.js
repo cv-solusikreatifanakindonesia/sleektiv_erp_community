@@ -1,4 +1,4 @@
-flectra.define("website.tour.backend_dashboard", function (require) {
+sleektiv.define("website.tour.backend_dashboard", function (require) {
 "use strict";
 
 var tour = require("web_tour.tour");

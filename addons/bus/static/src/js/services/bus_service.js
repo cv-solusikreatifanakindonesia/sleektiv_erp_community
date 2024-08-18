@@ -1,4 +1,4 @@
-flectra.define('bus.BusService', function (require) {
+sleektiv.define('bus.BusService', function (require) {
 "use strict";
 
 var CrossTab = require('bus.CrossTab');
@@ -29,7 +29,7 @@ var BusService =  CrossTab.extend(ServicesMixin, {
      * Directly calls the requested service, instead of triggering a
      * 'call_service' event up, which wouldn't work as services have no parent.
      *
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _trigger_up: function (ev) {
         if (ev.name === 'call_service') {

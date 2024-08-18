@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 
-from flectra import api, fields, models, _, tools
-from flectra.osv import expression
+from sleektiv import api, fields, models, _, tools
+from sleektiv.osv import expression
 
 
 class MassMailing(models.Model):

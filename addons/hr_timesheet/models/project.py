@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import re
 from lxml import etree
-from flectra.tools.float_utils import float_compare
-from flectra import models, fields, api, _
-from flectra.exceptions import UserError, ValidationError, RedirectWarning
+from sleektiv.tools.float_utils import float_compare
+from sleektiv import models, fields, api, _
+from sleektiv.exceptions import UserError, ValidationError, RedirectWarning
 
 
 class Project(models.Model):

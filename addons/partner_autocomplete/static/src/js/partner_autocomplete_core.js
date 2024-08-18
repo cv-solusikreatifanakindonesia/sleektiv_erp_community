@@ -1,4 +1,4 @@
-flectra.define('partner.autocomplete.Mixin', function (require) {
+sleektiv.define('partner.autocomplete.Mixin', function (require) {
 'use strict';
 
 var concurrency = require('web.concurrency');
@@ -12,7 +12,7 @@ var _t = core._t;
  * This mixin only works with classes having EventDispatcherMixin in 'web.mixins'
  */
 var PartnerAutocompleteMixin = {
-    _dropPreviousFlectra: new concurrency.DropPrevious(),
+    _dropPreviousSleektiv: new concurrency.DropPrevious(),
     _dropPreviousClearbit: new concurrency.DropPrevious(),
     _timeout : 1000, // Timeout for Clearbit autocomplete in ms
 
@@ -31,11 +31,11 @@ var PartnerAutocompleteMixin = {
         var self = this;
         value = value.trim();
         var isVAT = this._isVAT(value);
-        var flectraSuggestions = [];
+        var sleektivSuggestions = [];
         var clearbitSuggestions = [];
         return new Promise(function (resolve, reject) {
-            var flectraPromise = self._getFlectraSuggestions(value, isVAT).then(function (suggestions){
-                flectraSuggestions = suggestions;
+            var sleektivPromise = self._getSleektivSuggestions(value, isVAT).then(function (suggestions){
+                sleektivSuggestions = suggestions;
             });
 
             // Only get Clearbit suggestions if not a VAT number
@@ -44,29 +44,29 @@ var PartnerAutocompleteMixin = {
             });
 
             var concatResults = function () {
-                // Add Clearbit result with Flectra result (with unique domain)
+                // Add Clearbit result with Sleektiv result (with unique domain)
                 if (clearbitSuggestions && clearbitSuggestions.length) {
-                    var websites = flectraSuggestions.map(function (suggestion) {
+                    var websites = sleektivSuggestions.map(function (suggestion) {
                         return suggestion.website;
                     });
                     clearbitSuggestions.forEach(function (suggestion) {
                         if (websites.indexOf(suggestion.domain) < 0) {
                             websites.push(suggestion.domain);
-                            flectraSuggestions.push(suggestion);
+                            sleektivSuggestions.push(suggestion);
                         }
                     });
                 }
 
-                flectraSuggestions = _.filter(flectraSuggestions, function (suggestion) {
+                sleektivSuggestions = _.filter(sleektivSuggestions, function (suggestion) {
                     return !suggestion.ignored;
                 });
-                _.each(flectraSuggestions, function(suggestion){
+                _.each(sleektivSuggestions, function(suggestion){
                 delete suggestion.ignored;
                 });
-                return resolve(flectraSuggestions);
+                return resolve(sleektivSuggestions);
             };
 
-            self._whenAll([flectraPromise, clearbitPromise]).then(concatResults, concatResults);
+            self._whenAll([sleektivPromise, clearbitPromise]).then(concatResults, concatResults);
         });
 
     },
@@ -248,14 +248,14 @@ var PartnerAutocompleteMixin = {
     },
 
     /**
-     * Use Flectra Autocomplete API to return suggestions
+     * Use Sleektiv Autocomplete API to return suggestions
      *
      * @param {string} value
      * @param {boolean} isVAT
      * @returns {Promise}
      * @private
      */
-    _getFlectraSuggestions: function (value, isVAT) {
+    _getSleektivSuggestions: function (value, isVAT) {
         var method = isVAT ? 'read_by_vat' : 'autocomplete';
 
         var def = this._rpc({
@@ -281,7 +281,7 @@ var PartnerAutocompleteMixin = {
             return suggestions;
         });
 
-        return this._dropPreviousFlectra.add(def);
+        return this._dropPreviousSleektiv.add(def);
     },
     /**
      * Check if searched value is possibly a VAT : 2 first chars = alpha + min 5 numbers

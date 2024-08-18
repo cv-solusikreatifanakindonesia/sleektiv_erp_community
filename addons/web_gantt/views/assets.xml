@@ -1,4 +1,4 @@
-<flectra>
+<sleektiv>
 
     <template id="assets_backend_gantt_chart" inherit_id="web.assets_backend" name="Website Backend Assets Gantt Chart">
         <xpath expr="//script[last()]" position="after">
@@ -16,4 +16,4 @@
         </xpath>
     </template>
 
-</flectra> 
+</sleektiv> 

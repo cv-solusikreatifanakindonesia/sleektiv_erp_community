@@ -11,13 +11,13 @@ import pprint
 from requests.exceptions import HTTPError
 from werkzeug import urls
 
-from flectra import api, fields, models, _
-from flectra.http import request
-from flectra.tools.float_utils import float_round
-from flectra.tools import consteq
-from flectra.exceptions import ValidationError
+from sleektiv import api, fields, models, _
+from sleektiv.http import request
+from sleektiv.tools.float_utils import float_round
+from sleektiv.tools import consteq
+from sleektiv.exceptions import ValidationError
 
-from flectra.addons.payment_stripe.controllers.main import StripeController
+from sleektiv.addons.payment_stripe.controllers.main import StripeController
 
 _logger = logging.getLogger(__name__)
 
@@ -40,7 +40,7 @@ class PaymentAcquirerStripe(models.Model):
     stripe_webhook_secret = fields.Char(
         string='Stripe Webhook Secret', groups='base.group_user',
         help="If you enable webhooks, this secret is used to verify the electronic "
-             "signature of events sent by Stripe to Flectra. Failing to set this field in Flectra "
+             "signature of events sent by Stripe to Sleektiv. Failing to set this field in Sleektiv "
              "will disable the webhook system for this acquirer entirely.")
     stripe_image_url = fields.Char(
         "Checkout Image URL", groups='base.group_user',
@@ -207,7 +207,7 @@ class PaymentAcquirerStripe(models.Model):
         """Process a webhook payload from Stripe.
 
         Post-process a webhook payload to act upon the matching payment.transaction
-        record in Flectra.
+        record in Sleektiv.
         """
         wh_type = data.get('type')
         if wh_type != 'checkout.session.completed':
@@ -249,7 +249,7 @@ class PaymentAcquirerStripe(models.Model):
         if not consteq(expected_signature, actual_signature):
             _logger.error(
                 'incorrect webhook signature from Stripe, check if the webhook signature '
-                'in Flectra matches to one in the Stripe dashboard')
+                'in Sleektiv matches to one in the Stripe dashboard')
             raise ValidationError('incorrect webhook signature')
 
         return True
@@ -266,26 +266,26 @@ class PaymentAcquirerStripe(models.Model):
         tx_reference = checkout_object.get('client_reference_id')
         data = {'reference': tx_reference}
         try:
-            flectra_tx = self.env['payment.transaction']._stripe_form_get_tx_from_data(data)
+            sleektiv_tx = self.env['payment.transaction']._stripe_form_get_tx_from_data(data)
         except ValidationError as e:
             _logger.info('Received notification for tx %s. Skipped it because of %s', tx_reference, e)
             return False
 
-        PaymentAcquirerStripe._verify_stripe_signature(flectra_tx.acquirer_id)
+        PaymentAcquirerStripe._verify_stripe_signature(sleektiv_tx.acquirer_id)
 
-        url = 'payment_intents/%s' % flectra_tx.stripe_payment_intent
-        stripe_tx = flectra_tx.acquirer_id._stripe_request(url)
+        url = 'payment_intents/%s' % sleektiv_tx.stripe_payment_intent
+        stripe_tx = sleektiv_tx.acquirer_id._stripe_request(url)
 
         if 'error' in stripe_tx:
             error = stripe_tx['error']
             raise ValidationError("Could not fetch Stripe payment intent related to %s because of %s; see %s" % (
-                flectra_tx, error['message'], error['doc_url']))
+                sleektiv_tx, error['message'], error['doc_url']))
 
         if stripe_tx.get('charges') and stripe_tx.get('charges').get('total_count'):
             charge = stripe_tx.get('charges').get('data')[0]
             data.update(charge)
 
-        return flectra_tx.form_feedback(data, 'stripe')
+        return sleektiv_tx.form_feedback(data, 'stripe')
 
 
 class PaymentTransactionStripe(models.Model):

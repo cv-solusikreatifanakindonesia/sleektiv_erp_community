@@ -1,4 +1,4 @@
-flectra.define('web.registry_tests', function (require) {
+sleektiv.define('web.registry_tests', function (require) {
 "use strict";
 
 var Registry = require('web.Registry');

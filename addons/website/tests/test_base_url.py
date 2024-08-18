@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from lxml.html import document_fromstring
 
-import flectra.tests
+import sleektiv.tests
 
 
-class TestUrlCommon(flectra.tests.HttpCase):
+class TestUrlCommon(sleektiv.tests.HttpCase):
     def setUp(self):
         super(TestUrlCommon, self).setUp()
-        self.domain = 'http://' + flectra.tests.HOST
+        self.domain = 'http://' + sleektiv.tests.HOST
         self.website = self.env['website'].create({
             'name': 'test base url',
             'domain': self.domain,
@@ -26,7 +26,7 @@ class TestUrlCommon(flectra.tests.HttpCase):
         self.assertEqual(canonical_link[0].attrib["href"], canonical_url)
 
 
-@flectra.tests.tagged('-at_install', 'post_install')
+@sleektiv.tests.tagged('-at_install', 'post_install')
 class TestBaseUrl(TestUrlCommon):
     def test_01_base_url(self):
         ICP = self.env['ir.config_parameter']

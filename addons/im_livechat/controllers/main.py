@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 
-from flectra import http,tools, _
-from flectra.http import request
-from flectra.addons.base.models.assetsbundle import AssetsBundle
+from sleektiv import http,tools, _
+from sleektiv.http import request
+from sleektiv.addons.base.models.assetsbundle import AssetsBundle
 
 
 class LivechatController(http.Controller):

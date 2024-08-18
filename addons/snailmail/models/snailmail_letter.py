@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import re
 import base64
 import io
@@ -11,10 +11,10 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.pdfgen.canvas import Canvas
 
-from flectra import fields, models, api, _
-from flectra.addons.iap.tools import iap_tools
-from flectra.exceptions import AccessError, UserError
-from flectra.tools.safe_eval import safe_eval
+from sleektiv import fields, models, api, _
+from sleektiv.addons.iap.tools import iap_tools
+from sleektiv.exceptions import AccessError, UserError
+from sleektiv.tools.safe_eval import safe_eval
 
 DEFAULT_ENDPOINT = 'https://iap-snailmail.flectrahq.com'
 PRINT_ENDPOINT = '/iap/snailmail/1/print'

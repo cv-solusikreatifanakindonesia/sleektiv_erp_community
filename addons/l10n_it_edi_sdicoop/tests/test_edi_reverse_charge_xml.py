@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import namedtuple
 from lxml import etree
 
-from flectra import fields
-from flectra.tests import tagged
-from flectra.addons.l10n_it_edi_sdicoop.tests.test_edi_xml import TestItEdi
+from sleektiv import fields
+from sleektiv.tests import tagged
+from sleektiv.addons.l10n_it_edi_sdicoop.tests.test_edi_xml import TestItEdi
 
 
 @tagged('post_install_l10n', 'post_install', '-at_install')

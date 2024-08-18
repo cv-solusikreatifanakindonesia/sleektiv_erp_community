@@ -1,4 +1,4 @@
-flectra.define('job.update_kanban', function (require) {
+sleektiv.define('job.update_kanban', function (require) {
     'use strict';
     var KanbanRecord = require('web.KanbanRecord');
 

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.event_sale.tests.common import TestEventSaleCommon
-from flectra.addons.mail.tests.common import mail_new_test_user
+from sleektiv.addons.event_sale.tests.common import TestEventSaleCommon
+from sleektiv.addons.mail.tests.common import mail_new_test_user
 
-from flectra.tests import tagged
-from flectra.tests.common import users
+from sleektiv.tests import tagged
+from sleektiv.tests.common import users
 
 
 @tagged('event_flow')

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import logging
@@ -7,10 +7,10 @@ from collections import namedtuple
 from unittest.mock import patch
 from freezegun import freeze_time
 
-from flectra import tools
-from flectra.tests import tagged
-from flectra.addons.account_edi.tests.common import AccountEdiTestCommon
-from flectra.addons.l10n_it_edi.tools.remove_signature import remove_signature
+from sleektiv import tools
+from sleektiv.tests import tagged
+from sleektiv.addons.account_edi.tests.common import AccountEdiTestCommon
+from sleektiv.addons.l10n_it_edi.tools.remove_signature import remove_signature
 
 _logger = logging.getLogger(__name__)
 

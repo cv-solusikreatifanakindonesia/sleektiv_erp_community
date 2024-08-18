@@ -3,12 +3,12 @@
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from flectra import exceptions, tools
-from flectra.tests import common
-from flectra.addons.mail.tests.common import MailCommon
-from flectra.addons.phone_validation.tools import phone_validation
-from flectra.addons.sms.models.sms_api import SmsApi
-from flectra.addons.sms.models.sms_sms import SmsSms
+from sleektiv import exceptions, tools
+from sleektiv.tests import common
+from sleektiv.addons.mail.tests.common import MailCommon
+from sleektiv.addons.phone_validation.tools import phone_validation
+from sleektiv.addons.sms.models.sms_api import SmsApi
+from sleektiv.addons.sms.models.sms_sms import SmsSms
 
 
 class MockSMS(common.BaseCase):

@@ -3,12 +3,12 @@
 
 import logging
 
-from flectra import http
-from flectra.http import request
-from flectra.tools.translate import _
-from flectra.tools import plaintext2html
+from sleektiv import http
+from sleektiv.http import request
+from sleektiv.tools.translate import _
+from sleektiv.tools import plaintext2html
 from werkzeug.exceptions import NotFound, Forbidden
-from flectra.tools.misc import get_lang
+from sleektiv.tools.misc import get_lang
 
 _logger = logging.getLogger(__name__)
 

@@ -2,11 +2,11 @@ import json
 import requests
 from unittest.mock import patch, call, MagicMock
 
-from flectra import fields
-from flectra.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
-from flectra.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from flectra.addons.microsoft_account.models.microsoft_service import MicrosoftService
-from flectra.tests import TransactionCase
+from sleektiv import fields
+from sleektiv.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from sleektiv.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from sleektiv.addons.microsoft_account.models.microsoft_service import MicrosoftService
+from sleektiv.tests import TransactionCase
 
 
 DEFAULT_TIMEOUT = 20

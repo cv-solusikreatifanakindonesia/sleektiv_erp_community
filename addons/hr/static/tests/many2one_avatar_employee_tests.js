@@ -1,4 +1,4 @@
-flectra.define('hr.Many2OneAvatarEmployeeTests', function (require) {
+sleektiv.define('hr.Many2OneAvatarEmployeeTests', function (require) {
 "use strict";
 
 const {

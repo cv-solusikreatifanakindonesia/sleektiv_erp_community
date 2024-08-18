@@ -1,4 +1,4 @@
-flectra.define('web.SampleServer', function (require) {
+sleektiv.define('web.SampleServer', function (require) {
     "use strict";
 
     const session = require('web.session');

@@ -1,6 +1,6 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-import flectra
-from flectra.tests import Form, HttpCase, tagged
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+import sleektiv
+from sleektiv.tests import Form, HttpCase, tagged
 
 
 @tagged('-at_install', 'post_install')

@@ -1,4 +1,4 @@
-flectra.define('pos_adyen.payment', function (require) {
+sleektiv.define('pos_adyen.payment', function (require) {
 "use strict";
 
 var core = require('web.core');
@@ -38,13 +38,13 @@ var PaymentAdyen = PaymentInterface.extend({
         clearTimeout(this.polling);
     },
 
-    _handle_flectra_connection_failure: function (data) {
+    _handle_sleektiv_connection_failure: function (data) {
         // handle timeout
         var line = this.pending_adyen_line();
         if (line) {
             line.set_payment_status('retry');
         }
-        this._show_error(_t('Could not connect to the Flectra server, please check your internet connection and try again.'));
+        this._show_error(_t('Could not connect to the Sleektiv server, please check your internet connection and try again.'));
 
         return Promise.reject(data); // prevent subsequent onFullFilled's from being called
     },
@@ -57,10 +57,10 @@ var PaymentAdyen = PaymentInterface.extend({
         }, {
             // When a payment terminal is disconnected it takes Adyen
             // a while to return an error (~6s). So wait 10 seconds
-            // before concluding Flectra is unreachable.
+            // before concluding Sleektiv is unreachable.
             timeout: 10000,
             shadow: true,
-        }).catch(this._handle_flectra_connection_failure.bind(this));
+        }).catch(this._handle_sleektiv_connection_failure.bind(this));
     },
 
     _adyen_get_sale_id: function () {
@@ -204,7 +204,7 @@ var PaymentAdyen = PaymentInterface.extend({
             } else {
                 reject();
                 self.poll_error_order = self.pos.get_order();
-                return self._handle_flectra_connection_failure(data);
+                return self._handle_sleektiv_connection_failure(data);
             }
             // This is to make sure that if 'data' is not an instance of Error (i.e. timeout error),
             // this promise don't resolve -- that is, it doesn't go to the 'then' clause.

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.tools import float_is_zero, float_compare
-from flectra.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.tools import float_is_zero, float_compare
+from sleektiv.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
 
 
 class TestCommonReporting(TestCommonSaleTimesheet):

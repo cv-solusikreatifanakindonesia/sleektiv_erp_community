@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.hr_expense.tests.common import TestExpenseCommon
-from flectra.addons.sale.tests.common import TestSaleCommon
-from flectra.tests import tagged
+from sleektiv.addons.hr_expense.tests.common import TestExpenseCommon
+from sleektiv.addons.sale.tests.common import TestSaleCommon
+from sleektiv.tests import tagged
 
 
 @tagged('-at_install', 'post_install')

@@ -1,4 +1,4 @@
-flectra.define('web.AjaxService', function (require) {
+sleektiv.define('web.AjaxService', function (require) {
 "use strict";
 
 var AbstractService = require('web.AbstractService');

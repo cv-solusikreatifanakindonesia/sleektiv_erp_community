@@ -1,4 +1,4 @@
-flectra.define('payment_stripe.payment_form', function (require) {
+sleektiv.define('payment_stripe.payment_form', function (require) {
 "use strict";
 
 var ajax = require('web.ajax');

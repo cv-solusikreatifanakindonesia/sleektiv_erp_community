@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, _
-from flectra.tools.float_utils import float_compare, float_is_zero
+from sleektiv import api, fields, models, _
+from sleektiv.tools.float_utils import float_compare, float_is_zero
 
 
 class AccountMove(models.Model):

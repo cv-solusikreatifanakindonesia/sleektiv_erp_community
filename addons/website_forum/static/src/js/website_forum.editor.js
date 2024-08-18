@@ -1,4 +1,4 @@
-flectra.define('website_forum.editor', function (require) {
+sleektiv.define('website_forum.editor', function (require) {
 "use strict";
 
 var core = require('web.core');

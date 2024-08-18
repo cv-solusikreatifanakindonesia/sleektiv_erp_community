@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 import re
 
-import flectra.addons.web.controllers.main
-from flectra import http, _
-from flectra.addons.auth_totp.models.res_users import TRUSTED_DEVICE_SCOPE
-from flectra.exceptions import AccessDenied
-from flectra.http import request
+import sleektiv.addons.web.controllers.main
+from sleektiv import http, _
+from sleektiv.addons.auth_totp.models.res_users import TRUSTED_DEVICE_SCOPE
+from sleektiv.exceptions import AccessDenied
+from sleektiv.http import request
 
 TRUSTED_DEVICE_COOKIE = 'td_id'
 TRUSTED_DEVICE_AGE = 90*86400 # 90 days expiration
 
 
-class Home(flectra.addons.web.controllers.main.Home):
+class Home(sleektiv.addons.web.controllers.main.Home):
     @http.route(
         '/web/login/totp',
         type='http', auth='public', methods=['GET', 'POST'], sitemap=False,

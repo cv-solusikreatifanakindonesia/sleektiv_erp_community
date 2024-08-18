@@ -2,8 +2,8 @@
 import logging
 import pprint
 import json
-from flectra import fields, http
-from flectra.http import request
+from sleektiv import fields, http
+from sleektiv.http import request
 
 _logger = logging.getLogger(__name__)
 
@@ -30,4 +30,4 @@ class PosAdyenController(http.Controller):
                 payment_method.adyen_latest_response = json.dumps(data)
             _logger.info('notification writed from adyen\n%s', data)
         else:
-            _logger.error('received a message for a terminal not registered in Flectra: %s', terminal_identifier)
+            _logger.error('received a message for a terminal not registered in Sleektiv: %s', terminal_identifier)

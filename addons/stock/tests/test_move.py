@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.exceptions import UserError
-from flectra.tests import Form
-from flectra.tests.common import SavepointCase
+from sleektiv.exceptions import UserError
+from sleektiv.tests import Form
+from sleektiv.tests.common import SavepointCase
 
 
 class StockMove(SavepointCase):
@@ -4191,7 +4191,7 @@ class StockMove(SavepointCase):
             ('product_id', '=', self.product_lot.id),
             ('lot_id', '=', lot1.id),
         ])
-        from flectra.fields import Datetime
+        from sleektiv.fields import Datetime
         from datetime import timedelta
         initial_in_date_lot1 = Datetime.now() - timedelta(days=5)
         quant_lot1.in_date = initial_in_date_lot1
@@ -4302,7 +4302,7 @@ class StockMove(SavepointCase):
             ('lot_id', '=', lot1.id),
             ('quantity', '!=', 0),
         ])
-        from flectra.fields import Datetime
+        from sleektiv.fields import Datetime
         from datetime import timedelta
         initial_in_date_lot1 = Datetime.now() - timedelta(days=5)
         quant_lot1.in_date = initial_in_date_lot1

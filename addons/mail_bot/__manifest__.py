@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'FlectraBot',
+    'name': 'SleektivBot',
     'version': '1.2',
     'category': 'Productivity/Discuss',
-    'summary': 'Add FlectraBot in discussions',
+    'summary': 'Add SleektivBot in discussions',
     'description': "",
     'website': 'https://www.flectrahq.com/page/discuss',
     'depends': ['mail'],

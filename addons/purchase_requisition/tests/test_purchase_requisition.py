@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.purchase_requisition.tests.common import TestPurchaseRequisitionCommon
-from flectra.tests import Form
+from sleektiv.addons.purchase_requisition.tests.common import TestPurchaseRequisitionCommon
+from sleektiv.tests import Form
 
 
 class TestPurchaseRequisition(TestPurchaseRequisitionCommon):

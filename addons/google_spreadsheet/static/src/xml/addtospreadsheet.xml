@@ -12,7 +12,7 @@
                 <p>To insert this data inside of a Google Sheet:</p>
                 <ul>
                     <li>Duplicate the <a t-att-href="state.url" target="_blank">Spreadsheet Template</a></li>
-                    <li>Setup your Flectra credentials in the sheet via the <code>Flectra &gt; Settings</code> menu</li>
+                    <li>Setup your Sleektiv credentials in the sheet via the <code>Sleektiv &gt; Settings</code> menu</li>
                     <li>Paste the following formula in your spreadsheet:<br/>
                         <code><t t-esc="state.formula"/></code>
                     </li>

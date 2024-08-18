@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-import flectra
+import sleektiv
 import time
-from flectra import fields
-from flectra.tests import common
+from sleektiv import fields
+from sleektiv.tests import common
 
 class TestAngloSaxonCommon(common.TransactionCase):
 
@@ -60,7 +60,7 @@ class TestAngloSaxonCommon(common.TransactionCase):
         self.pos_config.write({'payment_method_ids': [(6, 0, self.cash_payment_method.ids)]})
 
 
-@flectra.tests.tagged('post_install', '-at_install')
+@sleektiv.tests.tagged('post_install', '-at_install')
 class TestAngloSaxonFlow(TestAngloSaxonCommon):
 
     def test_create_account_move_line(self):

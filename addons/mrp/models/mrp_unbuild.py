@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError, ValidationError
-from flectra.tools import float_compare, float_round
-from flectra.osv import expression
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.tools import float_compare, float_round
+from sleektiv.osv import expression
 
 from collections import defaultdict
 

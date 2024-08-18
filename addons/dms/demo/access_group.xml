@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<flectra noupdate="1">
+<sleektiv noupdate="1">
     <record id="access_group_01_demo" model="dms.access.group">
         <field name="name">Admin</field>
         <field name="perm_read">True</field>
@@ -16,4 +16,4 @@
         <field name="perm_read">True</field>
         <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]" />
     </record>
-</flectra>
+</sleektiv>

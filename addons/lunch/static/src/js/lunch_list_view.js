@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchListView', function (require) {
+sleektiv.define('lunch.LunchListView', function (require) {
 "use strict";
 
 var LunchListController = require('lunch.LunchListController');

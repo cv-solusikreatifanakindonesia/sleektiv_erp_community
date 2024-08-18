@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import time
 
 from unittest.mock import ANY, Mock, patch
 
-from flectra.exceptions import UserError
-from flectra.tests.common import SavepointCase
+from sleektiv.exceptions import UserError
+from sleektiv.tests.common import SavepointCase
 
 
 class TestFetchmailOutlook(SavepointCase):
 
-    @patch('flectra.addons.fetchmail.models.fetchmail.IMAP4_SSL')
+    @patch('sleektiv.addons.fetchmail.models.fetchmail.IMAP4_SSL')
     def test_connect(self, mock_imap):
         """Test that the connect method will use the right
         authentication method with the right arguments.

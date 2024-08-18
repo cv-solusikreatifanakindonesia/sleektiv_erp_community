@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 
-from flectra.tests import standalone
+from sleektiv.tests import standalone
 
 
 _logger = logging.getLogger(__name__)

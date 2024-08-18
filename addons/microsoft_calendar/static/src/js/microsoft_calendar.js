@@ -1,4 +1,4 @@
-flectra.define('microsoft_calendar.CalendarView', function (require) {
+sleektiv.define('microsoft_calendar.CalendarView', function (require) {
 "use strict";
 
 var core = require('web.core');
@@ -105,7 +105,7 @@ const MicrosoftCalendarController = CalendarController.include({
      * mean of a dialog.
      *
      * @private
-     * @returns {FlectraEvent} event
+     * @returns {SleektivEvent} event
      */
     _onSyncMicrosoftCalendar: function (event) {
         var self = this;

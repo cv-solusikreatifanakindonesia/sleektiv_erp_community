@@ -1,4 +1,4 @@
-flectra.define('hr_attendance.widget', function (require) {
+sleektiv.define('hr_attendance.widget', function (require) {
     "use strict";
 
     var basic_fields = require('web.basic_fields');

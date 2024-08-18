@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 
 from unittest.mock import patch
 
-from flectra.addons.test_mail.tests.common import TestMailCommon, TestRecipients
-from flectra.addons.test_mail.models.test_mail_models import MailTestSimple
-from flectra.tests import tagged
-from flectra.tools import mute_logger
+from sleektiv.addons.test_mail.tests.common import TestMailCommon, TestRecipients
+from sleektiv.addons.test_mail.models.test_mail_models import MailTestSimple
+from sleektiv.tests import tagged
+from sleektiv.tools import mute_logger
 
 
 @tagged('mail_composer')
@@ -21,7 +21,7 @@ class TestComposer(TestMailCommon, TestRecipients):
         cls.test_record = cls.env['mail.test.simple'].with_context(cls._test_context).create({'name': 'Test', 'email_from': 'ignasse@example.com'})
         cls._reset_mail_context(cls.test_record)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_composer_comment(self):
         composer = self.env['mail.compose.message'].with_context({
             'default_composition_mode': 'comment',
@@ -40,7 +40,7 @@ class TestComposer(TestMailCommon, TestRecipients):
         self.assertEqual(message.subtype_id, self.env.ref('mail.mt_comment'))
         self.assertEqual(message.partner_ids, self.partner_1 | self.partner_2)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_composer_comment_parent(self):
         parent = self.test_record.message_post(body='Test')
 
@@ -55,7 +55,7 @@ class TestComposer(TestMailCommon, TestRecipients):
         self.assertEqual(message.body, '<p>Mega</p>')
         self.assertEqual(message.parent_id, parent)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_composer_mass_mail(self):
         test_record_2 = self.env['mail.test.simple'].with_context(self._test_context).create({'name': 'Test2'})
 
@@ -90,7 +90,7 @@ class TestComposer(TestMailCommon, TestRecipients):
         self.assertEqual(message1.subject, 'Testing %s' % test_record_2.name)
         self.assertEqual(message1.body, '<p>%s</p>' % test_record_2.name)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_composer_mass_mail_active_domain(self):
         test_record_2 = self.env['mail.test.simple'].with_context(self._test_context).create({'name': 'Test2'})
 
@@ -108,7 +108,7 @@ class TestComposer(TestMailCommon, TestRecipients):
         self.assertEqual(self.test_record.message_ids[0].subject, 'From Composer Test')
         self.assertEqual(test_record_2.message_ids[0].subject, 'From Composer Test')
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_message_compose_mass_mail_no_active_domain(self):
         test_record_2 = self.env['mail.test.simple'].with_context(self._test_context).create({'name': 'Test2'})
 
@@ -126,7 +126,7 @@ class TestComposer(TestMailCommon, TestRecipients):
         self.assertEqual(self.test_record.message_ids[0].subject, 'From Composer Test')
         self.assertFalse(test_record_2.message_ids.ids)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_message_compose_portal_ok(self):
         portal_user = self._create_portal_user()
 
@@ -195,7 +195,7 @@ class TestComposerWTpl(TestMailCommon, TestRecipients):
         # Force the attachments of the template to be in the natural order.
         cls.email_template.invalidate_cache(['attachment_ids'], ids=cls.email_template.ids)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_composer_w_template(self):
         composer = self.env['mail.compose.message'].with_user(self.user_employee).with_context({
             'default_composition_mode': 'comment',
@@ -265,7 +265,7 @@ class TestComposerWTpl(TestMailCommon, TestRecipients):
             "The two static attachments on the template should be common to the two onchanges"
         )
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_composer_w_template_mass_mailing(self):
         test_record_2 = self.env['mail.test.simple'].with_context(self._test_context).create({'name': 'Test2', 'email_from': 'laurie.poiret@example.com'})
 

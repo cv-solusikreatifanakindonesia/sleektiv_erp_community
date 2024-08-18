@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import re
 from stdnum.util import clean
 
-from flectra import api, fields, models, _
-from flectra.exceptions import ValidationError
-from flectra.tools.misc import mod10r
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import ValidationError
+from sleektiv.tools.misc import mod10r
 
 
 ISR_SUBSCRIPTION_CODE = {'CHF': '01', 'EUR': '03'}

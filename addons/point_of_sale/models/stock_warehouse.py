@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import models, fields, api, _
+from sleektiv import models, fields, api, _
 
 
 class Warehouse(models.Model):

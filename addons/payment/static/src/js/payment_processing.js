@@ -1,4 +1,4 @@
-flectra.define('payment.processing', function (require) {
+sleektiv.define('payment.processing', function (require) {
     'use strict';
 
     var publicWidget = require('web.public.widget');

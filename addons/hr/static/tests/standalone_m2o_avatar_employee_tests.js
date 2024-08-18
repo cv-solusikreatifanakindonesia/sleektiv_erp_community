@@ -1,4 +1,4 @@
-flectra.define('hr.StandaloneM2OEmployeeTests', function (require) {
+sleektiv.define('hr.StandaloneM2OEmployeeTests', function (require) {
     "use strict";
 
     const { xml } = owl.tags;

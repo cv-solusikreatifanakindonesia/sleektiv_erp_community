@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
 
     <record id="base.main_company" model="res.company">
         <field name="pad_server">https://pad.flectrahq.com</field>
@@ -9,4 +9,4 @@
         <field name="pad_key">4DxmsNIbnQUVQMW9S9tx2oLOSjFdrx1l</field>
     </record>
 
-</flectra>
+</sleektiv>

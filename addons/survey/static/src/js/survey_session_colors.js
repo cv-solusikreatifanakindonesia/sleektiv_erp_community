@@ -1,4 +1,4 @@
-flectra.define('survey.session_colors', function (require) {
+sleektiv.define('survey.session_colors', function (require) {
 'use strict';
 
 /**

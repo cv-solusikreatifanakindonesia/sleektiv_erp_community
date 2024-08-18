@@ -1,4 +1,4 @@
-flectra.define('web_editor.field.html', function (require) {
+sleektiv.define('web_editor.field.html', function (require) {
 'use strict';
 
 var ajax = require('web.ajax');
@@ -20,7 +20,7 @@ var jinjaRegex = /(^|\n)\s*%\s(end|set\s)/;
 /**
  * FieldHtml Widget
  * Intended to display HTML content. This widget uses the wysiwyg editor
- * improved by flectra.
+ * improved by sleektiv.
  *
  * nodeOptions:
  *  - style-inline => convert class to inline style (no re-edition) => for sending by email
@@ -178,7 +178,7 @@ var FieldHtml = basic_fields.DebouncedField.extend(TranslatableFieldMixin, {
         // by default this is synchronous because the assets are already loaded in willStart
         // but it can be async in the case of options such as iframe, snippets...
         return this.wysiwyg.attachTo(this.$target).then(function () {
-            self.$content = self.wysiwyg.$editor.closest('body, flectra-wysiwyg-container');
+            self.$content = self.wysiwyg.$editor.closest('body, sleektiv-wysiwyg-container');
             self._onLoadWysiwyg();
             self.isRendered = true;
         });
@@ -431,7 +431,7 @@ var FieldHtml = basic_fields.DebouncedField.extend(TranslatableFieldMixin, {
      * Method called when wysiwyg triggers a change.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onChange: function (ev) {
         this._doDebouncedAction.apply(this, arguments);
@@ -461,7 +461,7 @@ var FieldHtml = basic_fields.DebouncedField.extend(TranslatableFieldMixin, {
      * Allows Enter keypress in a textarea (source mode)
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onKeydown: function (ev) {
         if (ev.which === $.ui.keyCode.ENTER) {
@@ -474,7 +474,7 @@ var FieldHtml = basic_fields.DebouncedField.extend(TranslatableFieldMixin, {
      * Method called when wysiwyg triggers a change.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onReadonlyClickChecklist: function (ev) {
         var self = this;
@@ -516,7 +516,7 @@ var FieldHtml = basic_fields.DebouncedField.extend(TranslatableFieldMixin, {
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onWysiwygBlur: function (ev) {
         ev.stopPropagation();
@@ -529,7 +529,7 @@ var FieldHtml = basic_fields.DebouncedField.extend(TranslatableFieldMixin, {
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onWysiwygFocus: function (ev) {},
 });

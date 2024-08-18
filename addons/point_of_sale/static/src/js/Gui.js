@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.Gui', function (require) {
+sleektiv.define('point_of_sale.Gui', function (require) {
     'use strict';
 
     /**

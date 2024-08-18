@@ -1,4 +1,4 @@
-flectra.define("website.tour.parallax", function (require) {
+sleektiv.define("website.tour.parallax", function (require) {
 "use strict";
 
 const tour = require("web_tour.tour");

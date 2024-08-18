@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <data>
         <!-- Sequence for Sprint -->
         <record id="seq_sprint" model="ir.sequence">
@@ -10,4 +10,4 @@
             <field name="company_id" eval="False"/>
         </record>
     </data>
-</flectra>
+</sleektiv>

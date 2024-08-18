@@ -10762,10 +10762,10 @@ var core_helpers = function() {
 	helpers$1.getMaximumWidth = function(domNode) {
 		var container = helpers$1._getParentNode(domNode);
 		if (!container) {
-			return domNode.getBoundingClientRect().width;  // Flectra customization
+			return domNode.getBoundingClientRect().width;  // Sleektiv customization
 		}
 
-		var clientWidth = container.getBoundingClientRect().width;  // Flectra customization
+		var clientWidth = container.getBoundingClientRect().width;  // Sleektiv customization
 		var paddingLeft = helpers$1._calculatePadding(container, 'padding-left', clientWidth);
 		var paddingRight = helpers$1._calculatePadding(container, 'padding-right', clientWidth);
 
@@ -10776,10 +10776,10 @@ var core_helpers = function() {
 	helpers$1.getMaximumHeight = function(domNode) {
 		var container = helpers$1._getParentNode(domNode);
 		if (!container) {
-			return domNode.getBoundingClientRect().height;  // Flectra customization
+			return domNode.getBoundingClientRect().height;  // Sleektiv customization
 		}
 
-		var clientHeight = container.getBoundingClientRect().height;  // Flectra customization
+		var clientHeight = container.getBoundingClientRect().height;  // Sleektiv customization
 		var paddingTop = helpers$1._calculatePadding(container, 'padding-top', clientHeight);
 		var paddingBottom = helpers$1._calculatePadding(container, 'padding-bottom', clientHeight);
 

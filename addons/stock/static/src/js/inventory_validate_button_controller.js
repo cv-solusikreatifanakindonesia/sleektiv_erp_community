@@ -1,4 +1,4 @@
-flectra.define('stock.InventoryValidationController', function (require) {
+sleektiv.define('stock.InventoryValidationController', function (require) {
 "use strict";
 
 var core = require('web.core');

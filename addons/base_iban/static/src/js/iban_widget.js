@@ -1,4 +1,4 @@
-flectra.define('base_iban.iban_widget', function (require) {
+sleektiv.define('base_iban.iban_widget', function (require) {
 "use strict";
 
 var basicFields = require('web.basic_fields');

@@ -1,4 +1,4 @@
-flectra.define('account.reconciliation_field_tests', function (require) {
+sleektiv.define('account.reconciliation_field_tests', function (require) {
 "use strict";
 
 var FormView = require('web.FormView');

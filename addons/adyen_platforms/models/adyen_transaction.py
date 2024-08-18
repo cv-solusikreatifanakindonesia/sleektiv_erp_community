@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from pytz import UTC
 
-from flectra import api, fields, models
-from flectra.tools import DEFAULT_SERVER_DATETIME_FORMAT
+from sleektiv import api, fields, models
+from sleektiv.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 
 class AdyenTransaction(models.Model):

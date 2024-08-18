@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 
-from flectra.addons.test_mail_full.tests.common import TestMailFullCommon
-from flectra.tests.common import users
-from flectra.tools import mute_logger
-from flectra.tests import tagged
+from sleektiv.addons.test_mail_full.tests.common import TestMailFullCommon
+from sleektiv.tests.common import users
+from sleektiv.tools import mute_logger
+from sleektiv.tests import tagged
 
 
 @tagged('mass_mailing')
@@ -17,7 +17,7 @@ class TestMassMailing(TestMailFullCommon):
         super(TestMassMailing, cls).setUpClass()
 
     @users('user_marketing')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mailing_w_blacklist_opt_out(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_bl.ids)
 
@@ -106,10 +106,10 @@ class TestMassMailing(TestMailFullCommon):
             self.assertMailTraces(
                 [recipient_info], mailing, recipient,
                 mail_links_info=[[
-                    ('url0', 'https://www.flectra.tz/my/%s' % recipient.name, True, {}),
-                    ('url1', 'https://www.flectra.be', True, {}),
+                    ('url0', 'https://www.sleektiv.tz/my/%s' % recipient.name, True, {}),
+                    ('url1', 'https://www.sleektiv.be', True, {}),
                     ('url2', 'https://www.flectrahq.com', True, {}),
-                    ('url3', 'https://www.flectra.eu', True, {}),
+                    ('url3', 'https://www.sleektiv.eu', True, {}),
                     ('url4', 'https://www.example.com/foo/bar?baz=qux', True, {'baz': 'qux'}),
                     ('url5', '%s/event/dummy-event-0' % mailing.get_base_url(), True, {}),
                     # view is not shortened and parsed at sending

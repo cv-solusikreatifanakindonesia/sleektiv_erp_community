@@ -1,6 +1,6 @@
 importScripts("/website_event_track/static/lib/idb-keyval/idb-keyval.js");
 
-const PREFIX = "flectra-event";
+const PREFIX = "sleektiv-event";
 const SYNCABLE_ROUTES = ["/event/track/toggle_reminder"];
 const CACHABLE_ROUTES = ["/web/webclient/version_info"];
 const MAX_CACHE_SIZE = 512 * 1024 * 1024; // 500 MB

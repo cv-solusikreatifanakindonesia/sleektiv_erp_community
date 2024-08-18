@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.OrderRow', function (require) {
+sleektiv.define('pos_restaurant.OrderRow', function (require) {
     'use strict';
 
     const OrderRow = require('point_of_sale.OrderRow');

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import fields, models
+from sleektiv import fields, models
 
 
 class Notification(models.Model):

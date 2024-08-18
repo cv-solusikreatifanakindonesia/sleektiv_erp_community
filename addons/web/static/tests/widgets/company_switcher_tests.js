@@ -1,4 +1,4 @@
-flectra.define('web.SwitchCompanyMenu_tests', function (require) {
+sleektiv.define('web.SwitchCompanyMenu_tests', function (require) {
 "use strict";
 
 var SwitchCompanyMenu = require('web.SwitchCompanyMenu');

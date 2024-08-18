@@ -1,5 +1,5 @@
-from flectra import models, fields, api, _
-from flectra.exceptions import UserError
+from sleektiv import models, fields, api, _
+from sleektiv.exceptions import UserError
 
 class CashBox(models.TransientModel):
     _register = False

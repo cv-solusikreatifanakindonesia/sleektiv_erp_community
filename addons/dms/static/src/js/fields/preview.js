@@ -4,7 +4,7 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
  **********************************************************************************/
 
-flectra.define("dms.preview", function(require) {
+sleektiv.define("dms.preview", function(require) {
     "use strict";
 
     var basic_fields = require("web.basic_fields");

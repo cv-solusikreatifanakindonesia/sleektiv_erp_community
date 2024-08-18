@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra import api, fields, models, _
-from flectra.exceptions import ValidationError
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import ValidationError
 
 
 class AccountAccountTag(models.Model):

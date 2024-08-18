@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import models, api, fields, _
-from flectra.exceptions import UserError
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv import models, api, fields, _
+from sleektiv.exceptions import UserError
 from datetime import datetime
-from flectra.fields import Datetime, Date
-from flectra.tools.misc import format_date
+from sleektiv.fields import Datetime, Date
+from sleektiv.tools.misc import format_date
 import pytz
 
 

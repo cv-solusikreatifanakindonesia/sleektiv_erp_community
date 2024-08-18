@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flectra import api, SUPERUSER_ID
+from sleektiv import api, SUPERUSER_ID
 
 FIXED_ACCOUNTS_MAP = {
     '5221': '5211',

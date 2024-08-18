@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 
-from flectra import fields
-from flectra.tests.common import TransactionCase, Form
-from flectra.tools import DEFAULT_SERVER_DATETIME_FORMAT
+from sleektiv import fields
+from sleektiv.tests.common import TransactionCase, Form
+from sleektiv.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 class TestOnchangeProductId(TransactionCase):
     """Test that when an included tax is mapped by a fiscal position, the included tax must be

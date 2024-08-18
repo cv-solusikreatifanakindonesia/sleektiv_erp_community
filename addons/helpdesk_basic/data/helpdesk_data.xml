@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
 
     <!-- Helpdesk-specific activities, for automatic generation mainly -->
     <record id="mail_act_helpdesk_handle" model="mail.activity.type">
@@ -68,4 +68,4 @@
         <field name="relation_field">team_id</field>
     </record>
 
-</flectra>
+</sleektiv>

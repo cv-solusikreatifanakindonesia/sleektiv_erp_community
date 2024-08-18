@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<flectra>
+<sleektiv>
     <record id="l10n_ph_fiscal_position_vat_registered" model="account.fiscal.position.template">
         <field name="sequence">1</field>
         <field name="name">VAT Registered</field>
@@ -15,4 +15,4 @@
         <field name="auto_apply" eval="True" />
         <field name="country_id" ref="base.ph" />
     </record>
-</flectra>
+</sleektiv>

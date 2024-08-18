@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import fields, models
-from flectra.addons.website.models import ir_http
+from sleektiv import fields, models
+from sleektiv.addons.website.models import ir_http
 
 
 class ProductProduct(models.Model):

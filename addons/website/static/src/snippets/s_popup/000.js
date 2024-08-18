@@ -1,4 +1,4 @@
-flectra.define('website.s_popup', function (require) {
+sleektiv.define('website.s_popup', function (require) {
 'use strict';
 
 const config = require('web.config');
@@ -144,12 +144,12 @@ $.fn.modal.Constructor.prototype._showElement = function () {
         // resized. Note this could technically be done for all modals and not
         // only the ones with the s_popup_no_backdrop class but that would be
         // useless as allowing content scroll while a modal with that class is
-        // opened is a very specific Flectra behavior.
+        // opened is a very specific Sleektiv behavior.
         $(this._element).on('content_changed.update_scrollbar', this, _updateScrollbar);
         $(window).on('resize.update_scrollbar', this, _updateScrollbar);
 
-        this._flectraLoadEventCaptureHandler = _.debounce(() => _updateScrollbar({ data: this }, 100));
-        this._element.addEventListener('load', this._flectraLoadEventCaptureHandler, true);
+        this._sleektivLoadEventCaptureHandler = _.debounce(() => _updateScrollbar({ data: this }, 100));
+        this._element.addEventListener('load', this._sleektivLoadEventCaptureHandler, true);
 
         _updateScrollbar({ data: this });
     }
@@ -167,9 +167,9 @@ $.fn.modal.Constructor.prototype._hideModal = function () {
     $(this._element).off('content_changed.update_scrollbar');
     $(window).off('resize.update_scrollbar');
 
-    if (this._flectraLoadEventCaptureHandler) {
-        this._element.removeEventListener('load', this._flectraLoadEventCaptureHandler, true);
-        delete this._flectraLoadEventCaptureHandler;
+    if (this._sleektivLoadEventCaptureHandler) {
+        this._element.removeEventListener('load', this._sleektivLoadEventCaptureHandler, true);
+        delete this._sleektivLoadEventCaptureHandler;
     }
 };
 

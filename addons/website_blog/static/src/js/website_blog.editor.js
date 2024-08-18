@@ -1,4 +1,4 @@
-flectra.define('website_blog.new_blog_post', function (require) {
+sleektiv.define('website_blog.new_blog_post', function (require) {
 'use strict';
 
 var core = require('web.core');
@@ -58,7 +58,7 @@ WebsiteNewMenu.include({
 
 //==============================================================================
 
-flectra.define('website_blog.editor', function (require) {
+sleektiv.define('website_blog.editor', function (require) {
 'use strict';
 
 require('web.dom_ready');
@@ -148,7 +148,7 @@ WysiwygMultizone.include({
 
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSetBlogPostUpdatedTags: function (ev) {
         this.blogTagsPerBlogPost[ev.data.blogPostID] = ev.data.tags;

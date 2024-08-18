@@ -1,4 +1,4 @@
-flectra.define('web.jquery.extensions', function () {
+sleektiv.define('web.jquery.extensions', function () {
 'use strict';
 
 /**
@@ -91,11 +91,11 @@ $.fn.extend({
         return o;
     },
     /**
-     * Makes DOM elements bounce the way Flectra decided it.
+     * Makes DOM elements bounce the way Sleektiv decided it.
      *
      * @param {string} [extraClass]
      */
-    flectraBounce: function (extraClass) {
+    sleektivBounce: function (extraClass) {
         for (const el of this) {
             el.classList.add('o_catch_attention', extraClass);
             setTimeout(() => el.classList.remove('o_catch_attention', extraClass), 400);

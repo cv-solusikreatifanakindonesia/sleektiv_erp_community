@@ -4,7 +4,7 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
  **********************************************************************************/
 
-flectra.define("dms.FileKanbanView", function(require) {
+sleektiv.define("dms.FileKanbanView", function(require) {
     "use strict";
 
     var registry = require("web.view_registry");

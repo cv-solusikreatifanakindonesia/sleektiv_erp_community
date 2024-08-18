@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, fields, _
-from flectra.tools import str2bool
-from flectra.addons.account_edi_ubl_cii.models.account_edi_common import COUNTRY_EAS
+from sleektiv import models, fields, _
+from sleektiv.tools import str2bool
+from sleektiv.addons.account_edi_ubl_cii.models.account_edi_common import COUNTRY_EAS
 
 import logging
 
@@ -148,7 +148,7 @@ class AccountEdiFormat(models.Model):
         if not edi_document.attachment_id:
             return
 
-        pdf_writer.embed_flectra_attachment(edi_document.attachment_id, subtype='text/xml')
+        pdf_writer.embed_sleektiv_attachment(edi_document.attachment_id, subtype='text/xml')
         if not pdf_writer.is_pdfa and str2bool(
                 self.env['ir.config_parameter'].sudo().get_param('edi.use_pdfa', 'False')):
             try:

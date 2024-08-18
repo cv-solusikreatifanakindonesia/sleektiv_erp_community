@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from psycopg2 import IntegrityError
 
-from flectra.addons.test_mail.tests.common import TestMailCommon
-from flectra.tests import tagged
-from flectra.tests import users
-from flectra.tools.misc import mute_logger
-from flectra.tests.common import users
+from sleektiv.addons.test_mail.tests.common import TestMailCommon
+from sleektiv.tests import tagged
+from sleektiv.tests import users
+from sleektiv.tools.misc import mute_logger
+from sleektiv.tests.common import users
 
 
 @tagged('mail_followers')
@@ -136,7 +136,7 @@ class BaseFollowersTest(TestMailCommon):
         """Test that a follower cannot suffer from dissociative identity disorder.
            It cannot be both a partner and a channel.
         """
-        with self.assertRaises(IntegrityError), mute_logger('flectra.sql_db'):
+        with self.assertRaises(IntegrityError), mute_logger('sleektiv.sql_db'):
             self.env['mail.followers'].create({
                 'res_model': self.test_record._name,
                 'res_id': self.test_record.id,

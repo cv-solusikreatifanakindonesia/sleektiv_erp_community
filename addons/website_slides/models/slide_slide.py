@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 import datetime
@@ -13,12 +13,12 @@ from dateutil.relativedelta import relativedelta
 from PIL import Image
 from werkzeug import urls
 
-from flectra import api, fields, models, _
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.exceptions import UserError, AccessError
-from flectra.http import request
-from flectra.addons.http_routing.models.ir_http import url_for
-from flectra.tools import sql
+from sleektiv import api, fields, models, _
+from sleektiv.addons.http_routing.models.ir_http import slug
+from sleektiv.exceptions import UserError, AccessError
+from sleektiv.http import request
+from sleektiv.addons.http_routing.models.ir_http import url_for
+from sleektiv.tools import sql
 
 
 class SlidePartnerRelation(models.Model):

@@ -1,4 +1,4 @@
-from flectra import models, api
+from sleektiv import models, api
 
 class MrpStockReport(models.TransientModel):
     _inherit = 'stock.traceability.report'

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models
+from sleektiv import api, fields, models
 
 
 class RecurrenceRule(models.Model):
@@ -25,7 +25,7 @@ class RecurrenceRule(models.Model):
     def _inverse_rrule(self):
         # Note: 'need_sync_m' is set to False to avoid syncing the updated recurrence with
         # Outlook, as this update mainly comes from Outlook (the 'rrule' field is not directly
-        # modified in Flectra but computed from other fields).
+        # modified in Sleektiv but computed from other fields).
         for recurrence in self.filtered('rrule'):
             values = self._rrule_parse(recurrence.rrule, recurrence.dtstart)
             recurrence.write(dict(values, need_sync_m=False))
@@ -90,10 +90,10 @@ class RecurrenceRule(models.Model):
 
     def _write_from_microsoft(self, microsoft_event, vals):
         current_rrule = self.rrule
-        # event_tz is written on event in Microsoft but on recurrence in Flectra
+        # event_tz is written on event in Microsoft but on recurrence in Sleektiv
         vals['event_tz'] = microsoft_event.start.get('timeZone')
         super()._write_from_microsoft(microsoft_event, vals)
-        new_event_values = self.env["calendar.event"]._microsoft_to_flectra_values(microsoft_event)
+        new_event_values = self.env["calendar.event"]._microsoft_to_sleektiv_values(microsoft_event)
         if self._has_base_event_time_fields_changed(new_event_values):
             # we need to recreate the recurrence, time_fields were modified.
             base_event_id = self.base_event_id
@@ -139,7 +139,7 @@ class RecurrenceRule(models.Model):
         super()._cancel_microsoft()
 
     @api.model
-    def _microsoft_to_flectra_values(self, microsoft_recurrence, default_reminders=(), default_values=None, with_ids=False):
+    def _microsoft_to_sleektiv_values(self, microsoft_recurrence, default_reminders=(), default_values=None, with_ids=False):
         recurrence = microsoft_recurrence.get_recurrence()
 
         if with_ids:

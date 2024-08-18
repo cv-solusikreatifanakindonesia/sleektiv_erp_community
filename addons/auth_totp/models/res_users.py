@@ -11,11 +11,11 @@ import time
 
 import werkzeug.urls
 
-from flectra import _, api, fields, models
-from flectra.addons.base.models.res_users import check_identity
-from flectra.exceptions import AccessDenied, UserError
-from flectra.http import request, db_list
-from flectra.tools import sql
+from sleektiv import _, api, fields, models
+from sleektiv.addons.base.models.res_users import check_identity
+from sleektiv.exceptions import AccessDenied, UserError
+from sleektiv.http import request, db_list
+from sleektiv.tools import sql
 
 _logger = logging.getLogger(__name__)
 

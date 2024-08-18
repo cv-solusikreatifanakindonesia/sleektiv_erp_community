@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<flectra>
+<sleektiv>
     <record id="hr_contract_form_view_inherit" model="ir.ui.view">
         <field name="name">hr.contract.view.form.inherit</field>
         <field name="model">hr.contract</field>
@@ -60,4 +60,4 @@
             parent="hr.menu_human_resources_configuration"
             sequence="3"
             groups="base.group_no_one"/>
-</flectra>
+</sleektiv>

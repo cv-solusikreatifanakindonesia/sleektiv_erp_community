@@ -1,4 +1,4 @@
-flectra.define('account.payment', function (require) {
+sleektiv.define('account.payment', function (require) {
 "use strict";
 
 var AbstractField = require('web.AbstractField');

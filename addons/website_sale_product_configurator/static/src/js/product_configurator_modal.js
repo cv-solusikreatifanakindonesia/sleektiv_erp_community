@@ -1,4 +1,4 @@
-flectra.define('website_sale_product_configurator.OptionalProductsModal', function (require) {
+sleektiv.define('website_sale_product_configurator.OptionalProductsModal', function (require) {
     "use strict";
 
 var OptionalProductsModal = require('sale_product_configurator.OptionalProductsModal');

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import fields, models, _
+from sleektiv import fields, models, _
 
 
 class AccountPartnerLedger(models.TransientModel):

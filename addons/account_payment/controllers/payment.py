@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.urls import url_encode
 
-from flectra import http, _
-from flectra.addons.portal.controllers.portal import _build_url_w_params
-from flectra.addons.payment.controllers.portal import PaymentProcessing
-from flectra.http import request, route
+from sleektiv import http, _
+from sleektiv.addons.portal.controllers.portal import _build_url_w_params
+from sleektiv.addons.payment.controllers.portal import PaymentProcessing
+from sleektiv.http import request, route
 
 
 class PaymentPortal(http.Controller):

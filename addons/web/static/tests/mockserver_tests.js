@@ -1,4 +1,4 @@
-flectra.define('web.mockserver_tests', function (require) {
+sleektiv.define('web.mockserver_tests', function (require) {
 "use strict";
 
 const MockServer = require("web.MockServer");

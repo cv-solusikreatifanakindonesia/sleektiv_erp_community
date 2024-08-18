@@ -1,4 +1,4 @@
-flectra.define('barcodes.BarcodeParser', function (require) {
+sleektiv.define('barcodes.BarcodeParser', function (require) {
 "use strict";
 
 var Class = require('web.Class');

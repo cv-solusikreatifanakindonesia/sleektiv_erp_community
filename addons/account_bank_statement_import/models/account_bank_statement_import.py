@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
-from flectra.addons.base.models.res_bank import sanitize_account_number
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError
+from sleektiv.addons.base.models.res_bank import sanitize_account_number
 
 import logging
 
@@ -42,7 +42,7 @@ class AccountBankStatementImport(models.TransientModel):
                 base64.b64decode(data_file.datas))
             # Check raw data
             self._check_parsed_data(stmts_vals, account_number)
-            # Try to find the currency and journal in flectra
+            # Try to find the currency and journal in sleektiv
             currency, journal = self._find_additional_data(currency_code, account_number)
             # If no journal found, ask the user about creating one
             if not journal:
@@ -110,7 +110,7 @@ class AccountBankStatementImport(models.TransientModel):
                         - 'amount': float
                         - 'unique_import_id': string
                         -o 'account_number': string
-                            Will be used to find/create the res.partner.bank in flectra
+                            Will be used to find/create the res.partner.bank in sleektiv
                         -o 'note': string
                         -o 'partner_name': string
                         -o 'ref': string

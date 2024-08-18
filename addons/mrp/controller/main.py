@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 import json
 import logging
 
-from flectra import http
-from flectra.http import request
-from flectra.tools.translate import _
+from sleektiv import http
+from sleektiv.http import request
+from sleektiv.tools.translate import _
 
 logger = logging.getLogger(__name__)
 

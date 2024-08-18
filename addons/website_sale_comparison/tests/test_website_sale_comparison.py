@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import OrderedDict
 from lxml import etree
-from flectra import tools
+from sleektiv import tools
 
-import flectra.tests
+import sleektiv.tests
 
 
-@flectra.tests.tagged('-at_install', 'post_install')
-class TestWebsiteSaleComparison(flectra.tests.TransactionCase):
+@sleektiv.tests.tagged('-at_install', 'post_install')
+class TestWebsiteSaleComparison(sleektiv.tests.TransactionCase):
     def test_01_website_sale_comparison_remove(self):
         """ This tour makes sure the product page still works after the module
         `website_sale_comparison` has been removed.
@@ -66,8 +66,8 @@ class TestWebsiteSaleComparison(flectra.tests.TransactionCase):
         self.assertFalse(Website1.viewref(test_view_key, raise_if_not_found=False))
 
 
-@flectra.tests.tagged('post_install', '-at_install')
-class TestUi(flectra.tests.HttpCase):
+@sleektiv.tests.tagged('post_install', '-at_install')
+class TestUi(sleektiv.tests.HttpCase):
 
     def setUp(self):
         super(TestUi, self).setUp()

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.test_mail.tests.common import TestMailCommon, TestRecipients
-from flectra.tests import tagged, users
-from flectra.tests.common import Form
+from sleektiv.addons.test_mail.tests.common import TestMailCommon, TestRecipients
+from sleektiv.tests import tagged, users
+from sleektiv.tests.common import Form
 
 @tagged('mail_template')
 class TestMailTemplateTools(TestMailCommon, TestRecipients):

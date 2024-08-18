@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from PIL import Image
 
-from flectra.tests import tagged
-from flectra.tests.common import TransactionCase
-from flectra.tools import base64_to_image, image_to_base64
+from sleektiv.tests import tagged
+from sleektiv.tests.common import TransactionCase
+from sleektiv.tools import base64_to_image, image_to_base64
 
 
 @tagged('post_install', '-at_install')

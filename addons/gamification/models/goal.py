@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import ast
 import logging
 from datetime import date, datetime, timedelta
 
-from flectra import api, fields, models, _, exceptions
-from flectra.osv import expression
-from flectra.tools.safe_eval import safe_eval, time
+from sleektiv import api, fields, models, _, exceptions
+from sleektiv.osv import expression
+from sleektiv.tools.safe_eval import safe_eval, time
 
 _logger = logging.getLogger(__name__)
 

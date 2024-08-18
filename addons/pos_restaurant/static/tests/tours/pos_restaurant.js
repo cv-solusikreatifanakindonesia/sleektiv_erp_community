@@ -1,4 +1,4 @@
-flectra.define('pos_reataurant.tour.synchronized_table_management', function (require) {
+sleektiv.define('pos_reataurant.tour.synchronized_table_management', function (require) {
     'use strict';
 
     const { PaymentScreen } = require('point_of_sale.tour.PaymentScreenTourMethods');

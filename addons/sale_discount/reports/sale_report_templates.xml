@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
         <xpath expr="//div[@id='total']/div/table/tr[1]" position="before">
             <t t-if="doc.amount_gross != doc.amount_untaxed">
@@ -29,4 +29,4 @@
             </t>
         </xpath>
     </template>
-</flectra>
+</sleektiv>

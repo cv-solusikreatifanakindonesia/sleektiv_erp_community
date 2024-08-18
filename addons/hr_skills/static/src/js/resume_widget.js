@@ -1,4 +1,4 @@
-flectra.define('web.FieldResume', function (require) {
+sleektiv.define('web.FieldResume', function (require) {
 "use strict";
 
 var time = require('web.time');

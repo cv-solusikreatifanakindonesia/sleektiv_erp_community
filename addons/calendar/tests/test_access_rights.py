@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 
-from flectra.tests.common import SavepointCase, new_test_user
-from flectra.exceptions import AccessError
-from flectra.tools import mute_logger
+from sleektiv.tests.common import SavepointCase, new_test_user
+from sleektiv.exceptions import AccessError
+from sleektiv.tools import mute_logger
 
 
 class TestAccessRights(SavepointCase):
 
     @classmethod
-    @mute_logger('flectra.tests', 'flectra.addons.auth_signup.models.res_users')
+    @mute_logger('sleektiv.tests', 'sleektiv.addons.auth_signup.models.res_users')
     def setUpClass(cls):
         super().setUpClass()
         cls.john = new_test_user(cls.env, login='john', groups='base.group_user')
@@ -36,7 +36,7 @@ class TestAccessRights(SavepointCase):
         return [r[field] for r in data]
 
     # don't spam logs with ACL failures from portal
-    @mute_logger('flectra.addons.base.models.ir_rule')
+    @mute_logger('sleektiv.addons.base.models.ir_rule')
     def test_privacy(self):
         event = self.create_event(
             self.john,

@@ -1,4 +1,4 @@
-flectra.define('web.test_utils', async function (require) {
+sleektiv.define('web.test_utils', async function (require) {
     "use strict";
 
     /**

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 
-from flectra.addons.event.tests.common import TestEventCommon
-from flectra.addons.phone_validation.tools import phone_validation
-from flectra.addons.sms.tests.common import SMSCase
+from sleektiv.addons.event.tests.common import TestEventCommon
+from sleektiv.addons.phone_validation.tools import phone_validation
+from sleektiv.addons.sms.tests.common import SMSCase
 
 
 class TestSMSSchedule(TestEventCommon, SMSCase):

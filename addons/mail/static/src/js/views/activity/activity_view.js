@@ -1,4 +1,4 @@
-flectra.define('mail.ActivityView', function (require) {
+sleektiv.define('mail.ActivityView', function (require) {
 "use strict";
 
 const ActivityController = require('mail.ActivityController');

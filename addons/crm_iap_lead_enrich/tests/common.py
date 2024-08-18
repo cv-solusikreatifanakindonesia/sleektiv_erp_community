@@ -4,10 +4,10 @@ from contextlib import contextmanager
 from functools import partial
 from unittest.mock import patch
 
-from flectra import exceptions
-from flectra.addons.iap.tools import iap_tools
-from flectra.addons.crm_iap_lead_enrich.models.iap_enrich_api import IapEnrichAPI
-from flectra.tests import common
+from sleektiv import exceptions
+from sleektiv.addons.iap.tools import iap_tools
+from sleektiv.addons.crm_iap_lead_enrich.models.iap_enrich_api import IapEnrichAPI
+from sleektiv.tests import common
 
 
 class MockIAPEnrich(common.BaseCase):

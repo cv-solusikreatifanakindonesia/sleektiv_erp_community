@@ -9,10 +9,10 @@ import threading
 import time
 import uuid
 
-from flectra import SUPERUSER_ID, _
-from flectra.modules.module import get_module_resource
-from flectra.tests import common
-from flectra.tools import convert_file
+from sleektiv import SUPERUSER_ID, _
+from sleektiv.modules.module import get_module_resource
+from sleektiv.tests import common
+from sleektiv.tools import convert_file
 
 _path = os.path.dirname(os.path.dirname(__file__))
 _logger = logging.getLogger(__name__)

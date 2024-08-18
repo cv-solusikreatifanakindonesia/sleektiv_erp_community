@@ -1,4 +1,4 @@
-flectra.define('web_gantt.GanttModel', function (require) {
+sleektiv.define('web_gantt.GanttModel', function (require) {
 "use strict";
 
 var core = require('web.core');

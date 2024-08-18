@@ -1,4 +1,4 @@
-flectra.define('web.public.lazyloader', function (require) {
+sleektiv.define('web.public.lazyloader', function (require) {
 'use strict';
 
 var blockEvents = ['submit', 'click'];

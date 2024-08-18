@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.test_mass_mailing.tests.common import TestMassMailCommon
-from flectra.addons.test_mass_mailing.data.mail_test_data import MAIL_TEMPLATE
-from flectra.tests.common import users
-from flectra.tools import mute_logger
+from sleektiv.addons.test_mass_mailing.tests.common import TestMassMailCommon
+from sleektiv.addons.test_mass_mailing.data.mail_test_data import MAIL_TEMPLATE
+from sleektiv.tests.common import users
+from sleektiv.tools import mute_logger
 
 
 class TestMailingInternals(TestMassMailCommon):
@@ -23,7 +23,7 @@ class TestMailingInternals(TestMassMailCommon):
             'alias_contact': 'everyone'
         })
 
-    @mute_logger('flectra.addons.mail.models.mail_render_mixin')
+    @mute_logger('sleektiv.addons.mail.models.mail_render_mixin')
     def test_mailing_test_button(self):
         mailing = self.env['mailing.mailing'].create({
             'name': 'TestButton',

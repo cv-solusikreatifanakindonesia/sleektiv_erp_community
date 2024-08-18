@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import pytz
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from flectra import models, fields, api, exceptions, _, SUPERUSER_ID
+from sleektiv import models, fields, api, exceptions, _, SUPERUSER_ID
 
 
 class HrEmployeeBase(models.AbstractModel):

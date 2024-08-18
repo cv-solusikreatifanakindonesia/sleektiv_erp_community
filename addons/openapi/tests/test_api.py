@@ -6,9 +6,9 @@ import logging
 
 import requests
 
-from flectra import api
-from flectra.tests import tagged
-from flectra.tests.common import PORT, HttpCase, get_db_name
+from sleektiv import api
+from sleektiv.tests import tagged
+from sleektiv.tests.common import PORT, HttpCase, get_db_name
 
 from ..controllers import pinguin
 

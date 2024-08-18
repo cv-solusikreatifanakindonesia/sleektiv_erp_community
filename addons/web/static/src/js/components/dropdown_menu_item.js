@@ -1,4 +1,4 @@
-flectra.define('web.DropdownMenuItem', function (require) {
+sleektiv.define('web.DropdownMenuItem', function (require) {
     "use strict";
 
     const { useListener } = require('web.custom_hooks');

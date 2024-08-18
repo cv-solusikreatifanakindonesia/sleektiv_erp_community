@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import UserError, ValidationError
-from flectra.osv import expression
+from sleektiv import api, fields, models, tools, _
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.osv import expression
 
 
 class ProductAttribute(models.Model):
@@ -291,7 +291,7 @@ class ProductTemplateAttributeLine(models.Model):
         ptal_to_archive = self.env['product.template.attribute.line']
         for ptal in self:
             try:
-                with self.env.cr.savepoint(), tools.mute_logger('flectra.sql_db'):
+                with self.env.cr.savepoint(), tools.mute_logger('sleektiv.sql_db'):
                     super(ProductTemplateAttributeLine, ptal).unlink()
             except Exception:
                 # We catch all kind of exceptions to be sure that the operation
@@ -495,7 +495,7 @@ class ProductTemplateAttributeValue(models.Model):
         ptav_to_archive = self.env['product.template.attribute.value']
         for ptav in self:
             try:
-                with self.env.cr.savepoint(), tools.mute_logger('flectra.sql_db'):
+                with self.env.cr.savepoint(), tools.mute_logger('sleektiv.sql_db'):
                     super(ProductTemplateAttributeValue, ptav).unlink()
             except Exception:
                 # We catch all kind of exceptions to be sure that the operation

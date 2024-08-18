@@ -1,5 +1,5 @@
-from flectra import models, api, fields, _
-from flectra.exceptions import UserError
+from sleektiv import models, api, fields, _
+from sleektiv.exceptions import UserError
 
 
 class L10nLatamDocumentType(models.Model):

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.exceptions import UserError
-from flectra.tests import Form
-from flectra.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
-from flectra.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
+from sleektiv.exceptions import UserError
+from sleektiv.tests import Form
+from sleektiv.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
+from sleektiv.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
 
 
 class TestStockValuationLayerRevaluation(TestStockValuationCommon):

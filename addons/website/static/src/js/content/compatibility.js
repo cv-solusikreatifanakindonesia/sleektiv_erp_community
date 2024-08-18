@@ -1,4 +1,4 @@
-flectra.define('website.content.compatibility', function (require) {
+sleektiv.define('website.content.compatibility', function (require) {
 'use strict';
 
 /**

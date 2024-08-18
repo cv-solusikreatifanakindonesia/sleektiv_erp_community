@@ -1,4 +1,4 @@
-flectra.define('mail.emojis', function (require) {
+sleektiv.define('mail.emojis', function (require) {
 "use strict";
 
 /**

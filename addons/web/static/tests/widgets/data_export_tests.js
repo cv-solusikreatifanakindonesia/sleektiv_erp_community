@@ -1,4 +1,4 @@
-flectra.define('web.data_export_tests', function (require) {
+sleektiv.define('web.data_export_tests', function (require) {
 "use strict";
 
 const data = require('web.data');

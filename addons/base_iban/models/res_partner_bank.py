@@ -2,8 +2,8 @@
 
 import re
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError, ValidationError
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError, ValidationError
 
 
 def normalize_iban(iban):

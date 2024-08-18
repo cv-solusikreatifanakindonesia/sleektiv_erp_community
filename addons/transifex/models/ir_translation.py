@@ -1,36 +1,36 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from configparser import ConfigParser
 from os.path import join as opj
 import os
 import werkzeug.urls
 
-import flectra
-from flectra import models, fields
+import sleektiv
+from sleektiv import models, fields
 
 
 class IrTranslation(models.Model):
 
     _inherit = 'ir.translation'
 
-    transifex_url = fields.Char("Transifex URL", compute='_get_transifex_url', help="Propose a modification in the official version of Flectra")
+    transifex_url = fields.Char("Transifex URL", compute='_get_transifex_url', help="Propose a modification in the official version of Sleektiv")
 
     def _get_transifex_url(self):
         """ Construct transifex URL based on the module on configuration """
-        # e.g. 'https://www.transifex.com/flectra/'
+        # e.g. 'https://www.transifex.com/sleektiv/'
         base_url = self.env['ir.config_parameter'].sudo().get_param('transifex.project_url')
 
         tx_config_file = ConfigParser()
         tx_sections = []
-        for addon_path in flectra.addons.__path__:
+        for addon_path in sleektiv.addons.__path__:
             tx_path = opj(addon_path, '.tx', 'config')
             if os.path.isfile(tx_path):
                 tx_config_file.read(tx_path)
-                # first section is [main], after [flectra-11.sale]
+                # first section is [main], after [sleektiv-11.sale]
                 tx_sections.extend(tx_config_file.sections()[1:])
 
-            # parent directory ad .tx/config is root directory in flectra/flectra
+            # parent directory ad .tx/config is root directory in sleektiv/sleektiv
             tx_path = opj(addon_path, os.pardir, '.tx', 'config')
             if os.path.isfile(tx_path):
                 tx_config_file.read(tx_path)
@@ -55,10 +55,10 @@ class IrTranslation(models.Model):
             for module in translation_modules:
                 for section in tx_sections:
                     if len(section.split(':')) != 6:
-                        # old format ['main', 'flectra-16.base', ...]
+                        # old format ['main', 'sleektiv-16.base', ...]
                         tx_project, tx_mod = section.split(".")
                     else:
-                        # tx_config_file.sections(): ['main', 'o:flectra:p:flectra-16:r:base', ...]
+                        # tx_config_file.sections(): ['main', 'o:sleektiv:p:sleektiv-16:r:base', ...]
                         _, _, _, tx_project, _, tx_mod = section.split(':')
                     if tx_mod == module:
                         project_modules[module] = tx_project
@@ -79,7 +79,7 @@ class IrTranslation(models.Model):
                     translation.transifex_url = False
                     continue
 
-                # e.g. https://www.transifex.com/flectra/flectra-10/translate/#fr/sale/42?q=text:'Sale+Order'
+                # e.g. https://www.transifex.com/sleektiv/sleektiv-10/translate/#fr/sale/42?q=text:'Sale+Order'
                 src = werkzeug.urls.url_quote_plus(translation.src[:50].replace("\n", "").replace("'", "\\'"))
                 src = f"'{src}'" if "+" in src else src
                 translation.transifex_url = "%(url)s/%(project)s/translate/#%(lang)s/%(module)s/42?q=%(src)s" % {

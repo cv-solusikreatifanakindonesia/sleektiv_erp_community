@@ -1,4 +1,4 @@
-flectra.define('website_blog.contentshare', function (require) {
+sleektiv.define('website_blog.contentshare', function (require) {
 'use strict';
 
 const dom = require('web.dom');

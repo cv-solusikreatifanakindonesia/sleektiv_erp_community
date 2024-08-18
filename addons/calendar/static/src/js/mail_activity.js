@@ -1,4 +1,4 @@
-flectra.define('calendar.Activity', function (require) {
+sleektiv.define('calendar.Activity', function (require) {
 "use strict";
 
 var Activity = require('mail.Activity');

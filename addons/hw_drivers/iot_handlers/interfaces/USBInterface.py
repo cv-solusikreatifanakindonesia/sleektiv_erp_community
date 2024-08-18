@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from usb import core
 
-from flectra.addons.hw_drivers.interface import Interface
+from sleektiv.addons.hw_drivers.interface import Interface
 
 
 class USBInterface(Interface):

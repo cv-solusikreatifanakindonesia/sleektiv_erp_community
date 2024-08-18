@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra import models, fields, _
-from flectra.exceptions import UserError
+from sleektiv import models, fields, _
+from sleektiv.exceptions import UserError
 
 
 class IrAttachment(models.Model):

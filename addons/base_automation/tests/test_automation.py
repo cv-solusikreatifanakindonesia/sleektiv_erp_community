@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.tests import TransactionCase
-from flectra.exceptions import UserError
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.tests import TransactionCase
+from sleektiv.exceptions import UserError
 
-import flectra.tests
+import sleektiv.tests
 
-@flectra.tests.tagged('post_install', '-at_install')
+@sleektiv.tests.tagged('post_install', '-at_install')
 class TestAutomation(TransactionCase):
 
     def test_01_on_create(self):

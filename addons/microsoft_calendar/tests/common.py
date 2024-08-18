@@ -2,10 +2,10 @@ import pytz
 from datetime import datetime, timedelta
 from unittest.mock import patch, MagicMock
 
-from flectra.tests.common import HttpCase
+from sleektiv.tests.common import HttpCase
 
-from flectra.addons.microsoft_calendar.models.microsoft_sync import MicrosoftSync
-from flectra.addons.microsoft_calendar.utils.event_id_storage import combine_ids
+from sleektiv.addons.microsoft_calendar.models.microsoft_sync import MicrosoftSync
+from sleektiv.addons.microsoft_calendar.utils.event_id_storage import combine_ids
 
 def mock_get_token(user):
     return f"TOKEN_FOR_USER_{user.id}"
@@ -55,7 +55,7 @@ class TestCommon(HttpCase):
             })
 
         # -----------------------------------------------------------------------------------------
-        # To create Flectra events
+        # To create Sleektiv events
         # -----------------------------------------------------------------------------------------
         self.start_date = datetime(2021, 9, 22, 10, 0, 0, 0)
         self.end_date = datetime(2021, 9, 22, 11, 0, 0, 0)
@@ -65,7 +65,7 @@ class TestCommon(HttpCase):
             days=self.recurrent_event_interval * self.recurrent_events_count
         )
 
-        # simple event values to create a Flectra event
+        # simple event values to create a Sleektiv event
         self.simple_event_values = {
             "name": "simple_event",
             "description": "my simple event",
@@ -96,7 +96,7 @@ class TestCommon(HttpCase):
         }
 
         # -----------------------------------------------------------------------------------------
-        # Expected values for Flectra events converted to Outlook events (to be posted through API)
+        # Expected values for Sleektiv events converted to Outlook events (to be posted through API)
         # -----------------------------------------------------------------------------------------
 
         # simple event values converted in the Outlook format to be posted through the API
@@ -230,10 +230,10 @@ class TestCommon(HttpCase):
         self.simple_event_from_outlook_attendee.update(isOrganizer=False)
 
         # -----------------------------------------------------------------------------------------
-        # Expected values for Outlook events converted to Flectra events
+        # Expected values for Outlook events converted to Sleektiv events
         # -----------------------------------------------------------------------------------------
 
-        self.expected_flectra_event_from_outlook = {
+        self.expected_sleektiv_event_from_outlook = {
             "name": "simple_event",
             "description": "my simple event",
             "active": True,
@@ -243,7 +243,7 @@ class TestCommon(HttpCase):
             "microsoft_id": combine_ids("123", "456"),
             "partner_ids": [self.organizer_user.partner_id.id, self.attendee_user.partner_id.id],
         }
-        self.expected_flectra_recurrency_from_outlook = {
+        self.expected_sleektiv_recurrency_from_outlook = {
             'active': True,
             'byday': '1',
             'count': 0,
@@ -387,7 +387,7 @@ class TestCommon(HttpCase):
             for d in self.recurrent_event_from_outlook_organizer
         ]
 
-        self.expected_flectra_recurrency_events_from_outlook = [
+        self.expected_sleektiv_recurrency_events_from_outlook = [
             {
                 "name": "recurrent event",
                 "user_id": self.organizer_user,
@@ -464,32 +464,32 @@ class TestCommon(HttpCase):
         self.recurrent_events = self.recurrence.calendar_event_ids.sorted(key=lambda r: r.start)
         self.recurrent_events_count = len(self.recurrent_events)
 
-    def assert_flectra_event(self, flectra_event, expected_values):
+    def assert_sleektiv_event(self, sleektiv_event, expected_values):
         """
-        Assert that an Flectra event has the same values than in the expected_values dictionary,
+        Assert that an Sleektiv event has the same values than in the expected_values dictionary,
         for the keys present in expected_values.
         """
         self.assertTrue(expected_values)
 
-        flectra_event_values = flectra_event.read(list(expected_values.keys()))[0]
+        sleektiv_event_values = sleektiv_event.read(list(expected_values.keys()))[0]
         for k, v in expected_values.items():
             if k in ("user_id", "recurrence_id"):
                 v = (v.id, v.name) if v else False
 
             if isinstance(v, list):
-                self.assertListEqual(sorted(v), sorted(flectra_event_values.get(k)), msg=f"'{k}' mismatch")
+                self.assertListEqual(sorted(v), sorted(sleektiv_event_values.get(k)), msg=f"'{k}' mismatch")
             else:
-                self.assertEqual(v, flectra_event_values.get(k), msg=f"'{k}' mismatch")
+                self.assertEqual(v, sleektiv_event_values.get(k), msg=f"'{k}' mismatch")
 
-    def assert_flectra_recurrence(self, flectra_recurrence, expected_values):
+    def assert_sleektiv_recurrence(self, sleektiv_recurrence, expected_values):
         """
-        Assert that an Flectra recurrence has the same values than in the expected_values dictionary,
+        Assert that an Sleektiv recurrence has the same values than in the expected_values dictionary,
         for the keys present in expected_values.
         """
-        flectra_recurrence_values = flectra_recurrence.read(list(expected_values.keys()))[0]
+        sleektiv_recurrence_values = sleektiv_recurrence.read(list(expected_values.keys()))[0]
 
         for k, v in expected_values.items():
-            self.assertEqual(v, flectra_recurrence_values.get(k), msg=f"'{k}' mismatch")
+            self.assertEqual(v, sleektiv_recurrence_values.get(k), msg=f"'{k}' mismatch")
 
     def assert_dict_equal(self, dict1, dict2):
 

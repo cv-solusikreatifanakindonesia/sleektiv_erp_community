@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
         <record id="acquirer_form_authorize" model="ir.ui.view">
             <field name="name">acquirer.form.authorize</field>
             <field name="model">payment.acquirer</field>
@@ -33,4 +33,4 @@
                 </xpath>
             </field>
         </record>
-</flectra>
+</sleektiv>

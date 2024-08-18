@@ -1,4 +1,4 @@
-flectra.define('sms.sms_widget', function (require) {
+sleektiv.define('sms.sms_widget', function (require) {
 "use strict";
 
 var core = require('web.core');

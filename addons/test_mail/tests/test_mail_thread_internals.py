@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.urls import url_parse, url_decode
 
-from flectra.addons.test_mail.tests.common import TestMailCommon, TestRecipients
-from flectra.tests.common import tagged, HttpCase, users
-from flectra.tools import mute_logger
+from sleektiv.addons.test_mail.tests.common import TestMailCommon, TestRecipients
+from sleektiv.tests.common import tagged, HttpCase, users
+from sleektiv.tools import mute_logger
 
 
 @tagged('mail_thread')
@@ -23,7 +23,7 @@ class TestChatterTweaks(TestMailCommon, TestRecipients):
         self.assertEqual(self.test_record.message_follower_ids.mapped('partner_id'), original.mapped('partner_id'))
         self.assertEqual(self.test_record.message_follower_ids.mapped('channel_id'), original.mapped('channel_id'))
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_post_no_subscribe_recipients(self):
         original = self.test_record.message_follower_ids
         self.test_record.with_user(self.user_employee).with_context({'mail_create_nosubscribe': True}).message_post(
@@ -31,7 +31,7 @@ class TestChatterTweaks(TestMailCommon, TestRecipients):
         self.assertEqual(self.test_record.message_follower_ids.mapped('partner_id'), original.mapped('partner_id'))
         self.assertEqual(self.test_record.message_follower_ids.mapped('channel_id'), original.mapped('channel_id'))
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_post_subscribe_recipients(self):
         original = self.test_record.message_follower_ids
         self.test_record.with_user(self.user_employee).with_context({'mail_create_nosubscribe': True, 'mail_post_autofollow': True}).message_post(
@@ -39,7 +39,7 @@ class TestChatterTweaks(TestMailCommon, TestRecipients):
         self.assertEqual(self.test_record.message_follower_ids.mapped('partner_id'), original.mapped('partner_id') | self.partner_1 | self.partner_2)
         self.assertEqual(self.test_record.message_follower_ids.mapped('channel_id'), original.mapped('channel_id'))
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_chatter_context_cleaning(self):
         """ Test default keys are not propagated to message creation as it may
         induce wrong values for some fields, like parent_id. """
@@ -144,7 +144,7 @@ class TestDiscuss(TestMailCommon, TestRecipients):
         self.assertFalse(msg.starred)
         self.assertTrue(msg_emp.starred)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mail_cc_recipient_suggestion(self):
         record = self.env['mail.test.cc'].create({'email_cc': 'cc1@example.com, cc2@example.com, cc3 <cc3@example.com>'})
         suggestions = record._message_get_suggested_recipients()[record.id]

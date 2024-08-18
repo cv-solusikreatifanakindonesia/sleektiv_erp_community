@@ -1,4 +1,4 @@
-flectra.define('web.RendererWrapper', function (require) {
+sleektiv.define('web.RendererWrapper', function (require) {
     "use strict";
 
     const { ComponentWrapper } = require('web.OwlCompatibility');

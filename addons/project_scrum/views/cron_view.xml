@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <record id="cron_check_sprint_state" model="ir.cron">
         <field name="name">Sprint State</field>
         <field name="interval_number">1</field>
@@ -10,4 +10,4 @@
         <field name="code">model.check_sprint_state()</field>
         <field name="active" eval="False"/>
     </record>
-</flectra>
+</sleektiv>

@@ -1,2 +1,1 @@
-debian/flectra.conf /etc/flectra
-README.md /usr/share/doc/flectra
+debian/sleektiv.conf /etc/sleektiv

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import HttpCase, standalone, tagged
+from sleektiv.tests import HttpCase, standalone, tagged
 
 
 @tagged('website_nightly', '-standard')
@@ -10,7 +10,7 @@ class TestWebsiteNightlyRunbot(HttpCase):
         """ This test is just here to avoid runbot to raise an error on the
         ``website_nightly`` build. Indeed, if not a single test with this tag is
         found, the build will be considered as failed.
-        In Flectra 16.4 a real test is using this tag.
+        In Sleektiv 16.4 a real test is using this tag.
         """
 
 

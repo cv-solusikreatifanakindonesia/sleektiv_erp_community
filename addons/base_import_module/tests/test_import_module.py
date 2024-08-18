@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import base64
 import io
 import os
@@ -8,9 +8,9 @@ import zipfile
 
 from unittest.mock import patch
 
-from flectra.addons import __path__ as __addons_path__
-from flectra.tools import mute_logger
-from flectra.tests.common import TransactionCase, HttpCase
+from sleektiv.addons import __path__ as __addons_path__
+from sleektiv.tools import mute_logger
+from sleektiv.tests.common import TransactionCase, HttpCase
 
 class TestImportModule(TransactionCase):
     def import_zipfile(self, files):
@@ -68,7 +68,7 @@ class TestImportModule(TransactionCase):
         files = [
             ('foo/__manifest__.py', b"foo")
         ]
-        with mute_logger("flectra.addons.base_import_module.models.ir_module"):
+        with mute_logger("sleektiv.addons.base_import_module.models.ir_module"):
             result = self.import_zipfile(files)
         self.assertIn("Error while importing module 'foo'", result[0])
 
@@ -104,7 +104,7 @@ class TestImportModule(TransactionCase):
                 b'foo,foo'
             ),
         ]
-        with self.assertLogs('flectra.addons.base_import_module.models.ir_module') as log_catcher:
+        with self.assertLogs('sleektiv.addons.base_import_module.models.ir_module') as log_catcher:
             self.import_zipfile(files)
             self.assertEqual(len(log_catcher.output), 1)
             self.assertIn('module foo: skip unsupported file res.partner.xls', log_catcher.output[0])

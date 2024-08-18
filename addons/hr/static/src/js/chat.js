@@ -1,4 +1,4 @@
-flectra.define('hr.employee_chat', function (require) {
+sleektiv.define('hr.employee_chat', function (require) {
 'use strict';
     var viewRegistry = require('web.view_registry');
 

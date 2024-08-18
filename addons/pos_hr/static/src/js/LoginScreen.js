@@ -1,4 +1,4 @@
-flectra.define('pos_hr.LoginScreen', function (require) {
+sleektiv.define('pos_hr.LoginScreen', function (require) {
     'use strict';
 
     const PosComponent = require('point_of_sale.PosComponent');

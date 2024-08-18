@@ -1,4 +1,4 @@
-flectra.define("web.DomainSelectorDialog", function (require) {
+sleektiv.define("web.DomainSelectorDialog", function (require) {
 "use strict";
 
 var core = require("web.core");

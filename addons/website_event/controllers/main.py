@@ -12,14 +12,14 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
-from flectra import fields, http, _
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.addons.website.controllers.main import QueryURL
-from flectra.addons.event.controllers.main import EventController
-from flectra.http import request
-from flectra.osv import expression
-from flectra.tools.misc import get_lang, format_date
-from flectra.exceptions import UserError
+from sleektiv import fields, http, _
+from sleektiv.addons.http_routing.models.ir_http import slug
+from sleektiv.addons.website.controllers.main import QueryURL
+from sleektiv.addons.event.controllers.main import EventController
+from sleektiv.http import request
+from sleektiv.osv import expression
+from sleektiv.tools.misc import get_lang, format_date
+from sleektiv.exceptions import UserError
 
 class WebsiteEventController(http.Controller):
 

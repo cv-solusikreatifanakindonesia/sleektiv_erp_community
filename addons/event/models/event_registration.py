@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 
-from flectra import _, api, fields, models, SUPERUSER_ID
-from flectra.tools import format_datetime, email_normalize, email_normalize_all
-from flectra.exceptions import AccessError, ValidationError
+from sleektiv import _, api, fields, models, SUPERUSER_ID
+from sleektiv.tools import format_datetime, email_normalize, email_normalize_all
+from sleektiv.exceptions import AccessError, ValidationError
 
 
 class EventRegistration(models.Model):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import tools
-from flectra.tests import common
-from flectra.modules.module import get_resource_path
+from sleektiv import tools
+from sleektiv.tests import common
+from sleektiv.modules.module import get_resource_path
 
 
 class TestAccountAsset(common.TransactionCase):

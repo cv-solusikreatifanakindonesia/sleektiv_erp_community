@@ -1,4 +1,4 @@
-flectra.define('web.ListRenderer', function (require) {
+sleektiv.define('web.ListRenderer', function (require) {
 "use strict";
 
 var BasicRenderer = require('web.BasicRenderer');

@@ -1,4 +1,4 @@
-flectra.define('web.abstract_view_tests', function (require) {
+sleektiv.define('web.abstract_view_tests', function (require) {
 "use strict";
 
 var AbstractView = require('web.AbstractView');

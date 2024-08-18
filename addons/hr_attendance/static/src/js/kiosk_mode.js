@@ -1,4 +1,4 @@
-flectra.define('hr_attendance.kiosk_mode', function (require) {
+sleektiv.define('hr_attendance.kiosk_mode', function (require) {
 "use strict";
 
 var AbstractAction = require('web.AbstractAction');

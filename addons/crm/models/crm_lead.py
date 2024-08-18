@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 import re
@@ -7,12 +7,12 @@ import threading
 from datetime import date, datetime, timedelta
 from psycopg2 import sql
 
-from flectra import api, fields, models, tools, SUPERUSER_ID
-from flectra.osv import expression
-from flectra.tools.translate import _
-from flectra.tools import email_split
-from flectra.exceptions import UserError, AccessError
-from flectra.addons.phone_validation.tools import phone_validation
+from sleektiv import api, fields, models, tools, SUPERUSER_ID
+from sleektiv.osv import expression
+from sleektiv.tools.translate import _
+from sleektiv.tools import email_split
+from sleektiv.exceptions import UserError, AccessError
+from sleektiv.addons.phone_validation.tools import phone_validation
 from collections import OrderedDict, defaultdict
 
 from . import crm_stage
@@ -69,7 +69,7 @@ PARTNER_ADDRESS_FIELDS_TO_SYNC = [
 
 # Those values have been determined based on benchmark to minimise
 # computation time, number of transaction and transaction time.
-PLS_COMPUTE_BATCH_STEP = 50000  # flectra.models.PREFETCH_MAX = 1000 but larger cluster can speed up global computation
+PLS_COMPUTE_BATCH_STEP = 50000  # sleektiv.models.PREFETCH_MAX = 1000 but larger cluster can speed up global computation
 PLS_UPDATE_BATCH_STEP = 5000
 
 

@@ -1,0 +1,14 @@
+[Unit]
+Description=Sleektiv Open Source ERP and CRM
+After=network.target
+
+[Service]
+Type=simple
+User=sleektiv
+Group=sleektiv
+ExecStart=/usr/bin/sleektiv --config /etc/sleektiv/sleektiv.conf --logfile /var/log/sleektiv/sleektiv-server.log
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
+

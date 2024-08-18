@@ -5,10 +5,10 @@
 import logging
 import unittest
 
-from flectra.modules.module import get_module_resource
-from flectra.tests import common, tagged
-from flectra.tools import convert_file
-from flectra.tools.profiler import profile
+from sleektiv.modules.module import get_module_resource
+from sleektiv.tests import common, tagged
+from sleektiv.tools import convert_file
+from sleektiv.tools.profiler import profile
 
 from .common import track_function
 

@@ -1,4 +1,4 @@
-flectra.define("web.ComparisonMenu", function (require) {
+sleektiv.define("web.ComparisonMenu", function (require) {
     "use strict";
 
     const DropdownMenu = require("web.DropdownMenu");

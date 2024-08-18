@@ -4,12 +4,12 @@ from datetime import timedelta, datetime, date
 import calendar
 from dateutil.relativedelta import relativedelta
 
-from flectra.addons.account.models.account_move import MAX_HASH_VERSION
-from flectra import fields, models, api, _
-from flectra.exceptions import ValidationError, UserError, RedirectWarning
-from flectra.tools.misc import format_date
-from flectra.tools.float_utils import float_round, float_is_zero
-from flectra.tests.common import Form
+from sleektiv.addons.account.models.account_move import MAX_HASH_VERSION
+from sleektiv import fields, models, api, _
+from sleektiv.exceptions import ValidationError, UserError, RedirectWarning
+from sleektiv.tools.misc import format_date
+from sleektiv.tools.float_utils import float_round, float_is_zero
+from sleektiv.tests.common import Form
 
 
 MONTH_SELECTION = [

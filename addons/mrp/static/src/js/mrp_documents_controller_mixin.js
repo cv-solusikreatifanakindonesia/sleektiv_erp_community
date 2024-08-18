@@ -1,4 +1,4 @@
-flectra.define('mrp.controllerMixin', function (require) {
+sleektiv.define('mrp.controllerMixin', function (require) {
 'use strict';
 
 const { _t, qweb } = require('web.core');
@@ -81,7 +81,7 @@ const MrpDocumentsControllerMixin = Object.assign({}, fileUploadMixin, {
      * Handles custom event to display the document viewer.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      * @param {integer} ev.data.recordID
      * @param {Array<Object>} ev.data.recordList
      */
@@ -97,7 +97,7 @@ const MrpDocumentsControllerMixin = Object.assign({}, fileUploadMixin, {
      * Specially created to call `_uploadFiles` method from tests.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     async _onUploadFile(ev) {
         await this._uploadFiles(ev.data.files);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
 
     <record id="helpdesk_team_form_view" model="ir.ui.view">
         <field name="name">Helpdesk Team Form</field>
@@ -13,4 +13,4 @@
         </field>
     </record>
 
-</flectra>
+</sleektiv>

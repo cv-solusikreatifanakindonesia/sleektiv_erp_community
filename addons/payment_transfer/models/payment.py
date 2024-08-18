@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, fields, models, _
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.tools.float_utils import float_compare
+from sleektiv import api, fields, models, _
+from sleektiv.addons.payment.models.payment_acquirer import ValidationError
+from sleektiv.tools.float_utils import float_compare
 
 import logging
 import pprint

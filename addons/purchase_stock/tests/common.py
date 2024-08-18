@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from datetime import timedelta
 
-from flectra import fields
-from flectra.addons.stock.tests.common2 import TestStockCommon
-from flectra import tools
-from flectra.modules.module import get_module_resource
+from sleektiv import fields
+from sleektiv.addons.stock.tests.common2 import TestStockCommon
+from sleektiv import tools
+from sleektiv.modules.module import get_module_resource
 
 
 class PurchaseTestCommon(TestStockCommon):

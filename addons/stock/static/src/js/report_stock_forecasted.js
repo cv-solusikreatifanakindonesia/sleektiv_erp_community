@@ -1,4 +1,4 @@
-flectra.define('stock.ReplenishReport', function (require) {
+sleektiv.define('stock.ReplenishReport', function (require) {
 "use strict";
 
 const clientAction = require('report.client_action');

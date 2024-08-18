@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchKanbanRenderer', function (require) {
+sleektiv.define('lunch.LunchKanbanRenderer', function (require) {
 "use strict";
 
 /**

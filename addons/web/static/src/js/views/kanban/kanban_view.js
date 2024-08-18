@@ -1,4 +1,4 @@
-flectra.define('web.KanbanView', function (require) {
+sleektiv.define('web.KanbanView', function (require) {
 "use strict";
 
 var BasicView = require('web.BasicView');

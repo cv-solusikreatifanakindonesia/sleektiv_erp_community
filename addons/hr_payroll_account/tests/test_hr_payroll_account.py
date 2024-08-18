@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import time
 
 from datetime import datetime, timedelta
 from dateutil import relativedelta
 
-from flectra import fields, tools
-from flectra.modules.module import get_module_resource
-from flectra.tests import common
+from sleektiv import fields, tools
+from sleektiv.modules.module import get_module_resource
+from sleektiv.tests import common
 
 
 class TestHrPayrollAccount(common.TransactionCase):

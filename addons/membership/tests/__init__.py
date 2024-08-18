@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from flectra.addons.membership.tests import test_membership
+from sleektiv.addons.membership.tests import test_membership

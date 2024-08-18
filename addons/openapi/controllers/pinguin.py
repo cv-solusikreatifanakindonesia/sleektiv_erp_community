@@ -5,7 +5,7 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 # pylint: disable=redefined-builtin
 
-"""Pinguin module for Flectra REST Api.
+"""Pinguin module for Sleektiv REST Api.
 
 This module implements plumbing code to the REST interface interface concerning
 authentication, validation, ORM access and error codes.
@@ -25,18 +25,18 @@ import traceback
 
 import werkzeug.wrappers
 
-import flectra
-from flectra.http import request
-from flectra.service import security
-from flectra.tools import date_utils
+import sleektiv
+from sleektiv.http import request
+from sleektiv.service import security
+from sleektiv.tools import date_utils
 
-from flectra.addons.base_api.lib.pinguin import (
+from sleektiv.addons.base_api.lib.pinguin import (
     error_response,
     get_dict_from_record,
     get_dictlist_from_model,
     get_model_for_read,
 )
-from flectra.addons.web.controllers.main import ReportController
+from sleektiv.addons.web.controllers.main import ReportController
 
 from .apijsonrequest import api_route
 
@@ -137,14 +137,14 @@ def authenticate_token_for_user(token):
     :param str token: The raw access token.
 
     :returns: User if token is authorized for the requested user.
-    :rtype flectra.models.Model
+    :rtype sleektiv.models.Model
 
     :raise: werkzeug.exceptions.HTTPException if user not found.
     """
     user = request.env["res.users"].sudo().search(
         [("openapi_token", "=", token)])
     if user.exists():
-        # copy-pasted from flectra.http.py:OpenERPSession.authenticate()
+        # copy-pasted from sleektiv.http.py:OpenERPSession.authenticate()
         request.session.uid = user.id
         request.session.login = user.login
         request.session.session_token = user.id and security.compute_session_token(
@@ -212,7 +212,7 @@ def get_data_from_auth_header(header):
         err_descrip = (
             'Basic auth header payload must be of the form "<%s>" (encoded to base64)'
             % "user_token"
-            if flectra.tools.config["dbfilter"]
+            if sleektiv.tools.config["dbfilter"]
             else "db_name:user_token"
         )
         raise werkzeug.exceptions.HTTPException(
@@ -233,7 +233,7 @@ def setup_db(httprequest, db_name):
     """
     if httprequest.session.db:
         return
-    if db_name not in flectra.service.db.list_dbs(force=True):
+    if db_name not in sleektiv.service.db.list_dbs(force=True):
         raise werkzeug.exceptions.HTTPException(
             response=error_response(*CODE__db_not_found)
         )
@@ -285,9 +285,9 @@ def create_log_record(**kwargs):
     # request (we cannot use second cursor and we cannot use aborted
     # transaction)
     if not test_mode:
-        with flectra.registry(request.session.db).cursor() as cr:
+        with sleektiv.registry(request.session.db).cursor() as cr:
             # use new to save data even in case of an error in the old cursor
-            env = flectra.api.Environment(cr, request.session.uid, {})
+            env = sleektiv.api.Environment(cr, request.session.uid, {})
             _create_log_record(env, **kwargs)
 
 
@@ -471,7 +471,7 @@ def get_model_openapi_access(namespace, model):
         A dictionary containing the model API configuration for this namespace.
             The layout of the dict is as follows:
             ```python
-            {'context':                 (Dict)      flectra context (default values through context),
+            {'context':                 (Dict)      sleektiv context (default values through context),
             'out_fields_read_multi':    (Tuple)     field spec,
             'out_fields_read_one':      (Tuple)     field spec,
             'out_fields_create_one':    (Tuple)     field spec,
@@ -588,7 +588,7 @@ def wrap__resource__create_one(modelname, context, data, success_code, out_field
         if not test_mode:
             # Somehow don't making a commit here may lead to error
             # "Record does not exist or has been deleted"
-            # Probably, Flectra (10.0 at least) uses different cursors
+            # Probably, Sleektiv (10.0 at least) uses different cursors
             # to create and to read fields from database
             request.env.cr.commit()
     except Exception as e:
@@ -840,7 +840,7 @@ def get_OAS_definitions_part(
 ):
     """Recursively gets definition parts of the OAS for model by export fields.
 
-    :param flectra.models.Model model_obj: The model object.
+    :param sleektiv.models.Model model_obj: The model object.
     :param dict export_fields_dict: The dictionary with export fields.
             Example of the dict is as follows:
             ```python
@@ -930,10 +930,10 @@ def get_OAS_definitions_part(
                     {"type": "array", "items": {"type": "integer"}})
 
             # We cannot have both required and readOnly flags in field openapi
-            # definition, for that reason we cannot blindly use flectra's
+            # definition, for that reason we cannot blindly use sleektiv's
             # attributed readonly and required.
             #
-            # 1) For flectra-required, but NOT flectra-related field, we do NOT use
+            # 1) For sleektiv-required, but NOT sleektiv-related field, we do NOT use
             # openapi-readonly
             #
             # Example of such field can be found in sale module:
@@ -941,7 +941,7 @@ def get_OAS_definitions_part(
             #     states={'draft': [('readonly', False)], 'sent': [('readonly',
             #     False)]}, required=True, ...)
             #
-            # 2) For flectra-required and flectra-related field, we DO use
+            # 2) For sleektiv-required and sleektiv-related field, we DO use
             # openapi-readonly, but we don't use openapi-required
             if meta["readonly"] and (not meta["required"] or meta.get("related")):
                 field_property.update(readOnly=True)

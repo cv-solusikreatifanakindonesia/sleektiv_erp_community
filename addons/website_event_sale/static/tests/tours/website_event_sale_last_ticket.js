@@ -1,4 +1,4 @@
-flectra.define('website_event_sale.tour.last_ticket', function (require) {
+sleektiv.define('website_event_sale.tour.last_ticket', function (require) {
 'use strict';
 
 var tour = require('web_tour.tour');

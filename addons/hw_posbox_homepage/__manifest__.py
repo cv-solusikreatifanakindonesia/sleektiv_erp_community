@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'IoT Box Homepage',
@@ -11,12 +11,12 @@
 IoT Box Homepage
 ================
 
-This module overrides Flectra web interface to display a simple
+This module overrides Sleektiv web interface to display a simple
 Homepage that explains what's the iotbox and shows the status,
 and where to find documentation.
 
 If you activate this module, you won't be able to access the 
-regular Flectra interface anymore.
+regular Sleektiv interface anymore.
 
 """,
     'installable': False,

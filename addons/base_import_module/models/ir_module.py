@@ -10,11 +10,11 @@ import zipfile
 from collections import defaultdict
 from os.path import join as opj
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
-from flectra.modules.module import MANIFEST_NAMES
-from flectra.tools import convert_csv_import, convert_sql_import, convert_xml_import, exception_to_unicode
-from flectra.tools import file_open, file_open_temporary_directory
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError
+from sleektiv.modules.module import MANIFEST_NAMES
+from sleektiv.tools import convert_csv_import, convert_sql_import, convert_xml_import, exception_to_unicode
+from sleektiv.tools import file_open, file_open_temporary_directory
 
 _logger = logging.getLogger(__name__)
 
@@ -69,7 +69,7 @@ class IrModule(models.Model):
                 )
             raise UserError(err)
         elif 'web_studio' not in installed_mods and _is_studio_custom(path):
-            raise UserError(_("Studio customizations require the Flectra Studio app."))
+            raise UserError(_("Studio customizations require the Sleektiv Studio app."))
 
         mod = known_mods_names.get(module)
         if mod:

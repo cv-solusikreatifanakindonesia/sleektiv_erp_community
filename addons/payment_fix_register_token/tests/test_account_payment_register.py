@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from flectra.tests import tagged
+from sleektiv.tests import tagged
 
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @tagged('post_install', '-at_install')
@@ -47,7 +47,7 @@ class TestAccountPaymentRegister(AccountTestInvoicingCommon):
         self.assertRecordValues(invoice, [{'amount_residual': 1000.0}])
 
         with patch(
-            'flectra.addons.payment.models.payment_acquirer.PaymentTransaction.s2s_do_transaction',
+            'sleektiv.addons.payment.models.payment_acquirer.PaymentTransaction.s2s_do_transaction',
             new=_s2s_do_transaction_mock,
         ):
             payments = self.env['account.payment.register']\

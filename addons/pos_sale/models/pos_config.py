@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import fields, models, api
-from flectra.exceptions import AccessError
+from sleektiv import fields, models, api
+from sleektiv.exceptions import AccessError
 
 
 class PosConfig(models.Model):

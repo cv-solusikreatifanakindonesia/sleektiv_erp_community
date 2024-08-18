@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime, timedelta
 
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.addons.product.tests import common
-from flectra.tests import Form
-from flectra.tools import DEFAULT_SERVER_DATETIME_FORMAT
+from sleektiv.addons.mail.tests.common import mail_new_test_user
+from sleektiv.addons.product.tests import common
+from sleektiv.tests import Form
+from sleektiv.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 
 class TestCreatePicking(common.TestProductCommon):

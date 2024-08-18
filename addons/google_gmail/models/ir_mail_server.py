@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 
-from flectra import _, models, api
-from flectra.exceptions import UserError
+from sleektiv import _, models, api
+from sleektiv.exceptions import UserError
 
 
 class IrMailServer(models.Model):

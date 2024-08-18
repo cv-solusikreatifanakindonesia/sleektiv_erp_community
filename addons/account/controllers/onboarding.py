@@ -1,5 +1,5 @@
-from flectra import http
-from flectra.http import request
+from sleektiv import http
+from sleektiv.http import request
 
 
 class OnboardingController(http.Controller):

@@ -1,7 +1,7 @@
 import re
 
-from flectra import _
-from flectra.exceptions import UserError
+from sleektiv import _
+from sleektiv.exceptions import UserError
 
 
 def format_partner_address(partner):

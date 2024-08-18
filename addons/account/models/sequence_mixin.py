@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, fields, models, _
-from flectra.exceptions import ValidationError
-from flectra.tools.misc import format_date
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import ValidationError
+from sleektiv.tools.misc import format_date
 
 import re
 from psycopg2 import sql

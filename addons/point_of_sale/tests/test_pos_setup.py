@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import tools
-import flectra
-from flectra.addons.point_of_sale.tests.common import TestPoSCommon
+from sleektiv import tools
+import sleektiv
+from sleektiv.addons.point_of_sale.tests.common import TestPoSCommon
 
-@flectra.tests.tagged('post_install', '-at_install')
+@sleektiv.tests.tagged('post_install', '-at_install')
 class TestPoSSetup(TestPoSCommon):
     """ This group of tests is for sanity check in setting up global records which will be used
     in each testing.

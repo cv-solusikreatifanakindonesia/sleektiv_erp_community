@@ -1,4 +1,4 @@
-flectra.define('website.s_google_map', function (require) {
+sleektiv.define('website.s_google_map', function (require) {
 'use strict';
 
 const publicWidget = require('web.public.widget');

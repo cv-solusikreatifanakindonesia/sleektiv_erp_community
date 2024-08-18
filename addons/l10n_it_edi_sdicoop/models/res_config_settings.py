@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, models, fields, _
-from flectra.exceptions import UserError
+from sleektiv import api, models, fields, _
+from sleektiv.exceptions import UserError
 
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'

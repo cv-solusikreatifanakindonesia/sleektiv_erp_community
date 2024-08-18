@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 # Copyright (C) 2009 - now Grzegorz Grzelak grzegorz.grzelak@openglobe.pl
 
@@ -10,7 +10,7 @@
     'website': 'http://www.openglobe.pl',
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
-This is the module to manage the accounting chart and taxes for Poland in Flectra.
+This is the module to manage the accounting chart and taxes for Poland in Sleektiv.
 ==================================================================================
 
 To jest moduł do tworzenia wzorcowego planu kont, podatków, obszarów podatkowych i

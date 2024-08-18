@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models
-from flectra.tools.sql import column_exists, create_column
+from sleektiv import api, fields, models
+from sleektiv.tools.sql import column_exists, create_column
 
 
 class StockMove(models.Model):

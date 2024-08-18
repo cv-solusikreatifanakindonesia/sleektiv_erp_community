@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import werkzeug.urls
 
-from flectra import http
-from flectra.addons.http_routing.models.ir_http import unslug, slug
-from flectra.addons.website.models.ir_http import sitemap_qs2dom
-from flectra.tools.translate import _
-from flectra.http import request
+from sleektiv import http
+from sleektiv.addons.http_routing.models.ir_http import unslug, slug
+from sleektiv.addons.website.models.ir_http import sitemap_qs2dom
+from sleektiv.tools.translate import _
+from sleektiv.http import request
 
 
 class WebsiteCustomer(http.Controller):

@@ -1,4 +1,4 @@
-flectra.define('website_sale_wishlist.tour', function (require) {
+sleektiv.define('website_sale_wishlist.tour', function (require) {
 'use strict';
 
 var rpc = require('web.rpc');

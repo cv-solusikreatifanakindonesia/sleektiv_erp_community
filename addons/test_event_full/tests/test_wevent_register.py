@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import tests
-from flectra.addons.test_event_full.tests.common import TestWEventCommon
-from flectra.tests.common import HOST
+from sleektiv import tests
+from sleektiv.addons.test_event_full.tests.common import TestWEventCommon
+from sleektiv.tests.common import HOST
 
 
 @tests.common.tagged('post_install', '-at_install')
@@ -12,8 +12,8 @@ class TestWEventRegister(TestWEventCommon):
     def test_register(self):
         self.browser_js(
             '/event',
-            'flectra.__DEBUG__.services["web_tour.tour"].run("wevent_register")',
-            'flectra.__DEBUG__.services["web_tour.tour"].tours.wevent_register.ready',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].run("wevent_register")',
+            'sleektiv.__DEBUG__.services["web_tour.tour"].tours.wevent_register.ready',
             login=None
         )
         new_registrations = self.event.registration_ids

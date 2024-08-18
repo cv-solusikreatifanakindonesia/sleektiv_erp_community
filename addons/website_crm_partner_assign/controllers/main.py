@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import werkzeug.urls
@@ -7,15 +7,15 @@ import werkzeug.urls
 from collections import OrderedDict
 from werkzeug.exceptions import NotFound
 
-from flectra import fields
-from flectra import http
-from flectra.http import request
-from flectra.addons.http_routing.models.ir_http import slug, unslug
-from flectra.addons.website.models.ir_http import sitemap_qs2dom
-from flectra.addons.portal.controllers.portal import CustomerPortal
-from flectra.addons.website_partner.controllers.main import WebsitePartnerPage
+from sleektiv import fields
+from sleektiv import http
+from sleektiv.http import request
+from sleektiv.addons.http_routing.models.ir_http import slug, unslug
+from sleektiv.addons.website.models.ir_http import sitemap_qs2dom
+from sleektiv.addons.portal.controllers.portal import CustomerPortal
+from sleektiv.addons.website_partner.controllers.main import WebsitePartnerPage
 
-from flectra.tools.translate import _
+from sleektiv.tools.translate import _
 
 
 class WebsiteAccount(CustomerPortal):

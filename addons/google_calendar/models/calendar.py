@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import pytz
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, fields, models, tools, _
+from sleektiv import api, fields, models, tools, _
 
 
 class Meeting(models.Model):
@@ -53,7 +53,7 @@ class Meeting(models.Model):
         return [('partner_ids.user_ids', 'in', self.env.user.id)]
 
     @api.model
-    def _flectra_values(self, google_event, default_reminders=()):
+    def _sleektiv_values(self, google_event, default_reminders=()):
         if google_event.is_cancelled():
             return {'active': False}
 
@@ -63,8 +63,8 @@ class Meeting(models.Model):
         reminder_command = google_event.reminders.get('overrides')
         if not reminder_command:
             reminder_command = google_event.reminders.get('useDefault') and default_reminders or ()
-        alarm_commands = self._flectra_reminders_commands(reminder_command)
-        attendee_commands, partner_commands = self._flectra_attendee_commands(google_event)
+        alarm_commands = self._sleektiv_reminders_commands(reminder_command)
+        attendee_commands, partner_commands = self._sleektiv_attendee_commands(google_event)
         values = {
             'name': google_event.summary or _("(No title)"),
             'description': google_event.description,
@@ -94,7 +94,7 @@ class Meeting(models.Model):
         return values
 
     @api.model
-    def _flectra_attendee_commands(self, google_event):
+    def _sleektiv_attendee_commands(self, google_event):
         attendee_commands = []
         partner_commands = []
         google_attendees = google_event.attendees or []
@@ -107,7 +107,7 @@ class Meeting(models.Model):
         emails = [a.get('email') for a in google_attendees]
         existing_attendees = self.env['calendar.attendee']
         if google_event.exists(self.env):
-            existing_attendees = self.browse(google_event.flectra_id(self.env)).attendee_ids
+            existing_attendees = self.browse(google_event.sleektiv_id(self.env)).attendee_ids
         attendees_by_emails = {tools.email_normalize(a.email): a for a in existing_attendees}
         for attendee in google_attendees:
             email = attendee.get('email')
@@ -122,15 +122,15 @@ class Meeting(models.Model):
                 partner_commands += [(4, partner.id)]
                 if attendee.get('displayName') and not partner.name:
                     partner.name = attendee.get('displayName')
-        for flectra_attendee in attendees_by_emails.values():
+        for sleektiv_attendee in attendees_by_emails.values():
             # Remove old attendees
-            if tools.email_normalize(flectra_attendee.email) not in emails:
-                attendee_commands += [(2, flectra_attendee.id)]
-                partner_commands += [(3, flectra_attendee.partner_id.id)]
+            if tools.email_normalize(sleektiv_attendee.email) not in emails:
+                attendee_commands += [(2, sleektiv_attendee.id)]
+                partner_commands += [(3, sleektiv_attendee.partner_id.id)]
         return attendee_commands, partner_commands
 
     @api.model
-    def _flectra_reminders_commands(self, reminders=()):
+    def _sleektiv_reminders_commands(self, reminders=()):
         commands = []
         for reminder in reminders:
             alarm_type = 'email' if reminder.get('method') == 'email' else 'notification'
@@ -198,7 +198,7 @@ class Meeting(models.Model):
             } for attendee in self.attendee_ids if attendee.email],
             'extendedProperties': {
                 'shared': {
-                    '%s_flectra_id' % self.env.cr.dbname: self.id,
+                    '%s_sleektiv_id' % self.env.cr.dbname: self.id,
                 },
             },
             'reminders': {
@@ -215,15 +215,15 @@ class Meeting(models.Model):
         elif not self.user_id:
             # We don't store the real owner identity (mail)
             # We can't store on the shared properties in that case without getting a 403
-            # If several flectra users are attendees but the owner is not in flectra, the event will be duplicated on flectra database
+            # If several sleektiv users are attendees but the owner is not in sleektiv, the event will be duplicated on sleektiv database
             # if we are not the owner, we should change the post values to avoid errors because we don't have enough rights
             # See https://developers.google.com/calendar/concepts/sharing
             keep_keys = ['id', 'attendees', 'start', 'end', 'reminders']
             values = {key: val for key, val in values.items() if key in keep_keys}
-            # values['extendedProperties']['private] should be used if the owner is not an flectra user
+            # values['extendedProperties']['private] should be used if the owner is not an sleektiv user
             values['extendedProperties'] = {
                 'private': {
-                    '%s_flectra_id' % self.env.cr.dbname: self.id,
+                    '%s_sleektiv_id' % self.env.cr.dbname: self.id,
                 },
             }
         return values

@@ -1,4 +1,4 @@
-flectra.define('website.editor.link', function (require) {
+sleektiv.define('website.editor.link', function (require) {
 'use strict';
 
 var weWidgets = require('wysiwyg.widgets');

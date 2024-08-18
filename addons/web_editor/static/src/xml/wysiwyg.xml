@@ -24,11 +24,11 @@
                 </t>
             </t>
             <script type="text/javascript">
-                flectra.define('web.session', function () {
-                    return window.top.flectra.__DEBUG__.services['web.session'];
+                sleektiv.define('web.session', function () {
+                    return window.top.sleektiv.__DEBUG__.services['web.session'];
                 });
 
-                flectra.define('root.widget', function (require) {
+                sleektiv.define('root.widget', function (require) {
                     'use strict';
                     var Widget = require('web.Widget');
                     var widget = new Widget();
@@ -36,9 +36,9 @@
                     return widget;
                 });
 
-                flectra.define('web.core.top', function (require) {
+                sleektiv.define('web.core.top', function (require) {
                     var core = require('web.core');
-                    core.qweb.templates = window.top.flectra.__DEBUG__.services['web.core'].qweb.templates;
+                    core.qweb.templates = window.top.sleektiv.__DEBUG__.services['web.core'].qweb.templates;
                 });
             </script>
         </head>
@@ -50,7 +50,7 @@
                 </main>
             </div>
             <script type="text/javascript">
-                flectra.define('web_editor.wysiwyg.iniframe', function (require) {
+                sleektiv.define('web_editor.wysiwyg.iniframe', function (require) {
                     'use strict';
                     var editor = require('web_editor.editor');
 

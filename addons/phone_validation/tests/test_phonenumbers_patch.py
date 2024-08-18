@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 try:
     import phonenumbers
 except ImportError:
     phonenumbers = None
 
-from flectra.tests.common import BaseCase
-from flectra.tools.parse_version import parse_version
-from flectra.addons.phone_validation.lib import phonenumbers_patch
+from sleektiv.tests.common import BaseCase
+from sleektiv.tools.parse_version import parse_version
+from sleektiv.addons.phone_validation.lib import phonenumbers_patch
 
 class TestPhonenumbersPatch(BaseCase):
     def test_region_CI_monkey_patch(self):
@@ -18,7 +18,7 @@ class TestPhonenumbersPatch(BaseCase):
             self.skipTest('Cannot test without phonenumbers module installed.')
         # MONKEY PATCHING phonemetadata of Ivory Coast if phonenumbers is too old
         if parse_version('7.6.1') <= parse_version(phonenumbers.__version__) < parse_version('8.12.32'):
-            # check that _local_load_region is set to `flectra.addons.phone_validation.lib.phonenumbers_patch._local_load_region`
+            # check that _local_load_region is set to `sleektiv.addons.phone_validation.lib.phonenumbers_patch._local_load_region`
             # check that you can load a new ivory coast phone number without error
             parsed_phonenumber_1 = phonenumbers.parse("20 25/35-51 ", region="CI", keep_raw_input=True)
             self.assertEqual(parsed_phonenumber_1.national_number, 20253551, "The national part of the phonenumber should be 22522586")

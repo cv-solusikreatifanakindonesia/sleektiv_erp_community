@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.account.tests.test_tax import TestTaxCommon
-from flectra.tests import tagged
+from sleektiv.addons.account.tests.test_tax import TestTaxCommon
+from sleektiv.tests import tagged
 
 
 @tagged('post_install', '-at_install')

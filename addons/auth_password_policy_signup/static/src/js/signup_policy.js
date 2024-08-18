@@ -1,4 +1,4 @@
-flectra.define('auth_password_policy_signup.policy', function (require) {
+sleektiv.define('auth_password_policy_signup.policy', function (require) {
 "use strict";
 
 require('web.dom_ready');

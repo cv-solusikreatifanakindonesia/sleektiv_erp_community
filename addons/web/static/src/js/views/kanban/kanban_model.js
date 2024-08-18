@@ -1,4 +1,4 @@
-flectra.define('web.KanbanModel', function (require) {
+sleektiv.define('web.KanbanModel', function (require) {
 "use strict";
 
 /**

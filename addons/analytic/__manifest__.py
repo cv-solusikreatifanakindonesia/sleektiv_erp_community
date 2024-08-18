@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 {
     'name' : 'Analytic Accounting',
@@ -10,7 +10,7 @@
 Module for defining analytic accounting object.
 ===============================================
 
-In Flectra, analytic accounts are linked to general accounts but are treated
+In Sleektiv, analytic accounts are linked to general accounts but are treated
 totally independently. So, you can enter various different analytic operations
 that have no counterpart in the general financial accounts.
     """,

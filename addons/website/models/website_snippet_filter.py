@@ -2,10 +2,10 @@
 
 from ast import literal_eval
 from collections import OrderedDict
-from flectra import models, fields, api, _
-from flectra.exceptions import ValidationError, MissingError
-from flectra.osv import expression
-from flectra.tools import html_escape as escape
+from sleektiv import models, fields, api, _
+from sleektiv.exceptions import ValidationError, MissingError
+from sleektiv.osv import expression
+from sleektiv.tools import html_escape as escape
 from lxml import etree as ET
 import logging
 

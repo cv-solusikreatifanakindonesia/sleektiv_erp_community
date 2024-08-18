@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.urls import url_parse, url_decode
 
 import json
 
-from flectra import http
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.tests import tagged, users
-from flectra.tests.common import HttpCase
+from sleektiv import http
+from sleektiv.addons.mail.tests.common import mail_new_test_user
+from sleektiv.tests import tagged, users
+from sleektiv.tests.common import HttpCase
 
 
 @tagged('portal')

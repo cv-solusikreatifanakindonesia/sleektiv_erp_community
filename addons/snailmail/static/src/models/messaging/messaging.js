@@ -1,4 +1,4 @@
-flectra.define('snailmail/static/src/models/messaging/messaging.js', function (require) {
+sleektiv.define('snailmail/static/src/models/messaging/messaging.js', function (require) {
 'use strict';
 
 const {

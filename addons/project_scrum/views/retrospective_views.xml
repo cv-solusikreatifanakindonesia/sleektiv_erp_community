@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <record id="retrospective_form_view_id" model="ir.ui.view">
         <field name="name">Retrospective</field>
         <field name="model">retrospective</field>
@@ -72,4 +72,4 @@
             action="action_retrospective_tree_view_id"
             sequence="1"
     />
-</flectra>
+</sleektiv>

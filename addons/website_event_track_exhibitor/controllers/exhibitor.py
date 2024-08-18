@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 from random import randint, sample
 from werkzeug.exceptions import NotFound, Forbidden
 
-from flectra import exceptions, http
-from flectra.addons.website_event_track.controllers.event_track import EventTrackController
-from flectra.http import request
-from flectra.osv import expression
-from flectra.tools import format_duration
+from sleektiv import exceptions, http
+from sleektiv.addons.website_event_track.controllers.event_track import EventTrackController
+from sleektiv.http import request
+from sleektiv.osv import expression
+from sleektiv.tools import format_duration
 
 
 class ExhibitorController(EventTrackController):

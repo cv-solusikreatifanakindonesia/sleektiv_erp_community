@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models, _
+from sleektiv import api, models, _
 
 
 class Channel(models.Model):
@@ -17,7 +17,7 @@ class Channel(models.Model):
             flectrabot_id = self.env['ir.model.data'].xmlid_to_res_id("base.partner_root")
             channel_info = self.channel_get([flectrabot_id])
             channel = self.browse(channel_info['id'])
-            message = _("Hello,<br/>Flectra's chat helps employees collaborate efficiently. I'm here to help you discover its features.<br/><b>Try to send me an emoji</b> <span class=\"o_flectrabot_command\">:)</span>")
+            message = _("Hello,<br/>Sleektiv's chat helps employees collaborate efficiently. I'm here to help you discover its features.<br/><b>Try to send me an emoji</b> <span class=\"o_flectrabot_command\">:)</span>")
             channel.sudo().message_post(body=message, author_id=flectrabot_id, message_type="comment", subtype_xmlid="mail.mt_comment")
             self.env.user.flectrabot_state = 'onboarding_emoji'
             return channel

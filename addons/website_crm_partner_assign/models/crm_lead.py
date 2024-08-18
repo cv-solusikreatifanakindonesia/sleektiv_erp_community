@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import random
 
-from flectra import api, fields, models, _
-from flectra.exceptions import AccessDenied, AccessError, UserError
-from flectra.tools import html_escape
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import AccessDenied, AccessError, UserError
+from sleektiv.tools import html_escape
 
 
 

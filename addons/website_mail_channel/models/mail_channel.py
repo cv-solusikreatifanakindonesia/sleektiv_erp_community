@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import hashlib
 import hmac
 
 from werkzeug import urls
 
-from flectra import models
-from flectra.addons.http_routing.models.ir_http import slug
+from sleektiv import models
+from sleektiv.addons.http_routing.models.ir_http import slug
 
 
 class MailGroup(models.Model):

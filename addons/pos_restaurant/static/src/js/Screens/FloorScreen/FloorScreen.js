@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.FloorScreen', function (require) {
+sleektiv.define('pos_restaurant.FloorScreen', function (require) {
     'use strict';
 
     const { debounce } = owl.utils;

@@ -1,4 +1,4 @@
-flectra.define('im_livechat/static/src/widgets/discuss/discuss.js', function (require) {
+sleektiv.define('im_livechat/static/src/widgets/discuss/discuss.js', function (require) {
 'use strict';
 
 const Discuss = require('mail/static/src/widgets/discuss/discuss.js');

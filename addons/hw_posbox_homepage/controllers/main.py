@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 import jinja2
@@ -11,13 +11,13 @@ import subprocess
 import sys
 import threading
 
-from flectra import http, tools
-from flectra.http import Response, request
-from flectra.modules.module import get_resource_path
+from sleektiv import http, tools
+from sleektiv.http import Response, request
+from sleektiv.modules.module import get_resource_path
 
-from flectra.addons.hw_drivers.main import iot_devices
-from flectra.addons.hw_drivers.tools import helpers
-from flectra.addons.web.controllers import main as web
+from sleektiv.addons.hw_drivers.main import iot_devices
+from sleektiv.addons.hw_drivers.tools import helpers
+from sleektiv.addons.web.controllers import main as web
 
 _logger = logging.getLogger(__name__)
 
@@ -31,7 +31,7 @@ if hasattr(sys, 'frozen'):
     path = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'views'))
     loader = jinja2.FileSystemLoader(path)
 else:
-    loader = jinja2.PackageLoader('flectra.addons.hw_posbox_homepage', "views")
+    loader = jinja2.PackageLoader('sleektiv.addons.hw_posbox_homepage', "views")
 
 jinja_env = jinja2.Environment(loader=loader, autoescape=True)
 jinja_env.filters["json"] = json.dumps
@@ -52,10 +52,10 @@ class IoTboxHomepage(web.Home):
         self.updating = threading.Lock()
 
     def clean_partition(self):
-        subprocess.check_call(['sudo', 'bash', '-c', '. /home/pi/flectra/addons/point_of_sale/tools/posbox/configuration/upgrade.sh; cleanup'])
+        subprocess.check_call(['sudo', 'bash', '-c', '. /home/pi/sleektiv/addons/point_of_sale/tools/posbox/configuration/upgrade.sh; cleanup'])
 
     def get_six_terminal(self):
-        terminal_id = helpers.read_file_first_line('flectra-six-payment-terminal.conf')
+        terminal_id = helpers.read_file_first_line('sleektiv-six-payment-terminal.conf')
         return terminal_id or 'Not Configured'
 
     def get_homepage_data(self):
@@ -87,7 +87,7 @@ class IoTboxHomepage(web.Home):
             'ip': helpers.get_ip(),
             'mac': helpers.get_mac_address(),
             'iot_device_status': iot_device,
-            'server_status': helpers.get_flectra_server_url() or 'Not Configured',
+            'server_status': helpers.get_sleektiv_server_url() or 'Not Configured',
             'six_terminal': self.get_six_terminal(),
             'network_status': network,
             'version': helpers.get_version(),
@@ -98,7 +98,7 @@ class IoTboxHomepage(web.Home):
     @http.route('/', type='http', auth='none')
     def index(self):
         wifi = Path.home() / 'wifi_network.txt'
-        remote_server = Path.home() / 'flectra-remote-server.conf'
+        remote_server = Path.home() / 'sleektiv-remote-server.conf'
         if (wifi.exists() == False or remote_server.exists() == False) and helpers.access_point():
             return "<meta http-equiv='refresh' content='0; url=http://" + helpers.get_ip() + ":7073/steps'>"
         else:
@@ -121,8 +121,8 @@ class IoTboxHomepage(web.Home):
 
                 if post_request_key == 'root':
                     need_config_save |= self._update_logger_level('', log_level_or_parent, AVAILABLE_LOG_LEVELS)
-                elif post_request_key == 'flectra':
-                    need_config_save |= self._update_logger_level('flectra', log_level_or_parent, AVAILABLE_LOG_LEVELS)
+                elif post_request_key == 'sleektiv':
+                    need_config_save |= self._update_logger_level('sleektiv', log_level_or_parent, AVAILABLE_LOG_LEVELS)
                     need_config_save |= self._update_logger_level(
                         'werkzeug',
                         log_level_or_parent if log_level_or_parent != 'debug' else 'info',
@@ -154,13 +154,13 @@ class IoTboxHomepage(web.Home):
                 interfaces_list.append(interface)
 
         return handler_list_template.render({
-            'title': "Flectra's IoT Box - Handlers list",
+            'title': "Sleektiv's IoT Box - Handlers list",
             'breadcrumb': 'Handlers list',
             'drivers_list': drivers_list,
             'interfaces_list': interfaces_list,
-            'server': helpers.get_flectra_server_url(),
+            'server': helpers.get_sleektiv_server_url(),
             'root_logger_log_level': self._get_logger_effective_level_str(logging.getLogger()),
-            'flectra_current_log_level': self._get_logger_effective_level_str(logging.getLogger('flectra')),
+            'sleektiv_current_log_level': self._get_logger_effective_level_str(logging.getLogger('sleektiv')),
             'recommended_log_level': 'warning',
             'available_log_levels': AVAILABLE_LOG_LEVELS,
             'drivers_logger_info': self._get_iot_handlers_logger(drivers_list, 'drivers'),
@@ -170,29 +170,29 @@ class IoTboxHomepage(web.Home):
     @http.route('/load_iot_handlers', type='http', auth='none', website=True)
     def load_iot_handlers(self):
         helpers.download_iot_handlers(False)
-        subprocess.check_call(["sudo", "service", "flectra", "restart"])
+        subprocess.check_call(["sudo", "service", "sleektiv", "restart"])
         return "<meta http-equiv='refresh' content='20; url=http://" + helpers.get_ip() + ":7073/list_handlers'>"
 
     @http.route('/list_credential', type='http', auth='none', website=True)
     def list_credential(self):
         return list_credential_template.render({
-            'title': "Flectra's IoT Box - List credential",
+            'title': "Sleektiv's IoT Box - List credential",
             'breadcrumb': 'List credential',
-            'db_uuid': helpers.read_file_first_line('flectra-db-uuid.conf'),
-            'enterprise_code': helpers.read_file_first_line('flectra-enterprise-code.conf'),
+            'db_uuid': helpers.read_file_first_line('sleektiv-db-uuid.conf'),
+            'enterprise_code': helpers.read_file_first_line('sleektiv-enterprise-code.conf'),
         })
 
     @http.route('/save_credential', type='http', auth='none', cors='*', csrf=False)
     def save_credential(self, db_uuid, enterprise_code):
         helpers.add_credential(db_uuid, enterprise_code)
-        subprocess.check_call(["sudo", "service", "flectra", "restart"])
+        subprocess.check_call(["sudo", "service", "sleektiv", "restart"])
         return "<meta http-equiv='refresh' content='20; url=http://" + helpers.get_ip() + ":7073'>"
 
     @http.route('/clear_credential', type='http', auth='none', cors='*', csrf=False)
     def clear_credential(self):
-        helpers.unlink_file('flectra-db-uuid.conf')
-        helpers.unlink_file('flectra-enterprise-code.conf')
-        subprocess.check_call(["sudo", "service", "flectra", "restart"])
+        helpers.unlink_file('sleektiv-db-uuid.conf')
+        helpers.unlink_file('sleektiv-enterprise-code.conf')
+        subprocess.check_call(["sudo", "service", "sleektiv", "restart"])
         return "<meta http-equiv='refresh' content='20; url=http://" + helpers.get_ip() + ":7073'>"
 
     @http.route('/wifi', type='http', auth='none', website=True)
@@ -212,14 +212,14 @@ class IoTboxHomepage(web.Home):
                 persistent = ""
 
         subprocess.check_call([get_resource_path('point_of_sale', 'tools/posbox/configuration/connect_to_wifi.sh'), essid, password, persistent])
-        server = helpers.get_flectra_server_url()
+        server = helpers.get_sleektiv_server_url()
         res_payload = {
             'message': 'Connecting to ' + essid,
         }
         if server:
             res_payload['server'] = {
                 'url': server,
-                'message': 'Redirect to Flectra Server'
+                'message': 'Redirect to Sleektiv Server'
             }
         else:
             res_payload['server'] = {
@@ -236,7 +236,7 @@ class IoTboxHomepage(web.Home):
 
     @http.route('/server_clear', type='http', auth='none', cors='*', csrf=False)
     def clear_server_configuration(self):
-        helpers.unlink_file('flectra-remote-server.conf')
+        helpers.unlink_file('sleektiv-remote-server.conf')
         return "<meta http-equiv='refresh' content='0; url=http://" + helpers.get_ip() + ":7073'>"
 
     @http.route('/handlers_clear', type='http', auth='none', cors='*', csrf=False)
@@ -259,7 +259,7 @@ class IoTboxHomepage(web.Home):
                 enterprise_code = credential[3]
                 helpers.add_credential(db_uuid, enterprise_code)
         else:
-            url = helpers.get_flectra_server_url()
+            url = helpers.get_sleektiv_server_url()
             token = helpers.get_token()
         reboot = 'reboot'
         subprocess.check_call([get_resource_path('point_of_sale', 'tools/posbox/configuration/connect_to_server.sh'), url, iotname, token, reboot])
@@ -272,7 +272,7 @@ class IoTboxHomepage(web.Home):
             'breadcrumb': 'Configure IoT Box',
             'loading_message': 'Configuring your IoT Box',
             'ssid': helpers.get_wifi_essid(),
-            'server': helpers.get_flectra_server_url() or '',
+            'server': helpers.get_sleektiv_server_url() or '',
             'hostname': subprocess.check_output('hostname').decode('utf-8').strip('\n'),
         })
 
@@ -290,10 +290,10 @@ class IoTboxHomepage(web.Home):
     @http.route('/server', type='http', auth='none', website=True)
     def server(self):
         return server_config_template.render({
-            'title': 'IoT -> Flectra server configuration',
-            'breadcrumb': 'Configure Flectra Server',
+            'title': 'IoT -> Sleektiv server configuration',
+            'breadcrumb': 'Configure Sleektiv Server',
             'hostname': subprocess.check_output('hostname').decode('utf-8').strip('\n'),
-            'server_status': helpers.get_flectra_server_url() or 'Not configured yet',
+            'server_status': helpers.get_sleektiv_server_url() or 'Not configured yet',
             'loading_message': 'Configure Domain Server'
         })
 
@@ -329,25 +329,25 @@ class IoTboxHomepage(web.Home):
 
     @http.route('/six_payment_terminal_add', type='http', auth='none', cors='*', csrf=False)
     def add_six_payment_terminal(self, terminal_id):
-        helpers.write_file('flectra-six-payment-terminal.conf', terminal_id)
-        subprocess.check_call(["sudo", "service", "flectra", "restart"])
+        helpers.write_file('sleektiv-six-payment-terminal.conf', terminal_id)
+        subprocess.check_call(["sudo", "service", "sleektiv", "restart"])
         return 'http://' + helpers.get_ip() + ':7073'
 
     @http.route('/six_payment_terminal_clear', type='http', auth='none', cors='*', csrf=False)
     def clear_six_payment_terminal(self):
-        helpers.unlink_file('flectra-six-payment-terminal.conf')
-        subprocess.check_call(["sudo", "service", "flectra", "restart"])
+        helpers.unlink_file('sleektiv-six-payment-terminal.conf')
+        subprocess.check_call(["sudo", "service", "sleektiv", "restart"])
         return "<meta http-equiv='refresh' content='0; url=http://" + helpers.get_ip() + ":7073'>"
 
     @http.route('/hw_proxy/upgrade', type='http', auth='none', )
     def upgrade(self):
-        commit = subprocess.check_output(["git", "--work-tree=/home/pi/flectra/", "--git-dir=/home/pi/flectra/.git", "log", "-1"]).decode('utf-8').replace("\n", "<br/>")
+        commit = subprocess.check_output(["git", "--work-tree=/home/pi/sleektiv/", "--git-dir=/home/pi/sleektiv/.git", "log", "-1"]).decode('utf-8').replace("\n", "<br/>")
         flashToVersion = helpers.check_image()
         actualVersion = helpers.get_version()
         if flashToVersion:
             flashToVersion = '%s.%s' % (flashToVersion.get('major', ''), flashToVersion.get('minor', ''))
         return upgrade_page_template.render({
-            'title': "Flectra's IoTBox - Software Upgrade",
+            'title': "Sleektiv's IoTBox - Software Upgrade",
             'breadcrumb': 'IoT Box Software Upgrade',
             'loading_message': 'Updating IoT box',
             'commit': commit,
@@ -358,7 +358,7 @@ class IoTboxHomepage(web.Home):
     @http.route('/hw_proxy/perform_upgrade', type='http', auth='none')
     def perform_upgrade(self):
         self.updating.acquire()
-        os.system('/home/pi/flectra/addons/point_of_sale/tools/posbox/configuration/posbox_update.sh')
+        os.system('/home/pi/sleektiv/addons/point_of_sale/tools/posbox/configuration/posbox_update.sh')
         self.updating.release()
         return 'SUCCESS'
 
@@ -369,7 +369,7 @@ class IoTboxHomepage(web.Home):
     @http.route('/hw_proxy/perform_flashing_create_partition', type='http', auth='none')
     def perform_flashing_create_partition(self):
         try:
-            response = subprocess.check_output(['sudo', 'bash', '-c', '. /home/pi/flectra/addons/point_of_sale/tools/posbox/configuration/upgrade.sh; create_partition']).decode().split('\n')[-2]
+            response = subprocess.check_output(['sudo', 'bash', '-c', '. /home/pi/sleektiv/addons/point_of_sale/tools/posbox/configuration/upgrade.sh; create_partition']).decode().split('\n')[-2]
             if response in ['Error_Card_Size', 'Error_Upgrade_Already_Started']:
                 raise Exception(response)
             return Response('success', status=200)
@@ -382,7 +382,7 @@ class IoTboxHomepage(web.Home):
     @http.route('/hw_proxy/perform_flashing_download_raspios', type='http', auth='none')
     def perform_flashing_download_raspios(self):
         try:
-            response = subprocess.check_output(['sudo', 'bash', '-c', '. /home/pi/flectra/addons/point_of_sale/tools/posbox/configuration/upgrade.sh; download_raspios']).decode().split('\n')[-2]
+            response = subprocess.check_output(['sudo', 'bash', '-c', '. /home/pi/sleektiv/addons/point_of_sale/tools/posbox/configuration/upgrade.sh; download_raspios']).decode().split('\n')[-2]
             if response == 'Error_Raspios_Download':
                 raise Exception(response)
             return Response('success', status=200)
@@ -396,7 +396,7 @@ class IoTboxHomepage(web.Home):
     @http.route('/hw_proxy/perform_flashing_copy_raspios', type='http', auth='none')
     def perform_flashing_copy_raspios(self):
         try:
-            response = subprocess.check_output(['sudo', 'bash', '-c', '. /home/pi/flectra/addons/point_of_sale/tools/posbox/configuration/upgrade.sh; copy_raspios']).decode().split('\n')[-2]
+            response = subprocess.check_output(['sudo', 'bash', '-c', '. /home/pi/sleektiv/addons/point_of_sale/tools/posbox/configuration/upgrade.sh; copy_raspios']).decode().split('\n')[-2]
             if response == 'Error_Iotbox_Download':
                 raise Exception(response)
             return Response('success', status=200)
@@ -412,18 +412,18 @@ class IoTboxHomepage(web.Home):
 
     def _get_iot_handler_logger(self, handler_name, handler_folder_name):
         """
-        Get Flectra Iot logger given an IoT handler name
+        Get Sleektiv Iot logger given an IoT handler name
         :param handler_name: name of the IoT handler
         :param handler_folder_name: IoT handler folder name (interfaces or drivers)
         :return: logger if any, False otherwise
         """
-        flectra_addon_handler_path = helpers.compute_iot_handlers_addon_name(handler_folder_name, handler_name)
-        return flectra_addon_handler_path in logging.Logger.manager.loggerDict.keys() and \
-               logging.getLogger(flectra_addon_handler_path)
+        sleektiv_addon_handler_path = helpers.compute_iot_handlers_addon_name(handler_folder_name, handler_name)
+        return sleektiv_addon_handler_path in logging.Logger.manager.loggerDict.keys() and \
+               logging.getLogger(sleektiv_addon_handler_path)
 
     def _update_logger_level(self, logger_name, new_level, available_log_levels, handler_folder=False):
         """
-        Update (if necessary) Flectra's configuration and logger to the given logger_name to the given level.
+        Update (if necessary) Sleektiv's configuration and logger to the given logger_name to the given level.
         The responsibility of saving the config file is not managed here.
         :param logger_name: name of the logging logger to change level
         :param new_level: new log level to set for this logger
@@ -473,7 +473,7 @@ class IoTboxHomepage(web.Home):
         if not IS_NEW_LEVEL_PARENT:
             new_entry = [LOGGER_PREFIX + new_level_upper_case]
             tools.config[FLECTRA_TOOL_CONFIG_HANDLER_NAME] += new_entry
-            _logger.debug('Adding to flectra config log_handler: %s', new_entry)
+            _logger.debug('Adding to sleektiv config log_handler: %s', new_entry)
 
         # Update the logger dynamically
         real_new_level = logging.NOTSET if IS_NEW_LEVEL_PARENT else new_level_upper_case

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 #
 # Order Point Method:
 #    - Order if the virtual stock of today is below the min of the defined order point
 #
 
-from flectra import api, models, tools
+from sleektiv import api, models, tools
 
 import logging
 import threading
@@ -25,7 +25,7 @@ class StockSchedulerCompute(models.TransientModel):
             scheduler_cron = self.sudo().env.ref('stock.ir_cron_scheduler_action')
             # Avoid to run the scheduler multiple times in the same time
             try:
-                with tools.mute_logger('flectra.sql_db'):
+                with tools.mute_logger('sleektiv.sql_db'):
                     self._cr.execute("SELECT id FROM ir_cron WHERE id = %s FOR UPDATE NOWAIT", (scheduler_cron.id,))
             except Exception:
                 _logger.info('Attempt to run procurement scheduler aborted, as already running')

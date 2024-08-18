@@ -9,10 +9,10 @@ import logging
 import operator
 from collections import defaultdict
 
-from flectra import _, api, fields, models, tools
-from flectra.exceptions import AccessError, ValidationError
+from sleektiv import _, api, fields, models, tools
+from sleektiv.exceptions import AccessError, ValidationError
 
-from flectra.addons.http_routing.models.ir_http import slugify
+from sleektiv.addons.http_routing.models.ir_http import slugify
 
 from ..tools.file import check_name, unique_name
 

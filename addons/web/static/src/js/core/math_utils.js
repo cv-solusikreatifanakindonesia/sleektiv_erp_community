@@ -1,4 +1,4 @@
-flectra.define('web.mathUtils', function () {
+sleektiv.define('web.mathUtils', function () {
 "use strict";
 
 /**

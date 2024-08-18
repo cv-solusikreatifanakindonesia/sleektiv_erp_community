@@ -1,4 +1,4 @@
-flectra.define('pos_hr.PaymentScreen', function (require) {
+sleektiv.define('pos_hr.PaymentScreen', function (require) {
     'use strict';
 
     const PaymentScreen = require('point_of_sale.PaymentScreen');

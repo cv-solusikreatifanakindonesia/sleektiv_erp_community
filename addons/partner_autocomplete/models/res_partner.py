@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 import json
-from flectra import api, fields, models, exceptions, _
-from flectra.addons.iap.tools import iap_tools
+from sleektiv import api, fields, models, exceptions, _
+from sleektiv.addons.iap.tools import iap_tools
 # TDE FIXME: check those errors at iap level ?
 from requests.exceptions import ConnectionError, HTTPError
 
@@ -185,7 +185,7 @@ class ResPartner(models.Model):
             partners._update_autocomplete_data(vals_list[0].get('vat', False))
             if partners.additional_info:
                 template_values = json.loads(partners.additional_info)
-                template_values['flavor_text'] = _("Partner created by Flectra Partner Autocomplete Service")
+                template_values['flavor_text'] = _("Partner created by Sleektiv Partner Autocomplete Service")
                 partners.message_post_with_view(
                     'iap_mail.enrich_company',
                     values=template_values,

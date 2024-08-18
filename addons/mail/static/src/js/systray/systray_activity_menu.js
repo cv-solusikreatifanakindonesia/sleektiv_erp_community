@@ -1,4 +1,4 @@
-flectra.define('mail.systray.ActivityMenu', function (require) {
+sleektiv.define('mail.systray.ActivityMenu', function (require) {
 "use strict";
 
 var core = require('web.core');

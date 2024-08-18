@@ -1,4 +1,4 @@
-flectra.define('web.custom_hooks', function () {
+sleektiv.define('web.custom_hooks', function () {
     "use strict";
 
     const { Component, hooks } = owl;

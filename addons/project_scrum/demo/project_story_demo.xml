@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<sleektiv>
     <data noupdate="1">
         <!--
             story.priority Demo Data
@@ -59,4 +59,4 @@
             <field name="description">Workflow testing...</field>
         </record>
     </data>
-</flectra>
+</sleektiv>

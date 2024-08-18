@@ -5,11 +5,11 @@ from setuptools import find_packages, setup
 from os.path import join, dirname
 
 
-exec(open(join(dirname(__file__), 'flectra', 'release.py'), 'rb').read())  # Load release variables
-lib_name = 'flectra'
+exec(open(join(dirname(__file__), 'sleektiv', 'release.py'), 'rb').read())  # Load release variables
+lib_name = 'sleektiv'
 
 setup(
-    name='flectra',
+    name='sleektiv',
     version=version,
     description=description,
     long_description=long_desc,
@@ -18,9 +18,9 @@ setup(
     author_email=author_email,
     classifiers=[c for c in classifiers.split('\n') if c],
     license=license,
-    scripts=['setup/flectra'],
+    scripts=['setup/sleektiv'],
     packages=find_packages(),
-    package_dir={'%s' % lib_name: 'flectra'},
+    package_dir={'%s' % lib_name: 'sleektiv'},
     include_package_data=True,
     install_requires=[
         'babel >= 1.0',

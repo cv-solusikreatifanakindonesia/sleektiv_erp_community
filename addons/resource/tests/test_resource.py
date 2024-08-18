@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime
 from freezegun import freeze_time
 from pytz import timezone, utc
 
-from flectra import fields
-from flectra.exceptions import ValidationError
-from flectra.addons.resource.models.resource import Intervals
-from flectra.addons.resource.tests.common import TestResourceCommon
-from flectra.tests.common import TransactionCase
+from sleektiv import fields
+from sleektiv.exceptions import ValidationError
+from sleektiv.addons.resource.models.resource import Intervals
+from sleektiv.addons.resource.tests.common import TestResourceCommon
+from sleektiv.tests.common import TransactionCase
 
 
 def datetime_tz(year, month, day, hour=0, minute=0, second=0, microsecond=0, tzinfo=None):

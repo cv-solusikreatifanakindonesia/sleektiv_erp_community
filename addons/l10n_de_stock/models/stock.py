@@ -1,5 +1,5 @@
-from flectra import models, fields, api, _
-from flectra.tools import format_date
+from sleektiv import models, fields, api, _
+from sleektiv.tools import format_date
 
 
 class StockInventory(models.Model):

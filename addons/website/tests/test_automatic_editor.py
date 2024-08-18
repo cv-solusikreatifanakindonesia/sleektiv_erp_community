@@ -1,6 +1,6 @@
 from unittest.mock import patch
 
-from flectra.tests import HttpCase, tagged
+from sleektiv.tests import HttpCase, tagged
 
 @tagged('post_install', '-at_install')
 class TestAutomaticEditor(HttpCase):
@@ -16,7 +16,7 @@ class TestAutomaticEditor(HttpCase):
 
     def setUp(self):
         super().setUp()
-        patcher = patch('flectra.addons.website.models.ir_module_module.IrModuleModule._theme_upgrade_upstream', wraps=self._theme_upgrade_upstream)
+        patcher = patch('sleektiv.addons.website.models.ir_module_module.IrModuleModule._theme_upgrade_upstream', wraps=self._theme_upgrade_upstream)
         patcher.start()
         self.addCleanup(patcher.stop)
 

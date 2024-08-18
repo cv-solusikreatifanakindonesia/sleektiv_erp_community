@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from flectra import api, fields, models, _
-from flectra.osv import expression
-from flectra.tools.float_utils import float_round as round
-from flectra.exceptions import UserError, ValidationError
+from sleektiv import api, fields, models, _
+from sleektiv.osv import expression
+from sleektiv.tools.float_utils import float_round as round
+from sleektiv.exceptions import UserError, ValidationError
 
 import math
 import logging

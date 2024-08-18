@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests.common import SavepointCase
-from flectra.tests import Form
-from flectra.tests import tagged
+from sleektiv.tests.common import SavepointCase
+from sleektiv.tests import Form
+from sleektiv.tests import tagged
 
 
 @tagged('post_install', '-at_install')

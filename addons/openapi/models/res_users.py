@@ -3,7 +3,7 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 import uuid
 
-from flectra import api, fields, models
+from sleektiv import api, fields, models
 
 
 class ResUsers(models.Model):

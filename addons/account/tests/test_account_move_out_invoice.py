@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.tests.common import Form
-from flectra.tests import tagged
-from flectra import fields
-from flectra.exceptions import UserError
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.tests.common import Form
+from sleektiv.tests import tagged
+from sleektiv import fields
+from sleektiv.exceptions import UserError
 
 from collections import defaultdict
 from freezegun import freeze_time

@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from uuid import uuid4
 import requests
 import json
 import logging
 
-from flectra import api, _
-from flectra.tools import exception_to_unicode
-from flectra.addons.google_calendar.utils.google_event import GoogleEvent
-from flectra.addons.google_account.models.google_service import TIMEOUT
+from sleektiv import api, _
+from sleektiv.tools import exception_to_unicode
+from sleektiv.addons.google_calendar.utils.google_event import GoogleEvent
+from sleektiv.addons.google_account.models.google_service import TIMEOUT
 
 
 _logger = logging.getLogger(__name__)

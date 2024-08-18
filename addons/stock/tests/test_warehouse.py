@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from flectra.addons.stock.tests.common2 import TestStockCommon
-from flectra.tests import Form
-from flectra.exceptions import AccessError
-from flectra.tools import mute_logger
+from sleektiv.addons.stock.tests.common2 import TestStockCommon
+from sleektiv.tests import Form
+from sleektiv.exceptions import AccessError
+from sleektiv.tools import mute_logger
 
 
 class TestWarehouse(TestStockCommon):

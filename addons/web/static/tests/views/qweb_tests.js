@@ -1,4 +1,4 @@
-flectra.define('web.qweb_view_tests', function (require) {
+sleektiv.define('web.qweb_view_tests', function (require) {
 "use strict";
 
 var utils = require('web.test_utils');

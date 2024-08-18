@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tools import mute_logger
-from flectra.tests import common, tagged
+from sleektiv.tools import mute_logger
+from sleektiv.tests import common, tagged
 
 
 @tagged('mail_message')
 class TestMessageFormatPortal(common.SavepointCase):
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('sleektiv.models.unlink')
     def test_mail_message_format(self):
         """ Test the specific message formatting for the portal.
         Notably the flag that tells if the message is of subtype 'note'. """

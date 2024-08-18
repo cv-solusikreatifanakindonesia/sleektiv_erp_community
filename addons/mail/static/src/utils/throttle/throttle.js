@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/utils/throttle/throttle.js', function (require) {
+sleektiv.define('mail/static/src/utils/throttle/throttle.js', function (require) {
 'use strict';
 
 const { makeDeferred } = require('mail/static/src/utils/deferred/deferred.js');

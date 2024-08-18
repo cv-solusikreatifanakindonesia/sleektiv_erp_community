@@ -1,4 +1,4 @@
-flectra.define('website.backend.button', function (require) {
+sleektiv.define('website.backend.button', function (require) {
 'use strict';
 
 var AbstractField = require('web.AbstractField');

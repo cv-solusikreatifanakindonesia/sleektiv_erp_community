@@ -1,4 +1,4 @@
-flectra.define('web.RamStorage', function (require) {
+sleektiv.define('web.RamStorage', function (require) {
 'use strict';
 
 /**

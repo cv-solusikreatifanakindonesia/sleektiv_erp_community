@@ -1,9 +1,9 @@
 import logging
 from functools import partial
-from flectra import models, fields, api, _
-from flectra.tools import float_is_zero, float_round, float_compare
-from flectra.tools.misc import formatLang
-from flectra.exceptions import UserError
+from sleektiv import models, fields, api, _
+from sleektiv.tools import float_is_zero, float_round, float_compare
+from sleektiv.tools.misc import formatLang
+from sleektiv.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <data noupdate="1">
         <!-- Fiscal Position Templates -->
         <record id="fiscal_position_template_1" model="account.fiscal.position.template">
@@ -69,4 +69,4 @@
             <field name="tax_dest_id" ref="vat_XO" />
         </record>
     </data>
-</flectra>
+</sleektiv>

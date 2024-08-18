@@ -46,7 +46,7 @@ var DateTimePicker = function ($, moment) {
         DATA_API_KEY = '.data-api',
         Selector = {
         // /!\ FLECTRA PATCH: ensure the datetimepickers can be toggled only after
-        // the Flectra lazy loader finished loading all lazy scripts. Another
+        // the Sleektiv lazy loader finished loading all lazy scripts. Another
         // solution could have been to temporarily removing the data-toggle
         // attributes during lazyloading but that would not have been stable as
         // custom code could search for data-toggle elements while the lazy
@@ -497,7 +497,7 @@ var DateTimePicker = function ($, moment) {
         DateTimePicker.prototype._change = function _change(e) {
             var val = $(e.target).val().trim(),
                 parsedDate = val ? this._parseInputDate(val) : null;
-            this._setValue(parsedDate, 0); // Flectra FIX: if a valid date is replaced by an invalid one, lib will crash, see https://github.com/tempusdominus/bootstrap-4/issues/223
+            this._setValue(parsedDate, 0); // Sleektiv FIX: if a valid date is replaced by an invalid one, lib will crash, see https://github.com/tempusdominus/bootstrap-4/issues/223
             e.stopImmediatePropagation();
             return false;
         };
@@ -568,7 +568,7 @@ var DateTimePicker = function ($, moment) {
         };
 
         DateTimePicker.prototype._notifyEvent = function _notifyEvent(e) {
-            // /!\ FLECTRA FIX: these next conditions have been modified by flectra
+            // /!\ FLECTRA FIX: these next conditions have been modified by sleektiv
             // FIXME should write a test about the tricky case this handles
             if (e.type === DateTimePicker.Event.CHANGE) {
                 if (!e.date && !e.oldDate) {
@@ -792,7 +792,7 @@ var DateTimePicker = function ($, moment) {
         };
 
         DateTimePicker.prototype._getLastPickedDate = function _getLastPickedDate() {
-            return this._dates[this._getLastPickedDateIndex()] || this.getMoment(); // FIXME changed by Flectra
+            return this._dates[this._getLastPickedDateIndex()] || this.getMoment(); // FIXME changed by Sleektiv
         };
 
         DateTimePicker.prototype._getLastPickedDateIndex = function _getLastPickedDateIndex() {
@@ -1877,7 +1877,7 @@ var TempusDominusBootstrap4 = function ($) {
                 self._element.children().first().after(self.widget);
             }
 
-            // /!\ FLECTRA FIX: the 3 next lines have been *added* by flectra
+            // /!\ FLECTRA FIX: the 3 next lines have been *added* by sleektiv
             var parentOffset = parent.offset();
             position.top = offset.top - parentOffset.top;
             position.left = offset.left - parentOffset.left;
@@ -2768,7 +2768,7 @@ var TempusDominusBootstrap4 = function ($) {
         if ($target.length === 0) {
             return;
         }
-        // /!\ FLECTRA FIX: check on 'config' existence added by flectra
+        // /!\ FLECTRA FIX: check on 'config' existence added by sleektiv
         if (config && config._options.debug || window.debug) {
             return;
         }
@@ -2791,7 +2791,7 @@ var TempusDominusBootstrap4 = function ($) {
         if ($target.length === 0) {
             return;
         }
-        // /!\ FLECTRA FIX: check on 'config' existence added by flectra
+        // /!\ FLECTRA FIX: check on 'config' existence added by sleektiv
         if (!(config && config._options.allowInputToggle)) {
             return;
         }

@@ -1,4 +1,4 @@
-flectra.define('wysiwyg.widgets.media', function (require) {
+sleektiv.define('wysiwyg.widgets.media', function (require) {
 'use strict';
 
 var concurrency = require('web.concurrency');
@@ -115,7 +115,7 @@ var SearchableMediaWidget = MediaWidget.extend({
 });
 
 /**
- * Let users choose a file, including uploading a new file in flectra.
+ * Let users choose a file, including uploading a new file in sleektiv.
  */
 var FileWidget = SearchableMediaWidget.extend({
     events: _.extend({}, SearchableMediaWidget.prototype.events || {}, {
@@ -263,7 +263,7 @@ var FileWidget = SearchableMediaWidget.extend({
      *
      * @private
      * @params {string} needle
-     * @returns {Array} "ir.attachment" flectra domain.
+     * @returns {Array} "ir.attachment" sleektiv domain.
      */
     _getAttachmentsDomain: function (needle) {
         var domain = this.options.attachmentIDs && this.options.attachmentIDs.length ? ['|', ['id', 'in', this.options.attachmentIDs]] : [];
@@ -704,7 +704,7 @@ var FileWidget = SearchableMediaWidget.extend({
 });
 
 /**
- * Let users choose an image, including uploading a new image in flectra.
+ * Let users choose an image, including uploading a new image in sleektiv.
  */
 var ImageWidget = FileWidget.extend({
     template: 'wysiwyg.widgets.image',
@@ -1003,7 +1003,7 @@ var ImageWidget = FileWidget.extend({
 
 
 /**
- * Let users choose a document, including uploading a new document in flectra.
+ * Let users choose a document, including uploading a new document in sleektiv.
  */
 var DocumentWidget = FileWidget.extend({
     template: 'wysiwyg.widgets.document',

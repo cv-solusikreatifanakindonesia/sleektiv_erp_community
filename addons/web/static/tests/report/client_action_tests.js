@@ -1,4 +1,4 @@
-flectra.define('web/static/tests/report/client_action_tests', function (require) {
+sleektiv.define('web/static/tests/report/client_action_tests', function (require) {
     "use strict";
 
     const ControlPanel = require('web.ControlPanel');

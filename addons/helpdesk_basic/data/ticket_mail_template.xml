@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<flectra>
+<sleektiv>
     <!--Email template -->
     <record id="ticket_mail_template" model="mail.template">
         <field name="name">Helpdesk Ticket : Send By Email</field>
@@ -191,7 +191,7 @@
                                                             % endif
                                                         </p>
                                                         <p>
-                                                            Your request flectra has been resolved by our
+                                                            Your request sleektiv has been resolved by our
                                                             ${object.team_id.name}.
                                                         </p>
                                                         <p>
@@ -415,4 +415,4 @@
             </table>
         </field>
     </record>
-</flectra>
+</sleektiv>

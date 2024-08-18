@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import datetime
 
 from dateutil.relativedelta import relativedelta
 
-from flectra.addons.event_sale.tests.common import TestEventSaleCommon
-from flectra.tests.common import Form
+from sleektiv.addons.event_sale.tests.common import TestEventSaleCommon
+from sleektiv.tests.common import Form
 
 
 class TestEventSpecific(TestEventSaleCommon):

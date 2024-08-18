@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
 
     <record id="helpdesk_team_tree_view" model="ir.ui.view">
         <field name="name">helpdesk.team.tree</field>
@@ -336,4 +336,4 @@
               action="act_team_dashboard_view"
               />
 
-</flectra>
+</sleektiv>

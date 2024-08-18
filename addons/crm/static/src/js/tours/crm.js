@@ -1,4 +1,4 @@
-flectra.define('crm.tour', function(require) {
+sleektiv.define('crm.tour', function(require) {
 "use strict";
 
 var core = require('web.core');

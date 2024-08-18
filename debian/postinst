@@ -2,15 +2,15 @@
 
 set -e
 
-FLECTRA_CONFIGURATION_FILE=/etc/flectra/flectra.conf
-FLECTRA_GROUP="flectra"
-FLECTRA_DATA_DIR=/var/lib/flectra
-FLECTRA_LOG_DIR=/var/log/flectra
-FLECTRA_USER="flectra"
+FLECTRA_CONFIGURATION_FILE=/etc/sleektiv/sleektiv.conf
+FLECTRA_GROUP="sleektiv"
+FLECTRA_DATA_DIR=/var/lib/sleektiv
+FLECTRA_LOG_DIR=/var/log/sleektiv
+FLECTRA_USER="sleektiv"
 
 case "${1}" in
     configure)
-        if ! getent passwd | grep -q "^flectra:"; then
+        if ! getent passwd | grep -q "^sleektiv:"; then
             adduser --system --home $FLECTRA_DATA_DIR --quiet --group $FLECTRA_USER
             # Data dir
             chown $FLECTRA_USER:$FLECTRA_GROUP $FLECTRA_DATA_DIR

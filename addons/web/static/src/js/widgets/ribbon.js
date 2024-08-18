@@ -1,4 +1,4 @@
-flectra.define('web.ribbon', function (require) {
+sleektiv.define('web.ribbon', function (require) {
     'use strict';
 
     /**

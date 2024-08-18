@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import base64
 
-from flectra import api, fields, models, _
-from flectra.modules.module import get_module_resource
-from flectra.modules.module import get_resource_path
+from sleektiv import api, fields, models, _
+from sleektiv.modules.module import get_module_resource
+from sleektiv.modules.module import get_resource_path
 
 class ResCompany(models.Model):
     _inherit = "res.company"

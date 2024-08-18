@@ -1,4 +1,4 @@
-flectra.define('auth_totp.tours', function(require) {
+sleektiv.define('auth_totp.tours', function(require) {
 "use strict";
 
 const tour = require('web_tour.tour');

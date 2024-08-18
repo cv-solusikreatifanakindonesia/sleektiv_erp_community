@@ -1,4 +1,4 @@
-flectra.define('website_forum.tour_forum_question', function (require) {
+sleektiv.define('website_forum.tour_forum_question', function (require) {
     'use strict';
 
     var tour = require("web_tour.tour");

@@ -5,7 +5,7 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
   -->
-<flectra>
+<sleektiv>
     <record id="view_dms_access_groups_tree" model="ir.ui.view">
         <field name="name">dms_access_groups.tree</field>
         <field name="model">dms.access.group</field>
@@ -127,4 +127,4 @@
         parent="dms.cat_menu_dms_config_system"
         action="action_dms_access_groups"
     />
-</flectra>
+</sleektiv>

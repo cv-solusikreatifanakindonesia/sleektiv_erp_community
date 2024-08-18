@@ -1,4 +1,4 @@
-flectra.define('website.content.menu', function (require) {
+sleektiv.define('website.content.menu', function (require) {
 'use strict';
 
 const config = require('web.config');
@@ -48,9 +48,9 @@ const BaseAnimatedHeader = animations.Animation.extend({
         });
 
         // We can rely on transitionend which is well supported but not on
-        // transitionstart, so we listen to a custom flectra event.
+        // transitionstart, so we listen to a custom sleektiv event.
         this._transitionCount = 0;
-        this.$el.on('flectra-transitionstart.BaseAnimatedHeader', () => {
+        this.$el.on('sleektiv-transitionstart.BaseAnimatedHeader', () => {
             this.el.classList.add('o_transitioning');
             this._adaptToHeaderChangeLoop(1);
         });
@@ -211,7 +211,7 @@ const BaseAnimatedHeader = animations.Animation.extend({
             this.scrollHeightTooShort = headerIsScrolled && this._scrollHeightTooShort();
             if (!this.scrollHeightTooShort) {
                 this.el.classList.toggle('o_header_is_scrolled', headerIsScrolled);
-                this.$el.trigger('flectra-transitionstart');
+                this.$el.trigger('sleektiv-transitionstart');
                 this.headerIsScrolled = headerIsScrolled;
             }
         }
@@ -362,7 +362,7 @@ const BaseDisappearingHeader = publicWidget.registry.FixedHeader.extend({
      * @private
      */
     _hideHeader: function () {
-        this.$el.trigger('flectra-transitionstart');
+        this.$el.trigger('sleektiv-transitionstart');
     },
     /**
      * @override
@@ -374,7 +374,7 @@ const BaseDisappearingHeader = publicWidget.registry.FixedHeader.extend({
      * @private
      */
     _showHeader: function () {
-        this.$el.trigger('flectra-transitionstart');
+        this.$el.trigger('sleektiv-transitionstart');
     },
 
     //--------------------------------------------------------------------------

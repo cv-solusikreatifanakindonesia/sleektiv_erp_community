@@ -1,4 +1,4 @@
-flectra.define('wysiwyg.widgets.LinkDialog', function (require) {
+sleektiv.define('wysiwyg.widgets.LinkDialog', function (require) {
 'use strict';
 
 var core = require('web.core');

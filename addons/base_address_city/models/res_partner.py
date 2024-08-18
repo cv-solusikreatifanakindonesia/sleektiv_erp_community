@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from lxml import etree
 
-from flectra import api, models, fields
-from flectra.tools.translate import _
+from sleektiv import api, models, fields
+from sleektiv.tools.translate import _
 
 
 class Partner(models.Model):

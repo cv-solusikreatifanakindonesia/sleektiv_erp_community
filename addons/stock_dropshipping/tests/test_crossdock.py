@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import common, Form
-from flectra.tools import mute_logger
+from sleektiv.tests import common, Form
+from sleektiv.tools import mute_logger
 
 
 class TestCrossdock(common.TransactionCase):
@@ -41,7 +41,7 @@ class TestCrossdock(common.TransactionCase):
         so_form.partner_id = self.env['res.partner'].create({'name': 'My Test Partner'})
         so_form.warehouse_id = wh_pps
 
-        with mute_logger('flectra.tests.common.onchange'):
+        with mute_logger('sleektiv.tests.common.onchange'):
             # otherwise complains that there's not enough inventory and
             # apparently that's normal according to @jco and @sle
             with so_form.order_line.new() as line:

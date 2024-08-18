@@ -1,4 +1,4 @@
-flectra.define('web.daterangepicker.extensions', function () {
+sleektiv.define('web.daterangepicker.extensions', function () {
 'use strict';
 
 /**

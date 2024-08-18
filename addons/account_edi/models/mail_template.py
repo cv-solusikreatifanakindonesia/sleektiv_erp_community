@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, models
+from sleektiv import api, models
 
 
 class MailTemplate(models.Model):

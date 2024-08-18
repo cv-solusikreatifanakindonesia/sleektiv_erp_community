@@ -1,4 +1,4 @@
-flectra.define('pos_mercury.PaymentTransactionPopup', function(require) {
+sleektiv.define('pos_mercury.PaymentTransactionPopup', function(require) {
     'use strict';
 
     const { useState } = owl.hooks;

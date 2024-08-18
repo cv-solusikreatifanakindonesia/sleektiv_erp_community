@@ -1,4 +1,4 @@
-flectra.define('website_slides_survey.fullscreen', function (require) {
+sleektiv.define('website_slides_survey.fullscreen', function (require) {
 "use strict";
 
 var core = require('web.core');

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 import math
@@ -9,11 +9,11 @@ import babel.dates
 import logging
 import pytz
 
-from flectra import api, fields, models
-from flectra import tools
-from flectra.addons.base.models.res_partner import _tz_get
-from flectra.addons.calendar.models.calendar_attendee import Attendee
-from flectra.addons.calendar.models.calendar_recurrence import (
+from sleektiv import api, fields, models
+from sleektiv import tools
+from sleektiv.addons.base.models.res_partner import _tz_get
+from sleektiv.addons.calendar.models.calendar_attendee import Attendee
+from sleektiv.addons.calendar.models.calendar_recurrence import (
     weekday_to_field,
     RRULE_TYPE_SELECTION,
     END_TYPE_SELECTION,
@@ -21,10 +21,10 @@ from flectra.addons.calendar.models.calendar_recurrence import (
     WEEKDAY_SELECTION,
     BYDAY_SELECTION
 )
-from flectra.tools.translate import _
-from flectra.tools.misc import get_lang
-from flectra.tools import pycompat
-from flectra.exceptions import UserError, ValidationError, AccessError
+from sleektiv.tools.translate import _
+from sleektiv.tools.misc import get_lang
+from sleektiv.tools import pycompat
+from sleektiv.exceptions import UserError, ValidationError, AccessError
 
 _logger = logging.getLogger(__name__)
 
@@ -470,7 +470,7 @@ class Meeting(models.Model):
                     elif interval == 'minutes':
                         delta = timedelta(minutes=duration)
                     trigger.value = delta
-                    valarm.add('DESCRIPTION').value = alarm.name or u'Flectra'
+                    valarm.add('DESCRIPTION').value = alarm.name or u'Sleektiv'
             for attendee in meeting.attendee_ids:
                 attendee_add = event.add('attendee')
                 attendee_add.value = u'MAILTO:' + (attendee.email or u'')

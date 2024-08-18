@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
-from flectra.addons.sale.tests.common import TestSaleCommon
-from flectra import fields
-from flectra.tests import tagged
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from sleektiv.addons.sale.tests.common import TestSaleCommon
+from sleektiv import fields
+from sleektiv.tests import tagged
 
 from datetime import timedelta
 

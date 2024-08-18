@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from freezegun import freeze_time
-from flectra.addons.account_edi.tests.common import AccountEdiTestCommon
-from flectra.tests import tagged
+from sleektiv.addons.account_edi.tests.common import AccountEdiTestCommon
+from sleektiv.tests import tagged
 
 
 @tagged('post_install', '-at_install')

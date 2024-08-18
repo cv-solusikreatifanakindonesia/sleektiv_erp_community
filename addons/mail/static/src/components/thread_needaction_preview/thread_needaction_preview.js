@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/thread_needaction_preview/thread_needaction_preview.js', function (require) {
+sleektiv.define('mail/static/src/components/thread_needaction_preview/thread_needaction_preview.js', function (require) {
 'use strict';
 
 const components = {

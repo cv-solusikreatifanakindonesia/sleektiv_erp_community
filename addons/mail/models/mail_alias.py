@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import ast
 import re
 
-from flectra import _, api, fields, models
-from flectra.exceptions import ValidationError, UserError
-from flectra.tools import remove_accents, is_html_empty
+from sleektiv import _, api, fields, models
+from sleektiv.exceptions import ValidationError, UserError
+from sleektiv.tools import remove_accents, is_html_empty
 
 # see rfc5322 section 3.2.3
 atext = r"[a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~]"
@@ -14,8 +14,8 @@ dot_atom_text = re.compile(r"^%s+(\.%s+)*$" % (atext, atext))
 
 
 class Alias(models.Model):
-    """A Mail Alias is a mapping of an email address with a given Flectra Document
-       model. It is used by Flectra's mail gateway when processing incoming emails
+    """A Mail Alias is a mapping of an email address with a given Sleektiv Document
+       model. It is used by Sleektiv's mail gateway when processing incoming emails
        sent to the system. If the recipient address (To) of the message matches
        a Mail Alias, the message will be either processed following the rules
        of that alias. If the message is a reply it will be attached to the
@@ -24,7 +24,7 @@ class Alias(models.Model):
 
        This is meant to be used in combination with a catch-all email configuration
        on the company's mail server, so that as soon as a new mail.alias is
-       created, it becomes immediately usable and Flectra will accept email for it.
+       created, it becomes immediately usable and Sleektiv will accept email for it.
      """
     _name = 'mail.alias'
     _description = "Email Aliases"
@@ -36,7 +36,7 @@ class Alias(models.Model):
 
     alias_name = fields.Char('Alias Name', copy=False, help="The name of the email alias, e.g. 'jobs' if you want to catch emails for <jobs@example.flectrahq.com>")
     alias_model_id = fields.Many2one('ir.model', 'Aliased Model', required=True, ondelete="cascade",
-                                     help="The model (Flectra Document Kind) to which this alias "
+                                     help="The model (Sleektiv Document Kind) to which this alias "
                                           "corresponds. Any incoming email that does not reply to an "
                                           "existing record will cause the creation of a new record "
                                           "of this model (e.g. a Project Task)",

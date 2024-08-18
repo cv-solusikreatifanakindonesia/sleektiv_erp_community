@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import calendar
 from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError, ValidationError
-from flectra.tools import float_compare, float_is_zero
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.tools import float_compare, float_is_zero
 
 
 class AccountAssetCategory(models.Model):

@@ -4,12 +4,12 @@ from dateutil.relativedelta import relativedelta
 import itertools
 import json
 
-from flectra import fields, _, models
-from flectra.osv import expression
-from flectra.tools import float_round
-from flectra.tools.misc import get_lang
+from sleektiv import fields, _, models
+from sleektiv.osv import expression
+from sleektiv.tools import float_round
+from sleektiv.tools.misc import get_lang
 
-from flectra.addons.web.controllers.main import clean_action
+from sleektiv.addons.web.controllers.main import clean_action
 from datetime import date
 
 DEFAULT_MONTH_RANGE = 3

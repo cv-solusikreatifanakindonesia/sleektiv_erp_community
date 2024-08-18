@@ -35,10 +35,10 @@
             {% endfor %}
             </select>
 
-            <label for="iot-logging-flectra">Flectra log level (Current value: {{flectra_current_log_level}}):</label>
-            <select name="iot-logging-flectra" id="iot-logging-flectra">
+            <label for="iot-logging-sleektiv">Sleektiv log level (Current value: {{sleektiv_current_log_level}}):</label>
+            <select name="iot-logging-sleektiv" id="iot-logging-sleektiv">
             {% for log_level in available_log_levels %}
-                <option value="{{ log_level }}" {{ "selected" if log_level == flectra_current_log_level }}>
+                <option value="{{ log_level }}" {{ "selected" if log_level == sleektiv_current_log_level }}>
                     {{ log_level | capitalize }} {{ "(Recommended)" if log_level == recommended_log_level }}
                 </option>
             {% endfor %}

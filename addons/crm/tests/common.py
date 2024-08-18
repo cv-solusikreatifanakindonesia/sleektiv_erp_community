@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-from flectra.addons.mail.tests.common import MailCase, mail_new_test_user
-from flectra.addons.sales_team.tests.common import TestSalesCommon
-from flectra.fields import Datetime
-from flectra import tools
+from sleektiv.addons.mail.tests.common import MailCase, mail_new_test_user
+from sleektiv.addons.sales_team.tests.common import TestSalesCommon
+from sleektiv.fields import Datetime
+from sleektiv import tools
 
 INCOMING_EMAIL = """Return-Path: {return_path}
 X-Original-To: {to}
@@ -308,7 +308,7 @@ class TestLeadConvertCommon(TestCrmCommon):
 
         cls.lead_1.write({'date_open': Datetime.from_string('2020-01-15 11:30:00')})
 
-        cls.crm_lead_dt_patcher = patch('flectra.addons.crm.models.crm_lead.fields.Datetime', wraps=Datetime)
+        cls.crm_lead_dt_patcher = patch('sleektiv.addons.crm.models.crm_lead.fields.Datetime', wraps=Datetime)
         cls.crm_lead_dt_mock = cls.crm_lead_dt_patcher.start()
 
     @classmethod

@@ -2,16 +2,16 @@
 
 set -e
 
-FLECTRA_CONFIGURATION_DIR=/etc/flectra
-FLECTRA_CONFIGURATION_FILE=$FLECTRA_CONFIGURATION_DIR/flectra.conf
-FLECTRA_DATA_DIR=/var/lib/flectra
-FLECTRA_GROUP="flectra"
-FLECTRA_LOG_DIR=/var/log/flectra
-FLECTRA_LOG_FILE=$FLECTRA_LOG_DIR/flectra-server.log
-FLECTRA_USER="flectra"
+FLECTRA_CONFIGURATION_DIR=/etc/sleektiv
+FLECTRA_CONFIGURATION_FILE=$FLECTRA_CONFIGURATION_DIR/sleektiv.conf
+FLECTRA_DATA_DIR=/var/lib/sleektiv
+FLECTRA_GROUP="sleektiv"
+FLECTRA_LOG_DIR=/var/log/sleektiv
+FLECTRA_LOG_FILE=$FLECTRA_LOG_DIR/sleektiv-server.log
+FLECTRA_USER="sleektiv"
 ABI=$(rpm -q --provides python3 | awk '/abi/ {print $NF}')
 
-if ! getent passwd | grep -q "^flectra:"; then
+if ! getent passwd | grep -q "^sleektiv:"; then
     groupadd $FLECTRA_GROUP
     adduser --system --no-create-home $FLECTRA_USER -g $FLECTRA_GROUP
 fi
@@ -29,7 +29,7 @@ db_host = False
 db_port = False
 db_user = $FLECTRA_USER
 db_password = False
-addons_path = /usr/lib/python${ABI}/site-packages/flectra/addons
+addons_path = /usr/lib/python${ABI}/site-packages/sleektiv/addons
 " > $FLECTRA_CONFIGURATION_FILE
     chown $FLECTRA_USER:$FLECTRA_GROUP $FLECTRA_CONFIGURATION_FILE
     chmod 0640 $FLECTRA_CONFIGURATION_FILE
@@ -42,7 +42,7 @@ chmod 0750 $FLECTRA_LOG_DIR
 mkdir -p $FLECTRA_DATA_DIR
 chown $FLECTRA_USER:$FLECTRA_GROUP $FLECTRA_DATA_DIR
 
-INIT_FILE=/lib/systemd/system/flectra.service
+INIT_FILE=/lib/systemd/system/sleektiv.service
 touch $INIT_FILE
 chmod 0700 $INIT_FILE
 cat << EOF > $INIT_FILE
@@ -52,9 +52,9 @@ After=network.target
 
 [Service]
 Type=simple
-User=flectra
-Group=flectra
-ExecStart=/usr/bin/flectra --config $FLECTRA_CONFIGURATION_FILE --logfile $FLECTRA_LOG_FILE
+User=sleektiv
+Group=sleektiv
+ExecStart=/usr/bin/sleektiv --config $FLECTRA_CONFIGURATION_FILE --logfile $FLECTRA_LOG_FILE
 KillMode=mixed
 
 [Install]

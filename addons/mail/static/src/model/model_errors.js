@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/model/model_errors.js', function (require) {
+sleektiv.define('mail/static/src/model/model_errors.js', function (require) {
 'use strict';
 
 class RecordDeletedError extends Error {

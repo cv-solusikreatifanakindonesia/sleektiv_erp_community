@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <data>
         <record id="account_journal_view_inherit" model="ir.ui.view">
             <field name="name">account.journal.kanban.inherit</field>
@@ -16,4 +16,4 @@
             </field>
         </record>
     </data>
-</flectra> 
+</sleektiv> 

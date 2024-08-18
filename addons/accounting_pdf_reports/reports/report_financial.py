@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import time
-from flectra import api, models, _
-from flectra.exceptions import UserError
+from sleektiv import api, models, _
+from sleektiv.exceptions import UserError
 
 
 class ReportFinancial(models.AbstractModel):

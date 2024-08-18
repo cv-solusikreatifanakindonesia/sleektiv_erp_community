@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
 from datetime import datetime, timedelta
 from collections import defaultdict
 
-from flectra import api, fields, models, _
-from flectra.tools import DEFAULT_SERVER_DATETIME_FORMAT, float_compare, float_round
-from flectra.tools.float_utils import float_repr
-from flectra.tools.misc import format_date
-from flectra.exceptions import UserError
+from sleektiv import api, fields, models, _
+from sleektiv.tools import DEFAULT_SERVER_DATETIME_FORMAT, float_compare, float_round
+from sleektiv.tools.float_utils import float_repr
+from sleektiv.tools.misc import format_date
+from sleektiv.exceptions import UserError
 
 
 _logger = logging.getLogger(__name__)

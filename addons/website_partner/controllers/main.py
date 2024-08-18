@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flectra import http
-from flectra.addons.http_routing.models.ir_http import unslug
-from flectra.http import request
+from sleektiv import http
+from sleektiv.addons.http_routing.models.ir_http import unslug
+from sleektiv.http import request
 
 
 class WebsitePartnerPage(http.Controller):

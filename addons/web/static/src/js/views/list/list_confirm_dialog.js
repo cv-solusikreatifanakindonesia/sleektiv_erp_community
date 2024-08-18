@@ -1,4 +1,4 @@
-flectra.define('web.ListConfirmDialog', function (require) {
+sleektiv.define('web.ListConfirmDialog', function (require) {
 "use strict";
 
 const core = require('web.core');

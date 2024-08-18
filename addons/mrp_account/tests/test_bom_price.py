@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.exceptions import UserError
-from flectra.tests import common, Form
+from sleektiv.exceptions import UserError
+from sleektiv.tests import common, Form
 
-from flectra.tools.float_utils import float_round, float_compare
+from sleektiv.tools.float_utils import float_round, float_compare
 
 
 class TestBom(common.TransactionCase):

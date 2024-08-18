@@ -6,7 +6,7 @@ define([
     'summernote/core/range'
 ], function (list, dom, key, agent, range) {
     // FLECTRA override: use 0.8.10 version of this, adapted for the old summernote
-    // version flectra is using
+    // version sleektiv is using
     var Clipboard = function (handler) {
         /**
          * paste by clipboard event

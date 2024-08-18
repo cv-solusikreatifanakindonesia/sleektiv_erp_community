@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import logging
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import ValidationError, UserError
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.addons.website.models import ir_http
-from flectra.tools.translate import html_translate
-from flectra.osv import expression
+from sleektiv import api, fields, models, tools, _
+from sleektiv.exceptions import ValidationError, UserError
+from sleektiv.addons.http_routing.models.ir_http import slug
+from sleektiv.addons.website.models import ir_http
+from sleektiv.tools.translate import html_translate
+from sleektiv.osv import expression
 from psycopg2.extras import execute_values
 
 _logger = logging.getLogger(__name__)
@@ -55,7 +55,7 @@ class ProductPricelist(models.Model):
         if data.get('company_id') and not data.get('website_id'):
             # l10n modules install will change the company currency, creating a
             # pricelist for that currency. Do not use user's company in that
-            # case as module install are done with FlectraBot (company 1)
+            # case as module install are done with SleektivBot (company 1)
             self = self.with_context(default_company_id=data['company_id'])
         res = super(ProductPricelist, self).create(data)
         self.clear_cache()

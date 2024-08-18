@@ -1,4 +1,4 @@
-flectra.define('website_slides.slide.archive', function (require) {
+sleektiv.define('website_slides.slide.archive', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

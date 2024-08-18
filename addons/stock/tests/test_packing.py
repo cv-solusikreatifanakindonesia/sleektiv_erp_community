@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import Form
-from flectra.tests.common import SavepointCase
-from flectra.tools import float_round
-from flectra.exceptions import UserError
+from sleektiv.tests import Form
+from sleektiv.tests.common import SavepointCase
+from sleektiv.tools import float_round
+from sleektiv.exceptions import UserError
 
 
 class TestPackingCommon(SavepointCase):

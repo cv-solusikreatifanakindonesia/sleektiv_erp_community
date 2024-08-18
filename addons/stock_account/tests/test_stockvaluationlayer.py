@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 """ Implementation of "INVENTORY VALUATION TESTS (With valuation layers)" spreadsheet. """
 
-from flectra.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
-from flectra.tests import Form, tagged
-from flectra.tests.common import SavepointCase, TransactionCase
+from sleektiv.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
+from sleektiv.tests import Form, tagged
+from sleektiv.tests.common import SavepointCase, TransactionCase
 
 
 class TestStockValuationCommon(SavepointCase):
@@ -305,7 +305,7 @@ class TestStockValuationStandard(TestStockValuationCommon):
 
     def test_currency_precision_and_standard_svl_value(self):
         currency = self.env['res.currency'].create({
-            'name': 'Flectra',
+            'name': 'Sleektiv',
             'symbol': 'O',
             'rounding': 1,
         })
@@ -773,7 +773,7 @@ class TestStockValuationFIFO(TestStockValuationCommon):
 
     def test_currency_precision_and_fifo_svl_value(self):
         currency = self.env['res.currency'].create({
-            'name': 'Flectra',
+            'name': 'Sleektiv',
             'symbol': 'O',
             'rounding': 1,
         })

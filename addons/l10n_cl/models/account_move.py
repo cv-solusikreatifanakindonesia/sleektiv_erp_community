@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.exceptions import ValidationError
-from flectra import models, fields, api, _
-from flectra.osv import expression
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.exceptions import ValidationError
+from sleektiv import models, fields, api, _
+from sleektiv.osv import expression
 
 SII_VAT = '60805000-0'
 

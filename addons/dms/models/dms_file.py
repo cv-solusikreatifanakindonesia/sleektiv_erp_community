@@ -8,11 +8,11 @@ import json
 import logging
 from collections import defaultdict
 
-from flectra import SUPERUSER_ID, _, api, fields, models, tools
-from flectra.exceptions import AccessError, ValidationError
-from flectra.osv import expression
-from flectra.tools import human_size
-from flectra.tools.mimetypes import guess_mimetype
+from sleektiv import SUPERUSER_ID, _, api, fields, models, tools
+from sleektiv.exceptions import AccessError, ValidationError
+from sleektiv.osv import expression
+from sleektiv.tools import human_size
+from sleektiv.tools.mimetypes import guess_mimetype
 
 from ..tools import file
 

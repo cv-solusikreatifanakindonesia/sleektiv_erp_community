@@ -1,4 +1,4 @@
-flectra.define('im_livechat/static/src/models/partner/partner.js', function (require) {
+sleektiv.define('im_livechat/static/src/models/partner/partner.js', function (require) {
 'use strict';
 
 const {

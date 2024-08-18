@@ -1,4 +1,4 @@
-flectra.define("website.tour.snippet_image_gallery", function (require) {
+sleektiv.define("website.tour.snippet_image_gallery", function (require) {
 "use strict";
 
 const tour = require("web_tour.tour");

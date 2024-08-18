@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.sale_mrp.tests import test_sale_mrp_flow
-from flectra.tests import common, Form
+from sleektiv.addons.sale_mrp.tests import test_sale_mrp_flow
+from sleektiv.tests import common, Form
 
 
 @common.tagged('post_install', '-at_install')

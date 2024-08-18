@@ -1,4 +1,4 @@
-flectra.define("web.env", function (require) {
+sleektiv.define("web.env", function (require) {
     "use strict";
 
     /**

@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.tests.FloorScreen', function (require) {
+sleektiv.define('pos_restaurant.tests.FloorScreen', function (require) {
     'use strict';
 
     const PosComponent = require('point_of_sale.PosComponent');

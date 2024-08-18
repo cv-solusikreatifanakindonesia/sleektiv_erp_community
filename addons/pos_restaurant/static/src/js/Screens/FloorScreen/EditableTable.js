@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.EditableTable', function(require) {
+sleektiv.define('pos_restaurant.EditableTable', function(require) {
     'use strict';
 
     const { onPatched, onMounted } = owl.hooks;

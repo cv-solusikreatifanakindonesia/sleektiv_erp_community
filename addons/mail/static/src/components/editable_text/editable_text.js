@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/editable_text/editable_text.js', function (require) {
+sleektiv.define('mail/static/src/components/editable_text/editable_text.js', function (require) {
 'use strict';
 
 const { markEventHandled } = require('mail/static/src/utils/utils.js');

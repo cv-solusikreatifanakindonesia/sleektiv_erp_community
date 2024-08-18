@@ -1,4 +1,4 @@
-flectra.define("stock.orderpoint_tests", function (require) {
+sleektiv.define("stock.orderpoint_tests", function (require) {
     "use strict";
 
     const { createView, dom, nextTick } = require("web.test_utils");

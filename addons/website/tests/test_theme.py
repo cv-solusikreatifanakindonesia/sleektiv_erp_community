@@ -1,5 +1,5 @@
 # coding: utf-8
-from flectra.tests import common, tagged
+from sleektiv.tests import common, tagged
 
 
 @tagged('-at_install', 'post_install')

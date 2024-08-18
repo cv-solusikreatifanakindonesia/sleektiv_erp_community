@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import hashlib
 import hmac
@@ -8,11 +8,11 @@ from unicodedata import normalize
 import psycopg2
 import werkzeug
 
-from flectra import http, _
-from flectra.http import request
-from flectra.osv import expression
-from flectra.tools import DEFAULT_SERVER_DATETIME_FORMAT, consteq, ustr
-from flectra.tools.float_utils import float_repr
+from sleektiv import http, _
+from sleektiv.http import request
+from sleektiv.osv import expression
+from sleektiv.tools import DEFAULT_SERVER_DATETIME_FORMAT, consteq, ustr
+from sleektiv.tools.float_utils import float_repr
 from datetime import datetime, timedelta
 
 

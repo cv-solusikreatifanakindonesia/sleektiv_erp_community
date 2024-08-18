@@ -1,4 +1,4 @@
-flectra.define('website.snippet.editor', function (require) {
+sleektiv.define('website.snippet.editor', function (require) {
 'use strict';
 
 const {qweb, _t, _lt} = require('web.core');
@@ -163,7 +163,7 @@ weSnippetEditor.Class.include({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      * @param {string} gmapRequestEventName
      */
     async _handleGMapRequest(ev, gmapRequestEventName) {
@@ -192,14 +192,14 @@ weSnippetEditor.Class.include({
 
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onGMapAPIRequest(ev) {
         this._handleGMapRequest(ev, 'gmap_api_request');
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onGMapAPIKeyRequest(ev) {
         this._handleGMapRequest(ev, 'gmap_api_key_request');

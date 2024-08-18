@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/discuss_sidebar_item/discuss_sidebar_item.js', function (require) {
+sleektiv.define('mail/static/src/components/discuss_sidebar_item/discuss_sidebar_item.js', function (require) {
 'use strict';
 
 const components = {

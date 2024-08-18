@@ -1,4 +1,4 @@
-flectra.define('mass_mailing.mass_mailing_tour', function (require) {
+sleektiv.define('mass_mailing.mass_mailing_tour', function (require) {
     "use strict";
 
     var core = require('web.core');

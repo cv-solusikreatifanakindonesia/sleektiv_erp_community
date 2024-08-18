@@ -1,4 +1,4 @@
-flectra.define('web.PivotRenderer', function (require) {
+sleektiv.define('web.PivotRenderer', function (require) {
     "use strict";
 
     const OwlAbstractRenderer = require('web.AbstractRendererOwl');

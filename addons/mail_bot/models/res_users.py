@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, fields
+from sleektiv import models, fields
 
 class Users(models.Model):
     _inherit = 'res.users'
@@ -15,7 +15,7 @@ class Users(models.Model):
             ('onboarding_ping', 'Onboarding ping'),
             ('idle', 'Idle'),
             ('disabled', 'Disabled'),
-        ], string="FlectraBot Status", readonly=True, required=False)  # keep track of the state: correspond to the code of the last message sent
+        ], string="SleektivBot Status", readonly=True, required=False)  # keep track of the state: correspond to the code of the last message sent
     flectrabot_failed = fields.Boolean(readonly=True)
 
     def __init__(self, pool, cr):

@@ -1,4 +1,4 @@
-flectra.define('web.ProgressCard', function (require) {
+sleektiv.define('web.ProgressCard', function (require) {
 'use strict';
 
 const { _t } = require('web.core');

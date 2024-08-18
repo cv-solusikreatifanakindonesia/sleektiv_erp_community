@@ -1,4 +1,4 @@
-flectra.define('website_slides.category.add', function (require) {
+sleektiv.define('website_slides.category.add', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

@@ -1,4 +1,4 @@
-flectra.define('website.tour.focus_blur_snippets', function (require) {
+sleektiv.define('website.tour.focus_blur_snippets', function (require) {
 'use strict';
 
 const ajax = require('web.ajax');

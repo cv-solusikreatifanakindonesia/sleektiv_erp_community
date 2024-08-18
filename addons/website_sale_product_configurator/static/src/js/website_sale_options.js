@@ -1,4 +1,4 @@
-flectra.define('website_sale_options.website_sale', function (require) {
+sleektiv.define('website_sale_options.website_sale', function (require) {
 'use strict';
 
 var ajax = require('web.ajax');

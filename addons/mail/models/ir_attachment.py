@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models
-from flectra.exceptions import AccessError
-from flectra.http import request
+from sleektiv import api, models
+from sleektiv.exceptions import AccessError
+from sleektiv.http import request
 
 class IrAttachment(models.Model):
     _inherit = 'ir.attachment'

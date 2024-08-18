@@ -1,4 +1,4 @@
-flectra.define('website.editor.menu', function (require) {
+sleektiv.define('website.editor.menu', function (require) {
 'use strict';
 
 var Dialog = require('web.Dialog');
@@ -12,7 +12,7 @@ var _t = core._t;
 var WysiwygMultizone = Wysiwyg.extend({
     assetLibs: Wysiwyg.prototype.assetLibs.concat(['website.compiled_assets_wysiwyg']),
     _getWysiwygContructor: function () {
-        return flectra.__DEBUG__.services['web_editor.wysiwyg.multizone'];
+        return sleektiv.__DEBUG__.services['web_editor.wysiwyg.multizone'];
     }
 });
 
@@ -222,7 +222,7 @@ var EditorMenu = Widget.extend({
      * Get the cleaned value of the editable element.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onGetCleanHTML: function (ev) {
         ev.data.callback(this.wysiwyg.getValue({$layout: ev.data.$layout}));
@@ -231,7 +231,7 @@ var EditorMenu = Widget.extend({
      * Snippet (menu_data) can request to save the document to leave the page
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      * @param {object} ev.data
      * @param {function} ev.data.onSuccess
      * @param {function} ev.data.onFailure

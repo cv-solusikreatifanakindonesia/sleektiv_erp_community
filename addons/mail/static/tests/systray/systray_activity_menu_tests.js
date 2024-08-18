@@ -1,4 +1,4 @@
-flectra.define('mail.systray.ActivityMenuTests', function (require) {
+sleektiv.define('mail.systray.ActivityMenuTests', function (require) {
 "use strict";
 
 const {

@@ -1,4 +1,4 @@
-flectra.define('web_gantt.GanttController', function (require) {
+sleektiv.define('web_gantt.GanttController', function (require) {
 "use strict";
 
 

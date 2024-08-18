@@ -1,4 +1,4 @@
-flectra.define('web.widget_tests', function (require) {
+sleektiv.define('web.widget_tests', function (require) {
 "use strict";
 
 var AjaxService = require('web.AjaxService');

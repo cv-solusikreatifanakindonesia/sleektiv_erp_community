@@ -5,8 +5,8 @@
 import base64
 import os
 
-from flectra import api, fields, models
-from flectra.modules.module import get_resource_path
+from sleektiv import api, fields, models
+from sleektiv.modules.module import get_resource_path
 
 
 class Thumbnail(models.AbstractModel):

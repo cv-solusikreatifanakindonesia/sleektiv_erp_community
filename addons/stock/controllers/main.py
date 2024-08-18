@@ -2,10 +2,10 @@
 import werkzeug
 from werkzeug.exceptions import InternalServerError
 
-from flectra import http
-from flectra.http import request
-from flectra.addons.web.controllers.main import _serialize_exception
-from flectra.tools.misc import html_escape
+from sleektiv import http
+from sleektiv.http import request
+from sleektiv.addons.web.controllers.main import _serialize_exception
+from sleektiv.tools.misc import html_escape
 
 import json
 
@@ -33,7 +33,7 @@ class StockReportController(http.Controller):
             se = _serialize_exception(e)
             error = {
                 'code': 200,
-                'message': 'Flectra Server Error',
+                'message': 'Sleektiv Server Error',
                 'data': se
             }
             res = request.make_response(html_escape(json.dumps(error)))

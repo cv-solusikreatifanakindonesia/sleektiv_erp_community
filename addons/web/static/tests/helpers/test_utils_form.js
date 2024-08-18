@@ -1,4 +1,4 @@
-flectra.define('web.test_utils_form', function (require) {
+sleektiv.define('web.test_utils_form', function (require) {
 "use strict";
 
 /**

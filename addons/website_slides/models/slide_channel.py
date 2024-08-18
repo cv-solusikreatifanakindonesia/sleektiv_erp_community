@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import uuid
 from collections import defaultdict
@@ -7,10 +7,10 @@ from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 import ast
 
-from flectra import api, fields, models, tools, _
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.exceptions import AccessError
-from flectra.osv import expression
+from sleektiv import api, fields, models, tools, _
+from sleektiv.addons.http_routing.models.ir_http import slug
+from sleektiv.exceptions import AccessError
+from sleektiv.osv import expression
 
 
 class ChannelUsersRelation(models.Model):

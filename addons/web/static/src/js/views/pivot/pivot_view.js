@@ -1,4 +1,4 @@
-flectra.define('web.PivotView', function (require) {
+sleektiv.define('web.PivotView', function (require) {
     "use strict";
 
     /**

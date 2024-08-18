@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.sale_stock.tests.test_anglo_saxon_valuation_reconciliation import TestValuationReconciliation
-from flectra.tests import tagged
+from sleektiv.addons.sale_stock.tests.test_anglo_saxon_valuation_reconciliation import TestValuationReconciliation
+from sleektiv.tests import tagged
 
 @tagged('post_install', '-at_install')
 class TestAngloSaxonAccounting(TestValuationReconciliation):

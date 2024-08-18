@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 from contextlib import contextmanager
@@ -7,24 +7,24 @@ from functools import wraps
 import pytz
 from dateutil.parser import parse
 
-from flectra import api, fields, models, registry
-from flectra.tools import ormcache_context
-from flectra.exceptions import UserError
-from flectra.osv import expression
+from sleektiv import api, fields, models, registry
+from sleektiv.tools import ormcache_context
+from sleektiv.exceptions import UserError
+from sleektiv.osv import expression
 
-from flectra.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from flectra.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
-from flectra.addons.microsoft_calendar.utils.event_id_storage import IDS_SEPARATOR, combine_ids, split_ids
-from flectra.addons.microsoft_account.models.microsoft_service import TIMEOUT
+from sleektiv.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from sleektiv.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from sleektiv.addons.microsoft_calendar.utils.event_id_storage import IDS_SEPARATOR, combine_ids, split_ids
+from sleektiv.addons.microsoft_account.models.microsoft_service import TIMEOUT
 
 _logger = logging.getLogger(__name__)
 
 MAX_RECURRENT_EVENT = 720
 
 # API requests are sent to Microsoft Calendar after the current transaction ends.
-# This ensures changes are sent to Microsoft only if they really happened in the Flectra database.
+# This ensures changes are sent to Microsoft only if they really happened in the Sleektiv database.
 # It is particularly important for event creation , otherwise the event might be created
-# twice in Microsoft if the first creation crashed in Flectra.
+# twice in Microsoft if the first creation crashed in Sleektiv.
 def after_commit(func):
     @wraps(func)
     def wrapped(self, *args, **kwargs):
@@ -178,7 +178,7 @@ class MicrosoftSync(models.AbstractModel):
             return self.browse()
         return self.search([('ms_universal_event_id', 'in', uids)])
 
-    def _sync_flectra2microsoft(self):
+    def _sync_sleektiv2microsoft(self):
         if not self:
             return
         if self._active_name:
@@ -210,7 +210,7 @@ class MicrosoftSync(models.AbstractModel):
         self.microsoft_id = False
         self.unlink()
 
-    def _sync_recurrence_microsoft2flectra(self, microsoft_events, new_events=None):
+    def _sync_recurrence_microsoft2sleektiv(self, microsoft_events, new_events=None):
         recurrent_masters = new_events.filter(lambda e: e.is_recurrence()) if new_events else []
         recurrents = new_events.filter(lambda e: e.is_recurrent_not_master()) if new_events else []
         default_values = {'need_sync_m': False}
@@ -221,7 +221,7 @@ class MicrosoftSync(models.AbstractModel):
         # --- create new recurrences and associated events ---
         for recurrent_master in recurrent_masters:
             new_calendar_recurrence = dict(
-                self.env['calendar.recurrence']._microsoft_to_flectra_values(recurrent_master, default_values, with_ids=True),
+                self.env['calendar.recurrence']._microsoft_to_sleektiv_values(recurrent_master, default_values, with_ids=True),
                 need_sync_m=False
             )
             to_create = recurrents.filter(
@@ -229,7 +229,7 @@ class MicrosoftSync(models.AbstractModel):
             )
             recurrents -= to_create
             base_values = dict(
-                self.env['calendar.event']._microsoft_to_flectra_values(recurrent_master, default_values, with_ids=True),
+                self.env['calendar.event']._microsoft_to_sleektiv_values(recurrent_master, default_values, with_ids=True),
                 need_sync_m=False
             )
             to_create_values = []
@@ -237,16 +237,16 @@ class MicrosoftSync(models.AbstractModel):
                 to_create = list(to_create)[:MAX_RECURRENT_EVENT]
             for recurrent_event in to_create:
                 if recurrent_event.type == 'occurrence':
-                    value = self.env['calendar.event']._microsoft_to_flectra_recurrence_values(recurrent_event, base_values)
+                    value = self.env['calendar.event']._microsoft_to_sleektiv_recurrence_values(recurrent_event, base_values)
                 else:
-                    value = self.env['calendar.event']._microsoft_to_flectra_values(recurrent_event, default_values)
+                    value = self.env['calendar.event']._microsoft_to_sleektiv_values(recurrent_event, default_values)
 
                 to_create_values += [dict(value, need_sync_m=False)]
 
             new_calendar_recurrence['calendar_event_ids'] = [(0, 0, to_create_value) for to_create_value in to_create_values]
-            new_recurrence_flectra = self.env['calendar.recurrence'].create(new_calendar_recurrence)
-            new_recurrence_flectra.base_event_id = new_recurrence_flectra.calendar_event_ids[0] if new_recurrence_flectra.calendar_event_ids else False
-            new_recurrence |= new_recurrence_flectra
+            new_recurrence_sleektiv = self.env['calendar.recurrence'].create(new_calendar_recurrence)
+            new_recurrence_sleektiv.base_event_id = new_recurrence_sleektiv.calendar_event_ids[0] if new_recurrence_sleektiv.calendar_event_ids else False
+            new_recurrence |= new_recurrence_sleektiv
 
         # --- update events in existing recurrences ---
         # Important note:
@@ -266,11 +266,11 @@ class MicrosoftSync(models.AbstractModel):
             to_update = recurrents.filter(lambda e: e.seriesMasterId == recurrent_master_id)
             for recurrent_event in to_update:
                 if recurrent_event.type == 'occurrence':
-                    value = self.env['calendar.event']._microsoft_to_flectra_recurrence_values(
+                    value = self.env['calendar.event']._microsoft_to_sleektiv_recurrence_values(
                         recurrent_event, {'need_sync_m': False}
                     )
                 else:
-                    value = self.env['calendar.event']._microsoft_to_flectra_values(recurrent_event, default_values)
+                    value = self.env['calendar.event']._microsoft_to_sleektiv_values(recurrent_event, default_values)
                 existing_event = recurrence_id.calendar_event_ids.filtered(
                     lambda e: e._is_matching_timeslot(value['start'], value['stop'], recurrent_event.isAllDay)
                 )
@@ -285,7 +285,7 @@ class MicrosoftSync(models.AbstractModel):
 
     def _update_microsoft_recurrence(self, recurrence, events):
         """
-        Update Flectra events from Outlook recurrence and events.
+        Update Sleektiv events from Outlook recurrence and events.
         """
         # get the list of events to update ...
         events_to_update = events.filter(lambda e: e.seriesMasterId == self.ms_organizer_event_id)
@@ -297,9 +297,9 @@ class MicrosoftSync(models.AbstractModel):
         update_events = self.env['calendar.event']
         for e in events_to_update:
             if e.type == "exception":
-                event_values = self.env['calendar.event']._microsoft_to_flectra_values(e)
+                event_values = self.env['calendar.event']._microsoft_to_sleektiv_values(e)
             elif e.type == "occurrence":
-                event_values = self.env['calendar.event']._microsoft_to_flectra_recurrence_values(e)
+                event_values = self.env['calendar.event']._microsoft_to_sleektiv_recurrence_values(e)
             else:
                 event_values = None
 
@@ -310,11 +310,11 @@ class MicrosoftSync(models.AbstractModel):
                         event_values, need_sync_m=False
                     )
 
-                flectra_event = self.env['calendar.event'].browse(e.flectra_id(self.env)).exists().with_context(
+                sleektiv_event = self.env['calendar.event'].browse(e.sleektiv_id(self.env)).exists().with_context(
                     no_mail_to_attendees=True, mail_create_nolog=True
                 )
-                flectra_event.write(dict(event_values, need_sync_m=False))
-                update_events |= flectra_event
+                sleektiv_event.write(dict(event_values, need_sync_m=False))
+                update_events |= sleektiv_event
 
         # update the recurrence
         detached_events = self._apply_recurrence(rec_values)
@@ -323,24 +323,24 @@ class MicrosoftSync(models.AbstractModel):
         return update_events
 
     @api.model
-    def _sync_microsoft2flectra(self, microsoft_events: MicrosoftEvent):
+    def _sync_microsoft2sleektiv(self, microsoft_events: MicrosoftEvent):
         """
-        Synchronize Microsoft recurrences in Flectra.
+        Synchronize Microsoft recurrences in Sleektiv.
         Creates new recurrences, updates existing ones.
-        :return: synchronized flectra
+        :return: synchronized sleektiv
         """
-        existing = microsoft_events.match_with_flectra_events(self.env)
+        existing = microsoft_events.match_with_sleektiv_events(self.env)
         cancelled = microsoft_events.cancelled()
         new = microsoft_events - existing - cancelled
         new_recurrence = new.filter(lambda e: e.is_recurrent())
 
         # create new events and reccurrences
-        flectra_values = [
-            dict(self._microsoft_to_flectra_values(e, with_ids=True), need_sync_m=False)
+        sleektiv_values = [
+            dict(self._microsoft_to_sleektiv_values(e, with_ids=True), need_sync_m=False)
             for e in (new - new_recurrence)
         ]
-        synced_events = self.with_context(dont_notify=True)._create_from_microsoft(new, flectra_values)
-        synced_recurrences, updated_events = self._sync_recurrence_microsoft2flectra(existing, new_recurrence)
+        synced_events = self.with_context(dont_notify=True)._create_from_microsoft(new, sleektiv_values)
+        synced_recurrences, updated_events = self._sync_recurrence_microsoft2sleektiv(existing, new_recurrence)
         synced_events |= updated_events
 
         # remove cancelled events and recurrences
@@ -350,7 +350,7 @@ class MicrosoftSync(models.AbstractModel):
             ('ms_organizer_event_id', 'in', cancelled.ids),
         ])
         cancelled_events = self.browse([
-            e.flectra_id(self.env)
+            e.sleektiv_id(self.env)
             for e in cancelled
             if e.id not in [r.ms_organizer_event_id for r in cancelled_recurrences]
         ])
@@ -364,26 +364,26 @@ class MicrosoftSync(models.AbstractModel):
         # update other events
         for mevent in (existing - cancelled).filter(lambda e: e.lastModifiedDateTime):
             # Last updated wins.
-            # This could be dangerous if microsoft server time and flectra server time are different
+            # This could be dangerous if microsoft server time and sleektiv server time are different
             if mevent.is_recurrence():
-                flectra_event = self.env['calendar.recurrence'].browse(mevent.flectra_id(self.env)).exists()
+                sleektiv_event = self.env['calendar.recurrence'].browse(mevent.sleektiv_id(self.env)).exists()
             else:
-                flectra_event = self.browse(mevent.flectra_id(self.env)).exists()
+                sleektiv_event = self.browse(mevent.sleektiv_id(self.env)).exists()
 
-            if flectra_event:
-                flectra_event_updated_time = pytz.utc.localize(flectra_event.write_date)
+            if sleektiv_event:
+                sleektiv_event_updated_time = pytz.utc.localize(sleektiv_event.write_date)
                 ms_event_updated_time = parse(mevent.lastModifiedDateTime)
 
-                if ms_event_updated_time >= flectra_event_updated_time:
-                    vals = dict(flectra_event._microsoft_to_flectra_values(mevent), need_sync_m=False)
-                    flectra_event._write_from_microsoft(mevent, vals)
+                if ms_event_updated_time >= sleektiv_event_updated_time:
+                    vals = dict(sleektiv_event._microsoft_to_sleektiv_values(mevent), need_sync_m=False)
+                    sleektiv_event._write_from_microsoft(mevent, vals)
 
-                    if flectra_event._name == 'calendar.recurrence':
-                        update_events = flectra_event._update_microsoft_recurrence(mevent, microsoft_events)
-                        synced_recurrences |= flectra_event
+                    if sleektiv_event._name == 'calendar.recurrence':
+                        update_events = sleektiv_event._update_microsoft_recurrence(mevent, microsoft_events)
+                        synced_recurrences |= sleektiv_event
                         synced_events |= update_events
                     else:
-                        synced_events |= flectra_event
+                        synced_events |= sleektiv_event
 
         return synced_events, synced_recurrences
 
@@ -394,7 +394,7 @@ class MicrosoftSync(models.AbstractModel):
     @after_commit
     def _microsoft_delete(self, user_id, event_id, timeout=TIMEOUT):
         """
-        Once the event has been really removed from the Flectra database, remove it from the Outlook calendar.
+        Once the event has been really removed from the Sleektiv database, remove it from the Outlook calendar.
 
         Note that all self attributes to use in this method must be provided as method parameters because
         'self' won't exist when this method will be really called due to @after_commit decorator.
@@ -407,7 +407,7 @@ class MicrosoftSync(models.AbstractModel):
     @after_commit
     def _microsoft_patch(self, user_id, event_id, values, timeout=TIMEOUT):
         """
-        Once the event has been really modified in the Flectra database, modify it in the Outlook calendar.
+        Once the event has been really modified in the Sleektiv database, modify it in the Outlook calendar.
 
         Note that all self attributes to use in this method must be provided as method parameters because
         'self' may have been modified between the call of '_microsoft_patch' and its execution,
@@ -425,7 +425,7 @@ class MicrosoftSync(models.AbstractModel):
     @after_commit
     def _microsoft_insert(self, values, timeout=TIMEOUT):
         """
-        Once the event has been really added in the Flectra database, add it in the Outlook calendar.
+        Once the event has been really added in the Sleektiv database, add it in the Outlook calendar.
 
         Note that all self attributes to use in this method must be provided as method parameters because
         'self' may have been modified between the call of '_microsoft_insert' and its execution,
@@ -460,7 +460,7 @@ class MicrosoftSync(models.AbstractModel):
 
     def _get_microsoft_records_to_sync(self, full_sync=False):
         """
-        Return records that should be synced from Flectra to Microsoft
+        Return records that should be synced from Sleektiv to Microsoft
         :param full_sync: If True, all events attended by the user are returned
         :return: events
         """
@@ -475,13 +475,13 @@ class MicrosoftSync(models.AbstractModel):
         return self.with_context(active_test=False).search(domain)
 
     @api.model
-    def _microsoft_to_flectra_values(
+    def _microsoft_to_sleektiv_values(
         self, microsoft_event: MicrosoftEvent, default_reminders=(), default_values=None, with_ids=False
     ):
         """
-        Implements this method to return a dict of Flectra values corresponding
+        Implements this method to return a dict of Sleektiv values corresponding
         to the Microsoft event given as parameter
-        :return: dict of Flectra formatted values
+        :return: dict of Sleektiv formatted values
         """
         raise NotImplementedError()
 

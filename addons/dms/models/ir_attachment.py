@@ -1,5 +1,5 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
-from flectra import api, models
+from sleektiv import api, models
 
 
 class IrAttachment(models.Model):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from flectra import models, api, _
-from flectra.exceptions import UserError
+from sleektiv import models, api, _
+from sleektiv.exceptions import UserError
 
-from flectra.tools import float_compare
+from sleektiv.tools import float_compare
 
 
 class IrActionsReport(models.Model):

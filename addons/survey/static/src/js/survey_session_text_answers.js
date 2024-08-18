@@ -1,4 +1,4 @@
-flectra.define('survey.session_text_answers', function (require) {
+sleektiv.define('survey.session_text_answers', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

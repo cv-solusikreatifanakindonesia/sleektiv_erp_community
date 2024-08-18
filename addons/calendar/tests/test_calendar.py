@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import datetime
 
 from datetime import datetime, timedelta, time
 
-from flectra import fields
-from flectra.tests import Form
-from flectra.addons.base.tests.common import SavepointCaseWithUserDemo
+from sleektiv import fields
+from sleektiv.tests import Form
+from sleektiv.addons.base.tests.common import SavepointCaseWithUserDemo
 import pytz
 import re
 
@@ -22,9 +22,9 @@ class TestCalendar(SavepointCaseWithUserDemo):
             'privacy': 'private',
             'start': '2011-04-30 16:00:00',
             'stop': '2011-04-30 18:30:00',
-            'description': 'The Technical Presentation will cover following topics:\n* Creating Flectra class\n* Views\n* Wizards\n* Workflows',
+            'description': 'The Technical Presentation will cover following topics:\n* Creating Sleektiv class\n* Views\n* Wizards\n* Workflows',
             'duration': 2.5,
-            'location': 'FlectraHQ, Inc., Odoo S.A.',
+            'location': 'SleektivHQ, Inc., Odoo S.A.',
             'name': 'Technical Presentation'
         })
 

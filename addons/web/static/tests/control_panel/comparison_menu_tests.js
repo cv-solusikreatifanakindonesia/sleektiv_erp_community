@@ -1,4 +1,4 @@
-flectra.define('web.comparison_menu_tests', function (require) {
+sleektiv.define('web.comparison_menu_tests', function (require) {
     "use strict";
 
     const {

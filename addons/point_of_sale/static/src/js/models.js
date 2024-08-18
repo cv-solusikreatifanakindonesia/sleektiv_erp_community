@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.models', function (require) {
+sleektiv.define('point_of_sale.models', function (require) {
 "use strict";
 
 const { Context } = owl;
@@ -293,7 +293,7 @@ exports.PosModel = Backbone.Model.extend({
         },
         loaded: function(self, pos_sessions, tmp){
             self.pos_session = pos_sessions[0];
-            self.pos_session.login_number = flectra.login_number;
+            self.pos_session.login_number = sleektiv.login_number;
             self.config_id = self.config_id || self.pos_session && self.pos_session.config_id[0];
             tmp.payment_method_ids = pos_sessions[0].payment_method_ids;
         },
@@ -1563,7 +1563,7 @@ exports.PosModel = Backbone.Model.extend({
      * Directly calls the requested service, instead of triggering a
      * 'call_service' event up, which wouldn't work as services have no parent
      *
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _trigger_up: function (ev) {
         if (ev.is_stopped()) {

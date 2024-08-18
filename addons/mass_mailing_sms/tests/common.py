@@ -3,9 +3,9 @@
 import re
 import werkzeug
 
-from flectra import tools
-from flectra.addons.mass_mailing.tests.common import MassMailCommon
-from flectra.addons.sms.tests.common import SMSCase, SMSCommon
+from sleektiv import tools
+from sleektiv.addons.mass_mailing.tests.common import MassMailCommon
+from sleektiv.addons.sms.tests.common import SMSCase, SMSCommon
 
 
 class MassSMSCase(SMSCase):

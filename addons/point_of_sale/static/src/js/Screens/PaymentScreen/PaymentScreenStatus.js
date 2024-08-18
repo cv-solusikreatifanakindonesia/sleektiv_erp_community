@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.PaymentScreenStatus', function(require) {
+sleektiv.define('point_of_sale.PaymentScreenStatus', function(require) {
     'use strict';
 
     const PosComponent = require('point_of_sale.PosComponent');

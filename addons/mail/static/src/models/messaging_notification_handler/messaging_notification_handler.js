@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/models/messaging_notification_handler/messaging_notification_handler.js', function (require) {
+sleektiv.define('mail/static/src/models/messaging_notification_handler/messaging_notification_handler.js', function (require) {
 'use strict';
 
 const { registerNewModel } = require('mail/static/src/model/model_core.js');
@@ -247,7 +247,7 @@ function factory(dependencies) {
             }
 
             // Message from mailing channel should not make a notification in
-            // Flectra for users with notification "Handled by Email".
+            // Sleektiv for users with notification "Handled by Email".
             // Channel has been marked as read server-side in this case, so
             // it should not display a notification by incrementing the
             // unread counter.
@@ -263,16 +263,16 @@ function factory(dependencies) {
             }
             // In all other cases: update counter and notify if necessary
 
-            // Chat from FlectraBot is considered disturbing and should only be
+            // Chat from SleektivBot is considered disturbing and should only be
             // shown on the menu, but no notification and no thread open.
-            const isChatWithFlectraBot = (
+            const isChatWithSleektivBot = (
                 channel.correspondent &&
                 channel.correspondent === this.env.messaging.partnerRoot
             );
-            if (!isChatWithFlectraBot) {
-                const isFlectraFocused = this.env.services['bus_service'].isFlectraFocused();
+            if (!isChatWithSleektivBot) {
+                const isSleektivFocused = this.env.services['bus_service'].isSleektivFocused();
                 // Notify if out of focus
-                if (!isFlectraFocused && channel.isChatChannel) {
+                if (!isSleektivFocused && channel.isChatChannel) {
                     this._notifyNewChannelMessageWhileOutOfFocus({
                         channel,
                         message,

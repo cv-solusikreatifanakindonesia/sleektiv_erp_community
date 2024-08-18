@@ -1,4 +1,4 @@
-flectra.define("website.tour.unsplash_beacon", function (require) {
+sleektiv.define("website.tour.unsplash_beacon", function (require) {
 "use strict";
 
 const tour = require("web_tour.tour");

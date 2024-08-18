@@ -1,4 +1,4 @@
-flectra.define('website_event.set_customize_options', function (require) {
+sleektiv.define('website_event.set_customize_options', function (require) {
 "use strict";
 
 var CustomizeMenu = require('website.customizeMenu');

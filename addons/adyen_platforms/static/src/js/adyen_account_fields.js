@@ -1,4 +1,4 @@
-flectra.define('adyen_platforms.fields', function (require) {
+sleektiv.define('adyen_platforms.fields', function (require) {
 "use strict";
 
 var core = require('web.core');

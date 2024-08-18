@@ -1,1 +1,1 @@
-flectra.__enable_summernote__ = true;
+sleektiv.__enable_summernote__ = true;

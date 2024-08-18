@@ -1,4 +1,4 @@
-flectra.define('web.OrgChart', function (require) {
+sleektiv.define('web.OrgChart', function (require) {
 "use strict";
 
 var AbstractField = require('web.AbstractField');

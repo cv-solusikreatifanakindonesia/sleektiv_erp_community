@@ -1,4 +1,4 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
@@ -8,9 +8,9 @@ from lxml import etree
 import re
 import werkzeug.urls
 
-from flectra import api, models
-from flectra.tools import misc
-from flectra.addons.google_account import TIMEOUT
+from sleektiv import api, models
+from sleektiv.tools import misc
+from sleektiv.addons.google_account import TIMEOUT
 
 _logger = logging.getLogger(__name__)
 

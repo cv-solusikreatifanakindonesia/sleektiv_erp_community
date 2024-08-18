@@ -1,4 +1,4 @@
-flectra.define('sale_management.sale_management', function (require) {
+sleektiv.define('sale_management.sale_management', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

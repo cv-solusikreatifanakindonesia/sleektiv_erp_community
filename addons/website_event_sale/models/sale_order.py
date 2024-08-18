@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, models, _
-from flectra.exceptions import UserError
-from flectra.osv import expression
+from sleektiv import api, models, _
+from sleektiv.exceptions import UserError
+from sleektiv.osv import expression
 
 
 class SaleOrder(models.Model):

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import pytz
 
-from flectra import api, fields, models
-from flectra.osv import expression
+from sleektiv import api, fields, models
+from sleektiv.osv import expression
 
 from .lunch_supplier import float_to_time
 from datetime import datetime, timedelta
 
-from flectra.addons.base.models.res_partner import _tz_get
+from sleektiv.addons.base.models.res_partner import _tz_get
 
 WEEKDAY_TO_NAME = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 

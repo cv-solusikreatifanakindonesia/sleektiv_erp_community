@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import OrderedDict
 from dateutil.relativedelta import relativedelta
 from operator import itemgetter
 
-from flectra import fields, http, _
-from flectra.http import request
-from flectra.tools import date_utils, groupby as groupbyelem
-from flectra.osv.expression import AND, OR
+from sleektiv import fields, http, _
+from sleektiv.http import request
+from sleektiv.tools import date_utils, groupby as groupbyelem
+from sleektiv.osv.expression import AND, OR
 
-from flectra.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from sleektiv.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
 
 
 class TimesheetCustomerPortal(CustomerPortal):

@@ -1,4 +1,4 @@
-flectra.define('web.Signature', function (require) {
+sleektiv.define('web.Signature', function (require) {
     "use strict";
 
     var AbstractFieldBinary = require('web.basic_fields').AbstractFieldBinary;

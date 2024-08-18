@@ -1,4 +1,4 @@
-flectra.define('stock.popover_widget_tests', function (require) {
+sleektiv.define('stock.popover_widget_tests', function (require) {
 "use strict";
 
 var testUtils = require('web.test_utils');

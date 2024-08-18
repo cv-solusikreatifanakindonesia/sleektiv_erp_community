@@ -1,4 +1,4 @@
-flectra.define('stock.StockOrderpointListModel', function (require) {
+sleektiv.define('stock.StockOrderpointListModel', function (require) {
 "use strict";
 
 var core = require('web.core');

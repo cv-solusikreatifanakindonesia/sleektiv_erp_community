@@ -1,5 +1,5 @@
-from flectra import models, fields, _
-from flectra.tools import format_date
+from sleektiv import models, fields, _
+from sleektiv.tools import format_date
 
 
 class BaseDocumentLayout(models.TransientModel):

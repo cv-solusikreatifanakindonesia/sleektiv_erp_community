@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra.tests.common import TransactionCase, tagged
+from sleektiv.tests.common import TransactionCase, tagged
 from unittest import skipIf
 import os
 

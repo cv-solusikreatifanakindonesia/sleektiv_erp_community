@@ -1,4 +1,4 @@
-flectra.define('google_drive.MockServer', function (require) {
+sleektiv.define('google_drive.MockServer', function (require) {
     'use strict';
 
     var MockServer = require('web.MockServer');

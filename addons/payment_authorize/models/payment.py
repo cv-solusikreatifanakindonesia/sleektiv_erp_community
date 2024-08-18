@@ -7,11 +7,11 @@ import hmac
 import logging
 import time
 
-from flectra import _, api, fields, models
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.addons.payment_authorize.controllers.main import AuthorizeController
-from flectra.tools.float_utils import float_compare, float_repr
-from flectra.exceptions import UserError
+from sleektiv import _, api, fields, models
+from sleektiv.addons.payment.models.payment_acquirer import ValidationError
+from sleektiv.addons.payment_authorize.controllers.main import AuthorizeController
+from sleektiv.tools.float_utils import float_compare, float_repr
+from sleektiv.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 

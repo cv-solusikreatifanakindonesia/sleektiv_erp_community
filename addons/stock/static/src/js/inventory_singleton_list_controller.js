@@ -1,4 +1,4 @@
-flectra.define('stock.SingletonListController', function (require) {
+sleektiv.define('stock.SingletonListController', function (require) {
 "use strict";
 
 var core = require('web.core');

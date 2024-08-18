@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/widgets/messaging_menu/messaging_menu.js', function (require) {
+sleektiv.define('mail/static/src/widgets/messaging_menu/messaging_menu.js', function (require) {
 'use strict';
 
 const components = {
@@ -9,7 +9,7 @@ const SystrayMenu = require('web.SystrayMenu');
 const Widget = require('web.Widget');
 
 /**
- * Flectra Widget, necessary to instantiate component.
+ * Sleektiv Widget, necessary to instantiate component.
  */
 const MessagingMenu = Widget.extend({
     template: 'mail.widgets.MessagingMenu',

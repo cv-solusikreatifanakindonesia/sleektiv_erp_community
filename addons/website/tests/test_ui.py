@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-import flectra
-import flectra.tests
+import sleektiv
+import sleektiv.tests
 
 
-@flectra.tests.tagged('-at_install', 'post_install')
-class TestUiCustomizeTheme(flectra.tests.HttpCase):
+@sleektiv.tests.tagged('-at_install', 'post_install')
+class TestUiCustomizeTheme(sleektiv.tests.HttpCase):
     def test_01_attachment_website_unlink(self):
         ''' Some ir.attachment needs to be unlinked when a website is unlink,
             otherwise some flows will just crash. That's the case when 2 website
@@ -56,8 +56,8 @@ class TestUiCustomizeTheme(flectra.tests.HttpCase):
         self.assertFalse(so_attachment.website_id, 'Website should be removed')
 
 
-@flectra.tests.tagged('-at_install', 'post_install')
-class TestUiHtmlEditor(flectra.tests.HttpCase):
+@sleektiv.tests.tagged('-at_install', 'post_install')
+class TestUiHtmlEditor(sleektiv.tests.HttpCase):
     def test_html_editor_multiple_templates(self):
         Website = self.env['website']
         View = self.env['ir.ui.view']
@@ -105,8 +105,8 @@ class TestUiHtmlEditor(flectra.tests.HttpCase):
         self.start_tour("/", 'test_html_editor_scss', login='admin')
 
 
-@flectra.tests.tagged('-at_install', 'post_install')
-class TestUiTranslate(flectra.tests.HttpCase):
+@sleektiv.tests.tagged('-at_install', 'post_install')
+class TestUiTranslate(sleektiv.tests.HttpCase):
     def test_admin_tour_rte_translator(self):
         self.env['res.lang'].create({
             'name': 'Parseltongue',
@@ -117,8 +117,8 @@ class TestUiTranslate(flectra.tests.HttpCase):
         self.start_tour("/", 'rte_translator', login='admin', timeout=120)
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
-class TestUi(flectra.tests.HttpCase):
+@sleektiv.tests.common.tagged('post_install', '-at_install')
+class TestUi(sleektiv.tests.HttpCase):
 
     def test_01_admin_tour_homepage(self):
         self.start_tour("/?enable_editor=1", 'homepage', login='admin')

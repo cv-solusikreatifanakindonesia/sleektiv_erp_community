@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flectra import api, fields, models
+from sleektiv import api, fields, models
 
 
 class Website(models.Model):

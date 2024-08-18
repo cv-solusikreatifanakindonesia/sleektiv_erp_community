@@ -1,4 +1,4 @@
-flectra.define('web.Menu', function (require) {
+sleektiv.define('web.Menu', function (require) {
 "use strict";
 
 var AppsMenu = require('web.AppsMenu');

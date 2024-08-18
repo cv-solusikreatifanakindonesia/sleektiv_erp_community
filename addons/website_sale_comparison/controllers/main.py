@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from flectra import http
-from flectra.http import request
-from flectra.addons.website_sale.controllers.main import WebsiteSale
+from sleektiv import http
+from sleektiv.http import request
+from sleektiv.addons.website_sale.controllers.main import WebsiteSale
 import json
 
 

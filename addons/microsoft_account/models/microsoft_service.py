@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 import json
@@ -8,7 +8,7 @@ import logging
 import requests
 from werkzeug import urls
 
-from flectra import api, fields, models, _
+from sleektiv import api, fields, models, _
 
 _logger = logging.getLogger(__name__)
 
@@ -62,7 +62,7 @@ class MicrosoftService(models.AbstractModel):
 
     @api.model
     def _get_authorize_uri(self, from_url, service, scope):
-        """ This method return the url needed to allow this instance of Flectra to access to the scope
+        """ This method return the url needed to allow this instance of Sleektiv to access to the scope
             of gmail specified as parameters
         """
         state = {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<flectra>
+<sleektiv>
     <record id="l10n_ph_chart_template" model="account.chart.template">
         <field name="name">Philippines Account Template</field>
         <field name="bank_account_code_prefix">1000</field>
@@ -10,4 +10,4 @@
         <field name="spoken_languages" eval="'tl_PH'"/>
         <field name="use_anglo_saxon" eval="True" />
     </record>
-</flectra>
+</sleektiv>

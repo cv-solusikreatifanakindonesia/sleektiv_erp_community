@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 
-from flectra.tests import tagged
-from flectra.exceptions import UserError
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.tests import tagged
+from sleektiv.exceptions import UserError
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
 
 @tagged('post_install', '-at_install')
 class TestSwissQRCode(AccountTestInvoicingCommon):

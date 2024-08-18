@@ -1,4 +1,4 @@
-flectra.define('mass_mailing.FieldHtml', function (require) {
+sleektiv.define('mass_mailing.FieldHtml', function (require) {
 'use strict';
 
 var config = require('web.config');
@@ -333,7 +333,7 @@ var MassMailingFieldHtml = FieldHtml.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSnippetsLoaded: function (ev) {
         var self = this;

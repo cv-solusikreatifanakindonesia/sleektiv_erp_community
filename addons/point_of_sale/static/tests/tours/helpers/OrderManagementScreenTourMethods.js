@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.tour.OrderManagementScreenTourMethods', function (require) {
+sleektiv.define('point_of_sale.tour.OrderManagementScreenTourMethods', function (require) {
     'use strict';
 
     const { createTourMethods } = require('point_of_sale.tour.utils');

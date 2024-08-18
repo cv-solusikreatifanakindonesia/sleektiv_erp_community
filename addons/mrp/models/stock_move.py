@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, exceptions, fields, models, _
-from flectra.exceptions import UserError
-from flectra.tools import float_compare, float_round, float_is_zero, OrderedSet
+from sleektiv import api, exceptions, fields, models, _
+from sleektiv.exceptions import UserError
+from sleektiv.tools import float_compare, float_round, float_is_zero, OrderedSet
 
 
 class StockMoveLine(models.Model):

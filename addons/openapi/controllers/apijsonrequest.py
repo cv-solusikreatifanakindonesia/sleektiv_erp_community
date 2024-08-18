@@ -7,8 +7,8 @@ import time
 
 import werkzeug.wrappers
 
-import flectra
-from flectra.http import (
+import sleektiv
+from sleektiv.http import (
     AuthenticationError,
     Response,
     Root,
@@ -19,8 +19,8 @@ from flectra.http import (
     rpc_response,
     serialize_exception,
 )
-from flectra.service.server import memory_info
-from flectra.tools import date_utils
+from sleektiv.service.server import memory_info
+from sleektiv.tools import date_utils
 
 try:
     import psutil
@@ -111,16 +111,16 @@ class ApiJsonRequest(WebRequest):
             if not isinstance(
                 exception,
                 (
-                    flectra.exceptions.Warning,
+                    sleektiv.exceptions.Warning,
                     SessionExpiredException,
-                    flectra.exceptions.except_orm,
+                    sleektiv.exceptions.except_orm,
                     werkzeug.exceptions.NotFound,
                 ),
             ):
                 _logger.exception("Exception during JSON request handling.")
             error = {
                 "code": exception.response.status_code,
-                "message": "Flectra Server Error",
+                "message": "Sleektiv Server Error",
                 "data": serialize_exception(exception),
                 "openapi_message": json.loads(exception.response.response[0]),
             }
@@ -130,10 +130,10 @@ class ApiJsonRequest(WebRequest):
                 error["message"] = "404: Not Found"
             if isinstance(exception, AuthenticationError):
                 error["code"] = 100
-                error["message"] = "Flectra Session Invalid"
+                error["message"] = "Sleektiv Session Invalid"
             if isinstance(exception, SessionExpiredException):
                 error["code"] = 100
-                error["message"] = "Flectra Session Expired"
+                error["message"] = "Sleektiv Session Expired"
             return self._json_response(error=error)
 
     def dispatch(self):

@@ -1,4 +1,4 @@
-flectra.define('website.tour.automatic_editor', function (require) {
+sleektiv.define('website.tour.automatic_editor', function (require) {
 'use strict';
 
 const tour = require('web_tour.tour');

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from flectra.addons.stock.tests.common import TestStockCommon
-from flectra.exceptions import ValidationError
-from flectra.tests import Form
-from flectra.tools import mute_logger, float_round
-from flectra import fields
+from sleektiv.addons.stock.tests.common import TestStockCommon
+from sleektiv.exceptions import ValidationError
+from sleektiv.tests import Form
+from sleektiv.tools import mute_logger, float_round
+from sleektiv import fields
 
 
 class TestStockFlow(TestStockCommon):
@@ -23,7 +23,7 @@ class TestStockFlow(TestStockCommon):
             'name': 'My Company (Chicago)-demo',
         })
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('sleektiv.addons.base.models.ir_model', 'sleektiv.models')
     def test_00_picking_create_and_transfer_quantity(self):
         """ Basic stock operation on incoming and outgoing shipment. """
         LotObj = self.env['stock.production.lot']

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 from lxml import objectify
 from werkzeug import urls
 
-from flectra.addons.payment.tests.common import PaymentAcquirerCommon
-from flectra.tests import tagged
-from flectra.tools import mute_logger
+from sleektiv.addons.payment.tests.common import PaymentAcquirerCommon
+from sleektiv.tests import tagged
+from sleektiv.tools import mute_logger
 
 
 class PayUlatamCommon(PaymentAcquirerCommon):
@@ -171,7 +171,7 @@ class PayUlatamForm(PayUlatamCommon):
         self.assertEqual(tx.state, 'done', 'payulatam: wrong state after receiving a valid pending notification')
         self.assertEqual(tx.acquirer_reference, 'b232989a-4aa8-42d1-bace-153236eee791', 'payulatam: wrong txn_id after receiving a valid pending notification')
 
-    @mute_logger('flectra.addons.payment_payulatam.controllers.main')
+    @mute_logger('sleektiv.addons.payment_payulatam.controllers.main')
     def test_confirmation_webhook_approved(self):
         tx = self.env['payment.transaction'].create({
             'amount': 0.01,
@@ -190,7 +190,7 @@ class PayUlatamForm(PayUlatamCommon):
         self.assertEqual(res.text, '', "Body should be empty")
         self.assertEqual(tx.state, 'done')
 
-    @mute_logger('flectra.addons.payment_payulatam.controllers.main')
+    @mute_logger('sleektiv.addons.payment_payulatam.controllers.main')
     def test_confirmation_webhook_approved_bad_signature(self):
         tx = self.env['payment.transaction'].create({
             'amount': 0.01,
@@ -210,7 +210,7 @@ class PayUlatamForm(PayUlatamCommon):
         self.assertEqual(res.status_code, 200, 'Should be OK')
         self.assertEqual(tx.state, 'draft')
 
-    @mute_logger('flectra.addons.payment_payulatam.controllers.main')
+    @mute_logger('sleektiv.addons.payment_payulatam.controllers.main')
     def test_confirmation_webhook_declined(self):
         tx = self.env['payment.transaction'].create({
             'amount': 0.01,
@@ -232,7 +232,7 @@ class PayUlatamForm(PayUlatamCommon):
         self.assertEqual(res.text, '', "Body should be empty")
         self.assertEqual(tx.state, 'cancel')
 
-    @mute_logger('flectra.addons.payment_payulatam.controllers.main')
+    @mute_logger('sleektiv.addons.payment_payulatam.controllers.main')
     def test_confirmation_webhook_expired(self):
         tx = self.env['payment.transaction'].create({
             'amount': 0.01,

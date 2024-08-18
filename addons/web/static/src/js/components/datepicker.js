@@ -1,4 +1,4 @@
-flectra.define('web.DatePickerOwl', function (require) {
+sleektiv.define('web.DatePickerOwl', function (require) {
     "use strict";
 
     const config = require('web.config');

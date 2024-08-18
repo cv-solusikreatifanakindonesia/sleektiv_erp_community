@@ -5,7 +5,7 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
   -->
-<flectra>
+<sleektiv>
     <menuitem
         id="main_menu_dms"
         name="Documents"
@@ -31,4 +31,4 @@
         parent="cat_menu_dms_config"
         sequence="25"
     />
-</flectra>
+</sleektiv>

@@ -1,4 +1,4 @@
-flectra.define('website_livechat/static/src/components/discuss/discuss.js', function (require) {
+sleektiv.define('website_livechat/static/src/components/discuss/discuss.js', function (require) {
 'use strict';
 
 const components = {

@@ -1,4 +1,4 @@
-flectra.define('wysiwyg.widgets.AltDialog', function (require) {
+sleektiv.define('wysiwyg.widgets.AltDialog', function (require) {
 'use strict';
 
 var core = require('web.core');

@@ -1,4 +1,4 @@
-flectra.define('web.SystrayMenu', function (require) {
+sleektiv.define('web.SystrayMenu', function (require) {
 "use strict";
 
 var dom = require('web.dom');

@@ -4,7 +4,7 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
  **********************************************************************************/
 
-flectra.define("dms.FileKanbanController", function(require) {
+sleektiv.define("dms.FileKanbanController", function(require) {
     "use strict";
 
     var KanbanController = require("web.KanbanController");

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from . import controllers
 from . import models
 from . import report
 from . import wizard
 
-from flectra import api, fields, SUPERUSER_ID, _
+from sleektiv import api, fields, SUPERUSER_ID, _
 
 
 def create_internal_project(cr, registry):

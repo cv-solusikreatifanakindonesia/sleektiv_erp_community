@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import base64
 import uuid
 
-from flectra import api, fields, models
+from sleektiv import api, fields, models
 
-from flectra.modules.module import get_resource_path
+from sleektiv.modules.module import get_resource_path
 
 RATING_LIMIT_SATISFIED = 5
 RATING_LIMIT_OK = 3

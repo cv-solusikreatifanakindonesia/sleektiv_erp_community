@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import models, fields
+from sleektiv import models, fields
 
 
 class AccountMove(models.Model):

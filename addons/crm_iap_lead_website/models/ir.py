@@ -2,8 +2,8 @@
 import logging
 import time
 
-from flectra import models
-from flectra.http import request
+from sleektiv import models
+from sleektiv.http import request
 
 _logger = logging.getLogger(__name__)
 

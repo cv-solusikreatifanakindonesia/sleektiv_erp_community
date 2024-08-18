@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import contextlib
 import logging
@@ -8,9 +8,9 @@ import requests
 import uuid
 from unittest.mock import patch
 
-from flectra import exceptions, _
-from flectra.tests.common import BaseCase
-from flectra.tools import pycompat
+from sleektiv import exceptions, _
+from sleektiv.tests.common import BaseCase
+from sleektiv.tools import pycompat
 
 _logger = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ def iap_jsonrpc_mocked(*args, **kwargs):
     raise exceptions.AccessError("Unavailable during tests.")
 
 
-iap_patch = patch('flectra.addons.iap.tools.iap_tools.iap_jsonrpc', iap_jsonrpc_mocked)
+iap_patch = patch('sleektiv.addons.iap.tools.iap_tools.iap_jsonrpc', iap_jsonrpc_mocked)
 
 
 def setUp(self):

@@ -8,15 +8,15 @@ from dateutil import relativedelta
 import pprint
 import psycopg2
 
-from flectra import api, exceptions, fields, models, _, SUPERUSER_ID
-from flectra.tools import consteq, float_round, image_process, ustr
-from flectra.exceptions import UserError, ValidationError
-from flectra.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
-from flectra.tools.misc import formatLang
-from flectra.http import request
-from flectra.osv import expression
+from sleektiv import api, exceptions, fields, models, _, SUPERUSER_ID
+from sleektiv.tools import consteq, float_round, image_process, ustr
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
+from sleektiv.tools.misc import formatLang
+from sleektiv.http import request
+from sleektiv.osv import expression
 
-from flectra.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+from sleektiv.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
 
 _logger = logging.getLogger(__name__)
 
@@ -109,7 +109,7 @@ class PaymentAcquirer(models.Model):
              acquirer. Watch out, test and production modes require
              different credentials.""")
     capture_manually = fields.Boolean(string="Capture Amount Manually",
-        help="Capture the amount from Flectra, when the delivery is completed.")
+        help="Capture the amount from Sleektiv, when the delivery is completed.")
     journal_id = fields.Many2one(
         'account.journal', 'Payment Journal', domain="[('type', 'in', ['bank', 'cash']), ('company_id', '=', company_id)]",
         help="""Journal where the successful transactions will be posted""", ondelete='restrict')
@@ -161,13 +161,13 @@ class PaymentAcquirer(models.Model):
     # TDE FIXME: remove that brol
     module_id = fields.Many2one('ir.module.module', string='Corresponding Module')
     module_state = fields.Selection(string='Installation State', related='module_id.state', store=True)
-    module_to_buy = fields.Boolean(string='Flectra Enterprise Module', related='module_id.to_buy', readonly=True, store=False)
+    module_to_buy = fields.Boolean(string='Sleektiv Enterprise Module', related='module_id.to_buy', readonly=True, store=False)
 
     image_128 = fields.Image("Image", max_width=128, max_height=128)
 
     payment_icon_ids = fields.Many2many('payment.icon', string='Supported Payment Icons')
     payment_flow = fields.Selection(selection=[('form', 'Redirection to the acquirer website'),
-        ('s2s','Payment from Flectra')],
+        ('s2s','Payment from Sleektiv')],
         default='form', required=True, string='Payment Flow',
         help="""Note: Subscriptions does not take this field in account, it uses server to server by default.""")
     inbound_payment_method_ids = fields.Many2many('account.payment.method', related='journal_id.inbound_payment_method_ids', readonly=False)
@@ -420,7 +420,7 @@ class PaymentAcquirer(models.Model):
          - 'return_url': URL for coming back after payment validation (wihout base url) -> FIXME
          - 'cancel_url': URL if the client cancels the payment -> FIXME
          - 'error_url': URL if there is an issue with the payment -> FIXME
-         - context: Flectra context
+         - context: Sleektiv context
 
         """
         if values is None:

@@ -1,4 +1,4 @@
-flectra.define('web.fileUploadMixin', function (require) {
+sleektiv.define('web.fileUploadMixin', function (require) {
 'use strict';
 
 /**
@@ -200,7 +200,7 @@ const ProgressBarMixin = {
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      * @param {integer} ev.data.fileUploadId
      */
     _onProgressBarAbort(ev) {

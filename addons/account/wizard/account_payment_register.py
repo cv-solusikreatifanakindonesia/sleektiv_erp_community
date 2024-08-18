@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from lxml import etree
 
-from flectra import models, fields, api, _
-from flectra.exceptions import UserError
+from sleektiv import models, fields, api, _
+from sleektiv.exceptions import UserError
 
 
 class AccountPaymentRegister(models.TransientModel):
@@ -82,10 +82,10 @@ class AccountPaymentRegister(models.TransientModel):
         readonly=False, store=True,
         compute='_compute_payment_method_id',
         domain="[('id', 'in', available_payment_method_ids)]",
-        help="Manual: Get paid by cash, check or any other method outside of Flectra.\n"\
+        help="Manual: Get paid by cash, check or any other method outside of Sleektiv.\n"\
         "Electronic: Get paid automatically through a payment acquirer by requesting a transaction on a card saved by the customer when buying or subscribing online (payment token).\n"\
-        "Check: Pay bill by check and print it from Flectra.\n"\
-        "Batch Deposit: Encase several customer checks at once by generating a batch deposit to submit to your bank. When encoding the bank statement in Flectra, you are suggested to reconcile the transaction with the batch deposit.To enable batch deposit, module account_batch_payment must be installed.\n"\
+        "Check: Pay bill by check and print it from Sleektiv.\n"\
+        "Batch Deposit: Encase several customer checks at once by generating a batch deposit to submit to your bank. When encoding the bank statement in Sleektiv, you are suggested to reconcile the transaction with the batch deposit.To enable batch deposit, module account_batch_payment must be installed.\n"\
         "SEPA Credit Transfer: Pay bill from a SEPA Credit Transfer file you submit to your bank. To enable sepa credit transfer, module account_sepa must be installed ")
     available_payment_method_ids = fields.Many2many('account.payment.method',
         compute='_compute_payment_method_fields')

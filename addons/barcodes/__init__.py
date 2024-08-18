@@ -2,7 +2,7 @@
 
 from . import models
 
-from flectra import api, SUPERUSER_ID
+from sleektiv import api, SUPERUSER_ID
 
 
 def _assign_default_nomeclature_id(cr, registry):

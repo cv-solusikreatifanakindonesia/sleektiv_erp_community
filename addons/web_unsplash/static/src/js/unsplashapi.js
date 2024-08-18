@@ -1,4 +1,4 @@
-flectra.define('unsplash.api', function (require) {
+sleektiv.define('unsplash.api', function (require) {
 'use strict';
 
 var Class = require('web.Class');

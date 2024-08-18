@@ -1,6 +1,6 @@
-# Part of flectra See LICENSE file for full copyright and licensing details.
+# Part of sleektiv See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models
+from sleektiv import api, fields, models
 
 
 class ResConfigSettings(models.TransientModel):

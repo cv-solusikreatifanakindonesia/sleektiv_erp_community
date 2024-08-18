@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import models
+from sleektiv import models
 
 
 class AccountPaymentRegister(models.TransientModel):

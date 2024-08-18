@@ -1,4 +1,4 @@
-flectra.define('base_setup.ResConfigEdition', function (require) {
+sleektiv.define('base_setup.ResConfigEdition', function (require) {
     "use strict";
 
     var Widget = require('web.Widget');

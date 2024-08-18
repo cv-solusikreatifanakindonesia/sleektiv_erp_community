@@ -2939,7 +2939,7 @@
                 console.info(`Owl is running in 'dev' mode.
 
 This is not suitable for production use.
-See https://github.com/flectra/owl/blob/master/doc/reference/config.md#mode for more information.`);
+See https://github.com/sleektiv/owl/blob/master/doc/reference/config.md#mode for more information.`);
             }
         },
     });
@@ -4165,7 +4165,7 @@ See https://github.com/flectra/owl/blob/master/doc/reference/config.md#mode for 
          * setup is run just after the component is constructed. This is the standard
          * location where the component can setup its hooks. It has some advantages
          * over the constructor:
-         *  - it can be patched (useful in flectra ecosystem)
+         *  - it can be patched (useful in sleektiv ecosystem)
          *  - it does not need to propagate the arguments to the super call
          *
          * Note: this method should not be called manually.
@@ -5604,7 +5604,7 @@ See https://github.com/flectra/owl/blob/master/doc/reference/config.md#mode for 
     __info__.version = '1.4.11';
     __info__.date = '2023-01-30T13:09:39.141Z';
     __info__.hash = 'a38c534';
-    __info__.url = 'https://github.com/flectra/owl';
+    __info__.url = 'https://github.com/sleektiv/owl';
 
 
 }(this.owl = this.owl || {}));

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError, ValidationError
-from flectra.tools import float_is_zero, float_compare, safe_eval, date_utils, email_split, email_escape_char, email_re
+from sleektiv import api, fields, models, _
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.tools import float_is_zero, float_compare, safe_eval, date_utils, email_split, email_escape_char, email_re
 from datetime import date, timedelta
 
 INTEGRITY_HASH_LINE_FIELDS = ('debit', 'credit', 'account_id', 'partner_id')

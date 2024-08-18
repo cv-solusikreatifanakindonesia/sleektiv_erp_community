@@ -1,8 +1,8 @@
 import logging
 
-from flectra.addons.account.models.chart_template import update_taxes_from_templates
-from flectra.tests import tagged
-from flectra.tests.common import SavepointCase
+from sleektiv.addons.account.models.chart_template import update_taxes_from_templates
+from sleektiv.tests import tagged
+from sleektiv.tests.common import SavepointCase
 
 
 @tagged('post_install', '-at_install')

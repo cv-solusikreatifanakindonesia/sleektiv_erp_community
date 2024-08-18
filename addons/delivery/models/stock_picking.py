@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 from collections import defaultdict
 
-from flectra import models, fields, api, _
-from flectra.exceptions import UserError
-from flectra.tools.sql import column_exists, create_column
+from sleektiv import models, fields, api, _
+from sleektiv.exceptions import UserError
+from sleektiv.tools.sql import column_exists, create_column
 
 
 class StockQuantPackage(models.Model):

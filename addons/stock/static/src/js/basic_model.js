@@ -1,4 +1,4 @@
-flectra.define('stock.BasicModel', function (require) {
+sleektiv.define('stock.BasicModel', function (require) {
 "use strict";
 
 var BasicModel = require('web.BasicModel');

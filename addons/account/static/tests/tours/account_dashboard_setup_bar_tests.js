@@ -1,4 +1,4 @@
-flectra.define('account.dashboard.setup.tour', function (require) {
+sleektiv.define('account.dashboard.setup.tour', function (require) {
     "use strict";
 
     var core = require('web.core');

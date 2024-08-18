@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import random
 import re
@@ -9,9 +9,9 @@ from datetime import datetime, timedelta
 from lxml import etree
 import logging
 
-from flectra.tests.common import BaseCase, tagged
-from flectra.tools import topological_sort
-from flectra.addons.web.controllers.main import HomeStaticTemplateHelpers
+from sleektiv.tests.common import BaseCase, tagged
+from sleektiv.tools import topological_sort
+from sleektiv.addons.web.controllers.main import HomeStaticTemplateHelpers
 
 _logger = logging.getLogger(__name__)
 

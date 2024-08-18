@@ -1,6 +1,6 @@
 import logging
-from flectra import models, fields, api, _
-import flectra.addons.decimal_precision as dp
+from sleektiv import models, fields, api, _
+import sleektiv.addons.decimal_precision as dp
 
 _logger = logging.getLogger(__name__)
 

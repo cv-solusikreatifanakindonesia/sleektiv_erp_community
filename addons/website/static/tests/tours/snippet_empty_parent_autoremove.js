@@ -1,4 +1,4 @@
-flectra.define("website.tour.snippet_empty_parent_autoremove", function (require) {
+sleektiv.define("website.tour.snippet_empty_parent_autoremove", function (require) {
 "use strict";
 
 const tour = require('web_tour.tour');

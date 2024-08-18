@@ -1,11 +1,11 @@
 # coding: utf-8
 from lxml import html
 
-from flectra.addons.website.controllers.main import Website
-from flectra.addons.website.tools import MockRequest
-from flectra.tests import common, HttpCase, tagged
-from flectra.tests.common import HOST
-from flectra.tools import config
+from sleektiv.addons.website.controllers.main import Website
+from sleektiv.addons.website.tools import MockRequest
+from sleektiv.tests import common, HttpCase, tagged
+from sleektiv.tests.common import HOST
+from sleektiv.tools import config
 
 
 @tagged('-at_install', 'post_install')

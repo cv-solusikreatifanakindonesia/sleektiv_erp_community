@@ -1,4 +1,4 @@
-flectra.define('web.CalendarQuickCreate', function (require) {
+sleektiv.define('web.CalendarQuickCreate', function (require) {
 "use strict";
 
 var core = require('web.core');

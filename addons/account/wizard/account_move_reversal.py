@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from flectra import models, fields, api
-from flectra.tools.translate import _
-from flectra.exceptions import UserError
+from sleektiv import models, fields, api
+from sleektiv.tools.translate import _
+from sleektiv.exceptions import UserError
 
 
 class AccountMoveReversal(models.TransientModel):

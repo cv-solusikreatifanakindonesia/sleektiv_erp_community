@@ -1,4 +1,4 @@
-flectra.define('web.base_import_tests', function (require) {
+sleektiv.define('web.base_import_tests', function (require) {
 "use strict";
 
 const KanbanView = require('web.KanbanView');

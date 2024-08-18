@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 from collections import defaultdict
@@ -11,11 +11,11 @@ from re import split as regex_split
 
 from dateutil import relativedelta
 
-from flectra import SUPERUSER_ID, _, api, fields, models
-from flectra.exceptions import UserError
-from flectra.osv import expression
-from flectra.tools.float_utils import float_compare, float_is_zero, float_repr, float_round
-from flectra.tools.misc import clean_context, format_date, OrderedSet
+from sleektiv import SUPERUSER_ID, _, api, fields, models
+from sleektiv.exceptions import UserError
+from sleektiv.osv import expression
+from sleektiv.tools.float_utils import float_compare, float_is_zero, float_repr, float_round
+from sleektiv.tools.misc import clean_context, format_date, OrderedSet
 
 PROCUREMENT_PRIORITIES = [('0', 'Normal'), ('1', 'Urgent')]
 

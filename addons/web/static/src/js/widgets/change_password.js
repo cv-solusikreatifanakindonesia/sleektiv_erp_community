@@ -1,4 +1,4 @@
-flectra.define('web.ChangePassword', function (require) {
+sleektiv.define('web.ChangePassword', function (require) {
 "use strict";
 
 /**

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 # Author: Leonardo Pistone
 # Copyright 2015 Camptocamp SA
 
-from flectra.addons.stock.tests.common2 import TestStockCommon
-from flectra.exceptions import UserError
-from flectra.tests.common import Form
+from sleektiv.addons.stock.tests.common2 import TestStockCommon
+from sleektiv.exceptions import UserError
+from sleektiv.tests.common import Form
 
 
 class TestVirtualAvailable(TestStockCommon):

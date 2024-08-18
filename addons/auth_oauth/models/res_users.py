@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 
 import requests
 import werkzeug.http
 
-from flectra import api, fields, models
-from flectra.exceptions import AccessDenied, UserError
-from flectra.addons.auth_signup.models.res_users import SignupError
+from sleektiv import api, fields, models
+from sleektiv.exceptions import AccessDenied, UserError
+from sleektiv.addons.auth_signup.models.res_users import SignupError
 
-from flectra.addons import base
+from sleektiv.addons import base
 base.models.res_users.USER_PRIVATE_FIELDS.append('oauth_access_token')
 
 class ResUsers(models.Model):
@@ -58,7 +58,7 @@ class ResUsers(models.Model):
             for key in [
                 'sub', # standard
                 'id', # google v1 userinfo, facebook opengraph
-                'user_id', # google tokeninfo, flectra (tokeninfo)
+                'user_id', # google tokeninfo, sleektiv (tokeninfo)
             ]
         ]), None)
         if not subject:

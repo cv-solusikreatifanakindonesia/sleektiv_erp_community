@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra.http import request
-from flectra import models
+from sleektiv.http import request
+from sleektiv import models
 
 
 class IrHttp(models.AbstractModel):

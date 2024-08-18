@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import http, _
-from flectra.addons.website_event.controllers.main import WebsiteEventController
-from flectra.http import request
+from sleektiv import http, _
+from sleektiv.addons.website_event.controllers.main import WebsiteEventController
+from sleektiv.http import request
 
 
 class WebsiteEventSaleController(WebsiteEventController):

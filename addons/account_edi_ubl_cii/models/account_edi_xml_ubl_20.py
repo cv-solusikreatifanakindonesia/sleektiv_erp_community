@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra import models, _
-from flectra.tools import html2plaintext, cleanup_xml_node
+from sleektiv import models, _
+from sleektiv.tools import html2plaintext, cleanup_xml_node
 from lxml import etree
 
 
@@ -227,7 +227,7 @@ class AccountEdiXmlUBL20(models.AbstractModel):
 
         Allowances are distinguished from charges using the ChargeIndicator node with 'false' as value.
 
-        Note that allowance charges do not exist for credit notes in UBL 2.0, so if we apply discount in Flectra
+        Note that allowance charges do not exist for credit notes in UBL 2.0, so if we apply discount in Sleektiv
         the net price will not be consistent with the unit price, but we cannot do anything about it
 
         :param line:    An invoice line.
@@ -264,7 +264,7 @@ class AccountEdiXmlUBL20(models.AbstractModel):
             # Must be 'false' since this method is for allowances.
             'charge_indicator': 'false',
 
-            # A reason should be provided. In Flectra, we only manage discounts.
+            # A reason should be provided. In Sleektiv, we only manage discounts.
             # Full code list is available here:
             # https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL5189/
             'allowance_charge_reason_code': 95,
@@ -358,7 +358,7 @@ class AccountEdiXmlUBL20(models.AbstractModel):
         taxes_vals = invoice._prepare_edi_tax_details(grouping_key_generator=grouping_key_generator)
 
         # Fixed Taxes: filter them on the document level, and adapt the totals
-        # Fixed taxes are not supposed to be taxes in real live. However, this is the way in Flectra to manage recupel
+        # Fixed taxes are not supposed to be taxes in real live. However, this is the way in Sleektiv to manage recupel
         # taxes in Belgium. Since only one tax is allowed, the fixed tax is removed from totals of lines but added
         # as an extra charge/allowance.
         fixed_taxes_keys = [k for k in taxes_vals['tax_details'] if k['tax_amount_type'] == 'fixed']

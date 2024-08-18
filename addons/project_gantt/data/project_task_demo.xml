@@ -1,4 +1,4 @@
-<flectra>
+<sleektiv>
     <data noupdate="1">
 
         <record id="project.project_task_1" model="project.task">
@@ -116,4 +116,4 @@
         </record>
 
     </data>
-</flectra> 
+</sleektiv> 

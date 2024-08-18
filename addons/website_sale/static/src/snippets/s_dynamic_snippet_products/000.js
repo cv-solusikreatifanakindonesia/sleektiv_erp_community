@@ -1,4 +1,4 @@
-flectra.define('website_sale.s_dynamic_snippet_products', function (require) {
+sleektiv.define('website_sale.s_dynamic_snippet_products', function (require) {
 'use strict';
 
 const config = require('web.config');

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import Form
-from flectra.addons.hr.tests.common import TestHrCommon
+from sleektiv.tests import Form
+from sleektiv.addons.hr.tests.common import TestHrCommon
 
 
 class TestHrEmployee(TestHrCommon):

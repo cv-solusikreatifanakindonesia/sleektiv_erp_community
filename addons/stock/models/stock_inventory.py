@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import _, api, fields, models
-from flectra.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
-from flectra.exceptions import UserError, ValidationError
-from flectra.osv import expression
-from flectra.tools import float_compare, float_is_zero
-from flectra.tools.misc import OrderedSet
+from sleektiv import _, api, fields, models
+from sleektiv.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.osv import expression
+from sleektiv.tools import float_compare, float_is_zero
+from sleektiv.tools.misc import OrderedSet
 
 
 class Inventory(models.Model):

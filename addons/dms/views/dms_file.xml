@@ -5,7 +5,7 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
   -->
-<flectra>
+<sleektiv>
     <record id="search_dms_file" model="ir.ui.view">
         <field name="name">dms_file.search</field>
         <field name="model">dms.file</field>
@@ -495,7 +495,7 @@
                 Add a new File.
             </p>
             <p>
-                Files are used to save content directly in Flectra.
+                Files are used to save content directly in Sleektiv.
             </p>
         </field>
     </record>
@@ -563,7 +563,7 @@
                 Add a new File.
             </p>
             <p>
-                Files are used to save content directly in Flectra.
+                Files are used to save content directly in Sleektiv.
             </p>
         </field>
     </record>
@@ -606,4 +606,4 @@
         <field name="target">new</field>
         <field name="view_id" ref="view_dms_file_new_form" />
     </record>
-</flectra>
+</sleektiv>

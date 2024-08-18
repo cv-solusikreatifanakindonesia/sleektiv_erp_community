@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.tests import Form, common
-from flectra.exceptions import ValidationError
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.tests import Form, common
+from sleektiv.exceptions import ValidationError
 
 
 CH_ISR_SUBSCRIPTION = "01-162-8"

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import calendar
 
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, fields, models
+from sleektiv import api, fields, models
 
 
 class KarmaTracking(models.Model):

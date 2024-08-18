@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.survey.tests import common
-from flectra.tests import tagged
-from flectra.tests.common import HttpCase
+from sleektiv.addons.survey.tests import common
+from sleektiv.tests import tagged
+from sleektiv.tests.common import HttpCase
 
 
 @tagged('-at_install', 'post_install', 'functional')

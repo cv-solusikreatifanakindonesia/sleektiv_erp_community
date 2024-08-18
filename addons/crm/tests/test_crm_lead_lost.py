@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.crm.tests import common as crm_common
-from flectra.exceptions import AccessError
-from flectra.tests.common import tagged, users
+from sleektiv.addons.crm.tests import common as crm_common
+from sleektiv.exceptions import AccessError
+from sleektiv.tests.common import tagged, users
 
 
 @tagged('lead_manage')

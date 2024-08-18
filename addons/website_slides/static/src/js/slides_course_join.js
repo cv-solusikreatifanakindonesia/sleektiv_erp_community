@@ -1,4 +1,4 @@
-flectra.define('website_slides.course.join.widget', function (require) {
+sleektiv.define('website_slides.course.join.widget', function (require) {
 'use strict';
 
 var core = require('web.core');

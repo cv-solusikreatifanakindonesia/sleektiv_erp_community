@@ -1,4 +1,4 @@
-flectra.define('barcodes.tests', function (require) {
+sleektiv.define('barcodes.tests', function (require) {
 "use strict";
 
 var barcodeEvents = require('barcodes.BarcodeEvents');

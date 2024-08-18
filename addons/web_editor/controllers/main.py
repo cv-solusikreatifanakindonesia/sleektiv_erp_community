@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import io
 import logging
 import re
@@ -10,12 +10,12 @@ from PIL import Image, ImageFont, ImageDraw
 from lxml import etree
 from base64 import b64decode, b64encode
 
-from flectra.http import request
-from flectra import http, tools, _, SUPERUSER_ID
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.exceptions import UserError
-from flectra.modules.module import get_module_path, get_resource_path
-from flectra.tools.misc import file_open
+from sleektiv.http import request
+from sleektiv import http, tools, _, SUPERUSER_ID
+from sleektiv.addons.http_routing.models.ir_http import slug
+from sleektiv.exceptions import UserError
+from sleektiv.modules.module import get_module_path, get_resource_path
+from sleektiv.tools.misc import file_open
 
 from ..models.ir_attachment import SUPPORTED_IMAGE_MIMETYPES
 

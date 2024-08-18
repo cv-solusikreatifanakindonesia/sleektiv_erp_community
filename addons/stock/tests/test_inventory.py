@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.exceptions import ValidationError, UserError
-from flectra.tests.common import Form, SavepointCase
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.exceptions import ValidationError, UserError
+from sleektiv.tests.common import Form, SavepointCase
 
 
 class TestInventory(SavepointCase):

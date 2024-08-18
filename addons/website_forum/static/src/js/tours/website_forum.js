@@ -1,4 +1,4 @@
-flectra.define("website_forum.tour_forum", function (require) {
+sleektiv.define("website_forum.tour_forum", function (require) {
     "use strict";
 
     var core = require("web.core");

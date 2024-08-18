@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.tests import tagged, new_test_user
-from flectra.tests.common import Form
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.tests import tagged, new_test_user
+from sleektiv.tests.common import Form
 
 
 @tagged('post_install', '-at_install')

@@ -5,8 +5,8 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
   -->
-<flectra noupdate="1">
+<sleektiv noupdate="1">
     <record id="base.user_demo" model="res.users">
         <field eval="[(4, ref('dms.group_dms_user'))]" name="groups_id" />
     </record>
-</flectra>
+</sleektiv>

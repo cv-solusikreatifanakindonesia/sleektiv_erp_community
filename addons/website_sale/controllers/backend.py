@@ -4,10 +4,10 @@ import babel.dates
 
 from datetime import datetime, timedelta, time
 
-from flectra import fields, http, _
-from flectra.addons.website.controllers.backend import WebsiteBackend
-from flectra.http import request
-from flectra.tools.misc import get_lang
+from sleektiv import fields, http, _
+from sleektiv.addons.website.controllers.backend import WebsiteBackend
+from sleektiv.http import request
+from sleektiv.tools.misc import get_lang
 
 
 class WebsiteSaleBackend(WebsiteBackend):

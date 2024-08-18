@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import re
 
-from flectra import models, fields, api, _
-from flectra.exceptions import ValidationError, UserError
-from flectra.tools.float_utils import float_split_str
-from flectra.tools.misc import mod10r
+from sleektiv import models, fields, api, _
+from sleektiv.exceptions import ValidationError, UserError
+from sleektiv.tools.float_utils import float_split_str
+from sleektiv.tools.misc import mod10r
 
 
 l10n_ch_ISR_NUMBER_LENGTH = 27

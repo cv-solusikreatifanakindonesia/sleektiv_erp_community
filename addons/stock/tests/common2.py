@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.addons.product.tests import common
+from sleektiv.addons.mail.tests.common import mail_new_test_user
+from sleektiv.addons.product.tests import common
 
 
 class TestStockCommon(common.TestProductCommon):

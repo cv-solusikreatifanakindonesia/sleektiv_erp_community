@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.addons.account.tests.common import AccountTestInvoicingHttpCommon
-from flectra.tests.common import tagged
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.addons.account.tests.common import AccountTestInvoicingHttpCommon
+from sleektiv.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')

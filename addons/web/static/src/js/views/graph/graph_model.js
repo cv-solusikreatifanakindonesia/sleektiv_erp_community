@@ -1,4 +1,4 @@
-flectra.define('web.GraphModel', function (require) {
+sleektiv.define('web.GraphModel', function (require) {
 "use strict";
 
 var core = require('web.core');

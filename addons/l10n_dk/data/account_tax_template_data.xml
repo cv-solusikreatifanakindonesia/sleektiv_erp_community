@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<flectra noupdate="1">
+<sleektiv noupdate="1">
     <!-- Salgsmoms (VAT) -->
     <!-- DK salgsmoms (taxes to set on Sales in DK) -->
     <record id="tax110" model="account.tax.template">
@@ -810,4 +810,4 @@
             }),
         ]"/>
     </record>
-</flectra>
+</sleektiv>

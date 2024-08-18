@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/discuss/tests/discuss_domain_tests.js', function (require) {
+sleektiv.define('mail/static/src/components/discuss/tests/discuss_domain_tests.js', function (require) {
 'use strict';
 
 const {

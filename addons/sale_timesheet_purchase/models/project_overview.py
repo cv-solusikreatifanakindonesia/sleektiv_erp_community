@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra import _, models
-from flectra.addons.sale_timesheet.models.project_overview import _to_action_data
+from sleektiv import _, models
+from sleektiv.addons.sale_timesheet.models.project_overview import _to_action_data
 
 
 class Project(models.Model):

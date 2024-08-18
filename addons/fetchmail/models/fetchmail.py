@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 import poplib
@@ -10,8 +10,8 @@ from poplib import POP3, POP3_SSL
 from socket import gaierror, timeout
 from ssl import SSLError
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import UserError
+from sleektiv import api, fields, models, tools, _
+from sleektiv.exceptions import UserError
 
 
 _logger = logging.getLogger(__name__)
@@ -62,7 +62,7 @@ class FetchmailServer(models.Model):
     priority = fields.Integer(string='Server Priority', readonly=True, states={'draft': [('readonly', False)]}, help="Defines the order of processing, lower values mean higher priority", default=5)
     message_ids = fields.One2many('mail.mail', 'fetchmail_server_id', string='Messages', readonly=True)
     configuration = fields.Text('Configuration', readonly=True)
-    script = fields.Char(readonly=True, default='/mail/static/scripts/flectra-mailgate.py')
+    script = fields.Char(readonly=True, default='/mail/static/scripts/sleektiv-mailgate.py')
 
     @api.onchange('server_type', 'is_ssl', 'object_id')
     def onchange_server_type(self):
@@ -78,11 +78,11 @@ class FetchmailServer(models.Model):
             'model': self.object_id.model if self.object_id else 'MODELNAME'
         }
         self.configuration = """Use the below script with the following command line options with your Mail Transport Agent (MTA)
-flectra-mailgate.py --host=HOSTNAME --port=PORT -u %(uid)d -p PASSWORD -d %(dbname)s
+sleektiv-mailgate.py --host=HOSTNAME --port=PORT -u %(uid)d -p PASSWORD -d %(dbname)s
 Example configuration for the postfix mta running locally:
-/etc/postfix/virtual_aliases: @youdomain flectra_mailgate@localhost
+/etc/postfix/virtual_aliases: @youdomain sleektiv_mailgate@localhost
 /etc/aliases:
-flectra_mailgate: "|/path/to/flectra-mailgate.py --host=localhost -u %(uid)d -p PASSWORD -d %(dbname)s"
+sleektiv_mailgate: "|/path/to/sleektiv-mailgate.py --host=localhost -u %(uid)d -p PASSWORD -d %(dbname)s"
         """ % conf
 
     @api.model

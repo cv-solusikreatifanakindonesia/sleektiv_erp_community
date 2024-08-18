@@ -5,7 +5,7 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
   -->
-<flectra>
+<sleektiv>
     <template id="onboarding_storage_step">
         <t t-call="base.onboarding_step">
             <t t-set="title">Storage</t>
@@ -94,4 +94,4 @@
             />
         </t>
     </template>
-</flectra>
+</sleektiv>

@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.tour.ProductScreen', function (require) {
+sleektiv.define('point_of_sale.tour.ProductScreen', function (require) {
     'use strict';
 
     const { ProductScreen } = require('point_of_sale.tour.ProductScreenTourMethods');
@@ -115,7 +115,7 @@ flectra.define('point_of_sale.tour.ProductScreen', function (require) {
     Tour.register('FiscalPositionNoTax', { test: true, url: '/pos/ui' }, getSteps());
 });
 
-flectra.define('point_of_sale.tour.FixedPriceNegativeQty', function (require) {
+sleektiv.define('point_of_sale.tour.FixedPriceNegativeQty', function (require) {
     'use strict';
 
     const { ProductScreen } = require('point_of_sale.tour.ProductScreenTourMethods');

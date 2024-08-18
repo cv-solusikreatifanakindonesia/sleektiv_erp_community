@@ -1,4 +1,4 @@
-flectra.define('calendar.CalendarView', function (require) {
+sleektiv.define('calendar.CalendarView', function (require) {
 "use strict";
 
 var CalendarController = require('calendar.CalendarController');

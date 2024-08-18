@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra import fields, models
-from flectra.tools import float_is_zero
+from sleektiv import fields, models
+from sleektiv.tools import float_is_zero
 
 
 class AccountMove(models.Model):

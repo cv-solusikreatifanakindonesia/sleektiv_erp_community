@@ -8,10 +8,10 @@ import select
 import threading
 import time
 
-import flectra
-from flectra import api, fields, models, SUPERUSER_ID
-from flectra.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
-from flectra.tools import date_utils
+import sleektiv
+from sleektiv import api, fields, models, SUPERUSER_ID
+from sleektiv.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
+from sleektiv.tools import date_utils
 
 from psycopg2 import sql
 
@@ -67,7 +67,7 @@ class ImBus(models.Model):
             # and the longpolling will return no notification.
             @self.env.cr.postcommit.add
             def notify():
-                with flectra.sql_db.db_connect('postgres').cursor() as cr:
+                with sleektiv.sql_db.db_connect('postgres').cursor() as cr:
                     if FLECTRA_NOTIFY_FUNCTION:
                         query = sql.SQL("SELECT {}('imbus', %s)").format(sql.Identifier(FLECTRA_NOTIFY_FUNCTION))
                     else:
@@ -117,13 +117,13 @@ class ImDispatch(object):
         # Dont hang ctrl-c for a poll request, we need to bypass private
         # attribute access because we dont know before starting the thread that
         # it will handle a longpolling request
-        if not flectra.evented:
+        if not sleektiv.evented:
             current = threading.current_thread()
             current._daemonic = True
             # rename the thread to avoid tests waiting for a longpolling
             current.setName("openerp.longpolling.request.%s" % current.ident)
 
-        registry = flectra.registry(dbname)
+        registry = sleektiv.registry(dbname)
 
         # immediatly returns if past notifications exist
         with registry.cursor() as cr:
@@ -162,7 +162,7 @@ class ImDispatch(object):
     def loop(self):
         """ Dispatch postgres notifications to the relevant polling threads/greenlets """
         _logger.info("Bus.loop listen imbus on db postgres")
-        with flectra.sql_db.db_connect('postgres').cursor() as cr:
+        with sleektiv.sql_db.db_connect('postgres').cursor() as cr:
             conn = cr._cnx
             cr.execute("listen imbus")
             cr.commit();
@@ -190,7 +190,7 @@ class ImDispatch(object):
                 time.sleep(TIMEOUT)
 
     def start(self):
-        if flectra.evented:
+        if sleektiv.evented:
             # gevent mode
             import gevent.event  # pylint: disable=import-outside-toplevel
             self.Event = gevent.event.Event

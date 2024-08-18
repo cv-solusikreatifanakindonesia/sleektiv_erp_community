@@ -11,13 +11,13 @@ import requests
 from lxml import etree, objectify
 from werkzeug import urls
 
-from flectra import api, fields, models, _
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.addons.payment_ingenico.controllers.main import OgoneController
-from flectra.addons.payment_ingenico.data import ogone
-from flectra.http import request
-from flectra.tools import DEFAULT_SERVER_DATE_FORMAT, ustr
-from flectra.tools.float_utils import float_compare, float_repr, float_round
+from sleektiv import api, fields, models, _
+from sleektiv.addons.payment.models.payment_acquirer import ValidationError
+from sleektiv.addons.payment_ingenico.controllers.main import OgoneController
+from sleektiv.addons.payment_ingenico.data import ogone
+from sleektiv.http import request
+from sleektiv.tools import DEFAULT_SERVER_DATE_FORMAT, ustr
+from sleektiv.tools.float_utils import float_compare, float_repr, float_round
 
 _logger = logging.getLogger(__name__)
 
@@ -67,8 +67,8 @@ class PaymentAcquirerOgone(models.Model):
     def _ogone_generate_shasign(self, inout, values):
         """ Generate the shasign for incoming or outgoing communications.
 
-        :param string inout: 'in' (flectra contacting ogone) or 'out' (ogone
-                             contacting flectra). In this last case only some
+        :param string inout: 'in' (sleektiv contacting ogone) or 'out' (ogone
+                             contacting sleektiv). In this last case only some
                              fields should be contained (see e-Commerce basic)
         :param dict values: transaction values
 

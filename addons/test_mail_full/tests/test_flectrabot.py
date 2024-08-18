@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-from flectra.addons.test_mail.tests.common import TestMailCommon, TestRecipients
-from flectra.tests import tagged
-from flectra.tools import mute_logger
+from sleektiv.addons.test_mail.tests.common import TestMailCommon, TestRecipients
+from sleektiv.tests import tagged
+from sleektiv.tools import mute_logger
 
 
 @tagged("flectrabot")
-class TestFlectrabot(TestMailCommon, TestRecipients):
+class TestSleektivbot(TestMailCommon, TestRecipients):
 
     @classmethod
     def setUpClass(cls):
-        super(TestFlectrabot, cls).setUpClass()
+        super(TestSleektivbot, cls).setUpClass()
         cls.test_record = cls.env['mail.test.simple'].with_context(cls._test_context).create({'name': 'Test', 'email_from': 'ignasse@example.com'})
 
         cls.flectrabot = cls.env.ref("base.partner_root")
@@ -24,10 +24,10 @@ class TestFlectrabot(TestMailCommon, TestRecipients):
             'partner_ids': [],
             'subtype_xmlid': 'mail.mt_comment'
         }
-        cls.flectrabot_ping_body = '<a href="http://flectrahq.com/web#model=res.partner&amp;id=%s" class="o_mail_redirect" data-oe-id="%s" data-oe-model="res.partner" target="_blank">@FlectraBot</a>' % (cls.flectrabot.id, cls.flectrabot.id)
+        cls.flectrabot_ping_body = '<a href="http://flectrahq.com/web#model=res.partner&amp;id=%s" class="o_mail_redirect" data-oe-id="%s" data-oe-model="res.partner" target="_blank">@SleektivBot</a>' % (cls.flectrabot.id, cls.flectrabot.id)
         cls.test_record_employe = cls.test_record.with_user(cls.user_employee)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_fetch_listener(self):
         channel = self.env['mail.channel'].with_user(self.user_employee).init_flectrabot()
         partners = self.env['mail.channel'].channel_fetch_listeners(channel.uuid)
@@ -35,7 +35,7 @@ class TestFlectrabot(TestMailCommon, TestRecipients):
         flectrabot_in_fetch_listeners = [partner for partner in partners if partner['id'] == flectrabot.id]
         self.assertEqual(len(flectrabot_in_fetch_listeners), 1, 'flectrabot should appear only once in channel_fetch_listeners')
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_flectrabot_ping(self):
         kwargs = self.message_post_default_kwargs.copy()
         kwargs.update({'body': self.flectrabot_ping_body, 'partner_ids': [self.flectrabot.id, self.user_admin.partner_id.id]})
@@ -46,13 +46,13 @@ class TestFlectrabot(TestMailCommon, TestRecipients):
                 sender=self.flectrabot,
                 answer=False
             )
-        # Flectrabot should not be a follower but user_employee and user_admin should
+        # Sleektivbot should not be a follower but user_employee and user_admin should
         follower = self.test_record.message_follower_ids.mapped('partner_id')
         self.assertNotIn(self.flectrabot, follower)
         self.assertIn(self.user_employee.partner_id, follower)
         self.assertIn(self.user_admin.partner_id, follower)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_onboarding_flow(self):
         kwargs = self.message_post_default_kwargs.copy()
         channel = self.env['mail.channel'].with_user(self.user_employee).init_flectrabot()
@@ -67,7 +67,7 @@ class TestFlectrabot(TestMailCommon, TestRecipients):
         self.assertNextMessage(
             last_message,  # no message will be post with command help, use last flectrabot message instead
             sender=self.flectrabot,
-            answer=("@FlectraBot",)
+            answer=("@SleektivBot",)
         )
         kwargs['body'] = ''
         kwargs['partner_ids'] = [self.env['ir.model.data'].xmlid_to_res_id("base.partner_root")]
@@ -110,7 +110,7 @@ class TestFlectrabot(TestMailCommon, TestRecipients):
             answer=("If you need help",)
         )
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_flectrabot_no_default_answer(self):
         kwargs = self.message_post_default_kwargs.copy()
         kwargs.update({'body': "I'm not talking to @flectrabot right now", 'partner_ids': []})

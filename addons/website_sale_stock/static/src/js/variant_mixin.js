@@ -1,4 +1,4 @@
-flectra.define('website_sale_stock.VariantMixin', function (require) {
+sleektiv.define('website_sale_stock.VariantMixin', function (require) {
 'use strict';
 
 var VariantMixin = require('sale.VariantMixin');

@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.SearchBar', function (require) {
+sleektiv.define('point_of_sale.SearchBar', function (require) {
     'use strict';
 
     const { useState, useExternalListener } = owl.hooks;

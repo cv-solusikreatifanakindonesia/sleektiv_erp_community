@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchKanbanController', function (require) {
+sleektiv.define('lunch.LunchKanbanController', function (require) {
 "use strict";
 
 /**

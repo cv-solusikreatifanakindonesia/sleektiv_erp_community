@@ -3,10 +3,10 @@ from xmlrpc.client import Fault
 
 from passlib.totp import TOTP
 
-from flectra import http
-from flectra.exceptions import AccessDenied
-from flectra.service import common as auth, model
-from flectra.tests import tagged, HttpCase, get_db_name
+from sleektiv import http
+from sleektiv.exceptions import AccessDenied
+from sleektiv.service import common as auth, model
+from sleektiv.tests import tagged, HttpCase, get_db_name
 
 from ..controllers.home import Home
 

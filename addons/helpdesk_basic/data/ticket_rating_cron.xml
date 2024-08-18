@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
     <record id="ir_cron_auto_rating_request" model="ir.cron">
         <field name="name">Auto Rating Request For Ticket Service</field>
         <field name="interval_number">3</field>
@@ -10,4 +10,4 @@
         <field name="code">model._auto_rating_request_mail()</field>
         <field name="state">code</field>
     </record>
-</flectra>
+</sleektiv>

@@ -1,4 +1,4 @@
-flectra.define('web.GroupByMenu', function (require) {
+sleektiv.define('web.GroupByMenu', function (require) {
     "use strict";
 
     const CustomGroupByItem = require('web.CustomGroupByItem');

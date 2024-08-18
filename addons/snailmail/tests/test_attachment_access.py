@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import base64
 
-from flectra.exceptions import AccessError
-from flectra.tests import SavepointCase
+from sleektiv.exceptions import AccessError
+from sleektiv.tests import SavepointCase
 
 
 class testAttachmentAccess(SavepointCase):

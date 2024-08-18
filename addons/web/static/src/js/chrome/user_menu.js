@@ -1,4 +1,4 @@
-flectra.define('web.UserMenu', function (require) {
+sleektiv.define('web.UserMenu', function (require) {
 "use strict";
 
 /**

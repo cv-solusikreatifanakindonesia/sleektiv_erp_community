@@ -1,4 +1,4 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 import re
@@ -6,11 +6,11 @@ import requests
 
 from werkzeug import urls
 
-from flectra import _, api, fields, models
-from flectra.exceptions import ValidationError
+from sleektiv import _, api, fields, models
+from sleektiv.exceptions import ValidationError
 
-from flectra.addons.payment_adyen_paybylink import utils as adyen_utils
-from flectra.addons.payment_adyen_paybylink.const import API_ENDPOINT_VERSIONS
+from sleektiv.addons.payment_adyen_paybylink import utils as adyen_utils
+from sleektiv.addons.payment_adyen_paybylink.const import API_ENDPOINT_VERSIONS
 
 
 _logger = logging.getLogger(__name__)

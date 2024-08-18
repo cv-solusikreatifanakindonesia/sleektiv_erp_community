@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import datetime
 from enum import Enum
@@ -17,8 +17,8 @@ import zipfile
 from threading import Thread
 import time
 
-from flectra import _, http
-from flectra.modules.module import get_resource_path
+from sleektiv import _, http
+from sleektiv.modules.module import get_resource_path
 
 _logger = logging.getLogger(__name__)
 
@@ -35,7 +35,7 @@ class CertificateStatus(Enum):
 
 class IoTRestart(Thread):
     """
-    Thread to restart flectra server in IoT Box when we must return a answer before
+    Thread to restart sleektiv server in IoT Box when we must return a answer before
     """
     def __init__(self, delay):
         Thread.__init__(self)
@@ -43,21 +43,21 @@ class IoTRestart(Thread):
 
     def run(self):
         time.sleep(self.delay)
-        subprocess.check_call(["sudo", "service", "flectra", "restart"])
+        subprocess.check_call(["sudo", "service", "sleektiv", "restart"])
 
 def access_point():
     return get_ip() == '10.11.12.1'
 
 def add_credential(db_uuid, enterprise_code):
-    write_file('flectra-db-uuid.conf', db_uuid)
-    write_file('flectra-enterprise-code.conf', enterprise_code)
+    write_file('sleektiv-db-uuid.conf', db_uuid)
+    write_file('sleektiv-enterprise-code.conf', enterprise_code)
 
 def check_certificate():
     """
     Check if the current certificate is up to date or not authenticated
     :return CheckCertificateStatus
     """
-    server = get_flectra_server_url()
+    server = get_sleektiv_server_url()
     if not server:
         return {"status": CertificateStatus.ERROR,
                 "error_code": "ERR_IOT_HTTPS_CHECK_NO_SERVER"}
@@ -78,7 +78,7 @@ def check_certificate():
     for key in cert.get_subject().get_components():
         if key[0] == b'CN':
             cn = key[1].decode('utf-8')
-    if cn == 'FlectraTempIoTBoxCertificate' or datetime.datetime.now() > cert_end_date:
+    if cn == 'SleektivTempIoTBoxCertificate' or datetime.datetime.now() > cert_end_date:
         message = _('Your certificate %s must be updated') % (cn)
         _logger.info(message)
         return {"status": CertificateStatus.NEED_REFRESH}
@@ -89,10 +89,10 @@ def check_certificate():
 
 def check_git_branch():
     """
-    Check if the local branch is the same than the connected Flectra DB and
+    Check if the local branch is the same than the connected Sleektiv DB and
     checkout to match it if needed.
     """
-    server = get_flectra_server_url()
+    server = get_sleektiv_server_url()
     if server:
         urllib3.disable_warnings()
         http = urllib3.PoolManager(cert_reqs='CERT_NONE')
@@ -105,7 +105,7 @@ def check_git_branch():
             )
 
             if response.status == 200:
-                git = ['git', '--work-tree=/home/pi/flectra/', '--git-dir=/home/pi/flectra/.git']
+                git = ['git', '--work-tree=/home/pi/sleektiv/', '--git-dir=/home/pi/sleektiv/.git']
 
                 db_branch = json.loads(response.data)['result']['server_serie'].replace('~', '-')
                 if not subprocess.check_output(git + ['ls-remote', 'origin', db_branch]):
@@ -115,11 +115,11 @@ def check_git_branch():
 
                 if db_branch != local_branch:
                     subprocess.call(["sudo", "mount", "-o", "remount,rw", "/"])
-                    subprocess.check_call(["rm", "-rf", "/home/pi/flectra/addons/hw_drivers/iot_handlers/drivers/*"])
-                    subprocess.check_call(["rm", "-rf", "/home/pi/flectra/addons/hw_drivers/iot_handlers/interfaces/*"])
+                    subprocess.check_call(["rm", "-rf", "/home/pi/sleektiv/addons/hw_drivers/iot_handlers/drivers/*"])
+                    subprocess.check_call(["rm", "-rf", "/home/pi/sleektiv/addons/hw_drivers/iot_handlers/interfaces/*"])
                     subprocess.check_call(git + ['branch', '-m', db_branch])
                     subprocess.check_call(git + ['remote', 'set-branches', 'origin', db_branch])
-                    os.system('/home/pi/flectra/addons/point_of_sale/tools/posbox/configuration/posbox_update.sh')
+                    os.system('/home/pi/sleektiv/addons/point_of_sale/tools/posbox/configuration/posbox_update.sh')
                     subprocess.call(["sudo", "mount", "-o", "remount,ro", "/"])
                     subprocess.call(["sudo", "mount", "-o", "remount,rw", "/root_bypass_ramdisks/etc/cups"])
 
@@ -213,17 +213,17 @@ def get_ssid():
     process_grep = subprocess.Popen(['grep', 'ESSID:"'], stdin=process_iwconfig.stdout, stdout=subprocess.PIPE)
     return subprocess.check_output(['sed', 's/.*"\\(.*\\)"/\\1/'], stdin=process_grep.stdout).decode('utf-8').rstrip()
 
-def get_flectra_server_url():
+def get_sleektiv_server_url():
     ap = subprocess.call(['systemctl', 'is-active', '--quiet', 'hostapd']) # if service is active return 0 else inactive
     if not ap:
         return False
-    return read_file_first_line('flectra-remote-server.conf')
+    return read_file_first_line('sleektiv-remote-server.conf')
 
 def get_token():
     return read_file_first_line('token')
 
 def get_version():
-    return subprocess.check_output(['cat', '/var/flectra/iotbox_version']).decode().rstrip()
+    return subprocess.check_output(['cat', '/var/sleektiv/iotbox_version']).decode().rstrip()
 
 def get_wifi_essid():
     wifi_options = []
@@ -237,14 +237,14 @@ def get_wifi_essid():
 
 def load_certificate():
     """
-    Send a request to Flectra with customer db_uuid and enterprise_code to get a true certificate
+    Send a request to Sleektiv with customer db_uuid and enterprise_code to get a true certificate
     """
-    db_uuid = read_file_first_line('flectra-db-uuid.conf')
-    enterprise_code = read_file_first_line('flectra-enterprise-code.conf')
+    db_uuid = read_file_first_line('sleektiv-db-uuid.conf')
+    enterprise_code = read_file_first_line('sleektiv-enterprise-code.conf')
     if not (db_uuid and enterprise_code):
         return "ERR_IOT_HTTPS_LOAD_NO_CREDENTIAL"
 
-    url = 'https://www.flectrahq.com/flectra-enterprise/iot/x509'
+    url = 'https://www.flectrahq.com/sleektiv-enterprise/iot/x509'
     data = {
         'params': {
             'db_uuid': db_uuid,
@@ -271,7 +271,7 @@ def load_certificate():
     if not result:
         return "ERR_IOT_HTTPS_LOAD_REQUEST_NO_RESULT"
 
-    write_file('flectra-subject.conf', result['subject_cn'])
+    write_file('sleektiv-subject.conf', result['subject_cn'])
     subprocess.call(["sudo", "mount", "-o", "remount,rw", "/"])
     subprocess.call(["sudo", "mount", "-o", "remount,rw", "/root_bypass_ramdisks/"])
     Path('/etc/ssl/certs/nginx-cert.crt').write_text(result['x509_pem'])
@@ -286,9 +286,9 @@ def load_certificate():
 
 def download_iot_handlers(auto=True):
     """
-    Get the drivers from the configured Flectra server
+    Get the drivers from the configured Sleektiv server
     """
-    server = get_flectra_server_url()
+    server = get_sleektiv_server_url()
     if server:
         urllib3.disable_warnings()
         pm = urllib3.PoolManager(cert_reqs='CERT_NONE')
@@ -297,7 +297,7 @@ def download_iot_handlers(auto=True):
             resp = pm.request('POST', server, fields={'mac': get_mac_address(), 'auto': auto})
             if resp.data:
                 subprocess.call(["sudo", "mount", "-o", "remount,rw", "/"])
-                drivers_path = Path.home() / 'flectra/addons/hw_drivers/iot_handlers'
+                drivers_path = Path.home() / 'sleektiv/addons/hw_drivers/iot_handlers'
                 zip_file = zipfile.ZipFile(io.BytesIO(resp.data))
                 zip_file.extractall(drivers_path)
                 subprocess.call(["sudo", "mount", "-o", "remount,ro", "/"])
@@ -307,14 +307,14 @@ def download_iot_handlers(auto=True):
             _logger.error('A error encountered : %s ' % e)
 
 def compute_iot_handlers_addon_name(handler_kind, handler_file_name):
-    # TODO: replace with `removesuffix` (for Flectra version using an IoT image that use Python >= 3.9)
-    return "flectra.addons.hw_drivers.iot_handlers.{handler_kind}.{handler_name}".\
+    # TODO: replace with `removesuffix` (for Sleektiv version using an IoT image that use Python >= 3.9)
+    return "sleektiv.addons.hw_drivers.iot_handlers.{handler_kind}.{handler_name}".\
         format(handler_kind=handler_kind, handler_name=handler_file_name.replace('.py', ''))
 
 def load_iot_handlers():
     """
-    This method loads local files: 'flectra/addons/hw_drivers/iot_handlers/drivers' and
-    'flectra/addons/hw_drivers/iot_handlers/interfaces'
+    This method loads local files: 'sleektiv/addons/hw_drivers/iot_handlers/drivers' and
+    'sleektiv/addons/hw_drivers/iot_handlers/interfaces'
     And execute these python drivers and interfaces
     """
     for directory in ['interfaces', 'drivers']:
@@ -329,7 +329,7 @@ def load_iot_handlers():
     http.addons_manifest = {}
     http.root = http.Root()
 
-def flectra_restart(delay):
+def sleektiv_restart(delay):
     IR = IoTRestart(delay)
     IR.start()
 

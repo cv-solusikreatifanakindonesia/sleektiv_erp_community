@@ -7,7 +7,7 @@ import os
 import shutil
 import tempfile
 
-from flectra.tools.mimetypes import guess_mimetype
+from sleektiv.tools.mimetypes import guess_mimetype
 
 
 def check_name(name):

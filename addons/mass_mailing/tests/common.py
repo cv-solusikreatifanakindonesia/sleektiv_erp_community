@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import random
 import re
 import werkzeug
 
-from flectra.addons.link_tracker.tests.common import MockLinkTracker
-from flectra.addons.mail.tests.common import MailCase, MailCommon, mail_new_test_user
-from flectra import tools
+from sleektiv.addons.link_tracker.tests.common import MockLinkTracker
+from sleektiv.addons.mail.tests.common import MailCase, MailCommon, mail_new_test_user
+from sleektiv import tools
 
 class MassMailCase(MailCase, MockLinkTracker):
 

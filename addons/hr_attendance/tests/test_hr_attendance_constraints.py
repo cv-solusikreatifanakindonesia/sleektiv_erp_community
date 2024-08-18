@@ -2,7 +2,7 @@
 
 import time
 
-from flectra.tests.common import TransactionCase
+from sleektiv.tests.common import TransactionCase
 
 
 class TestHrAttendance(TransactionCase):

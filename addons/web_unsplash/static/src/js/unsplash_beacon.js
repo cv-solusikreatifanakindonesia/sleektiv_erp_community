@@ -1,4 +1,4 @@
-flectra.define('web_unsplash.beacon', function (require) {
+sleektiv.define('web_unsplash.beacon', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

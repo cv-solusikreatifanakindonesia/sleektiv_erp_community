@@ -1,4 +1,4 @@
-flectra.define('test_website.error_views', function (require) {
+sleektiv.define('test_website.error_views', function (require) {
 'use strict';
 
 var tour = require('web_tour.tour');

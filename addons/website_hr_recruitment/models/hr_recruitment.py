@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from werkzeug import urls
 
-from flectra import _, api, fields, models
-from flectra.tools.translate import html_translate
-from flectra.exceptions import UserError
+from sleektiv import _, api, fields, models
+from sleektiv.tools.translate import html_translate
+from sleektiv.exceptions import UserError
 
 
 class RecruitmentSource(models.Model):

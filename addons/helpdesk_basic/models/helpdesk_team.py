@@ -1,7 +1,7 @@
-# Part of flectra. See LICENSE file for full copyright and licensing details.
+# Part of sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, _
-from flectra.tools import DEFAULT_SERVER_DATE_FORMAT as DF
+from sleektiv import api, fields, models, _
+from sleektiv.tools import DEFAULT_SERVER_DATE_FORMAT as DF
 from datetime import datetime, timedelta
 from babel.dates import format_datetime, format_date
 import json

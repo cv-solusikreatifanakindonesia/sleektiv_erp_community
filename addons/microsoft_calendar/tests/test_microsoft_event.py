@@ -1,5 +1,5 @@
-from flectra.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from flectra.addons.microsoft_calendar.tests.common import TestCommon, patch_api
+from sleektiv.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from sleektiv.addons.microsoft_calendar.tests.common import TestCommon, patch_api
 
 class TestMicrosoftEvent(TestCommon):
 
@@ -15,17 +15,17 @@ class TestMicrosoftEvent(TestCommon):
         event_uid = self.simple_event.ms_universal_event_id
         events = MicrosoftEvent([{
             "type": "singleInstance",
-            "_flectra_id": self.simple_event.id,
+            "_sleektiv_id": self.simple_event.id,
             "iCalUId": event_uid,
             "id": event_id,
         }])
 
         # act
-        mapped = events._load_flectra_ids_from_db(self.env)
+        mapped = events._load_sleektiv_ids_from_db(self.env)
 
         # assert
         self.assertEqual(len(mapped._events), 1)
-        self.assertEqual(mapped._events[event_id]["_flectra_id"], self.simple_event.id)
+        self.assertEqual(mapped._events[event_id]["_sleektiv_id"], self.simple_event.id)
 
     def test_map_an_event_using_global_id(self):
 
@@ -34,41 +34,41 @@ class TestMicrosoftEvent(TestCommon):
         event_uid = self.simple_event.ms_universal_event_id
         events = MicrosoftEvent([{
             "type": "singleInstance",
-            "_flectra_id": False,
+            "_sleektiv_id": False,
             "iCalUId": event_uid,
             "id": event_id,
         }])
 
         # act
-        mapped = events._load_flectra_ids_from_db(self.env)
+        mapped = events._load_sleektiv_ids_from_db(self.env)
 
         # assert
         self.assertEqual(len(mapped._events), 1)
-        self.assertEqual(mapped._events[event_id]["_flectra_id"], self.simple_event.id)
+        self.assertEqual(mapped._events[event_id]["_sleektiv_id"], self.simple_event.id)
 
     def test_map_an_event_using_instance_id(self):
         """
-        Here, the Flectra event has an uid but the Outlook event has not.
+        Here, the Sleektiv event has an uid but the Outlook event has not.
         """
         # arrange
         event_id = self.simple_event.ms_organizer_event_id
         events = MicrosoftEvent([{
             "type": "singleInstance",
-            "_flectra_id": False,
+            "_sleektiv_id": False,
             "iCalUId": False,
             "id": event_id,
         }])
 
         # act
-        mapped = events._load_flectra_ids_from_db(self.env)
+        mapped = events._load_sleektiv_ids_from_db(self.env)
 
         # assert
         self.assertEqual(len(mapped._events), 1)
-        self.assertEqual(mapped._events[event_id]["_flectra_id"], self.simple_event.id)
+        self.assertEqual(mapped._events[event_id]["_sleektiv_id"], self.simple_event.id)
 
     def test_map_an_event_without_uid_using_instance_id(self):
         """
-        Here, the Flectra event has no uid but the Outlook event has one.
+        Here, the Sleektiv event has no uid but the Outlook event has one.
         """
 
         # arrange
@@ -77,22 +77,22 @@ class TestMicrosoftEvent(TestCommon):
         self.simple_event.ms_universal_event_id = False
         events = MicrosoftEvent([{
             "type": "singleInstance",
-            "_flectra_id": False,
+            "_sleektiv_id": False,
             "iCalUId": event_uid,
             "id": event_id,
         }])
 
         # act
-        mapped = events._load_flectra_ids_from_db(self.env)
+        mapped = events._load_sleektiv_ids_from_db(self.env)
 
         # assert
         self.assertEqual(len(mapped._events), 1)
-        self.assertEqual(mapped._events[event_id]["_flectra_id"], self.simple_event.id)
+        self.assertEqual(mapped._events[event_id]["_sleektiv_id"], self.simple_event.id)
         self.assertEqual(self.simple_event.ms_universal_event_id, event_uid)
 
     def test_map_an_event_without_uid_using_instance_id_2(self):
         """
-        Here, both Flectra event and Outlook event have no uid.
+        Here, both Sleektiv event and Outlook event have no uid.
         """
 
         # arrange
@@ -100,17 +100,17 @@ class TestMicrosoftEvent(TestCommon):
         self.simple_event.ms_universal_event_id = False
         events = MicrosoftEvent([{
             "type": "singleInstance",
-            "_flectra_id": False,
+            "_sleektiv_id": False,
             "iCalUId": False,
             "id": event_id,
         }])
 
         # act
-        mapped = events._load_flectra_ids_from_db(self.env)
+        mapped = events._load_sleektiv_ids_from_db(self.env)
 
         # assert
         self.assertEqual(len(mapped._events), 1)
-        self.assertEqual(mapped._events[event_id]["_flectra_id"], self.simple_event.id)
+        self.assertEqual(mapped._events[event_id]["_sleektiv_id"], self.simple_event.id)
         self.assertEqual(self.simple_event.ms_universal_event_id, False)
 
     def test_map_a_recurrence_using_global_id(self):
@@ -120,17 +120,17 @@ class TestMicrosoftEvent(TestCommon):
         rec_uid = self.recurrence.ms_universal_event_id
         events = MicrosoftEvent([{
             "type": "seriesMaster",
-            "_flectra_id": False,
+            "_sleektiv_id": False,
             "iCalUId": rec_uid,
             "id": rec_id,
         }])
 
         # act
-        mapped = events._load_flectra_ids_from_db(self.env)
+        mapped = events._load_sleektiv_ids_from_db(self.env)
 
         # assert
         self.assertEqual(len(mapped._events), 1)
-        self.assertEqual(mapped._events[rec_id]["_flectra_id"], self.recurrence.id)
+        self.assertEqual(mapped._events[rec_id]["_sleektiv_id"], self.recurrence.id)
 
     def test_map_a_recurrence_using_instance_id(self):
 
@@ -138,17 +138,17 @@ class TestMicrosoftEvent(TestCommon):
         rec_id = self.recurrence.ms_organizer_event_id
         events = MicrosoftEvent([{
             "type": "seriesMaster",
-            "_flectra_id": False,
+            "_sleektiv_id": False,
             "iCalUId": False,
             "id": rec_id,
         }])
 
         # act
-        mapped = events._load_flectra_ids_from_db(self.env)
+        mapped = events._load_sleektiv_ids_from_db(self.env)
 
         # assert
         self.assertEqual(len(mapped._events), 1)
-        self.assertEqual(mapped._events[rec_id]["_flectra_id"], self.recurrence.id)
+        self.assertEqual(mapped._events[rec_id]["_sleektiv_id"], self.recurrence.id)
 
     def test_try_to_map_mixed_of_single_events_and_recurrences(self):
 
@@ -161,13 +161,13 @@ class TestMicrosoftEvent(TestCommon):
         events = MicrosoftEvent([
             {
                 "type": "seriesMaster",
-                "_flectra_id": False,
+                "_sleektiv_id": False,
                 "iCalUId": rec_uid,
                 "id": rec_id,
             },
             {
                 "type": "singleInstance",
-                "_flectra_id": False,
+                "_sleektiv_id": False,
                 "iCalUId": event_uid,
                 "id": event_id,
             },
@@ -175,7 +175,7 @@ class TestMicrosoftEvent(TestCommon):
 
         # act & assert
         with self.assertRaises(TypeError):
-            events._load_flectra_ids_from_db(self.env)
+            events._load_sleektiv_ids_from_db(self.env)
 
     def test_match_event_only(self):
 
@@ -184,17 +184,17 @@ class TestMicrosoftEvent(TestCommon):
         event_uid = self.simple_event.ms_universal_event_id
         events = MicrosoftEvent([{
             "type": "singleInstance",
-            "_flectra_id": False,
+            "_sleektiv_id": False,
             "iCalUId": event_uid,
             "id": event_id,
         }])
 
         # act
-        matched = events.match_with_flectra_events(self.env)
+        matched = events.match_with_sleektiv_events(self.env)
 
         # assert
         self.assertEqual(len(matched._events), 1)
-        self.assertEqual(matched._events[event_id]["_flectra_id"], self.simple_event.id)
+        self.assertEqual(matched._events[event_id]["_sleektiv_id"], self.simple_event.id)
 
     def test_match_recurrence_only(self):
 
@@ -203,17 +203,17 @@ class TestMicrosoftEvent(TestCommon):
         rec_uid = self.recurrence.ms_universal_event_id
         events = MicrosoftEvent([{
             "type": "seriesMaster",
-            "_flectra_id": False,
+            "_sleektiv_id": False,
             "iCalUId": rec_uid,
             "id": rec_id,
         }])
 
         # act
-        matched = events.match_with_flectra_events(self.env)
+        matched = events.match_with_sleektiv_events(self.env)
 
         # assert
         self.assertEqual(len(matched._events), 1)
-        self.assertEqual(matched._events[rec_id]["_flectra_id"], self.recurrence.id)
+        self.assertEqual(matched._events[rec_id]["_sleektiv_id"], self.recurrence.id)
 
     def test_match_not_typed_recurrence(self):
         """
@@ -228,17 +228,17 @@ class TestMicrosoftEvent(TestCommon):
             "@removed": {
                 "reason": "deleted",
             },
-            "_flectra_id": False,
+            "_sleektiv_id": False,
             "iCalUId": rec_uid,
             "id": rec_id,
         }])
 
         # act
-        matched = events.match_with_flectra_events(self.env)
+        matched = events.match_with_sleektiv_events(self.env)
 
         # assert
         self.assertEqual(len(matched._events), 1)
-        self.assertEqual(matched._events[rec_id]["_flectra_id"], self.recurrence.id)
+        self.assertEqual(matched._events[rec_id]["_sleektiv_id"], self.recurrence.id)
 
     def test_match_mix_of_events_and_recurrences(self):
 
@@ -251,7 +251,7 @@ class TestMicrosoftEvent(TestCommon):
         events = MicrosoftEvent([
             {
                 "type": "singleInstance",
-                "_flectra_id": False,
+                "_sleektiv_id": False,
                 "iCalUId": event_uid,
                 "id": event_id,
             },
@@ -259,32 +259,32 @@ class TestMicrosoftEvent(TestCommon):
                 "@removed": {
                     "reason": "deleted",
                 },
-                "_flectra_id": False,
+                "_sleektiv_id": False,
                 "iCalUId": rec_uid,
                 "id": rec_id,
             }
         ])
 
         # act
-        matched = events.match_with_flectra_events(self.env)
+        matched = events.match_with_sleektiv_events(self.env)
 
         # assert
         self.assertEqual(len(matched._events), 2)
-        self.assertEqual(matched._events[event_id]["_flectra_id"], self.simple_event.id)
-        self.assertEqual(matched._events[rec_id]["_flectra_id"], self.recurrence.id)
+        self.assertEqual(matched._events[event_id]["_sleektiv_id"], self.simple_event.id)
+        self.assertEqual(matched._events[rec_id]["_sleektiv_id"], self.recurrence.id)
 
     def test_ignore_not_found_items(self):
 
         # arrange
         events = MicrosoftEvent([{
             "type": "singleInstance",
-            "_flectra_id": False,
+            "_sleektiv_id": False,
             "iCalUId": "UNKNOWN_EVENT",
             "id": "UNKNOWN_EVENT",
         }])
 
         # act
-        matched = events.match_with_flectra_events(self.env)
+        matched = events.match_with_sleektiv_events(self.env)
 
         # assert
         self.assertEqual(len(matched._events), 0)

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import time
-from flectra import api, models, _
-from flectra.exceptions import UserError
-from flectra.tools import float_is_zero
+from sleektiv import api, models, _
+from sleektiv.exceptions import UserError
+from sleektiv.tools import float_is_zero
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 

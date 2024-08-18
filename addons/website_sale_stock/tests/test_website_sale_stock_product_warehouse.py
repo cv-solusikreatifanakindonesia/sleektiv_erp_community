@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.website.tools import MockRequest
-from flectra.addons.sale.tests.test_sale_product_attribute_value_config import TestSaleProductAttributeValueCommon
-from flectra.tests import tagged
+from sleektiv.addons.website.tools import MockRequest
+from sleektiv.addons.sale.tests.test_sale_product_attribute_value_config import TestSaleProductAttributeValueCommon
+from sleektiv.tests import tagged
 
 
 @tagged('post_install', '-at_install')

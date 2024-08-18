@@ -4,8 +4,8 @@
 
 import logging
 
-from flectra import _, api, fields, models
-from flectra.exceptions import AccessError
+from sleektiv import _, api, fields, models
+from sleektiv.exceptions import AccessError
 
 _logger = logging.getLogger(__name__)
 

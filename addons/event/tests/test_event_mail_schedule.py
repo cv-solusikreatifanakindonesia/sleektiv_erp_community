@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from flectra.addons.event.tests.common import TestEventCommon
-from flectra.addons.mail.tests.common import MockEmail
-from flectra.tools import formataddr, mute_logger
+from sleektiv.addons.event.tests.common import TestEventCommon
+from sleektiv.addons.mail.tests.common import MockEmail
+from sleektiv.tools import formataddr, mute_logger
 
 
 class TestMailSchedule(TestEventCommon, MockEmail):
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('sleektiv.addons.base.models.ir_model', 'sleektiv.models')
     def test_event_mail_schedule(self):
         """ Test mail scheduling for events """
         event_cron_id = self.env.ref('event.event_mail_scheduler')
@@ -257,7 +257,7 @@ class TestMailSchedule(TestEventCommon, MockEmail):
                            'email_from': self.user_eventmanager.company_id.email_formatted,
                           })
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('sleektiv.addons.base.models.ir_model', 'sleektiv.models')
     def test_archived_event_mail_schedule(self):
         """ Test mail scheduling for archived events """
         event_cron_id = self.env.ref('event.event_mail_scheduler')

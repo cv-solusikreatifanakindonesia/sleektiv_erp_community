@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flectra import _, api, models
-from flectra.exceptions import UserError
-from flectra.tools import split_every
+from sleektiv import _, api, models
+from sleektiv.exceptions import UserError
+from sleektiv.tools import split_every
 
 
 class AccountTax(models.Model):

@@ -1,9 +1,9 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from flectra.fields import Datetime
-from flectra.tests import HttpCase, tagged
+from sleektiv.fields import Datetime
+from sleektiv.tests import HttpCase, tagged
 
 
 @tagged('post_install', '-at_install')

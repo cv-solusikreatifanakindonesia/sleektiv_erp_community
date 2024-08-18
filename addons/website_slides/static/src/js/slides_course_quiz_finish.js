@@ -1,4 +1,4 @@
-flectra.define('website_slides.quiz.finish', function (require) {
+sleektiv.define('website_slides.quiz.finish', function (require) {
 'use strict';
 
 var Dialog = require('web.Dialog');

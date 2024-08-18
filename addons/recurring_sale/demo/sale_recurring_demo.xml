@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<flectra noupdate="1">
+<sleektiv noupdate="1">
 
     <record id="sale_order_demo_recurring" model="sale.order">
         <field name="name">SO001</field>
@@ -33,4 +33,4 @@
         <field name="date_init" eval="datetime.now()"/>
         <field name="doc_source" ref='recurring_sale.sale_order_demo_recurring'/>
     </record>
-</flectra>
+</sleektiv>

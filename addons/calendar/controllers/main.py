@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 
-import flectra.http as http
+import sleektiv.http as http
 
-from flectra.http import request
-from flectra.tools.misc import get_lang
+from sleektiv.http import request
+from sleektiv.tools.misc import get_lang
 
 
 class CalendarController(http.Controller):

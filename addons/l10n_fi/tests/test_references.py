@@ -1,7 +1,7 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.tests import tagged
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.exceptions import UserError
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.tests import tagged
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.exceptions import UserError
 
 
 @tagged('post_install', '-at_install')

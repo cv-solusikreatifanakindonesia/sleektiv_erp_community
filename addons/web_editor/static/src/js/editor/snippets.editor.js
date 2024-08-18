@@ -1,4 +1,4 @@
-flectra.define('web_editor.snippet.editor', function (require) {
+sleektiv.define('web_editor.snippet.editor', function (require) {
 'use strict';
 
 var concurrency = require('web.concurrency');
@@ -896,7 +896,7 @@ var SnippetEditor = Widget.extend({
      * specific action/react to a specific event.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onOptionUpdate: function (ev) {
         var self = this;
@@ -943,14 +943,14 @@ var SnippetEditor = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSnippetOptionUpdate: async function (ev) {
         // TODO remove me in master
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSnippetOptionVisibilityUpdate: function (ev) {
         if (this.willDestroyEditors) {
@@ -1169,7 +1169,7 @@ var SnippetsMenu = Widget.extend({
                 this._activateSnippet(false);
                 // If empty oe_structure, encourage using snippets in there by
                 // making them "wizz" in the panel.
-                this.$snippets.flectraBounce();
+                this.$snippets.sleektivBounce();
                 return;
             }
             this._activateSnippet($target);
@@ -2546,7 +2546,7 @@ var SnippetsMenu = Widget.extend({
      * Called when a child editor asks for insertion zones to be enabled.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onActivateInsertionZones: function (ev) {
         // TODO Done this way in stable but should be a parameter in master.
@@ -2568,7 +2568,7 @@ var SnippetsMenu = Widget.extend({
      * snippet of a DOM element.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onCallForEachChildSnippet: function (ev) {
         const prom = this._callForEachChildSnippet(ev.data.$snippet, ev.data.callback);
@@ -2580,7 +2580,7 @@ var SnippetsMenu = Widget.extend({
      * Called when the overlay dimensions/positions should be recomputed.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onOverlaysCoverUpdate: function (ev) {
         this.snippetEditors.forEach(editor => {
@@ -2595,7 +2595,7 @@ var SnippetsMenu = Widget.extend({
      * call the _onClone methods if the element's editor has one.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onCloneSnippet: async function (ev) {
         ev.stopPropagation();
@@ -2618,7 +2618,7 @@ var SnippetsMenu = Widget.extend({
      * Called when a snippet has moved in the page.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onDragAndDropStop: async function (ev) {
         const modalEl = ev.data.$snippet[0].closest('.modal');
@@ -2635,7 +2635,7 @@ var SnippetsMenu = Widget.extend({
      * Returns the droppable snippet from which a dropped snippet originates.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onFindSnippetTemplate(ev) {
         this.$snippets.each(function () {
@@ -2651,7 +2651,7 @@ var SnippetsMenu = Widget.extend({
      * parent instead.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onGoToParent: function (ev) {
         ev.stopPropagation();
@@ -2798,7 +2798,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onGetSnippetVersions: function (ev) {
         const snippet = this.el.querySelector(`.oe_snippet > [data-snippet="${ev.data.snippetName}"]`);
@@ -2835,7 +2835,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onRemoveSnippet: async function (ev) {
         ev.stopPropagation();
@@ -2879,13 +2879,13 @@ var SnippetsMenu = Widget.extend({
         const $els = this.getEditableArea().find('.oe_structure.oe_empty').addBack('.oe_structure.oe_empty');
         for (const el of $els) {
             if (!el.children.length) {
-                $(el).flectraBounce('o_we_snippet_area_animation');
+                $(el).sleektivBounce('o_we_snippet_area_animation');
             }
         }
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      * @param {Object} ev.data
      * @param {function} ev.data.exec
      */
@@ -2894,7 +2894,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSnippetEditorDestroyed(ev) {
         ev.stopPropagation();
@@ -2934,7 +2934,7 @@ var SnippetsMenu = Widget.extend({
      * may depend on their UI status.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSnippetOptionUpdate(ev) {
         ev.stopPropagation();
@@ -2947,7 +2947,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSnippetOptionVisibilityUpdate: async function (ev) {
         if (this.willDestroyEditors) {
@@ -2961,7 +2961,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSnippetThumbnailURLRequest(ev) {
         const $snippet = this.$snippets.has(`[data-snippet="${ev.data.key}"]`);
@@ -3006,7 +3006,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onUpdateCustomizeElements: function (ev) {
         this._updateLeftPanelContent({

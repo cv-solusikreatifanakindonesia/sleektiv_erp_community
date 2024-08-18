@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import OrderedDict
 from operator import itemgetter
 
-from flectra import http, _
-from flectra.exceptions import AccessError, MissingError
-from flectra.http import request
-from flectra.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
-from flectra.tools import groupby as groupbyelem
+from sleektiv import http, _
+from sleektiv.exceptions import AccessError, MissingError
+from sleektiv.http import request
+from sleektiv.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from sleektiv.tools import groupby as groupbyelem
 
-from flectra.osv.expression import OR
+from sleektiv.osv.expression import OR
 
 
 class CustomerPortal(CustomerPortal):

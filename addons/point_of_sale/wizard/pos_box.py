@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, _
-from flectra.exceptions import UserError
+from sleektiv import api, _
+from sleektiv.exceptions import UserError
 
-from flectra.addons.account.wizard.pos_box import CashBox
+from sleektiv.addons.account.wizard.pos_box import CashBox
 
 
 class PosBox(CashBox):

@@ -1,4 +1,4 @@
-flectra.define('website_links.website_links', function (require) {
+sleektiv.define('website_links.website_links', function (require) {
 'use strict';
 
 var core = require('web.core');

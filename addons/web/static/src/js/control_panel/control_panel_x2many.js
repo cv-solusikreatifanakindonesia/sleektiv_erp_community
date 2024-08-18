@@ -1,4 +1,4 @@
-flectra.define('web.ControlPanelX2Many', function (require) {
+sleektiv.define('web.ControlPanelX2Many', function (require) {
 
     const ControlPanel = require('web.ControlPanel');
 

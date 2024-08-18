@@ -1,4 +1,4 @@
-flectra.define('web_editor.convertInline', function (require) {
+sleektiv.define('web_editor.convertInline', function (require) {
 'use strict';
 
 var FieldHtml = require('web_editor.field.html');
@@ -189,7 +189,7 @@ function getMatchedCSSRules(a) {
  *                           converted to images
  */
 function fontToImg($editable) {
-    var fonts = flectra.__DEBUG__.services["wysiwyg.fonts"];
+    var fonts = sleektiv.__DEBUG__.services["wysiwyg.fonts"];
 
     $editable.find('.fa').each(function () {
         var $font = $(this);

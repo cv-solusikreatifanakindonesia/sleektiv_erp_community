@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import fields, models
-from flectra.tools.translate import html_translate
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv import fields, models
+from sleektiv.tools.translate import html_translate
 
 
 class DigestTip(models.Model):

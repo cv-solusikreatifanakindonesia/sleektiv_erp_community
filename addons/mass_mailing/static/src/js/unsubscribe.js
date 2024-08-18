@@ -1,4 +1,4 @@
-flectra.define('mass_mailing.unsubscribe', function (require) {
+sleektiv.define('mass_mailing.unsubscribe', function (require) {
     'use strict';
 
     var session = require('web.session');

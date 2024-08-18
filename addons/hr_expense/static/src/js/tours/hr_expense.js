@@ -1,4 +1,4 @@
-flectra.define('hr_expense.tour', function(require) {
+sleektiv.define('hr_expense.tour', function(require) {
 "use strict";
 
 var core = require('web.core');

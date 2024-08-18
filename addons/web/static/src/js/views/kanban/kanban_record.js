@@ -1,4 +1,4 @@
-flectra.define('web.KanbanRecord', function (require) {
+sleektiv.define('web.KanbanRecord', function (require) {
 "use strict";
 
 /**

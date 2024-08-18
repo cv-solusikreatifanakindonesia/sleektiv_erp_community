@@ -1,9 +1,9 @@
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.models import Model
-from flectra.tests import tagged
-from flectra import fields
-from flectra.exceptions import UserError
-from flectra.tools import format_date
+from sleektiv.addons.account.tests.common import AccountTestInvoicingCommon
+from sleektiv.models import Model
+from sleektiv.tests import tagged
+from sleektiv import fields
+from sleektiv.exceptions import UserError
+from sleektiv.tools import format_date
 
 
 @tagged('post_install', '-at_install')

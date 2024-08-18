@@ -1,4 +1,4 @@
-define([], function () { // FLECTRA: remove error from Flectra define
+define([], function () { // FLECTRA: remove error from Sleektiv define
   var HelpDialog = function (handler) {
     /**
      * show help dialog

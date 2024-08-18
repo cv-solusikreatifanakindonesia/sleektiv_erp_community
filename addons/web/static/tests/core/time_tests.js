@@ -1,4 +1,4 @@
-flectra.define('web.time_tests', function (require) {
+sleektiv.define('web.time_tests', function (require) {
 "use strict";
 
 const core = require('web.core');

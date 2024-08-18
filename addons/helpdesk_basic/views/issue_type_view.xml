@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
 
     <record id="view_issue_type_form" model="ir.ui.view">
         <field name="name">Issue Type Form</field>
@@ -149,4 +149,4 @@
               action="action_issue_type" sequence="2"
               groups="helpdesk_basic.helpdesk_group_manager"/>
 
-</flectra>
+</sleektiv>

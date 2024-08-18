@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models
+from sleektiv import api, models
 
 class PayslipDetailsReport(models.AbstractModel):
     _name = 'report.hr_payroll.report_payslipdetails'

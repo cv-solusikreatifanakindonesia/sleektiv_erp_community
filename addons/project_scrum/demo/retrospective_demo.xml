@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<sleektiv>
     <data noupdate="1">
         <!--
             retrospective.method Demo Data
@@ -57,4 +57,4 @@
             <field name="retrospective_id" ref="project_scrum.retrospective_3"/>
         </record>
     </data>
-</flectra>
+</sleektiv>

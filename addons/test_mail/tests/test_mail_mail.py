@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import psycopg2
 
-from flectra import api, tools
-from flectra.addons.test_mail.tests.common import TestMailCommon
-from flectra.tests import common, tagged
-from flectra.tools import mute_logger
+from sleektiv import api, tools
+from sleektiv.addons.test_mail.tests.common import TestMailCommon
+from sleektiv.tests import common, tagged
+from sleektiv.tools import mute_logger
 
 
 @tagged('mail_mail')
@@ -22,7 +22,7 @@ class TestMailMail(TestMailCommon):
             'email_from': 'ignasse@example.com',
         }).with_context({})
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mail_mail_notify_from_mail_mail(self):
         # Due ot post-commit hooks, store send emails in every step
         mail = self.env['mail.mail'].sudo().create({
@@ -35,7 +35,7 @@ class TestMailMail(TestMailCommon):
         self.assertSentEmail(mail.env.user.partner_id, ['test@example.com'])
         self.assertEqual(len(self._mails), 1)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mail_mail_return_path(self):
         # mail without thread-enabled record
         base_values = {
@@ -75,7 +75,7 @@ class TestMailMail(TestMailCommon):
             mail.send()
         self.assertEqual(self._mails[0]['headers']['Return-Path'], '%s@%s' % (self.alias_bounce, self.alias_domain))
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mail_mail_values_email_formatted(self):
         """ Test outgoing email values, with formatting """
         customer = self.env['res.partner'].create({
@@ -106,7 +106,7 @@ class TestMailMail(TestMailCommon):
             'Mail: currently always removing formatting in email_cc'
         )
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mail_mail_values_email_multi(self):
         """ Test outgoing email values, with email field holding multi emails """
         # Multi
@@ -169,7 +169,7 @@ class TestMailMail(TestMailCommon):
             [['test.cc.1@test.example.com', 'test.cc.2@test.example.com']] * 3,
         )
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mail_mail_values_unicode(self):
         """ Unicode should be fine. """
         mail = self.env['mail.mail'].create({
@@ -187,7 +187,7 @@ class TestMailMail(TestMailCommon):
 @tagged('mail_mail')
 class TestMailMailRace(common.TransactionCase):
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('sleektiv.addons.mail.models.mail_mail')
     def test_mail_bounce_during_send(self):
         self.partner = self.env['res.partner'].create({
             'name': 'Ernest Partner',
@@ -220,7 +220,7 @@ class TestMailMailRace(common.TransactionCase):
         bounce_deferred = []
         @api.model
         def send_email(self, message, *args, **kwargs):
-            with this.registry.cursor() as cr, mute_logger('flectra.sql_db'):
+            with this.registry.cursor() as cr, mute_logger('sleektiv.sql_db'):
                 try:
                     # try ro aquire lock (no wait) on notification (should fail)
                     cr.execute("SELECT notification_status FROM mail_message_res_partner_needaction_rel WHERE id = %s FOR UPDATE NOWAIT", [notif.id])

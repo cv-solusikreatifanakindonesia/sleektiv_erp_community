@@ -1,4 +1,4 @@
-flectra.define('web.tools', function (require) {
+sleektiv.define('web.tools', function (require) {
 "use strict";
 
 /**

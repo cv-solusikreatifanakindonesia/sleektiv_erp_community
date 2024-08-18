@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.website_event_track_live.controllers.track_live import EventTrackLiveController
+from sleektiv.addons.website_event_track_live.controllers.track_live import EventTrackLiveController
 
 
 class EventTrackLiveQuizController(EventTrackLiveController):

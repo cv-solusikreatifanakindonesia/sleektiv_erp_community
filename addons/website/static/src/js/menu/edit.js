@@ -1,4 +1,4 @@
-flectra.define('website.editMenu', function (require) {
+sleektiv.define('website.editMenu', function (require) {
 'use strict';
 
 var core = require('web.core');
@@ -156,7 +156,7 @@ var EditPageMenu = websiteNavbarData.WebsiteNavbarActionWidget.extend({
      * WebsiteRoot that is should stop the public widgets.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onContentWillBeDestroyed: function (ev) {
         this.trigger_up('widgets_stop_request', {
@@ -168,7 +168,7 @@ var EditPageMenu = websiteNavbarData.WebsiteNavbarActionWidget.extend({
      * WebsiteRoot that is should start the public widgets.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onContentWasRecreated: function (ev) {
         this.trigger_up('widgets_start_request', {
@@ -181,7 +181,7 @@ var EditPageMenu = websiteNavbarData.WebsiteNavbarActionWidget.extend({
      * WebsiteRoot that is should stop the public widgets.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onEditionWillStop: function (ev) {
         this.$editorMessageElements && this.$editorMessageElements.removeAttr('data-editor-message');
@@ -200,7 +200,7 @@ var EditPageMenu = websiteNavbarData.WebsiteNavbarActionWidget.extend({
      * WebsiteRoot that is should start the public widgets.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onEditionWasStopped: function (ev) {
         this.trigger_up('widgets_start_request', {
@@ -213,7 +213,7 @@ var EditPageMenu = websiteNavbarData.WebsiteNavbarActionWidget.extend({
      * WebsiteRoot that is should destroy the animations for this snippet.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSnippetWillBeCloned: function (ev) {
         this.trigger_up('widgets_stop_request', {
@@ -226,7 +226,7 @@ var EditPageMenu = websiteNavbarData.WebsiteNavbarActionWidget.extend({
      * was cloned from.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSnippetCloned: function (ev) {
         this.trigger_up('widgets_start_request', {
@@ -247,7 +247,7 @@ var EditPageMenu = websiteNavbarData.WebsiteNavbarActionWidget.extend({
      * editor messages.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {SleektivEvent} ev
      */
     _onSnippetDropped: function (ev) {
         this.trigger_up('widgets_start_request', {

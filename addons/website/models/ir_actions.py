@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 from werkzeug import urls
 
-from flectra import api, fields, models
-from flectra.http import request
-from flectra.tools.json import scriptsafe as json_scriptsafe
+from sleektiv import api, fields, models
+from sleektiv.http import request
+from sleektiv.tools.json import scriptsafe as json_scriptsafe
 
 
 class ServerAction(models.Model):

@@ -1,4 +1,4 @@
-flectra.define('web.ListView', function (require) {
+sleektiv.define('web.ListView', function (require) {
 "use strict";
 
 /**

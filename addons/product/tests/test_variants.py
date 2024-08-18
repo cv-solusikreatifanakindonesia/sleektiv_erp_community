@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 from collections import OrderedDict
@@ -10,8 +10,8 @@ import unittest.mock
 from PIL import Image
 
 from . import common
-from flectra.exceptions import UserError
-from flectra.tests.common import TransactionCase, Form
+from sleektiv.exceptions import UserError
+from sleektiv.tests.common import TransactionCase, Form
 
 
 class TestVariantsSearch(TransactionCase):

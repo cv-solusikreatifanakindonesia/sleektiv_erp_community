@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-import flectra.tests
+import sleektiv.tests
 
 
-@flectra.tests.tagged('post_install', '-at_install')
-class TestRoutes(flectra.tests.HttpCase):
+@sleektiv.tests.tagged('post_install', '-at_install')
+class TestRoutes(sleektiv.tests.HttpCase):
 
     def test_01_web_session_destroy(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')

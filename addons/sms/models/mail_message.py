@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from operator import itemgetter
 
-from flectra import exceptions, fields, models
-from flectra.tools import groupby
+from sleektiv import exceptions, fields, models
+from sleektiv.tools import groupby
 
 
 class MailMessage(models.Model):

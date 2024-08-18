@@ -1,4 +1,4 @@
-flectra.define('website_slides.slides.slide.like', function (require) {
+sleektiv.define('website_slides.slides.slide.like', function (require) {
 'use strict';
 
 var core = require('web.core');

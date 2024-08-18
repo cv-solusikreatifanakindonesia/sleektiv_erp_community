@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Budget Management',
@@ -12,8 +12,8 @@
     'website': 'https://www.flectrahq.com',
     'depends': ['account'],
     'license': 'LGPL-3',
-    'company': 'FlectraHQ',
-    'maintainer': 'FlectraHQ',
+    'company': 'SleektivHQ',
+    'maintainer': 'SleektivHQ',
     'data': [
         'security/ir.model.access.csv',
         'security/account_budget_security.xml',

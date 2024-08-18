@@ -1,4 +1,4 @@
-flectra.define('web.field_many_to_one_tests', function (require) {
+sleektiv.define('web.field_many_to_one_tests', function (require) {
 "use strict";
 
 var BasicModel = require('web.BasicModel');

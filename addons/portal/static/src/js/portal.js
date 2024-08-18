@@ -1,4 +1,4 @@
-flectra.define('portal.portal', function (require) {
+sleektiv.define('portal.portal', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

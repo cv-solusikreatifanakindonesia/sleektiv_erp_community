@@ -5,7 +5,7 @@
 // Owl Component.
 ////////////////////////////////////////////////////////////////////////////////
 
-flectra.define('web.basic_fields.deprecated', function (require) {
+sleektiv.define('web.basic_fields.deprecated', function (require) {
 "use strict";
 
 /**

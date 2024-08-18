@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import Form, tagged, TransactionCase
-from flectra.exceptions import MissingError
+from sleektiv.tests import Form, tagged, TransactionCase
+from sleektiv.exceptions import MissingError
 
 @tagged('post_install', '-at_install')
 class TestEmployeeDeletion(TransactionCase):

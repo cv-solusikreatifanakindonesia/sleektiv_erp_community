@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from contextlib import contextmanager
 from dateutil.relativedelta import relativedelta
 import itertools
 from psycopg2 import OperationalError
 
-from flectra import api, fields, models, tools
+from sleektiv import api, fields, models, tools
 
 
 class HrWorkEntry(models.Model):

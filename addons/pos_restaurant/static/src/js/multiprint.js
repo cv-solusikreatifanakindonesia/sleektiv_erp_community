@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.multiprint', function (require) {
+sleektiv.define('pos_restaurant.multiprint', function (require) {
 "use strict";
 
 var models = require('point_of_sale.models');

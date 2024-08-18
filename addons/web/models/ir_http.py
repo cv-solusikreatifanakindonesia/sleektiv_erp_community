@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import hashlib
 import json
 
-from flectra import api, models
-from flectra.http import request
-from flectra.tools import ustr
+from sleektiv import api, models
+from sleektiv.http import request
+from sleektiv.tools import ustr
 
-from flectra.addons.web.controllers.main import module_boot, HomeStaticTemplateHelpers
+from sleektiv.addons.web.controllers.main import module_boot, HomeStaticTemplateHelpers
 
-import flectra
+import sleektiv
 
 
 class Http(models.AbstractModel):
@@ -23,7 +23,7 @@ class Http(models.AbstractModel):
 
     def session_info(self):
         user = request.env.user
-        version_info = flectra.service.common.exp_version()
+        version_info = sleektiv.service.common.exp_version()
 
         user_context = request.session.get_context() if request.session.uid else {}
         IrConfigSudo = self.env['ir.config_parameter'].sudo()
@@ -84,7 +84,7 @@ class Http(models.AbstractModel):
             'is_frontend': True,
         }
         if request.session.uid:
-            version_info = flectra.service.common.exp_version()
+            version_info = sleektiv.service.common.exp_version()
             session_info.update({
                 'server_version': version_info.get('server_version'),
                 'server_version_info': version_info.get('server_version_info')

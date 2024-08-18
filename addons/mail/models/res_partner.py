@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 
-from flectra import _, api, fields, models, tools
-from flectra.addons.bus.models.bus_presence import AWAY_TIMER
-from flectra.addons.bus.models.bus_presence import DISCONNECTION_TIMER
-from flectra.exceptions import AccessError
-from flectra.osv import expression
+from sleektiv import _, api, fields, models, tools
+from sleektiv.addons.bus.models.bus_presence import AWAY_TIMER
+from sleektiv.addons.bus.models.bus_presence import DISCONNECTION_TIMER
+from sleektiv.exceptions import AccessError
+from sleektiv.osv import expression
 
 _logger = logging.getLogger(__name__)
 

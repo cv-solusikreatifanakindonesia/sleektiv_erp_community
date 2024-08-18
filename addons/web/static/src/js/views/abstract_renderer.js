@@ -1,4 +1,4 @@
-flectra.define('web.AbstractRenderer', function (require) {
+sleektiv.define('web.AbstractRenderer', function (require) {
 "use strict";
 
 /**

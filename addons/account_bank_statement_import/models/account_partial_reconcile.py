@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, _
+from sleektiv import api, fields, models, _
 from collections import defaultdict
-from flectra.tools import float_is_zero
+from sleektiv.tools import float_is_zero
 
 
 class AccountPartialReconcile(models.Model):

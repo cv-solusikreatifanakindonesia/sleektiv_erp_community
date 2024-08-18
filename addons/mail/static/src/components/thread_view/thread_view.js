@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/thread_view/thread_view.js', function (require) {
+sleektiv.define('mail/static/src/components/thread_view/thread_view.js', function (require) {
 'use strict';
 
 const components = {

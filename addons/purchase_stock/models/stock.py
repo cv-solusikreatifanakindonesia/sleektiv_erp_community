@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, _
-from flectra.tools.float_utils import float_round, float_is_zero
-from flectra.exceptions import UserError
-from flectra.osv.expression import AND
+from sleektiv import api, fields, models, _
+from sleektiv.tools.float_utils import float_round, float_is_zero
+from sleektiv.exceptions import UserError
+from sleektiv.osv.expression import AND
 
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
@@ -52,7 +52,7 @@ class StockMove(models.Model):
                 # The date must be today, and not the date of the move since the move move is still
                 # in assigned state. However, the move date is the scheduled date until move is
                 # done, then date of actual move processing. See:
-                # https://github.com/flectra/flectra/blob/2f789b6863407e63f90b3a2d4cc3be09815f7002/addons/stock/models/stock_move.py#L36
+                # https://github.com/sleektiv/sleektiv/blob/2f789b6863407e63f90b3a2d4cc3be09815f7002/addons/stock/models/stock_move.py#L36
                 price_unit = order.currency_id._convert(
                     price_unit, order.company_id.currency_id, order.company_id, fields.Date.context_today(self), round=False)
             return price_unit
@@ -148,7 +148,7 @@ class StockMove(models.Model):
             valuation_total_qty += layers_qty
         if float_is_zero(valuation_total_qty, precision_rounding=related_aml.product_uom_id.rounding or related_aml.product_id.uom_id.rounding):
             raise UserError(
-                _('Flectra is not able to generate the anglo saxon entries. The total valuation of %s is zero.') % related_aml.product_id.display_name)
+                _('Sleektiv is not able to generate the anglo saxon entries. The total valuation of %s is zero.') % related_aml.product_id.display_name)
         return valuation_price_unit_total, valuation_total_qty
 
     def _is_purchase_return(self):

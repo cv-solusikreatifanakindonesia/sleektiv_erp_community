@@ -1,6 +1,6 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests.common import TransactionCase
+from sleektiv.tests.common import TransactionCase
 
 
 class RecurringTransactionCase(TransactionCase):

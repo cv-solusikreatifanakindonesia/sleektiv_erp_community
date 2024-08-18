@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 import json
 import lxml
 import requests
@@ -10,15 +10,15 @@ import werkzeug.wrappers
 
 from datetime import datetime
 
-from flectra import http, tools, _
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.addons.website.models.ir_http import sitemap_qs2dom
-from flectra.addons.website_profile.controllers.main import WebsiteProfile
-from flectra.addons.portal.controllers.portal import _build_url_w_params
+from sleektiv import http, tools, _
+from sleektiv.addons.http_routing.models.ir_http import slug
+from sleektiv.addons.website.models.ir_http import sitemap_qs2dom
+from sleektiv.addons.website_profile.controllers.main import WebsiteProfile
+from sleektiv.addons.portal.controllers.portal import _build_url_w_params
 
-from flectra.exceptions import UserError
-from flectra.http import request
-from flectra.osv import expression
+from sleektiv.exceptions import UserError
+from sleektiv.http import request
+from sleektiv.osv import expression
 
 
 _logger = logging.getLogger(__name__)

@@ -1,4 +1,4 @@
-flectra.define('google_drive.gdrive_integration', function (require) {
+sleektiv.define('google_drive.gdrive_integration', function (require) {
     "use strict";
 
     const FormView = require('web.FormView');

@@ -1,4 +1,4 @@
-from flectra import models, fields, api, _
+from sleektiv import models, fields, api, _
 
 class AccountAnalyticLine(models.Model):
     _inherit = 'account.analytic.line'

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'FlectraBot for livechat',
+    'name': 'SleektivBot for livechat',
     'version': '1.0',
     'category': 'Productivity/Discuss',
-    'summary': 'Add livechat support for FlectraBot',
+    'summary': 'Add livechat support for SleektivBot',
     'description': "",
     'website': 'https://www.flectrahq.com/page/discuss',
     'depends': ['mail_bot', 'im_livechat'],

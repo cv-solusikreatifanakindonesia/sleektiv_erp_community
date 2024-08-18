@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from flectra import registry, SUPERUSER_ID
-from flectra.api import Environment
-from flectra.addons.bus.controllers.main import BusController
-from flectra.fields import Datetime
-from flectra.http import Controller, request, route
+from sleektiv import registry, SUPERUSER_ID
+from sleektiv.api import Environment
+from sleektiv.addons.bus.controllers.main import BusController
+from sleektiv.fields import Datetime
+from sleektiv.http import Controller, request, route
 
 
 class BusController(BusController):

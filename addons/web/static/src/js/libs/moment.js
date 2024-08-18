@@ -4,7 +4,7 @@
  * moment.js files, which could lead to conflict when updating the library.
  */
 
-flectra.define('web.moment.extensions', function () {
+sleektiv.define('web.moment.extensions', function () {
 'use strict';
 const locale = moment.locale();
 moment.updateLocale('ca', {

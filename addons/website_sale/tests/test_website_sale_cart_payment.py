@@ -1,10 +1,10 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-from flectra.addons.payment.tests.common import PaymentAcquirerCommon
-from flectra.addons.website.tools import MockRequest
-from flectra.tests.common import tagged
+from sleektiv.addons.payment.tests.common import PaymentAcquirerCommon
+from sleektiv.addons.website.tools import MockRequest
+from sleektiv.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')
@@ -50,7 +50,7 @@ class WebsiteSaleCartPayment(PaymentAcquirerCommon):
         """ Test that fetching sales orders linked to a payment transaction in the states 'pending',
         'authorized', or 'done' returns an empty recordset to prevent updating the paid orders. """
         with patch(
-            'flectra.addons.payment.models.payment_acquirer.PaymentAcquirer._get_feature_support',
+            'sleektiv.addons.payment.models.payment_acquirer.PaymentAcquirer._get_feature_support',
             return_value={'authorize': ['manual'], 'tokenize': [], 'fees': []},
         ):
             for paid_order_tx_state in ('pending', 'authorized', 'done'):

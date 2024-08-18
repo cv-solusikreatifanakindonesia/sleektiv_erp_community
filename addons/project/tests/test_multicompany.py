@@ -2,8 +2,8 @@
 
 from contextlib import contextmanager
 
-from flectra.tests.common import SavepointCase, Form
-from flectra.exceptions import AccessError, UserError
+from sleektiv.tests.common import SavepointCase, Form
+from sleektiv.exceptions import AccessError, UserError
 
 
 class TestMultiCompanyCommon(SavepointCase):

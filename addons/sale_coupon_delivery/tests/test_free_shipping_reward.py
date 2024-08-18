@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.sale_coupon.tests.common import TestSaleCouponCommon
-from flectra.tests import Form, tagged
+from sleektiv.addons.sale_coupon.tests.common import TestSaleCouponCommon
+from sleektiv.tests import Form, tagged
 
 
 @tagged('post_install', '-at_install')

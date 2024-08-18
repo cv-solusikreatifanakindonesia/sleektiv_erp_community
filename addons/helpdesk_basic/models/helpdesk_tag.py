@@ -1,6 +1,6 @@
-# Part of flectra. See LICENSE file for full copyright and licensing details.
+# Part of sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import fields, models
+from sleektiv import fields, models
 
 
 class HelpdeskTag(models.Model):

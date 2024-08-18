@@ -1,4 +1,4 @@
-flectra.define('web.GraphView', function (require) {
+sleektiv.define('web.GraphView', function (require) {
 "use strict";
 
 /**

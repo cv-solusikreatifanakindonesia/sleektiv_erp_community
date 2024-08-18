@@ -1,4 +1,4 @@
-flectra.define('mail.utils', function (require) {
+sleektiv.define('mail.utils', function (require) {
 "use strict";
 
 var core = require('web.core');

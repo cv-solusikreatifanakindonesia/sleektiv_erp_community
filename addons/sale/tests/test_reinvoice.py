@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 from freezegun import freeze_time
-from flectra.addons.sale.tests.common import TestSaleCommon
-from flectra.tests import Form, tagged
+from sleektiv.addons.sale.tests.common import TestSaleCommon
+from sleektiv.tests import Form, tagged
 
 
 @tagged('post_install', '-at_install')

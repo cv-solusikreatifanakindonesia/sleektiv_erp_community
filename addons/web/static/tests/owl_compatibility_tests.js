@@ -1,4 +1,4 @@
-flectra.define('web.OwlCompatibilityTests', function (require) {
+sleektiv.define('web.OwlCompatibilityTests', function (require) {
     "use strict";
 
     const { ComponentAdapter, ComponentWrapper, WidgetAdapterMixin } = require('web.OwlCompatibility');

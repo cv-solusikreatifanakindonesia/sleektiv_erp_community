@@ -1,4 +1,4 @@
-flectra.define('mrp.MrpDocumentsKanbanRenderer', function (require) {
+sleektiv.define('mrp.MrpDocumentsKanbanRenderer', function (require) {
 "use strict";
 
 /**

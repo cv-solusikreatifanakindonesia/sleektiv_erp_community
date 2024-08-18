@@ -1,4 +1,4 @@
-flectra.define('website_sale_wishlist.wishlist', function (require) {
+sleektiv.define('website_sale_wishlist.wishlist', function (require) {
 "use strict";
 
 var publicWidget = require('web.public.widget');

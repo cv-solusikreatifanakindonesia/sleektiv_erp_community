@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flectra import models
+from sleektiv import models
 
 
 class AccountEdiXmlUBL21(models.AbstractModel):

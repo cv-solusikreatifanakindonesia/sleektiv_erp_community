@@ -1,4 +1,4 @@
-flectra.define('web.web_client', function (require) {
+sleektiv.define('web.web_client', function (require) {
     'use strict';
 
     const AbstractService = require('web.AbstractService');

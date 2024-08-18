@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 import pytz
@@ -8,10 +8,10 @@ from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from werkzeug.urls import url_join
 
-from flectra import api, fields, models, tools, _
-from flectra.addons.base.models.ir_mail_server import MailDeliveryException
-from flectra.exceptions import AccessError
-from flectra.tools.float_utils import float_round
+from sleektiv import api, fields, models, tools, _
+from sleektiv.addons.base.models.ir_mail_server import MailDeliveryException
+from sleektiv.exceptions import AccessError
+from sleektiv.tools.float_utils import float_round
 
 _logger = logging.getLogger(__name__)
 

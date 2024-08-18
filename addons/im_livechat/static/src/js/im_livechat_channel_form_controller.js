@@ -1,4 +1,4 @@
-flectra.define('im_livechat.ImLivechatChannelFormController', function (require) {
+sleektiv.define('im_livechat.ImLivechatChannelFormController', function (require) {
 'use strict';
 
 const FormController = require('web.FormController');

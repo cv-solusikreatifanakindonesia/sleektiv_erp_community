@@ -1,7 +1,7 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import models
-from flectra.tools.misc import format_datetime
+from sleektiv import models
+from sleektiv.tools.misc import format_datetime
 
 
 class StockQuantityHistory(models.TransientModel):

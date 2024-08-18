@@ -3,11 +3,11 @@ import base64
 
 from freezegun import freeze_time
 
-from flectra.addons.account_edi.tests.common import AccountEdiTestCommon
-from flectra import fields
-from flectra.modules.module import get_resource_path
-from flectra.tests import tagged
-from flectra.tools import float_round
+from sleektiv.addons.account_edi.tests.common import AccountEdiTestCommon
+from sleektiv import fields
+from sleektiv.modules.module import get_resource_path
+from sleektiv.tests import tagged
+from sleektiv.tools import float_round
 
 from lxml import etree
 

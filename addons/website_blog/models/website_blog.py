@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 import random
 
-from flectra import api, models, fields, _
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.tools.json import scriptsafe as json_scriptsafe
-from flectra.tools.translate import html_translate
-from flectra.tools import html2plaintext
+from sleektiv import api, models, fields, _
+from sleektiv.addons.http_routing.models.ir_http import slug
+from sleektiv.tools.json import scriptsafe as json_scriptsafe
+from sleektiv.tools.translate import html_translate
+from sleektiv.tools import html2plaintext
 
 
 class Blog(models.Model):

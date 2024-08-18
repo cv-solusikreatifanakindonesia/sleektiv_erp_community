@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.addons.sale.tests.common import TestSaleCommon
-from flectra.exceptions import AccessError, UserError, ValidationError
-from flectra.tests import HttpCase, tagged
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
+from sleektiv.addons.sale.tests.common import TestSaleCommon
+from sleektiv.exceptions import AccessError, UserError, ValidationError
+from sleektiv.tests import HttpCase, tagged
 
 
 @tagged('post_install', '-at_install')

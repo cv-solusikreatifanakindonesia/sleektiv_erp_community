@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.exceptions import BadRequest
 
-from flectra import models
-from flectra.http import request
+from sleektiv import models
+from sleektiv.http import request
 
 class IrHttp(models.AbstractModel):
     _inherit = 'ir.http'
@@ -18,7 +18,7 @@ class IrHttp(models.AbstractModel):
         if access_token.startswith('Bearer '):
             access_token = access_token[7:]
 
-        user_id = request.env["res.users.apikeys"]._check_credentials(scope='flectra.plugin.outlook', key=access_token)
+        user_id = request.env["res.users.apikeys"]._check_credentials(scope='sleektiv.plugin.outlook', key=access_token)
         if not user_id:
             raise BadRequest('Access token invalid')
 

@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import os
 import requests
 import uuid
 from werkzeug.urls import url_join
 
-from flectra import api, fields, models, _
-from flectra.http import request
-from flectra.exceptions import UserError, ValidationError
-from flectra.tools import date_utils
+from sleektiv import api, fields, models, _
+from sleektiv.http import request
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.tools import date_utils
 
-from flectra.addons.adyen_platforms.util import AdyenProxyAuth
+from sleektiv.addons.adyen_platforms.util import AdyenProxyAuth
 
 ADYEN_AVAILABLE_COUNTRIES = ['US', 'AT', 'AU', 'BE', 'CA', 'CH', 'CZ', 'DE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HR', 'IE', 'IT', 'LT', 'LU', 'NL', 'PL', 'PT']
 TIMEOUT = 60
@@ -192,7 +192,7 @@ class AdyenAccount(models.Model):
     def action_create_redirect(self):
         '''
         Accessing the FormView to create an Adyen account needs to be done through this action.
-        The action will redirect the user to accounts.flectrahq.com to link an Flectra user_id to the Adyen
+        The action will redirect the user to accounts.flectrahq.com to link an Sleektiv user_id to the Adyen
         account. After logging in on flectrahq.com the user will be redirected to his DB with a token in
         the URL. This token is then needed to create the Adyen account.
         '''
@@ -390,7 +390,7 @@ class AdyenAccount(models.Model):
         })
 
         if kyc_status_message.decode() != self.kyc_status_message:
-            self.sudo().message_post(body = kyc_status_message, subtype_xmlid="mail.mt_comment") # Message from Flectra Bot
+            self.sudo().message_post(body = kyc_status_message, subtype_xmlid="mail.mt_comment") # Message from Sleektiv Bot
 
         self.with_context(update_from_adyen=True).write({
             'kyc_status': kyc_status,

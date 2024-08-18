@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-import flectra.addons.web.tests.test_js
-import flectra.tests
+import sleektiv.addons.web.tests.test_js
+import sleektiv.tests
 
 
-@flectra.tests.tagged("post_install", "-at_install")
-class WebSuite(flectra.tests.HttpCase):
+@sleektiv.tests.tagged("post_install", "-at_install")
+class WebSuite(sleektiv.tests.HttpCase):
     def setUp(self):
         super().setUp()
         env = self.env(user=self.env.ref('base.user_admin'))

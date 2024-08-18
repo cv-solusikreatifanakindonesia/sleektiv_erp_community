@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from unittest.mock import MagicMock, patch
 
-from flectra.addons.google_calendar.utils.google_calendar import GoogleCalendarService
-from flectra.addons.google_account.models.google_service import GoogleService
-from flectra.addons.google_calendar.models.res_users import User
-from flectra.addons.google_calendar.models.google_sync import GoogleSync
-from flectra.modules.registry import Registry
-from flectra.addons.google_account.models.google_service import TIMEOUT
-from flectra.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
+from sleektiv.addons.google_calendar.utils.google_calendar import GoogleCalendarService
+from sleektiv.addons.google_account.models.google_service import GoogleService
+from sleektiv.addons.google_calendar.models.res_users import User
+from sleektiv.addons.google_calendar.models.google_sync import GoogleSync
+from sleektiv.modules.registry import Registry
+from sleektiv.addons.google_account.models.google_service import TIMEOUT
+from sleektiv.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
 
 
 @patch.object(User, '_get_google_calendar_token', lambda user: 'dummy-token')
-class TestSyncFlectra2Google(TestSyncGoogle):
+class TestSyncSleektiv2Google(TestSyncGoogle):
 
     def setUp(self):
         super().setUp()
@@ -39,7 +39,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'privacy': 'private',
             'need_sync': False,
         })
-        event._sync_flectra2google(self.google_service)
+        event._sync_sleektiv2google(self.google_service)
         self.assertGoogleEventInserted({
             'id': False,
             'start': {'dateTime': '2020-01-15T08:00:00+00:00'},
@@ -52,7 +52,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'reminders': {'useDefault': False, 'overrides': [{'method': 'popup', 'minutes': alarm.duration_minutes}]},
             'organizer': {'email': 'flectrabot@example.com', 'self': True},
             'attendees': [{'email': 'jean-luc@opoo.com', 'responseStatus': 'needsAction'}],
-            'extendedProperties': {'shared': {'%s_flectra_id' % self.env.cr.dbname: event.id}}
+            'extendedProperties': {'shared': {'%s_sleektiv_id' % self.env.cr.dbname: event.id}}
         })
 
     def test_event_without_user(self):
@@ -84,7 +84,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
         attendee_2.write({
             'state': False,
         })
-        event._sync_flectra2google(self.google_service)
+        event._sync_sleektiv2google(self.google_service)
         self.assertGoogleEventInserted({
             'id': False,
             'start': {'dateTime': '2020-01-15T08:00:00+00:00'},
@@ -98,7 +98,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'organizer': {'email': 'flectrabot@example.com', 'self': True},
             'attendees': [{'email': 'jean-luc@opoo.com', 'responseStatus': 'needsAction'},
                           {'email': 'phineas@opoo.com', 'responseStatus': 'needsAction'}],
-            'extendedProperties': {'shared': {'%s_flectra_id' % self.env.cr.dbname: event.id}}
+            'extendedProperties': {'shared': {'%s_sleektiv_id' % self.env.cr.dbname: event.id}}
         })
 
     @patch_api
@@ -110,7 +110,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'stop': datetime(2020, 1, 15),
             'need_sync': False,
         })
-        event._sync_flectra2google(self.google_service)
+        event._sync_sleektiv2google(self.google_service)
         self.assertGoogleEventInserted({
             'id': False,
             'start': {'date': '2020-01-15'},
@@ -123,7 +123,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'reminders': {'overrides': [], 'useDefault': False},
             'organizer': {'email': 'flectrabot@example.com', 'self': True},
             'attendees': [],
-            'extendedProperties': {'shared': {'%s_flectra_id' % self.env.cr.dbname: event.id}}
+            'extendedProperties': {'shared': {'%s_sleektiv_id' % self.env.cr.dbname: event.id}}
         })
 
     @patch_api
@@ -135,7 +135,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'active': False,
             'need_sync': False,
         })
-        event._sync_flectra2google(self.google_service)
+        event._sync_sleektiv2google(self.google_service)
         self.assertGoogleEventNotInserted()
         self.assertGoogleEventNotDeleted()
 
@@ -150,7 +150,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'active': False,
             'need_sync': False,
         })
-        event._sync_flectra2google(self.google_service)
+        event._sync_sleektiv2google(self.google_service)
         self.assertGoogleEventDeleted(google_id)
 
     @patch_api
@@ -169,7 +169,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'calendar_event_ids': [(4, event.id)],
             'need_sync': False,
         })
-        recurrence._sync_flectra2google(self.google_service)
+        recurrence._sync_sleektiv2google(self.google_service)
         self.assertGoogleEventInserted({
             'id': False,
             'start': {'date': '2020-01-15'},
@@ -183,7 +183,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'organizer': {'email': 'flectrabot@example.com', 'self': True},
             'attendees': [],
             'recurrence': ['RRULE:FREQ=WEEKLY;COUNT=2;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_flectra_id' % self.env.cr.dbname: recurrence.id}}
+            'extendedProperties': {'shared': {'%s_sleektiv_id' % self.env.cr.dbname: recurrence.id}}
         })
 
     @patch_api
@@ -218,7 +218,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'organizer': {'email': 'flectrabot@example.com', 'self': True},
             'attendees': [],
             'recurrence': ['RRULE:FREQ=WEEKLY;COUNT=2;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_flectra_id' % self.env.cr.dbname: event.recurrence_id.id}}
+            'extendedProperties': {'shared': {'%s_sleektiv_id' % self.env.cr.dbname: event.recurrence_id.id}}
         }, timeout=3)
 
         self.assertGoogleEventDeleted(google_id)
@@ -263,7 +263,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'guestsCanModify': True,
             'organizer': {'email': 'flectrabot@example.com', 'self': True},
             'attendees': [],
-            'extendedProperties': {'shared': {'%s_flectra_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_sleektiv_id' % self.env.cr.dbname: event.id}},
             'reminders': {'overrides': [], 'useDefault': False},
             'visibility': 'public',
         }, timeout=3)
@@ -300,7 +300,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'organizer': {'email': 'flectrabot@example.com', 'self': True},
             'attendees': [],
             'recurrence': ['RRULE:FREQ=WEEKLY;COUNT=2;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_flectra_id' % self.env.cr.dbname: recurrence.id}},
+            'extendedProperties': {'shared': {'%s_sleektiv_id' % self.env.cr.dbname: recurrence.id}},
             'reminders': {'overrides': [], 'useDefault': False},
             'visibility': 'public',
         }, timeout=3)
@@ -429,7 +429,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
                 'guestsCanModify': True,
                 'organizer': {'email': 'flectrabot@example.com', 'self': True},
                 'attendees': [{'email': 'jean-luc@opoo.com', 'responseStatus': 'declined'}],
-                'extendedProperties': {'shared': {'%s_flectra_id' % self.env.cr.dbname: event.id}},
+                'extendedProperties': {'shared': {'%s_sleektiv_id' % self.env.cr.dbname: event.id}},
                 'reminders': {'overrides': [], 'useDefault': False},
                 'visibility': 'public',
             })
@@ -444,7 +444,7 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'need_sync': False,
         })
 
-        event.with_context(send_updates=True)._sync_flectra2google(self.google_service)
+        event.with_context(send_updates=True)._sync_sleektiv2google(self.google_service)
         self.call_post_commit_hooks()
         self.assertGoogleEventSendUpdates('all')
 
@@ -458,6 +458,6 @@ class TestSyncFlectra2Google(TestSyncGoogle):
             'need_sync': False,
         })
 
-        event.with_context(send_updates=False)._sync_flectra2google(self.google_service)
+        event.with_context(send_updates=False)._sync_sleektiv2google(self.google_service)
         self.call_post_commit_hooks()
         self.assertGoogleEventSendUpdates('none')

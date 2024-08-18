@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import logging
 import threading
-from flectra import api, fields, models
-from flectra.tools.translate import xml_translate
-from flectra.modules.module import get_resource_from_path
+from sleektiv import api, fields, models
+from sleektiv.tools.translate import xml_translate
+from sleektiv.modules.module import get_resource_from_path
 
 _logger = logging.getLogger(__name__)
 

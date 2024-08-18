@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import flectra
+import sleektiv
 
 def migrate(cr, version):
-    registry = flectra.registry(cr.dbname)
-    from flectra.addons.account.models.chart_template import migrate_set_tags_and_taxes_updatable
+    registry = sleektiv.registry(cr.dbname)
+    from sleektiv.addons.account.models.chart_template import migrate_set_tags_and_taxes_updatable
     migrate_set_tags_and_taxes_updatable(cr, registry, 'l10n_hr')

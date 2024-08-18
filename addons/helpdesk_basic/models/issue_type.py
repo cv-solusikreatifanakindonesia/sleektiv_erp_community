@@ -1,11 +1,11 @@
-# Part of flectra. See LICENSE file for full copyright and licensing details.
+# Part of sleektiv. See LICENSE file for full copyright and licensing details.
 
 import json
 from datetime import datetime, timedelta
 
 from babel.dates import format_datetime, format_date
-from flectra import fields, models, _
-from flectra.tools import DEFAULT_SERVER_DATE_FORMAT as DF
+from sleektiv import fields, models, _
+from sleektiv.tools import DEFAULT_SERVER_DATE_FORMAT as DF
 
 
 class IssueType(models.Model):

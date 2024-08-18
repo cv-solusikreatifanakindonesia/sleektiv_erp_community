@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra.tests.common import SavepointCase
-from flectra.exceptions import UserError
+from sleektiv.tests.common import SavepointCase
+from sleektiv.exceptions import UserError
 
 class TestProjectCommon(SavepointCase):
 

@@ -1,4 +1,4 @@
-from flectra.tests.common import TransactionCase
+from sleektiv.tests.common import TransactionCase
 
 class TestWebsiteSaleCommon(TransactionCase):
 

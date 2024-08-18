@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 import os
@@ -8,9 +8,9 @@ import uuid
 
 from lxml import etree
 
-from flectra import models
-from flectra.tools import misc
-from flectra.addons.base.models.assetsbundle import EXTENSIONS
+from sleektiv import models
+from sleektiv.tools import misc
+from sleektiv.addons.base.models.assetsbundle import EXTENSIONS
 
 _match_asset_file_url_regex = re.compile("^/(\w+)/(.+?)(\.custom\.(.+))?\.(\w+)$")
 

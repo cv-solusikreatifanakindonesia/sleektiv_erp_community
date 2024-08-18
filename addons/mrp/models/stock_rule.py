@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, fields, models, SUPERUSER_ID, _
-from flectra.osv import expression
-from flectra.addons.stock.models.stock_rule import ProcurementException
+from sleektiv import api, fields, models, SUPERUSER_ID, _
+from sleektiv.osv import expression
+from sleektiv.addons.stock.models.stock_rule import ProcurementException
 
 
 class StockRule(models.Model):

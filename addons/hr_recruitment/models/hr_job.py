@@ -1,8 +1,8 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import ast
 
-from flectra import api, fields, models, _
+from sleektiv import api, fields, models, _
 
 
 class Job(models.Model):

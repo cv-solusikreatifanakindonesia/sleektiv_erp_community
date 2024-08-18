@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 {
     'name' : 'Fleet',
     'version' : '0.1',
@@ -10,7 +10,7 @@
     'description' : """
 Vehicle, leasing, insurances, cost
 ==================================
-With this module, Flectra helps you managing all your vehicles, the
+With this module, Sleektiv helps you managing all your vehicles, the
 contracts associated to those vehicle as well as services, costs
 and many other features necessary to the management of your fleet
 of vehicle(s)

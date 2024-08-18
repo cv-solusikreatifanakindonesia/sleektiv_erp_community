@@ -1,4 +1,4 @@
-flectra.define("web.public_env", function (require) {
+sleektiv.define("web.public_env", function (require) {
     "use strict";
 
     /**

@@ -1,4 +1,4 @@
-flectra.define('web.time', function (require) {
+sleektiv.define('web.time', function (require) {
 "use strict";
 
 var translation = require('web.translation');

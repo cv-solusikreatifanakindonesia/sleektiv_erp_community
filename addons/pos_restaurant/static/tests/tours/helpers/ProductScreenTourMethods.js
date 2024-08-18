@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.tour.ProductScreenTourMethods', function (require) {
+sleektiv.define('pos_restaurant.tour.ProductScreenTourMethods', function (require) {
     'use strict';
 
     const { createTourMethods } = require('point_of_sale.tour.utils');

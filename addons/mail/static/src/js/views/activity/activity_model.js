@@ -1,4 +1,4 @@
-flectra.define('mail.ActivityModel', function (require) {
+sleektiv.define('mail.ActivityModel', function (require) {
 'use strict';
 
 const BasicModel = require('web.BasicModel');

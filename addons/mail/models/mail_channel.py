@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 import logging
 import re
 from uuid import uuid4
 
-from flectra import _, api, fields, models, modules, tools
-from flectra.exceptions import UserError, ValidationError
-from flectra.osv import expression
-from flectra.tools import ormcache
-from flectra.exceptions import AccessError
-from flectra.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
-from flectra.tools import html_escape
+from sleektiv import _, api, fields, models, modules, tools
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.osv import expression
+from sleektiv.tools import ormcache
+from sleektiv.exceptions import AccessError
+from sleektiv.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+from sleektiv.tools import html_escape
 
 MODERATION_FIELDS = ['moderation', 'moderator_ids', 'moderation_ids', 'moderation_notify', 'moderation_notify_msg', 'moderation_guidelines', 'moderation_guidelines_msg']
 _logger = logging.getLogger(__name__)

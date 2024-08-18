@@ -1,4 +1,4 @@
-flectra.define('website.s_facebook_page_options', function (require) {
+sleektiv.define('website.s_facebook_page_options', function (require) {
 'use strict';
 
 const options = require('web_editor.snippets.options');
@@ -148,7 +148,7 @@ options.registry.facebookPage = options.Class.extend({
      * @private
      */
     _checkURL: function () {
-        const defaultURL = 'https://www.facebook.com/Flectra';
+        const defaultURL = 'https://www.facebook.com/Sleektiv';
         // Patterns matched by the regex (all relate to existing pages,
         // in spite of the URLs containing "profile.php" or "people"):
         // - https://www.facebook.com/<pagewithaname>

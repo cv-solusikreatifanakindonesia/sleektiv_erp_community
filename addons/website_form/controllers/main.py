@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import base64
 import json
@@ -9,13 +9,13 @@ from datetime import datetime
 from psycopg2 import IntegrityError
 from werkzeug.exceptions import BadRequest
 
-from flectra import http, SUPERUSER_ID
-from flectra.http import request
-from flectra.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
-from flectra.tools.translate import _, _lt
-from flectra.exceptions import AccessDenied, ValidationError, UserError
-from flectra.addons.base.models.ir_qweb_fields import nl2br
-from flectra.tools.misc import hmac, consteq
+from sleektiv import http, SUPERUSER_ID
+from sleektiv.http import request
+from sleektiv.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
+from sleektiv.tools.translate import _, _lt
+from sleektiv.exceptions import AccessDenied, ValidationError, UserError
+from sleektiv.addons.base.models.ir_qweb_fields import nl2br
+from sleektiv.tools.misc import hmac, consteq
 
 
 class WebsiteForm(http.Controller):

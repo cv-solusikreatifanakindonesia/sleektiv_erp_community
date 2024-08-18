@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 import werkzeug.utils
 import werkzeug.exceptions
 
-from flectra import _
-from flectra import http
-from flectra.exceptions import AccessError
-from flectra.http import request
-from flectra.osv import expression
+from sleektiv import _
+from sleektiv import http
+from sleektiv.exceptions import AccessError
+from sleektiv.http import request
+from sleektiv.osv import expression
 
-from flectra.addons.website_slides.controllers.main import WebsiteSlides
+from sleektiv.addons.website_slides.controllers.main import WebsiteSlides
 
 
 class WebsiteSlidesSurvey(WebsiteSlides):

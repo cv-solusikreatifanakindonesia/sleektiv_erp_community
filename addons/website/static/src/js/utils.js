@@ -1,4 +1,4 @@
-flectra.define('website.utils', function (require) {
+sleektiv.define('website.utils', function (require) {
 'use strict';
 
 var ajax = require('web.ajax');

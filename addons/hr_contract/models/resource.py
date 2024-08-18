@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 from datetime import datetime
 
-from flectra import models, fields, api
-from flectra.osv.expression import AND
+from sleektiv import models, fields, api
+from sleektiv.osv.expression import AND
 
 
 class ResourceCalendar(models.Model):

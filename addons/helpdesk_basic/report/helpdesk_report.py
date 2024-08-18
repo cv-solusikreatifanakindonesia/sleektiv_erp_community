@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of flectra. See LICENSE file for full copyright and licensing details.
+# Part of sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import fields, models, tools
+from sleektiv import fields, models, tools
 
 
 class HelpdeskReport(models.Model):

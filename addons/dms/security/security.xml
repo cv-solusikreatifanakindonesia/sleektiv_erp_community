@@ -6,7 +6,7 @@
     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
   -->
-<flectra>
+<sleektiv>
     <record id="category_dms_security" model="ir.module.category">
         <field name="name">Documents</field>
     </record>
@@ -67,4 +67,4 @@
         <field name="perm_unlink" eval="1" />
         <field name="domain_force">[(1 ,'=', 1)]</field>
     </record>
-</flectra>
+</sleektiv>

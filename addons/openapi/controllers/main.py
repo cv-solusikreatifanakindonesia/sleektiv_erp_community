@@ -6,10 +6,10 @@ import logging
 
 import werkzeug
 
-from flectra import http
-from flectra.tools import date_utils
+from sleektiv import http
+from sleektiv.tools import date_utils
 
-from flectra.addons.web.controllers.main import ensure_db
+from sleektiv.addons.web.controllers.main import ensure_db
 
 _logger = logging.getLogger(__name__)
 

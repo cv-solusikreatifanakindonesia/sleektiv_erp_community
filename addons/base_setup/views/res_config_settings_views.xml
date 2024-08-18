@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<sleektiv>
         <record id="res_config_settings_view_form" model="ir.ui.view">
             <field name="name">res.config.settings.view.form.inherit.base.setup</field>
             <field name="model">res.config.settings</field>
@@ -22,7 +22,7 @@
                                         <span class='o_form_label' attrs="{'invisible':[('active_user_count', '&lt;=', '1')]}">
                                             Active Users
                                         </span>
-                                        <a href="https://doc.flectrahq.com/2.0/applications/general/flectra_basics/users.html" title="Documentation" class="o_doc_link" target="_blank"></a>
+                                        <a href="https://doc.flectrahq.com/2.0/applications/general/sleektiv_basics/users.html" title="Documentation" class="o_doc_link" target="_blank"></a>
                                         <br/>
                                         <button name="%(base.action_res_users)d" icon="fa-arrow-right" type="action" string="Manage Users" class="btn-link o_web_settings_access_rights"/>
 
@@ -147,7 +147,7 @@
                                             </div>
                                         </div>
                                 </div>
-                                <div class="col-xs-12 col-md-6 o_setting_box" title="When populating your address book, Flectra provides a list of matching companies. When selecting one item, the company data and logo are auto-filled." id="partner_autocomplete">
+                                <div class="col-xs-12 col-md-6 o_setting_box" title="When populating your address book, Sleektiv provides a list of matching companies. When selecting one item, the company data and logo are auto-filled." id="partner_autocomplete">
                                     <div class="o_setting_left_pane">
                                         <field name="module_partner_autocomplete"/>
                                     </div>
@@ -240,7 +240,7 @@
                                 <div class="o_setting_right_pane">
                                     <label for="module_pad"/>
                                     <div class="text-muted">
-                                        Use external pads in Flectra Notes
+                                        Use external pads in Sleektiv Notes
                                     </div>
                                     <div class="content-group" attrs="{'invisible': [('module_pad','=',False)]}" id="msg_module_pad">
                                         <div class="text-warning mt16"><strong>Save</strong> this page and come back here to set up the feature.</div>
@@ -297,7 +297,7 @@
                                 <div class="o_setting_right_pane">
                                     <label for="module_google_spreadsheet"/>
                                     <div class="text-muted">
-                                        Extract and analyze Flectra data from Google Spreadsheet
+                                        Extract and analyze Sleektiv data from Google Spreadsheet
                                     </div>
                                     <div class="content-group" attrs="{'invisible': [('module_google_spreadsheet','=',False)]}" id="msg_module_google_spreadsheet">
                                         <div class="mt16 text-warning"><strong>Save</strong> this page and come back here to set up the feature.</div>
@@ -381,22 +381,6 @@
                         <div id='about'>
                             <h2>About</h2>
                             <div class="row mt16 o_settings_container" name="about_setting_container">
-                                <div class='col-12 col-lg-6 o_setting_box' id='appstore'>
-                                    <div class="d-flex">
-                                        <div class="o_setting_right_pane">
-                                            <!-- FIXME Those links are defined directly in the template which means that we will have to
-                                            update the template code is the link ever changes -->
-                                            <a class="d-block mx-auto" href="https://play.google.com/store/apps/details?id=com.flectra.flectrahq" target="blank">
-                                                <img alt="On Google Play" class="d-block mx-auto img img-fluid" src="/base_setup/static/src/img/google_play.png"/>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a class='d-block mx-auto' href="https://itunes.apple.com/us/app/flectra/id1561830563" target="blank">
-                                                <img alt="On Apple Store" class="d-block mx-auto img img-fluid" src="/base_setup/static/src/img/app_store.png"/>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
                                 <widget name='res_config_edition'/>
                             </div>
                         </div>
@@ -422,4 +406,4 @@
             action="action_general_configuration"
             groups="base.group_system"/>
 
-</flectra>
+</sleektiv>

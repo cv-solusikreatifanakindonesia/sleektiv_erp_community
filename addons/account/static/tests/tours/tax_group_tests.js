@@ -1,4 +1,4 @@
-flectra.define('account.tax.group.tour.tests', function (require) {
+sleektiv.define('account.tax.group.tour.tests', function (require) {
     "use strict";
 
     var core = require('web.core');

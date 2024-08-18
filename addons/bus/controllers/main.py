@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flectra import exceptions, _
-from flectra.http import Controller, request, route
-from flectra.addons.bus.models.bus import dispatch
+from sleektiv import exceptions, _
+from sleektiv.http import Controller, request, route
+from sleektiv.addons.bus.models.bus import dispatch
 
 
 class BusController(Controller):

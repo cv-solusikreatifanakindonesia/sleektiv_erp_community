@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.OrderManagementControlPanel', function (require) {
+sleektiv.define('point_of_sale.OrderManagementControlPanel', function (require) {
     'use strict';
 
     const { useContext } = owl.hooks;

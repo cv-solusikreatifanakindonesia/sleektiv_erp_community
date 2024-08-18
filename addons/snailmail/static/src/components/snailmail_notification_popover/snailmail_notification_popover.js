@@ -1,4 +1,4 @@
-flectra.define('snailmail/static/src/components/snailmail_notification_popover/snailmail_notification_popover.js', function (require) {
+sleektiv.define('snailmail/static/src/components/snailmail_notification_popover/snailmail_notification_popover.js', function (require) {
 'use strict';
 
 const { Component } = owl;

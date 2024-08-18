@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, api, fields
-from flectra.tools.translate import _
+from sleektiv import models, api, fields
+from sleektiv.tools.translate import _
 
 
 class SaleOrder(models.Model):

@@ -1,4 +1,4 @@
-flectra.define('web.domain_tests', function (require) {
+sleektiv.define('web.domain_tests', function (require) {
 "use strict";
 
 var Domain = require('web.Domain');

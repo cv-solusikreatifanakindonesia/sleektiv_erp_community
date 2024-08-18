@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from flectra import _, models
-from flectra.tools import float_repr
-from flectra.tests.common import Form
-from flectra.exceptions import UserError, ValidationError
-from flectra.tools.float_utils import float_round
-from flectra.tools.misc import formatLang
+from sleektiv import _, models
+from sleektiv.tools import float_repr
+from sleektiv.tests.common import Form
+from sleektiv.exceptions import UserError, ValidationError
+from sleektiv.tools.float_utils import float_round
+from sleektiv.tools.misc import formatLang
 
 from zeep import Client
 
@@ -456,7 +456,7 @@ class AccountEdiCommon(models.AbstractModel):
 
     def _import_fill_invoice_line_values(self, tree, xpath_dict, invoice_line_form, qty_factor):
         """
-        Read the xml invoice, extract the invoice line values, compute the flectra values
+        Read the xml invoice, extract the invoice line values, compute the sleektiv values
         to fill an invoice line form: quantity, price_unit, discount, product_uom_id.
 
         The way of computing invoice line is quite complicated:
@@ -477,7 +477,7 @@ class AccountEdiCommon(models.AbstractModel):
                 "item price discount" which is different from the usual allow_charge_amount
                 gross_unit_price (BT-148) - rebate (BT-147) = net_unit_price (BT-146)
 
-        In Flectra, we obtain:
+        In Sleektiv, we obtain:
         (1) = price_unit  =  gross_price_unit / basis_qty  =  (net_price_unit + rebate) / basis_qty
         (2) = quantity  =  billed_qty
         (3) = discount (converted into a percentage)  =  100 * (1 - price_subtotal / (billed_qty * price_unit))
@@ -492,7 +492,7 @@ class AccountEdiCommon(models.AbstractModel):
         UBL ROUNDING: "the result of Item line net
             amount = ((Item net price (BT-146)÷Item price base quantity (BT-149))×(Invoiced Quantity (BT-129))
         must be rounded to two decimals, and the allowance/charge amounts are also rounded separately."
-        It is not possible to do it in Flectra.
+        It is not possible to do it in Sleektiv.
 
         :params tree
         :params xpath_dict dict: {
@@ -553,7 +553,7 @@ class AccountEdiCommon(models.AbstractModel):
             uom_xml = quantity_node.attrib.get('unitCode')
             if uom_xml:
                 uom_infered_xmlid = [
-                    flectra_xmlid for flectra_xmlid, uom_unece in UOM_TO_UNECE_CODE.items() if uom_unece == uom_xml
+                    sleektiv_xmlid for sleektiv_xmlid, uom_unece in UOM_TO_UNECE_CODE.items() if uom_unece == uom_xml
                 ]
                 if uom_infered_xmlid:
                     product_uom_id = self.env.ref(uom_infered_xmlid[0], raise_if_not_found=False)
@@ -573,7 +573,7 @@ class AccountEdiCommon(models.AbstractModel):
             reason = allow_charge_el.find(xpath_dict['allowance_charge_reason'])
             if amount is not None:
                 if reason_code is not None and reason_code.text == 'AEO' and reason is not None:
-                    # Handle Fixed Taxes: when exporting from Flectra, we use the allowance_charge node
+                    # Handle Fixed Taxes: when exporting from Sleektiv, we use the allowance_charge node
                     fixed_taxes_list.append({
                         'tax_name': reason.text,
                         'tax_amount': float(amount.text),

@@ -1,4 +1,0 @@
-#!/home/erp/sleektiv_erp/venv/bin/python
-# EASY-INSTALL-SCRIPT: 'flectra==2.0','flectra'
-__requires__ = 'flectra==2.0'
-__import__('pkg_resources').run_script('flectra==2.0', 'flectra')

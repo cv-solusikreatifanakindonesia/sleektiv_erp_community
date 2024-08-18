@@ -1,4 +1,0 @@
-#!/home/erp/sleektiv_erp/venv/bin/python
-# EASY-INSTALL-SCRIPT: 'pypng==0.20220715.0','prigreypng'
-__requires__ = 'pypng==0.20220715.0'
-__import__('pkg_resources').run_script('pypng==0.20220715.0', 'prigreypng')

@@ -7,7 +7,7 @@
     "version": "2.0",
     "category": "Document Management",
     "license": "LGPL-3",
-    "author": "SleektivHQ, MuK IT, Tecnativa, Odoo Community Association (OCA)",
+    "author": "FlectraHQ, MuK IT, Tecnativa, Odoo Community Association (OCA)",
     "depends": ["mail", "http_routing", "portal"],
     "data": [
         "security/security.xml",

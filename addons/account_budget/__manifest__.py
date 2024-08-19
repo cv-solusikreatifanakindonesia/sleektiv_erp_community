@@ -3,7 +3,7 @@
 
 {
     'name': 'Budget Management',
-    'author': 'FlectraHQ, Odoo Mates, Odoo SA',
+    'author': 'Sleektiv, FlectraHQ, Odoo Mates, Odoo SA',
     'category': 'Accounting',
     'version': '2.0.1.0.0',
     'description': """Use budgets to compare actual with expected revenues and costs""",
@@ -12,8 +12,8 @@
     'website': 'https://www.flectrahq.com',
     'depends': ['account'],
     'license': 'LGPL-3',
-    'company': 'SleektivHQ',
-    'maintainer': 'SleektivHQ',
+    'company': 'FlectraHQ',
+    'maintainer': 'FlectraHQ',
     'data': [
         'security/ir.model.access.csv',
         'security/account_budget_security.xml',

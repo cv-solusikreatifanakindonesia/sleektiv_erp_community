@@ -8,7 +8,7 @@
     "images": ["images/openapi-swagger.png"],
     "version": "2.0.1.2.1",
     "application": False,
-    "author": "SleektivHQ, IT-Projects LLC, Ivan Yelizariev",
+    "author": "FlectraHQ, IT-Projects LLC, Ivan Yelizariev",
     "license": "LGPL-3",
     "depends": ["base_api", "mail"],
     "external_dependencies": {

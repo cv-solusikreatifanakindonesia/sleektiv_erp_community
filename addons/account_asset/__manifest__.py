@@ -4,7 +4,7 @@
 {
     'name': 'Assets Management',
     'version': '2.0.1.0.0',
-    'author': 'FlectraHQ, Odoo Mates, Odoo SA',
+    'author': 'Sleektiv, FlectraHQ, Odoo Mates, Odoo SA',
     'depends': ['account'],
     'description': """Manage assets owned by a company or a person. 
     Keeps track of depreciation's, and creates corresponding journal entries""",
@@ -12,8 +12,8 @@
     'category': 'Accounting',
     'sequence': 10,
     'license': 'LGPL-3',
-    'company': 'SleektivHQ',
-    'maintainer': 'SleektivHQ',
+    'company': 'FlectraHQ',
+    'maintainer': 'FlectraHQ',
     'website': 'https://www.flectrahq.com',
     'images': ['static/description/assets.gif'],
     'data': [

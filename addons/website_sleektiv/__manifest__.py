@@ -7,7 +7,7 @@
     'version': '2.0.1.0',
     "category": "Hidden",
     "website": "https://flectrahq.com/",
-    "author": "SleektivHQ",
+    "author": "FlectraHQ",
     "license": "LGPL-3",
     'summary': 'Frontend For Sleektiv',
     'depends': ['website'],

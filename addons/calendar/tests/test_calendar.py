@@ -24,7 +24,7 @@ class TestCalendar(SavepointCaseWithUserDemo):
             'stop': '2011-04-30 18:30:00',
             'description': 'The Technical Presentation will cover following topics:\n* Creating Sleektiv class\n* Views\n* Wizards\n* Workflows',
             'duration': 2.5,
-            'location': 'SleektivHQ, Inc., Odoo S.A.',
+            'location': 'FlectraHQ, Inc., Odoo S.A.',
             'name': 'Technical Presentation'
         })
 

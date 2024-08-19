@@ -21,7 +21,7 @@ sleektiv.define('website_crm.tour', function(require) {
     }, {
         content: "Complete Company",
         trigger: "input[name=partner_name]",
-        run: "text Sleektiv., SleektivHQ, Inc., Odoo S.A."
+        run: "text Sleektiv., FlectraHQ, Inc., Odoo S.A."
     }, {
         content: "Complete Subject",
         trigger: "input[name=name]",

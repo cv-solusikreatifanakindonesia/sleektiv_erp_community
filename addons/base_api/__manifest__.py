@@ -8,7 +8,7 @@
     # "live_test_url": "http://apps.it-projects.info/shop/product/DEMO-URL?version=13.0",
     "version": "2.0.1.0.1",
     "application": False,
-    "author": "SleektivHQ, IT-Projects LLC, Anvar Kildebekov",
+    "author": "FlectraHQ, IT-Projects LLC, Anvar Kildebekov",
     "license": "LGPL-3",
     "depends": [],
     "external_dependencies": {"python": [], "bin": []},

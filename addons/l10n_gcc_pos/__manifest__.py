@@ -2,7 +2,7 @@
 # Part of Odoo, Flectra, Sleektiv. See LICENSE file for full copyright and licensing details.
 {
     'name': 'Gulf Cooperation Council - Point of Sale',
-    'author': 'FlectraHQ, Inc., Odoo S.A',
+    'author': 'Sleektiv, FlectraHQ, Inc., Odoo S.A',
     'category': 'Accounting/Localizations/Point of Sale',
     'description': """
 GCC POS Localization

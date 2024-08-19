@@ -40,7 +40,7 @@ Unicode True
     Exch $R2
 !macroend
 
-!define PUBLISHER 'FlectraHQ, Inc.'
+!define PUBLISHER 'Sleektiv, FlectraHQ, Inc.'
 
 !ifndef MAJOR_VERSION
     !define MAJOR_VERSION '14'

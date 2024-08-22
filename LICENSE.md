@@ -167,6 +167,21 @@ Library.
 
 [LGPL LICENSE](https://www.gnu.org/licenses/lgpl-3.0.txt)
 
+**************************************************************************
+
+For copyright information, please see the COPYRIGHT file.
+
+Sleektiv ERP Community is published under the GNU LESSER GENERAL PUBLIC LICENSE, Version 3
+(LGPLv3), as included below. Since the LGPL is a set of additional
+permissions on top of the GPL, the text of the GPL is included at the
+bottom as well.
+
+Some external libraries and contributions bundled with Sleektiv ERP Community may be published
+under other GPL-compatible licenses. For these, please refer to the relevant
+source files and/or license files, in the source code tree.
+
+**************************************************************************
+
 #[EN]
 
 # Sub-License Agreement for Sleektiv ERP Community

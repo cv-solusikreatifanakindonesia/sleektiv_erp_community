@@ -19,7 +19,7 @@
     <t t-name="AppsMenu">
         <li>
             <a class="full" href="#">
-                <i class="fa fa-th"/>
+                <i class="fa fa-bars"/>
             </a>
             <div class="d-none" id="apps_menu">
                 <div class="search-container align-items-center">

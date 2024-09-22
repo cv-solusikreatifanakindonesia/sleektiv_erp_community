@@ -47,3 +47,14 @@ body.o_web_client{
     }
 }
 
+/** HIDE MENU **/
+a[data-menu-xmlid="base.menu_theme_store"], 
+a[data-menu-xmlid="base.menu_third_party"] {
+    display: none !important;
+}
+
+/** HIDE Leran More **/
+.oe_module_action .btn-secondary, a[href*="flectrahq.com"]{
+    display: none !important;
+}
+

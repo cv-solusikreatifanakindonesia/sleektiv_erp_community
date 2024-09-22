@@ -16,6 +16,7 @@
                         <b class="caret" style="color:#fff;"></b>
                     </a>
                     <ul class="dropdown-menu text-right" style="left:auto; right:0; margin-top:10px;">
+                        <!--
                         <li>
                             <a data-menu="documentation" href="https://flectrahq.com/documentation/user">Documentation</a>
                         </li>
@@ -26,6 +27,7 @@
                             <a data-menu="about" href="/page/website.aboutus">About</a>
                         </li>
                         <li class="divider"></li>
+                        -->
                         <li>
                             <a data-menu="account" href="https://accounts.flectrahq.com/web/login?">My flectrahq.com account</a>
                         </li>

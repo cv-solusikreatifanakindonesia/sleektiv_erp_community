@@ -392,6 +392,7 @@
             <field name="view_mode">tree,kanban,form,graph,pivot,activity</field>
             <field name="search_view_id" ref="hr_expense_view_search"/>
             <field name="context">{'search_default_my_expenses': 1, 'search_default_no_report': 1}</field>
+            <!--
             <field name="help" type="html">
                 <p class="o_view_nocontent_expense_receipt">
                     Did you try the mobile app?
@@ -406,6 +407,7 @@
                     </a>
                 </p>
             </field>
+            -->
         </record>
 
         <!-- Tree & Kanban view for "My Expenses to Report" with the header -->

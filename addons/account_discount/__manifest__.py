@@ -7,8 +7,7 @@
     'description': """
         Use Document Discounts on Invoices
     """,
-    'author': "Jamotion GmbH, Sleektiv HQ",
-    'website': "https://sleektiv-hq.com",
+    'author': "Jamotion GmbH, Sleektiv",
     'category': 'Accounting',
     'version': '0.1',
     'depends': [

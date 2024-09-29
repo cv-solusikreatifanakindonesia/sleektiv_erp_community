@@ -46,6 +46,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!--
                         <div class="col-12 col-lg-6 o_setting_box" id="synchronize_web_mobile_setting" invisible="1">
                             <div class="o_setting_left_pane">
                                 <field name="module_project_timesheet_synchro" widget="upgrade_boolean"/>
@@ -72,6 +73,7 @@
                                 </div>
                             </div>
                         </div>
+                        -->
                         <div class="col-12 col-lg-6 o_setting_box" attrs="{'invisible': [('module_project_timesheet_synchro', '=', False), ('is_encode_uom_days', '=', True)]}">
                             <div class="o_setting_right_pane">
                                 <strong>Round Timesheets</strong>

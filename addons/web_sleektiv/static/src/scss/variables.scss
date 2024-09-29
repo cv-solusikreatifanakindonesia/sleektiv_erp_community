@@ -48,6 +48,8 @@ body.o_web_client{
 }
 
 /** HIDE MENU **/
+a[data-menu-xmlid="base.module_mi"], 
+a[data-menu-xmlid="base.menu_module_updates"], 
 a[data-menu-xmlid="base.menu_theme_store"], 
 a[data-menu-xmlid="base.menu_third_party"] {
     display: none !important;

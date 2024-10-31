@@ -1,1 +1,1 @@
-./sleektiv-bin -r [dbusername] -w [dbpassword] --addons-path=addons -d [dbname] -i base --dev xml --db_host=[dbhost] --db_port=[port] --xmlrpc-port=[appsport] --limit-memory-hard 0
+./sleektiv-bin 	-c config.conf
